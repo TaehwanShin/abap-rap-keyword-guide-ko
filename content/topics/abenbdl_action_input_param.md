@@ -20,7 +20,7 @@ deep parameter
 
 ## 설명
 
-[[abenbdl_action|action]] 이나 [[abenbdl_function|function]] 의 입력 매개변수를 정의합니다. flat 으로도, deep 으로도 정의할 수 있습니다.
+[[abenbdl_action|action]] 이나 [[abenbdl_function|function]] 의 입력 매개변수를 정의합니다. flat parameter 로도, deep parameter 로도 정의할 수 있습니다.
 
 ### flat parameter: parameter { ParameterEntity | $self }
 

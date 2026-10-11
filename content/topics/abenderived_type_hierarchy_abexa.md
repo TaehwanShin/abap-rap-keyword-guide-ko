@@ -1,6 +1,6 @@
 ---
 title: TYPE TABLE / TYPE STRUCTURE FOR HIERARCHY 사용 예제
-summary: action 의 deep parameter·deep result 를 TYPE STRUCTURE FOR HIERARCHY 와 TYPE TABLE FOR HIERARCHY 로 채워 넘기고 받는 예제입니다.
+summary: action 의 deep parameter 와 deep result 를 TYPE STRUCTURE FOR HIERARCHY 와 TYPE TABLE FOR HIERARCHY 로 채워 넘기고 받는 예제입니다.
 keywords: TYPE TABLE FOR HIERARCHY, TYPE STRUCTURE FOR HIERARCHY, deep parameter, deep table parameter, deep result, 깊은 매개변수, 깊은 입력 매개변수, 깊은 출력 매개변수, 추상 BDEF, with hierarchy, with control, %param, 액션, 예제
 ---
 
@@ -14,7 +14,7 @@ deep parameter 는 필드만 나란히 있는 것이 아니라, 안에 구조나
 
 | action | 매개변수 | 하는 일 |
 | --- | --- | --- |
-| `action_flat_param` | `parameter` (flat 입력) | 입력 값을 조금 바꿔 `result` 로 돌려주고, 그 값으로 인스턴스를 만듭니다. |
+| `action_flat_param` | `parameter` (flat parameter) | 입력 값을 조금 바꿔 `result` 로 돌려주고, 그 값으로 인스턴스를 만듭니다. |
 | `action_deep_param` | `deep parameter` (구조 하나) | 입력이 `TYPE STRUCTURE FOR HIERARCHY` 구조입니다. abstract entity 의 값 몇 개를 골라 바꾼 뒤 `result` 로 돌려주고 인스턴스를 만듭니다. |
 | `action_deep_table_param` | `deep table parameter` (테이블) | 입력이 `TYPE TABLE FOR HIERARCHY` 테이블입니다. 나머지는 위와 같습니다. |
 | `returnHData` | `deep result` | 계층 데이터를 돌려줍니다. `result` 의 `%param` 안에 `TYPE STRUCTURE FOR HIERARCHY` 와 `TYPE TABLE FOR HIERARCHY` 타입의 하위 구성요소가 어떻게 겹쳐 들어가는지 보여 줍니다. |
@@ -105,9 +105,9 @@ COMMIT ENTITIES.
 
 원문 예제는 action 을 실행할 때마다 action 의 `result` 와 저장 뒤의 persistent table 내용을 보여 줍니다.
 
-1. `action_flat_param` : `%cid` 와 flat `%param` 을 넘깁니다.
-2. `action_deep_param` : `%cid` 와 deep `%param` 을 넘깁니다. 여기서 `%param` 은 구조입니다.
-3. `action_deep_table_param` : `%cid` 와 deep `%param` 을 넘깁니다. 여기서 `%param` 은 내부 테이블입니다.
+1. `action_flat_param` : `%cid` 와 flat structure 인 `%param` 을 넘깁니다.
+2. `action_deep_param` : `%cid` 와 deep structure 인 `%param` 을 넘깁니다.
+3. `action_deep_table_param` : `%cid` 와 deep table 인 `%param` 을 넘깁니다.
 4. `returnHData` 에는 `%cid` 만 넘깁니다. 돌려받은 결과를 `CORRESPONDING` 으로 옮겨 `storeHData` 의 입력으로 그대로 넘깁니다. `storeHData` 가 인스턴스를 만듭니다.
 
 각 단계 뒤에 `COMMIT ENTITIES` 가 인스턴스를 persistent table 에 저장합니다.
