@@ -352,7 +352,8 @@
   });
   el.doc.addEventListener('focusout', function () { hidePeek(); });
   el.main.addEventListener('scroll', hidePeek, { passive: true });
-  document.addEventListener('keydown', function (ev) { if (ev.key === 'Escape' && peekFor) hidePeek(); });
+  // 미리보기를 닫은 Esc 가 아래의 "찾기 끝내기"까지 이어지지 않게 막는다
+  document.addEventListener('keydown', function (ev) { if (ev.key === 'Escape' && peekFor) { hidePeek(); ev.preventDefault(); } });
 
   // 본문에서 검색어를 찾아 표시한다. 본문에서 처음 걸린 곳을 돌려준다
   function markTerms(terms) {
@@ -641,9 +642,21 @@
     revealInTree(current);
   }
   el.clear.addEventListener('click', function () { clearSearch(); el.q.focus(); });
+  // 찾기를 끝내고 목차로 돌아가, 지금 보는 항목의 자리를 보여 준다
+  $('toTreeBtn').addEventListener('click', function () {
+    clearSearch();
+    el.q.blur();
+    var here = el.tree.querySelector('.row.here .node');
+    if (here) here.focus();
+  });
 
   document.addEventListener('keydown', function (ev) {
     var typing = /^(INPUT|TEXTAREA|SELECT)$/.test(document.activeElement.tagName);
+    // 문서를 읽는 중에도 Esc 로 찾기를 끝내고 목차로 돌아간다 (검색창 안의 Esc 는 따로 처리한다)
+    if (ev.key === 'Escape' && !typing && !ev.defaultPrevented && !el.results.hidden) {
+      clearSearch();
+      return;
+    }
     if ((ev.key === '/' && !typing) || ((ev.ctrlKey || ev.metaKey) && ev.key.toLowerCase() === 'k')) {
       ev.preventDefault();
       if (window.matchMedia('(max-width: 820px)').matches) openSide();
