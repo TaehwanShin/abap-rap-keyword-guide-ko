@@ -15,7 +15,8 @@
     tree: $('tree'), results: $('results'), treeHead: $('treeHead'), resultHead: $('resultHead'),
     resultCount: $('resultCount'), chips: $('chips'),
     doc: $('doc'), outline: $('outline'), main: $('main'), side: $('side'),
-    menu: $('menuBtn'), scrim: $('scrim'), grip: $('grip'), theme: $('themeBtn')
+    menu: $('menuBtn'), scrim: $('scrim'), grip: $('grip'), theme: $('themeBtn'),
+    peek: $('peek'), totop: $('totop')
   };
 
   // 주소에 constructor 같은 상속된 속성 이름이 와도 항목으로 잘못 알지 않게 한다
@@ -128,12 +129,34 @@
   /* ---------- 문서 보여 주기 ---------- */
   var current = null;
   var pendingTerms = null;
+  var scrollMemo = Object.create(null); // 항목마다 읽던 자리. 뒤로 가기로 돌아오면 그 자리로 간다
+  var headings = [];                    // 지금 문서의 단락 제목들 (단락 목록의 "지금 읽는 곳" 표시용)
+  var outlineLinks = [];
 
   function kindTag(d) { return '<span class="kind kind-' + d.g + '">' + KIND_LABEL[d.g] + '</span>'; }
+
+  // 최근 본 항목: 검색창에 초점을 두면 보인다
+  var recent = [];
+  try { recent = JSON.parse(store.get('recent') || '[]').filter(has); } catch (e) { recent = []; }
+  function noteRecent(id) {
+    if (id === ROOT_ID) return;
+    recent = [id].concat(recent.filter(function (r) { return r !== id; })).slice(0, 10);
+    store.set('recent', JSON.stringify(recent));
+  }
+
+  function outlineHtml(id, outline) {
+    return outline.map(function (o) {
+      return '<a href="#/' + id + '/' + o[0] + '" data-h="' + o[0] + '" class="lv' + (o[2] || 2) + '">' + esc(o[1]) + '</a>';
+    }).join('');
+  }
 
   function show(id, anchor) {
     if (!has(id)) id = ROOT_ID;
     var d = DOCS[id];
+    var fromHistory = false;
+    try { fromHistory = !!(history.state && history.state.id === id); } catch (e) { /* 무시 */ }
+    var sameDoc = current === id;
+    hidePeek();
     current = id;
 
     var crumbs = [];
@@ -155,8 +178,10 @@
     var i = ORDER.indexOf(id);
     var prev = ORDER[i - 1];
     var next = ORDER[i + 1];
+    var up = parentOf[id];
     html += '<nav class="pager" aria-label="앞뒤 항목">' +
       (prev ? '<a class="prev" href="#/' + prev + '"><small>앞 항목</small><b>' + esc(DOCS[prev].t) + '</b></a>' : '<span class="gap"></span>') +
+      (up ? '<a class="up" href="#/' + up + '"><small>위 항목</small><b>' + esc(DOCS[up].t) + '</b></a>' : '') +
       (next ? '<a class="next" href="#/' + next + '"><small>다음 항목</small><b>' + esc(DOCS[next].t) + '</b></a>' : '<span class="gap"></span>') +
       '</nav>';
     html += '<p class="foot">SAP ABAP 키워드 문서(ABAP Cloud)의 RAP 부분을 읽고 한글로 풀어 쓴 비공식 참고 자료입니다. ' +
@@ -174,24 +199,160 @@
     });
 
     var outline = d.o.slice();
-    if (d.c.length) outline.push(['kids', '하위 항목']);
-    el.outline.innerHTML = outline.length > 1
-      ? '<div class="outline-title">이 문서의 단락</div>' + outline.map(function (o) {
-          return '<a href="#/' + id + '/' + o[0] + '">' + esc(o[1]) + '</a>';
-        }).join('')
+    if (d.c.length) outline.push(['kids', '하위 항목', 2]);
+    var hasOutline = outline.filter(function (o) { return o[2] !== 3; }).length > 1;
+    el.outline.innerHTML = hasOutline
+      ? '<div class="outline-title">이 문서의 단락</div>' + outlineHtml(id, outline)
       : '';
+    // 오른쪽 단락 목록이 들어가지 않는 좁은 화면에서는 요약 아래에 접힌 목록을 둔다
+    if (hasOutline) {
+      var lead = el.doc.querySelector('.lead') || el.doc.querySelector('.doc-meta');
+      var box = document.createElement('details');
+      box.className = 'doc-outline';
+      box.innerHTML = '<summary>이 문서의 단락</summary><div>' + outlineHtml(id, outline) + '</div>';
+      lead.parentNode.insertBefore(box, lead.nextSibling);
+    }
+    headings = [];
+    outlineLinks = Array.prototype.slice.call(el.outline.querySelectorAll('a[data-h]'));
+    outline.forEach(function (o) {
+      var h = document.getElementById(o[0]);
+      if (h) headings.push({ id: o[0], node: h });
+    });
 
     document.title = d.t + ' · RAP 키워드 길잡이';
     revealInTree(id);
+    noteRecent(id);
+    try { history.replaceState({ id: id }, ''); } catch (e) { /* 파일로 열면 막힐 수 있다 */ }
 
     var terms = pendingTerms;
     pendingTerms = null;
-    var firstMark = terms ? markTerms(terms) : null;
+    var marks = terms ? markTerms(terms) : null;
     var target = anchor ? document.getElementById(anchor) : null;
-    if (target) target.scrollIntoView();
-    else if (firstMark) firstMark.scrollIntoView({ block: 'center' });
+    if (target) jumpTo(target, sameDoc);
+    else if (marks && marks.first) marks.first.scrollIntoView({ block: 'center' });
+    else if (fromHistory && scrollMemo[id] !== undefined) el.main.scrollTop = scrollMemo[id];
     else el.main.scrollTop = 0;
+    if (marks && marks.all.length) markBar(marks.all);
+    onScroll();
   }
+
+  // 단락 제목으로 옮긴다. 같은 문서 안에서 옮길 때만 스르륵 움직이고, 다른 문서를 열 때는 바로 간다
+  function jumpTo(target, smooth) {
+    if (!smooth) el.main.style.scrollBehavior = 'auto';
+    target.scrollIntoView();
+    el.main.style.scrollBehavior = '';
+  }
+
+  /* ---------- 찾은 낱말 사이 오가기 ---------- */
+  var markAt = -1;
+  function markBar(all) {
+    var bar = document.createElement('div');
+    bar.className = 'markbar';
+    bar.innerHTML = '<span>찾은 낱말 <b>' + all.length + '</b>곳</span>' +
+      '<button type="button" data-go="-1">이전</button><button type="button" data-go="1">다음</button>' +
+      '<button type="button" data-go="x">표시 지우기</button>';
+    el.doc.insertBefore(bar, el.doc.firstChild);
+    markAt = -1;
+    bar.addEventListener('click', function (ev) {
+      var b = ev.target.closest('button');
+      if (!b) return;
+      if (b.dataset.go === 'x') {
+        all.forEach(function (m) {
+          var t = document.createTextNode(m.textContent);
+          m.parentNode.replaceChild(t, m);
+        });
+        bar.remove();
+        return;
+      }
+      if (markAt >= 0 && all[markAt]) all[markAt].classList.remove('cur');
+      markAt = (markAt + (+b.dataset.go) + all.length) % all.length;
+      all[markAt].classList.add('cur');
+      all[markAt].scrollIntoView({ block: 'center' });
+      bar.querySelector('b').textContent = (markAt + 1) + ' / ' + all.length;
+    });
+  }
+
+  /* ---------- 읽는 자리 따라가기: 단락 목록 표시와 "맨 위로" ---------- */
+  var scrollTick = false;
+  function onScroll() {
+    if (scrollTick) return;
+    scrollTick = true;
+    requestAnimationFrame(function () {
+      scrollTick = false;
+      var top = el.main.scrollTop;
+      el.totop.hidden = top < 600;
+      if (!headings.length) return;
+      var line = el.main.getBoundingClientRect().top + 80;
+      var cur = headings[0].id;
+      for (var i = 0; i < headings.length; i++) {
+        if (headings[i].node.getBoundingClientRect().top <= line) cur = headings[i].id; else break;
+      }
+      outlineLinks.forEach(function (a) {
+        var on = a.dataset.h === cur;
+        a.classList.toggle('now', on);
+        if (on) a.setAttribute('aria-current', 'location'); else a.removeAttribute('aria-current');
+      });
+    });
+  }
+  el.main.addEventListener('scroll', onScroll, { passive: true });
+  el.totop.addEventListener('click', function () {
+    el.main.scrollTop = 0;
+    el.main.focus();
+  });
+
+  /* ---------- 연결에 손을 올리면 그 항목의 제목과 요약 보여 주기 ---------- */
+  var peekTimer = null;
+  var peekFor = null;
+  function peekTarget(node) {
+    var a = node && node.closest && node.closest('a[href^="#/"]');
+    if (!a || !el.doc.contains(a) || a.closest('.pager, .kids, .crumbs, .doc-outline, .markbar')) return null;
+    var m = /^#\/([^/?]+)/.exec(a.getAttribute('href'));
+    if (!m || !has(m[1]) || m[1] === current) return null;
+    return a;
+  }
+  function showPeek(a) {
+    var id = /^#\/([^/?]+)/.exec(a.getAttribute('href'))[1];
+    var d = DOCS[id];
+    el.peek.innerHTML = '<div class="peek-head">' + kindTag(d) + '<span class="peek-en">' + esc(d.e) + '</span></div>' +
+      '<div class="peek-title">' + esc(d.t) + '</div>' +
+      (d.s ? '<p>' + esc(d.s) + '</p>' : '') +
+      (d.o.length ? '<div class="peek-secs">' + d.o.filter(function (o) { return o[2] !== 3; }).map(function (o) { return esc(o[1]); }).join(' · ') + '</div>' : '');
+    el.peek.hidden = false;
+    peekFor = a;
+    a.setAttribute('aria-describedby', 'peek');
+    var r = a.getBoundingClientRect();
+    var w = el.peek.offsetWidth;
+    var h = el.peek.offsetHeight;
+    var left = Math.max(8, Math.min(r.left, window.innerWidth - w - 8));
+    var top = r.bottom + 8;
+    if (top + h > window.innerHeight - 8) top = Math.max(8, r.top - h - 8);
+    el.peek.style.left = left + 'px';
+    el.peek.style.top = top + 'px';
+  }
+  function hidePeek() {
+    clearTimeout(peekTimer);
+    if (peekFor) { peekFor.removeAttribute('aria-describedby'); peekFor = null; }
+    el.peek.hidden = true;
+  }
+  el.doc.addEventListener('mouseover', function (ev) {
+    var a = peekTarget(ev.target);
+    if (!a || a === peekFor) return;
+    clearTimeout(peekTimer);
+    peekTimer = setTimeout(function () { showPeek(a); }, 260);
+  });
+  el.doc.addEventListener('mouseout', function (ev) {
+    var a = peekTarget(ev.target);
+    if (!a) return;
+    if (ev.relatedTarget && (a.contains(ev.relatedTarget) || el.peek.contains(ev.relatedTarget))) return;
+    hidePeek();
+  });
+  el.doc.addEventListener('focusin', function (ev) {
+    var a = peekTarget(ev.target);
+    if (a) showPeek(a); else hidePeek();
+  });
+  el.doc.addEventListener('focusout', function () { hidePeek(); });
+  el.main.addEventListener('scroll', hidePeek, { passive: true });
+  document.addEventListener('keydown', function (ev) { if (ev.key === 'Escape' && peekFor) hidePeek(); });
 
   // 본문에서 검색어를 찾아 표시한다. 본문에서 처음 걸린 곳을 돌려준다
   function markTerms(terms) {
@@ -206,6 +367,7 @@
     }
     var first = null;
     var headerHit = false;
+    var all = [];
     nodes.forEach(function (n) {
       var text = n.nodeValue;
       var frag = document.createDocumentFragment();
@@ -221,12 +383,13 @@
       frag.appendChild(document.createTextNode(text.slice(last)));
       var inHeader = n.parentNode.closest('h1, .doc-meta, .lead');
       var firstInNode = frag.querySelector('mark');
+      Array.prototype.push.apply(all, frag.querySelectorAll('mark'));
       n.parentNode.replaceChild(frag, n);
       if (inHeader) headerHit = true;
       else if (!first) first = firstInNode;
     });
     // 제목이나 요약에 검색어가 있으면 맨 위에 그대로 둔다
-    return headerHit ? null : first;
+    return { first: headerHit ? null : first, all: all };
   }
 
   el.doc.addEventListener('click', function (ev) {
@@ -261,6 +424,8 @@
     // "#/" 로 시작하지 않는 해시는 항목 주소가 아니므로 보던 문서를 그대로 둔다
     if (current && location.hash && location.hash.indexOf('#/') !== 0) return;
     var m =/^#\/([^/?]*)(?:\/([^/?]+))?/.exec(location.hash) || [];
+    // 떠나기 전에 읽던 자리를 적어 둔다. 뒤로 가기로 돌아오면 그 자리로 간다
+    if (current) scrollMemo[current] = el.main.scrollTop;
     show(m[1] || ROOT_ID, m[2]);
   }
   window.addEventListener('hashchange', route);
@@ -355,9 +520,25 @@
     var searching = query.length > 0;
     el.search.classList.toggle('has-text', el.q.value.length > 0);
     el.clear.hidden = !el.q.value.length;
-    el.tree.hidden = el.treeHead.hidden = searching;
-    el.results.hidden = el.resultHead.hidden = !searching;
-    if (!searching) { hits = []; sel = -1; return; }
+    // 검색어가 없을 때 검색창에 초점이 있으면 최근 본 항목을 보여 준다
+    var showRecent = !searching && qFocus && recent.length > 0;
+    el.tree.hidden = el.treeHead.hidden = searching || showRecent;
+    el.results.hidden = el.resultHead.hidden = !(searching || showRecent);
+    if (!searching) {
+      hits = []; sel = -1;
+      if (showRecent) {
+        hits = recent.map(function (id) { return { id: id }; });
+        el.chips.innerHTML = '';
+        el.resultCount.textContent = '최근 본 항목';
+        el.results.innerHTML = hits.map(function (h, i) {
+          var d = DOCS[h.id];
+          return '<a class="hit" href="#/' + h.id + '" data-i="' + i + '">' +
+            '<span class="hit-title"><span>' + esc(d.t) + '</span></span>' +
+            '<span class="hit-en">' + esc(d.e) + '</span></a>';
+        }).join('');
+      }
+      return;
+    }
 
     var terms = query.toLowerCase().split(/\s+/).filter(Boolean);
     var all = search(query);
@@ -398,10 +579,26 @@
   }
 
   function openHit(id) {
-    pendingTerms = el.q.value.toLowerCase().split(/\s+/).filter(Boolean);
+    var terms = el.q.value.toLowerCase().split(/\s+/).filter(Boolean);
+    pendingTerms = terms.length ? terms : null;
     if (location.hash === '#/' + id) route(); else location.hash = '#/' + id;
     closeSide();
+    if (!terms.length) renderResults(); // 최근 본 항목에서 골랐으면 목록을 새로 그린다
   }
+
+  var qFocus = false;
+  el.q.addEventListener('focus', function () {
+    qFocus = true;
+    if (!el.q.value.trim()) renderResults();
+  });
+  el.q.addEventListener('blur', function (ev) {
+    qFocus = false;
+    if (el.q.value.trim()) return;
+    // 최근 항목을 누르는 중이면 목록을 그대로 둔다 (누른 뒤 openHit 이 새로 그린다)
+    if (ev.relatedTarget && el.results.contains(ev.relatedTarget)) return;
+    renderResults();
+    revealInTree(current);
+  });
 
   var timer = null;
   var stale = false; // 검색어가 바뀌었는데 결과를 아직 다시 그리지 않았다
@@ -439,6 +636,7 @@
   function clearSearch() {
     el.q.value = '';
     kindFilter = 'all';
+    qFocus = false; // 지운 직후에는 최근 목록이 아니라 목차로 돌아간다
     renderResults();
     revealInTree(current);
   }

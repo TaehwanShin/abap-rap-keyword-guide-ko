@@ -80,8 +80,12 @@ function renderBody(id, body) {
       const inner = this.parser.parseInline(tokens);
       const level = Math.min(Math.max(depth, 2), 4);
       const anchor = `s${++headingNo}`;
-      if (level === 2) outline.push([anchor, inner.replace(/<[^>]+>/g, '')]);
-      return `<h${level} id="${anchor}">${inner}</h${level}>\n`;
+      const plain = inner.replace(/<[^>]+>/g, '');
+      // 단락 목록에는 ## 과 ### 를 담는다. 셋째 값은 깊이(2·3)
+      if (level === 2 || level === 3) outline.push([anchor, plain, level]);
+      // 책 보강본에만 있는 "책에서 더 읽기" 단락은 본문과 구별되게 표시한다
+      const cls = level === 2 && plain.trim() === '책에서 더 읽기' ? ' class="book"' : '';
+      return `<h${level} id="${anchor}"${cls}>${inner}</h${level}>\n`;
     },
     // 긴 코드에만 표시를 달아, 표 안에서 짧은 코드는 중간에 줄이 바뀌지 않게 한다 (text 는 이미 이스케이프된 글)
     codespan({ text }) {
