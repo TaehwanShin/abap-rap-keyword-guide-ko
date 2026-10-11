@@ -62,7 +62,7 @@ draft 조회 뷰는 draft 테이블에서 관리용 필드까지 모두 고릅�
 
 ```cds
 @AccessControl.authorizationCheck: #CHECK
-@EndUserText.label: '여행 draft 조회 뷰'
+@EndUserText.label: 'Travel draft query view'
 define view entity ZR_TravelDraftQuery
   as select from ztravel_d
 {
@@ -89,7 +89,7 @@ define view entity ZR_TravelDraftQuery
 이 뷰에 DCL 을 걸어 draft 데이터의 읽기를 제한합니다. 여기서는 여행사 `070001` 의 draft 만 읽을 수 있게 했습니다.
 
 ```cds
-@EndUserText.label: '여행 draft 읽기 제한'
+@EndUserText.label: 'Read restriction for travel drafts'
 @MappingRole: true
 define role ZR_TravelDraftQuery {
   grant select on ZR_TravelDraftQuery

@@ -40,7 +40,7 @@ managed RAP BO 에서는 `with additional save` 로 additional save 를 켜고([
 여행이 만들어지면 여행사와 고객 번호를 실어 event 를 내보냅니다. 먼저 페이로드로 쓸 abstract entity 입니다.
 
 ```cds
-@EndUserText.label: '여행 생성 event 의 페이로드'
+@EndUserText.label: 'Payload of the travel created event'
 define abstract entity ZA_TravelCreated
 {
   AgencyID   : abap.numc(6);

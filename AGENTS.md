@@ -208,6 +208,7 @@ RAP 에서 키워드나 이름으로 내놓는 말은 **원문 그대로** 쓴�
   줄이지 않은 완성 모델은 첫 항목(`abenabap_rap`)의 "이 참고서의 예제 읽는 법"에 있다. 모델을 바꾸면 그곳도 함께 고친다.
 - ABAP 코드에서 키워드는 대문자, 직접 지은 이름은 소문자(`lt_travel`, `ls_failed`)로 쓴다. 최신 문법(인라인 선언, `VALUE #( )`)을 쓴다.
 - 주석은 한글로 단다.
+- CDS 주석의 글귀(`@EndUserText.label`, `@UI` 의 `label` 따위)는 영문으로 쓴다. 실제 객체에서도 영문으로 적는 자리다. 예) `@EndUserText.label: 'Travel draft query view'`
 
 ## 화면 코드를 고칠 때
 

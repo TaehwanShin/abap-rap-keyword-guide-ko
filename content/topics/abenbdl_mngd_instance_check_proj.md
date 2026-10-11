@@ -58,7 +58,7 @@ projection BDEF, RAP BO interface
 상태가 열림(`O`)인 여행만 보여 주는 projection 뷰입니다.
 
 ```cds
-@EndUserText.label: '열린 여행만 보여 주는 projection'
+@EndUserText.label: 'Projection of open travels only'
 @AccessControl.authorizationCheck: #NOT_REQUIRED
 define root view entity ZC_Travel
   provider contract transactional_query

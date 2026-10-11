@@ -36,7 +36,7 @@ draft 테이블은 draft 데이터를 담는 DDIC 데이터베이스 테이블�
 `ZR_Travel` 의 draft 테이블입니다. 필드 이름과 타입을 CDS entity 에 맞추고, 끝에 draft 관리 인클루드를 넣습니다.
 
 ```cds
-@EndUserText.label : '여행 draft 테이블'
+@EndUserText.label : 'Travel draft table'
 @AbapCatalog.tableCategory : #TRANSPARENT
 @AbapCatalog.deliveryClass : #A
 @AbapCatalog.dataMaintenance : #RESTRICTED

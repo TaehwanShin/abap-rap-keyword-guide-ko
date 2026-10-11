@@ -22,7 +22,7 @@ draft 조회 뷰입니다. draft 테이블 `ztravel_d` 의 필드를 관리용 �
 
 ```cds
 @AccessControl.authorizationCheck: #CHECK
-@EndUserText.label: '여행 draft 조회 뷰'
+@EndUserText.label: 'Travel draft query view'
 define view entity ZR_TravelDraftQuery
   as select from ztravel_d
 {

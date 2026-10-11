@@ -45,10 +45,10 @@ deep parameter
 할인율을 받아 여행 총액에서 깎는 action 입니다. 입력은 CDS abstract entity 로 정의합니다.
 
 ```cds
-@EndUserText.label: '할인'
+@EndUserText.label: 'Discount'
 define abstract entity ZA_Discount
 {
-  @EndUserText.label: '할인율(%)'
+  @EndUserText.label: 'Discount rate (%)'
   DiscountPercent : abap.int1;
 }
 ```

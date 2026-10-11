@@ -18,7 +18,7 @@ action `deductDiscount` 는 이렇게 생겼습니다.
 입력 매개변수의 타입이 되는 abstract entity 입니다. 할인율 필드 하나만 있습니다.
 
 ```cds
-@EndUserText.label: '할인율'
+@EndUserText.label: 'Discount rate'
 define abstract entity ZA_Discount
 {
   discount_percent : abap.int1;

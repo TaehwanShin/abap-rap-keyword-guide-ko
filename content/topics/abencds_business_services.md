@@ -20,7 +20,7 @@ RAP 비즈니스 서비스는 AS ABAP 이 ABAP RAP 의 한 부분으로 내놓�
 projection `ZC_Travel` 과 `ZC_Booking` 을 내놓는 service definition 입니다. 이 service definition 에 service binding 을 만들어 프로토콜을 고르면 서비스가 공개됩니다.
 
 ```cds
-@EndUserText.label: '여행 서비스'
+@EndUserText.label: 'Travel service'
 define service ZUI_Travel {
   expose ZC_Travel  as Travel;
   expose ZC_Booking as Booking;

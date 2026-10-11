@@ -36,7 +36,7 @@ managed RAP BO 와 unmanaged RAP BO 에서 선언할 수 있습니다.
 
 ```cds
 @AccessControl.authorizationCheck: #NOT_REQUIRED
-@EndUserText.label: '여행 event 의 페이로드'
+@EndUserText.label: 'Payload of the travel event'
 define view entity ZI_TravelPayload
   as select from ztravel
 {
