@@ -19,7 +19,7 @@ abstract BDEF 에서 `define behavior for` 뒤의 중괄호 `{ ... }` 안이 ent
 
 - [[abenbdl_field_abstract]] : abstract BDEF 의 필드에 특성을 줍니다. derived type(파생 타입)에서 필드를 빼는 `suppress` 와, 값을 꼭 넘기게 하는 `mandatory:execute` 가 있습니다.
 - [[abenbdl_association_abstract]] : association 을 계층 BDEF derived type 에 넣습니다. composition 도 여기서는 `association` 키워드로 적습니다.
-- [[abenbdl_type_mapping_abstract]] : abstract BDEF 의 데이터 타입을 DDIC 쪽 상대 타입에 연결합니다. 평평한 구조에 쓰는 type mapping(`mapping for`)과 중첩 구조에 쓰는 깊은 mapping(`deep mapping for`) 두 가지가 있습니다.
+- [[abenbdl_type_mapping_abstract]] : abstract BDEF 의 데이터 타입을 DDIC 쪽 상대 타입에 연결합니다. flat structure 에 쓰는 type mapping(`mapping for`)과 중첩 구조에 쓰는 deep mapping(`deep mapping for`) 두 가지가 있습니다.
 
 ## 예제
 

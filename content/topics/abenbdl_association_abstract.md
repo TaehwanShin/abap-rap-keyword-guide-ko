@@ -65,7 +65,7 @@ with control
 }
 ```
 
-이 abstract BDEF 를 깊은 입력 매개변수로 쓰는 action 을 부릅니다. `_Booking` 의 `%control` 표시를 켜야 합니다.
+이 abstract BDEF 를 deep parameter 로 쓰는 action 을 부릅니다. `_Booking` 의 `%control` 표시를 켜야 합니다.
 
 ```abap
 DATA lt_param TYPE TABLE FOR ACTION IMPORT zr_travel~createdeep.

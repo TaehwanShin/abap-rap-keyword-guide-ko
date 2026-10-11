@@ -1,6 +1,6 @@
 ---
 title: abstract behavior definition (abstract BDEF)
-summary: 트랜잭션 동작 없이 타입만 정해 주는 behavior definition 으로, 주로 action 과 function 의 깊은 매개변수 타입으로 씁니다.
+summary: 트랜잭션 동작 없이 타입만 정해 주는 behavior definition 으로, 주로 action 과 function 의 deep parameter 타입으로 씁니다.
 keywords: abstract, abstract BDEF, abstract behavior definition, 추상 BDEF, 추상 동작 정의, 깊은 매개변수, deep parameter, deep table parameter, deep result, with hierarchy, 계층 타입, 추상 엔터티, deep mapping
 ---
 
@@ -8,7 +8,7 @@ keywords: abstract, abstract BDEF, abstract behavior definition, 추상 BDEF, �
 
 abstract behavior definition(동작 정의, abstract BDEF)는 구현 타입이 `abstract` 인 behavior definition 입니다. 다른 behavior definition 과 마찬가지로 BDL 소스 코드로 만듭니다.
 
-abstract BDEF 가 하는 일은 거의 하나입니다. action 이나 function 의 **깊은 매개변수**(구조 안에 구조나 테이블이 들어 있는 매개변수)에 **타입을 정해 주는 것**입니다. CDS abstract entity(엔터티) 여러 개를 composition 으로 엮어 두고, abstract BDEF 로 그 전체를 하나의 계층 타입으로 묶습니다.
+abstract BDEF 가 하는 일은 거의 하나입니다. action 이나 function 의 **deep parameter**(구조 안에 구조나 테이블이 들어 있는 매개변수)에 **타입을 정해 주는 것**입니다. CDS abstract entity(엔터티) 여러 개를 composition 으로 엮어 두고, abstract BDEF 로 그 전체를 하나의 계층 타입으로 묶습니다.
 
 그래서 쓸 수 있는 문법이 얼마 없습니다.
 
@@ -60,19 +60,19 @@ define behavior for ZA_BookingInput alias BookingInput
 }
 ```
 
-managed BDEF 에서 이 abstract BDEF 를 action 매개변수로 씁니다. 어떤 키워드를 붙이느냐에 따라 평평한 구조, 깊은 구조, 깊은 테이블로 쓰입니다.
+managed BDEF 에서 이 abstract BDEF 를 action 매개변수로 씁니다. 어떤 키워드를 붙이느냐에 따라 flat structure, deep structure, deep table 로 쓰입니다.
 
 ```bdl
-// 평평한 매개변수
+// flat parameter
 static action createFlat parameter ZA_TravelInput;
 
-// 깊은 구조: 예약 테이블까지 들어 있는 구조 하나
+// deep structure: 예약 테이블까지 들어 있는 구조 하나
 static action createDeep deep parameter ZA_TravelInput;
 
-// 깊은 테이블: 위 구조가 여러 줄
+// deep table: 위 구조가 여러 줄
 static action createMany deep table parameter ZA_TravelInput;
 
-// 깊은 출력 매개변수
+// deep result
 action getInput deep result selective [1] ZA_TravelInput;
 ```
 

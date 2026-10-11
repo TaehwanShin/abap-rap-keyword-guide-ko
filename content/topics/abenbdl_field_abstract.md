@@ -59,7 +59,7 @@ with control
 }
 ```
 
-이 abstract BDEF 를 깊은 입력 매개변수로 쓰는 action 을 부릅니다. `AgencyID` 에 값을 넣고 `%control` 도 켭니다.
+이 abstract BDEF 를 deep parameter 로 쓰는 action 을 부릅니다. `AgencyID` 에 값을 넣고 `%control` 도 켭니다.
 
 ```abap
 MODIFY ENTITIES OF zr_travel

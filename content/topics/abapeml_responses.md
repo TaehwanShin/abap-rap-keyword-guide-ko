@@ -16,7 +16,7 @@ keywords: response_param, 응답 매개변수, FAILED, MAPPED, REPORTED, TYPE RE
 
 동적이 아닌 꼴, 곧 짧은 꼴이나 긴 꼴의 EML 문(예: [[abapmodify_entity_short|MODIFY ENTITY]], [[abapmodify_entities_long|MODIFY ENTITIES]])에서 응답을 받는 방법입니다. 세 가지를 쓸 수 있는 문이라면 함께 써도 됩니다.
 
-`failed_resp`, `mapped_resp`, `reported_resp` 는 **깊은 구조**(안에 내부 테이블이 든 구조)입니다. BDEF derived type(BDEF 파생 타입) [[abaptype_response_for|TYPE RESPONSE FOR]] 로 선언해야 합니다. `DATA( )` 나 `FINAL( )` 로 그 자리에서 선언해도 됩니다.
+`failed_resp`, `mapped_resp`, `reported_resp` 는 **deep structure**(안에 내부 테이블이 든 구조)입니다. BDEF derived type(BDEF 파생 타입) [[abaptype_response_for|TYPE RESPONSE FOR]] 로 선언해야 합니다. `DATA( )` 나 `FINAL( )` 로 그 자리에서 선언해도 됩니다.
 
 이 구조 안에는 RAP BO 의 entity(엔터티)마다 내부 테이블이 하나씩 들어 있습니다. 그래서 BO 의 모든 entity 에 걸친 정보를 한 번에 받을 수 있습니다. 예를 들어 `ls_failed-travel`, `ls_failed-booking` 처럼 읽습니다.
 

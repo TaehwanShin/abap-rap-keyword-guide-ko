@@ -24,7 +24,7 @@ managed 또는 unmanaged RAP BO 에 **파생 event** 를 선언합니다. 파생
 
 - association 이 **하나도 없는** CDS 뷰 entity(엔터티)여야 합니다.
 - 이 뷰 entity 의 키 필드가, `RefEvent` 가 선언된 entity 의 키 필드와 맞아야 합니다.
-- 파생 event 의 매개변수는 늘 평평합니다. 깊은 구조나 association 이 있는 뷰 entity 는 쓸 수 없습니다.
+- 파생 event 의 매개변수는 늘 flat 입니다. deep structure 나 association 이 있는 뷰 entity 는 쓸 수 없습니다.
 
 ### 쓸 수 있는 곳
 

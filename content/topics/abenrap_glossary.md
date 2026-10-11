@@ -288,7 +288,7 @@ RAP BO extension 에서 온 요소나 리포지토리 객체를 가리킬 때 �
 
 ### RAP abstract behavior definition (RAP abstract 동작 정의)
 
-줄임말 RAP abstract BDEF 또는 abstract BDEF. 구현 유형이 abstract 인 RAP behavior definition 입니다. CDS abstract entity 를 바탕으로 합니다. 주로 action 이나 function 의 깊은(deep) 매개변수 타입을 정하는 데 씁니다. 관련 항목: [[abenbdl_abstract]]
+줄임말 RAP abstract BDEF 또는 abstract BDEF. 구현 유형이 abstract 인 RAP behavior definition 입니다. CDS abstract entity 를 바탕으로 합니다. 주로 action 이나 function 의 deep parameter 타입을 정하는 데 씁니다. 관련 항목: [[abenbdl_abstract]]
 
 ### RAP action
 

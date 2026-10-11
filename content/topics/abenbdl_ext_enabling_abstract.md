@@ -50,7 +50,7 @@ extension 을 허용하는 출발점입니다. 이것이 없으면 확장할 수
 
 ## 예제
 
-두 노드 모두 extension 을 허용한 abstract BDEF 입니다. 루트 노드의 깊은 mapping 도 확장할 수 있게 열어 두었습니다.
+두 노드 모두 extension 을 허용한 abstract BDEF 입니다. 루트 노드의 deep mapping 도 확장할 수 있게 열어 두었습니다.
 
 ```bdl
 abstract;

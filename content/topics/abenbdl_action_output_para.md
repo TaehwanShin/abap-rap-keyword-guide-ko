@@ -123,7 +123,7 @@ READ ENTITIES OF zr_travel
   REPORTED FINAL(ls_reported).
 ```
 
-### 깊은 결과
+### deep result
 
 ```bdl
 action getItinerary deep result selective [1] ZA_Itinerary;

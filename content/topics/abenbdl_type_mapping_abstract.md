@@ -1,6 +1,6 @@
 ---
 title: abstract BDEF 의 mapping (mapping, deep mapping)
-summary: abstract BDEF 의 타입을 DDIC 구조에 연결하는 문법으로, 평평한 구조에는 mapping for 를, 중첩된 깊은 구조에는 deep mapping for 를 씁니다.
+summary: abstract BDEF 의 타입을 DDIC 구조에 연결하는 문법으로, flat structure 에는 mapping for 를, 중첩된 deep structure 에는 deep mapping for 를 씁니다.
 keywords: mapping, deep mapping, mapping for, deep mapping for, sub, corresponding, extensible, 타입 매핑, 깊은 매핑, 추상 BDEF, abstract BDEF, DDIC 구조, 계층 타입, with hierarchy
 ---
 
@@ -12,7 +12,7 @@ type mapping
 ... mapping for PartnerType ...
 ```
 
-깊은 mapping
+deep mapping
 
 ```syntax
 ... deep mapping for NestedDeepDDICType [corresponding [extensible]]
@@ -32,16 +32,16 @@ RAP type mapping 은 abstract BDEF 의 데이터 타입을 DDIC 쪽 상대 타�
 
 | 상대 타입 | 쓰는 문법 |
 | --- | --- |
-| 평평한 구조이고 기본 타입끼리만 연결 | `mapping for` |
-| 중첩 구조 또는 깊은 구조 | `deep mapping for` |
+| flat structure 이고 기본 타입끼리만 연결 | `mapping for` |
+| 중첩 구조 또는 deep structure | `deep mapping for` |
 
 ### mapping for
 
-구성요소를 평평한 DDIC 구조에 연결합니다. 문법은 managed·unmanaged RAP BO 의 type mapping 과 같습니다. [[abenbdl_type_mapping]] 을 보세요.
+구성요소를 flat DDIC 구조에 연결합니다. 문법은 managed·unmanaged RAP BO 의 type mapping 과 같습니다. [[abenbdl_type_mapping]] 을 보세요.
 
 ### deep mapping for
 
-`with hierarchy` 가 붙은 abstract BDEF 에서, 만들어진 계층 derived type(파생 타입)을 중첩되거나 깊은 DDIC 타입에 연결합니다. 이런 mapping 은 반드시 `deep` 으로 시작합니다.
+`with hierarchy` 가 붙은 abstract BDEF 에서, 만들어진 계층 derived type(파생 타입)을 중첩되거나 deep DDIC 타입에 연결합니다. 이런 mapping 은 반드시 `deep` 으로 시작합니다.
 
 **sub** : child entity(자식 엔터티)를 상대 타입의 하위 구성요소에 연결합니다.
 

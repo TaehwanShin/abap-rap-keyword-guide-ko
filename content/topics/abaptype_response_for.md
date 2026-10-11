@@ -1,6 +1,6 @@
 ---
 title: TYPE RESPONSE FOR (응답 구조 타입)
-summary: response parameter failed, mapped, reported 의 타입으로, RAP BO 의 entity 마다 내부 테이블을 하나씩 품은 깊은 구조입니다.
+summary: response parameter failed, mapped, reported 의 타입으로, RAP BO 의 entity 마다 내부 테이블을 하나씩 품은 deep structure 입니다.
 keywords: TYPE RESPONSE FOR, RESPONSE FOR FAILED, RESPONSE FOR MAPPED, RESPONSE FOR REPORTED, EARLY, LATE, failed, mapped, reported, 응답 매개변수, 응답 구조, BDEF 파생 타입, ABP_BEHV_RESPONSE_TAB
 ---
 
@@ -18,7 +18,7 @@ keywords: TYPE RESPONSE FOR, RESPONSE FOR FAILED, RESPONSE FOR MAPPED, RESPONSE 
 
 `TYPE RESPONSE FOR` 는 RAP 응답을 주고받는 데 쓰는 BDEF derived type(BDEF 파생 타입)입니다. response parameter(응답 매개변수) `failed`, `mapped`, `reported` 와, EML 문에서 응답을 받는 변수가 이 타입입니다.
 
-이 타입은 **깊은 구조**입니다. RAP BO 의 entity(엔터티)마다 내부 테이블이 구성요소로 하나씩 들어 있습니다. 그래서 RAP BO 전체의 응답을 한 번에 넘기고 받을 수 있습니다. `bdef` 자리에는 RAP BO root entity(루트 엔터티)의 이름을 적습니다.
+이 타입은 **deep structure** 입니다. RAP BO 의 entity(엔터티)마다 내부 테이블이 구성요소로 하나씩 들어 있습니다. 그래서 RAP BO 전체의 응답을 한 번에 넘기고 받을 수 있습니다. `bdef` 자리에는 RAP BO root entity(루트 엔터티)의 이름을 적습니다.
 
 | 종류 | 담는 내용 |
 | --- | --- |

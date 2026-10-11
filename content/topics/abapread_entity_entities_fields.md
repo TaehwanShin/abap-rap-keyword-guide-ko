@@ -61,9 +61,9 @@ keywords: field_spec, FROM, FIELDS WITH, ALL FIELDS WITH, fields_tab, %control, 
 - `%control` 은 자동으로 채워집니다. `fields_tab` 은 읽는 자리이면서 쓰는 자리입니다.
 - `EXECUTE` 에는 쓸 수 없습니다.
 
-### 깊은 매개변수에서 FIELDS ( ... ) WITH
+### deep parameter 에서 FIELDS ( ... ) WITH
 
-`FIELDS ( ... ) WITH` 는 action 이나 function 의 [[abenbdl_action_input_param|깊은 입력 매개변수]]에서도 `%control` 을 채워 줍니다. 조건이 있습니다. 매개변수인 CDS abstract entity 의 behavior definition(동작 정의)에 [[abenbdl_bdef_abstract_header|with hierarchy;]] 가 있고, composition 트리의 노드 하나 이상이 [[abenbdl_define_beh_abstract|define behavior for ... with control]] 로 정의돼 있어야 합니다.
+`FIELDS ( ... ) WITH` 는 action 이나 function 의 [[abenbdl_action_input_param|deep parameter]] 에서도 `%control` 을 채워 줍니다. 조건이 있습니다. 매개변수인 CDS abstract entity 의 behavior definition(동작 정의)에 [[abenbdl_bdef_abstract_header|with hierarchy;]] 가 있고, composition 트리의 노드 하나 이상이 [[abenbdl_define_beh_abstract|define behavior for ... with control]] 로 정의돼 있어야 합니다.
 
 이때 연관된 abstract entity `_ent` 뒤에 괄호를 한 번 더 써서 하위 구성요소만 표시할 수 있습니다. `a` 는 부모 abstract entity 의 필드, `b` 는 `_ent` 안의 구성요소입니다. 표시는 [[abapderived_types_param|%param]] 안의 `%control` 에 들어갑니다.
 
@@ -115,7 +115,7 @@ READ ENTITIES OF zr_travel IN LOCAL MODE
 - `fields_tab` 뒤에는 [[abapeml_result|RESULT]] 를 적어 문장을 마무리합니다. association 으로 읽을 때는 `RESULT` 대신 `LINK` 만 적어도 되고, 둘 다 적어도 됩니다([[abapread_entity_entities_op]]). [[abapeml_response|response parameter]] 도 그 뒤에 적을 수 있습니다.
 - `fields_tab` 에는 **키 필드를 모두** 적어야 합니다. 하나라도 빠지면 읽기 작업이 실패합니다.
 - association 으로 읽으면 연관된 entity 의 키 필드가 기본으로 모두 돌아옵니다.
-- `FIELDS ( ... ) WITH` 와 [[abapmodify_entity_entities_fields|SET FIELDS WITH]] 는 function 을 실행하는 읽기(`EXECUTE`)에는 조건이 맞을 때만 쓸 수 있습니다. BDEF 에서 function 을 `deep [table] parameter`([[abenbdl_action_input_param|깊은 입력 매개변수]])로 선언하고 [[abenbdl_action_output_para|selective]] 를 쓰지 않았을 때입니다.
+- `FIELDS ( ... ) WITH` 와 [[abapmodify_entity_entities_fields|SET FIELDS WITH]] 는 function 을 실행하는 읽기(`EXECUTE`)에는 조건이 맞을 때만 쓸 수 있습니다. BDEF 에서 function 을 `deep [table] parameter`([[abenbdl_action_input_param|deep parameter]])로 선언하고 [[abenbdl_action_output_para|selective]] 를 쓰지 않았을 때입니다.
 
 ## 관련 항목
 

@@ -17,7 +17,7 @@ behavior definition(동작 정의)에는 standard operation(표준 작업) 말�
 | 3 | 삭제 | `%cid_ref` 로도, 키로도 지웁니다. |
 | 4 | action 실행 | 두 숫자 필드에 2 를 곱하는 action 입니다. |
 | 5 | validation | 한 인스턴스가 validation 에 걸리면 그 요청의 인스턴스가 모두 저장되지 않습니다. |
-| 6 | association 을 거친 생성 | 부모와 자식을 한 요청으로 만드는 깊은 생성(deep create)입니다. |
+| 6 | association 을 거친 생성 | 부모와 자식을 한 요청으로 만드는 deep create 입니다. |
 | 7 | 읽기 | 루트 읽기, 자식 직접 읽기, 부모→자식 읽기, 자식→부모 읽기 |
 | 8 | 곁들임: 동적 EML | `READ ENTITIES OPERATIONS` 로 읽기와 association 을 거친 읽기를 합니다. |
 
@@ -82,7 +82,7 @@ MODIFY ENTITIES OF zr_travel
   MAPPED ls_mapped FAILED ls_failed REPORTED ls_reported.
 COMMIT ENTITIES.
 
-" 깊은 생성: 부모와 자식을 한 번에
+" deep create: 부모와 자식을 한 번에
 MODIFY ENTITIES OF zr_travel
   ENTITY travel
     CREATE FIELDS ( TravelID AgencyID )

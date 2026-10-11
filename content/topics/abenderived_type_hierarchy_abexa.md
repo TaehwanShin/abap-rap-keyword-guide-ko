@@ -1,24 +1,24 @@
 ---
 title: TYPE TABLE / TYPE STRUCTURE FOR HIERARCHY 사용 예제
-summary: action 의 깊은 입력·출력 매개변수를 TYPE STRUCTURE FOR HIERARCHY 와 TYPE TABLE FOR HIERARCHY 로 채워 넘기고 받는 예제입니다.
+summary: action 의 deep parameter·deep result 를 TYPE STRUCTURE FOR HIERARCHY 와 TYPE TABLE FOR HIERARCHY 로 채워 넘기고 받는 예제입니다.
 keywords: TYPE TABLE FOR HIERARCHY, TYPE STRUCTURE FOR HIERARCHY, deep parameter, deep table parameter, deep result, 깊은 매개변수, 깊은 입력 매개변수, 깊은 출력 매개변수, 추상 BDEF, with hierarchy, with control, %param, 액션, 예제
 ---
 
 ## 설명
 
-이 예제는 managed RAP BO 의 action 에서 **깊은 매개변수**를 주고받을 때 BDEF derived type(BDEF 파생 타입) `TYPE TABLE FOR HIERARCHY` 와 `TYPE STRUCTURE FOR HIERARCHY` 를 어떻게 쓰는지 보여 줍니다.
+이 예제는 managed RAP BO 의 action 에서 **deep parameter** 를 주고받을 때 BDEF derived type(BDEF 파생 타입) `TYPE TABLE FOR HIERARCHY` 와 `TYPE STRUCTURE FOR HIERARCHY` 를 어떻게 쓰는지 보여 줍니다.
 
-깊은 매개변수는 필드만 나란히 있는 것이 아니라, 안에 구조나 테이블이 겹겹이 들어 있는 매개변수입니다. 모양은 abstract entity(엔터티)와 그 composition 이 정하고, abstract BDEF 에 `with hierarchy;` 를 적어야 쓸 수 있습니다.
+deep parameter 는 필드만 나란히 있는 것이 아니라, 안에 구조나 테이블이 겹겹이 들어 있는 매개변수입니다. 모양은 abstract entity(엔터티)와 그 composition 이 정하고, abstract BDEF 에 `with hierarchy;` 를 적어야 쓸 수 있습니다.
 
 원문 예제의 behavior definition(동작 정의)에는 static action 이 다섯 개 있습니다.
 
 | action | 매개변수 | 하는 일 |
 | --- | --- | --- |
-| `action_flat_param` | `parameter` (평평한 입력) | 입력 값을 조금 바꿔 `result` 로 돌려주고, 그 값으로 인스턴스를 만듭니다. |
+| `action_flat_param` | `parameter` (flat 입력) | 입력 값을 조금 바꿔 `result` 로 돌려주고, 그 값으로 인스턴스를 만듭니다. |
 | `action_deep_param` | `deep parameter` (구조 하나) | 입력이 `TYPE STRUCTURE FOR HIERARCHY` 구조입니다. abstract entity 의 값 몇 개를 골라 바꾼 뒤 `result` 로 돌려주고 인스턴스를 만듭니다. |
 | `action_deep_table_param` | `deep table parameter` (테이블) | 입력이 `TYPE TABLE FOR HIERARCHY` 테이블입니다. 나머지는 위와 같습니다. |
-| `returnHData` | `deep result` (깊은 출력) | 계층 데이터를 돌려줍니다. `result` 의 `%param` 안에 `TYPE STRUCTURE FOR HIERARCHY` 와 `TYPE TABLE FOR HIERARCHY` 타입의 하위 구성요소가 어떻게 겹쳐 들어가는지 보여 줍니다. |
-| `storeHData` | `deep parameter` (구조 하나) | 깊은 입력에서 값을 골라 `TYPE TABLE FOR CREATE` 테이블을 채우고 인스턴스를 만듭니다. 만든 인스턴스를 `result` 로 돌려줍니다. |
+| `returnHData` | `deep result` | 계층 데이터를 돌려줍니다. `result` 의 `%param` 안에 `TYPE STRUCTURE FOR HIERARCHY` 와 `TYPE TABLE FOR HIERARCHY` 타입의 하위 구성요소가 어떻게 겹쳐 들어가는지 보여 줍니다. |
+| `storeHData` | `deep parameter` (구조 하나) | deep parameter 에서 값을 골라 `TYPE TABLE FOR CREATE` 테이블을 채우고 인스턴스를 만듭니다. 만든 인스턴스를 `result` 로 돌려줍니다. |
 
 action 안에서 값을 바꾼다는 것은 문자 필드에 글자를 덧붙이고 숫자 필드로 계산을 한다는 뜻입니다. 어느 action 이든 인스턴스를 만들 때는 `TYPE TABLE FOR CREATE` 테이블을 채워 RAP 생성 작업을 실행합니다.
 
@@ -45,7 +45,7 @@ with control
 }
 ```
 
-`ZR_Travel` 의 behavior definition 에는 깊은 매개변수를 받는 action 을 넣습니다.
+`ZR_Travel` 의 behavior definition 에는 deep parameter 를 받는 action 을 넣습니다.
 
 ```bdl
 // 입력이 구조 하나
@@ -56,7 +56,7 @@ static action createWithBookings deep parameter ZA_TravelInput
 static action createManyWithBookings deep table parameter ZA_TravelInput
   result [1..*] $self;
 
-// 출력이 깊은 구조
+// 출력이 deep structure
 static action getTemplate deep result [1] ZA_TravelInput;
 ```
 
@@ -105,9 +105,9 @@ COMMIT ENTITIES.
 
 원문 예제는 action 을 실행할 때마다 action 의 `result` 와 저장 뒤의 persistent table 내용을 보여 줍니다.
 
-1. `action_flat_param` : `%cid` 와 평평한 `%param` 을 넘깁니다.
-2. `action_deep_param` : `%cid` 와 깊은 `%param` 을 넘깁니다. 여기서 `%param` 은 구조입니다.
-3. `action_deep_table_param` : `%cid` 와 깊은 `%param` 을 넘깁니다. 여기서 `%param` 은 내부 테이블입니다.
+1. `action_flat_param` : `%cid` 와 flat `%param` 을 넘깁니다.
+2. `action_deep_param` : `%cid` 와 deep `%param` 을 넘깁니다. 여기서 `%param` 은 구조입니다.
+3. `action_deep_table_param` : `%cid` 와 deep `%param` 을 넘깁니다. 여기서 `%param` 은 내부 테이블입니다.
 4. `returnHData` 에는 `%cid` 만 넘깁니다. 돌려받은 결과를 `CORRESPONDING` 으로 옮겨 `storeHData` 의 입력으로 그대로 넘깁니다. `storeHData` 가 인스턴스를 만듭니다.
 
 각 단계 뒤에 `COMMIT ENTITIES` 가 인스턴스를 persistent table 에 저장합니다.

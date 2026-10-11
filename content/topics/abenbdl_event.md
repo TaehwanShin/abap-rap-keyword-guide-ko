@@ -20,8 +20,8 @@ managed 또는 unmanaged RAP BO 에 **business event** 를 선언합니다. busi
 
 | 적는 법 | `ParamName` 에 올 수 있는 것 | BDEF derived type(BDEF 파생 타입)의 모양 |
 | --- | --- | --- |
-| `parameter ParamName` | CDS abstract entity | 평평한 구조입니다. abstract entity 의 필드마다 구성요소가 하나씩 생깁니다. |
-| `deep parameter ParamName` | `with hierarchy` 가 붙은 abstract BDEF ([[abenbdl_bdef_abstract_header]]) | 깊은 구조입니다. entity 의 모든 필드에 더해 CDS composition 마다 구성요소가 생깁니다. |
+| `parameter ParamName` | CDS abstract entity | flat structure 입니다. abstract entity 의 필드마다 구성요소가 하나씩 생깁니다. |
+| `deep parameter ParamName` | `with hierarchy` 가 붙은 abstract BDEF ([[abenbdl_bdef_abstract_header]]) | deep structure 입니다. entity 의 모든 필드에 더해 CDS composition 마다 구성요소가 생깁니다. |
 
 ### event 내보내기
 
@@ -66,7 +66,7 @@ authorization master ( instance )
 
   field ( readonly : update ) TravelID;
 
-  // 평평한 매개변수가 있는 event
+  // flat parameter 가 있는 event
   event travelCreated parameter ZA_TravelCreated;
 
   // 매개변수 없는 event

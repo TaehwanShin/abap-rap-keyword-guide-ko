@@ -73,7 +73,7 @@ CLASS lsc_travel IMPLEMENTATION.
 ENDCLASS.
 ```
 
-`create` 는 `TYPE REQUEST FOR CHANGE`, `delete` 는 `TYPE REQUEST FOR DELETE` 타입의 깊은 구조이고, 그 안에 entity 이름을 딴 내부 테이블이 들어 있습니다.
+`create` 는 `TYPE REQUEST FOR CHANGE`, `delete` 는 `TYPE REQUEST FOR DELETE` 타입의 deep structure 이고, 그 안에 entity 이름을 딴 내부 테이블이 들어 있습니다.
 
 ## 알아두기
 

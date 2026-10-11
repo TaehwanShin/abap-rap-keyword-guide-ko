@@ -44,7 +44,7 @@ projection BDEF 는 base BDEF 의 요소를 다시 씁니다. 어떤 특성과 �
 
 ### abstract
 
-abstract BDEF 는 주로 action 이나 function 의 깊은 매개변수에 타입을 주는 데 씁니다. 쓸 수 있는 문법 요소가 association, type mapping 정도로 적습니다. 트랜잭션 동작은 정의할 수 없습니다. 쓸 수 있는 요소는 [[abenbdl_abstract]] 에 있습니다.
+abstract BDEF 는 주로 action 이나 function 의 deep parameter 에 타입을 주는 데 씁니다. 쓸 수 있는 문법 요소가 association, type mapping 정도로 적습니다. 트랜잭션 동작은 정의할 수 없습니다. 쓸 수 있는 요소는 [[abenbdl_abstract]] 에 있습니다.
 
 ## 예제
 

@@ -172,12 +172,12 @@ managed, unmanaged, projection BDEF 에서 쓸 수 있는 키워드입니다.
 | `parameter ... [$self]` | action·function 의 입력 매개변수를 정의합니다. | | | | | [[abenbdl_action_input_param|보기]] |
 | | unmanaged | 7.73 | 7.53 | 1805 | 1805 | |
 | | managed | 7.77 | 7.54 | 1905 | 1905 | |
-| `deep [table]` (매개변수) | action·function 의 깊은 입력 매개변수나 깊은 테이블 입력 매개변수를 정의합니다. | 7.83 | 7.56 | 2102 | 2102 | [[abenbdl_action_input_param|보기]] |
+| `deep [table]` (매개변수) | action·function 의 deep parameter 나 deep table parameter 를 정의합니다. | 7.83 | 7.56 | 2102 | 2102 | [[abenbdl_action_input_param|보기]] |
 | `result[cardinality] $self`, `result[cardinality] entity` | action·function 의 출력 매개변수를 정의합니다. | | | | | [[abenbdl_action_output_para|보기]] |
 | | unmanaged | 7.73 | 7.53 | 1805 | 1805 | |
 | | managed | 7.77 | 7.54 | 1905 | 1905 | |
 | `selective` (`result`) | action·function 의 출력 매개변수에 붙이는 추가 구문 | 7.79 | 7.55 | 2002 | 2002 | [[abenbdl_action_output_para|보기]] |
-| `selective` (`deep result`) | action·function 의 깊은 출력 매개변수에 붙이는 추가 구문 | 7.89 | 7.57 | 2208 | 2208 | [[abenbdl_action_output_para|보기]] |
+| `selective` (`deep result`) | action·function 의 deep result 에 붙이는 추가 구문 | 7.89 | 7.57 | 2208 | 2208 | [[abenbdl_action_output_para|보기]] |
 | `mapping for ... [control ... ] [corresponding] [except]` | 데이터베이스 테이블의 필드 이름을 지금 데이터 모델의 필드 이름에 잇습니다. | 7.78 | 7.55 | 1911 | 1911 | [[abenbdl_type_mapping|보기]] |
 | `validation ... on save { ... }` | save sequence(저장 순서) 안에서 불리는 validation 을 정의합니다. | | | | | [[abenbdl_validations|보기]] |
 | | unmanaged | 7.73 | 7.53 | 1808 | 1808 | |
@@ -235,7 +235,7 @@ managed, unmanaged, projection BDEF 에서 쓸 수 있는 키워드입니다.
 | `with control` | `define behavior` 문에 붙이는 선택 구문. abstract BDEF 에서만 됩니다. derived type 구조에 `%control` 구조를 더합니다. | 7.85 | 7.56 | 2108 | 2108 | [[abenbdl_define_beh_abstract|보기]] |
 | `scalar entity` | entity behavior definition 대신 쓰는 구문. abstract BDEF 에서만 됩니다. CDS 구성 트리의 노드를 abstract BDEF 의 계층 derived type 에 스칼라 타입으로 넣습니다. | 7.83 | 7.56 | 2102 | 2102 | [[abenbdl_define_beh_abstract|보기]] |
 | `association ... [with hierarchy]` | abstract BDEF 에서 association 에 `with hierarchy` 를 붙일 수 있습니다. to-parent association 과 BO 사이 association 을 타입 구조에 여러 번 넣을 때 씁니다. | 7.83 | 7.56 | 2102 | 2102 | [[abenbdl_association_abstract|보기]] |
-| `deep mapping for ... [corresponding] [sub]` | abstract BDEF 의 깊은 mapping 을 정의합니다. | 7.83 | 7.56 | 2102 | 2102 | [[abenbdl_type_mapping_abstract|보기]] |
+| `deep mapping for ... [corresponding] [sub]` | abstract BDEF 의 deep mapping 을 정의합니다. | 7.83 | 7.56 | 2102 | 2102 | [[abenbdl_type_mapping_abstract|보기]] |
 | `mandatory:execute` (필드) | abstract BDEF 의 필드를 필수로 선언하는 field characteristics(필드 특성) | 7.88 | 7.57 | 2205 | 2205 | [[abenbdl_field_abstract|보기]] |
 | `mandatory:execute` (association) | abstract BDEF 의 association 을 필수로 선언하는 속성 | 7.94 | 7.58 | 2311 | 2402 | [[abenbdl_association_abstract|보기]] |
 

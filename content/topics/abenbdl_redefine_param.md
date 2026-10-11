@@ -1,6 +1,6 @@
 ---
 title: 매개변수 다시 정의 (RedefinedParameter)
-summary: projection·interface BDEF 에서 다시 쓰는 action·function·business event 의 깊은 매개변수를, 구성요소가 더 적은 abstract BDEF 로 바꿔 내보내는 문법입니다.
+summary: projection·interface BDEF 에서 다시 쓰는 action·function·business event 의 deep parameter 를, 구성요소가 더 적은 abstract BDEF 로 바꿔 내보내는 문법입니다.
 keywords: RedefinedParameter, deep parameter, deep result, 매개변수 다시 정의, 재정의 매개변수, 깊은 매개변수, 추상 BDEF, abstract BDEF, with hierarchy, deep mapping, use action, use function, use event, mandatory:execute, with control
 ---
 
@@ -30,7 +30,7 @@ projection BDEF 나 interface BDEF 에서 action, function, business event 를 [
 
 다시 정의는 선택입니다. 적지 않으면 base BDEF 의 매개변수를 그대로 씁니다.
 
-**전제 조건** : base BDEF 에서 그 매개변수가 `deep` 을 붙인 깊은 매개변수여야 하고, 타입이 abstract BDEF 여야 합니다.
+**전제 조건** : base BDEF 에서 그 매개변수가 `deep` 을 붙인 deep parameter 여야 하고, 타입이 abstract BDEF 여야 합니다.
 
 새 매개변수 `RedefinedAbstractBDEF` 는 다음 규칙을 지켜야 합니다.
 
@@ -48,7 +48,7 @@ projection BDEF 나 interface BDEF 에서 action, function, business event 를 [
 
 ## 예제
 
-base BDEF `ZR_Travel` 은 abstract BDEF `ZA_Reason` 을 깊은 매개변수로 씁니다. `ZA_Reason` 에는 구성요소가 세 개(`ReasonCode`, `ReasonText`, `InternalNote`) 있습니다.
+base BDEF `ZR_Travel` 은 abstract BDEF `ZA_Reason` 을 deep parameter 로 씁니다. `ZA_Reason` 에는 구성요소가 세 개(`ReasonCode`, `ReasonText`, `InternalNote`) 있습니다.
 
 ```bdl
 // base BDEF 의 일부

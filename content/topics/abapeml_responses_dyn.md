@@ -26,7 +26,7 @@ keywords: response_param, 응답 매개변수, 동적 EML, dynamic, FAILED, MAPP
 - [[abapget_permissions_dyn|GET PERMISSIONS OPERATIONS]]
 - [[abapset_locks_dyn|SET LOCKS lock_tab]]
 
-이 내부 테이블의 줄은 `ABP_BEHV_RESPONSE` 타입의 깊은 구조입니다. 응답에 내용이 있는 entity(엔터티)마다 한 줄씩 들어 있습니다. 구성요소는 다음과 같습니다.
+이 내부 테이블의 줄은 `ABP_BEHV_RESPONSE` 타입의 deep structure 입니다. 응답에 내용이 있는 entity(엔터티)마다 한 줄씩 들어 있습니다. 구성요소는 다음과 같습니다.
 
 | 구성요소 | 내용 | 타입 |
 | --- | --- | --- |

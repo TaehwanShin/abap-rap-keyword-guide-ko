@@ -28,8 +28,8 @@ keywords: default function, default values function, GetDefaultsFor, GetDefaults
 | --- | --- |
 | [[abenbdl_standard_operations|create]] | 이름은 안 적어도 됩니다. 적는다면 `GetDefaultsForCreate` 여야 합니다. 바깥 이름은 붙일 수 없습니다. |
 | [[abenbdl_association|create-by-association]] | 중괄호 안에서 `create` 와 함께 적어야 합니다. 바깥 이름을 붙일 수 있습니다. |
-| [[abenbdl_action|action]] | action 의 입력 매개변수에 기본값을 줍니다. action 에 [[abenbdl_action_input_param|입력 매개변수]]가 있어야 합니다. 평면, 깊은, 깊은 테이블 매개변수를 모두 지원합니다. 바깥 이름을 붙일 수 있습니다. |
-| [[abenbdl_function|function]] | function 의 입력 매개변수에 기본값을 줍니다. function 에 입력 매개변수가 있어야 합니다. 평면, 깊은, 깊은 테이블 매개변수를 모두 지원합니다. 바깥 이름을 붙일 수 있습니다. |
+| [[abenbdl_action|action]] | action 의 입력 매개변수에 기본값을 줍니다. action 에 [[abenbdl_action_input_param|입력 매개변수]]가 있어야 합니다. flat parameter, deep parameter, deep table parameter 를 모두 지원합니다. 바깥 이름을 붙일 수 있습니다. |
+| [[abenbdl_function|function]] | function 의 입력 매개변수에 기본값을 줍니다. function 에 입력 매개변수가 있어야 합니다. flat parameter, deep parameter, deep table parameter 를 모두 지원합니다. 바깥 이름을 붙일 수 있습니다. |
 
 ### 어디에서 쓸 수 있나
 

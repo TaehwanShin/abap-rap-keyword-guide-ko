@@ -78,7 +78,7 @@ draft action `additionalsave` 를 처리합니다. 이름은 정해져 있습니
 - EML 문으로 직접 부를 수 없고, OData 로도 드러나지 않습니다. 커밋할 때 불립니다.
 - draft 인스턴스만을 위한 저장 출구입니다. 예를 들어 내부에서 관리하는 draft 저장소와 나란히 바깥 draft 저장소를 둘 때 씁니다.
 
-`im_par_mod` 에는 [[abapderived_types_cid|%cid]] 와 [[abapderived_types_param|%param]] 이 들어 있습니다. 여기서 `%param` 은 깊은 구조입니다.
+`im_par_mod` 에는 [[abapderived_types_cid|%cid]] 와 [[abapderived_types_param|%param]] 이 들어 있습니다. 여기서 `%param` 은 deep structure 입니다.
 
 - 절대 타입 이름은 `\BDEF=NAME\TYPE=%CHANGEOP` 입니다.
 - RAP BO 의 entity 마다 내부 테이블이 구성요소로 하나씩 들어 있고, 구성요소 이름은 entity 이름과 같습니다.

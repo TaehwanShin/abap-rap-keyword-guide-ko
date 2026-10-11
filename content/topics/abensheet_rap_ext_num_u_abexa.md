@@ -25,7 +25,7 @@ behavior definition(동작 정의)는 managed 예제와 이런 점이 다릅니�
 | 4 | action 1 | 두 숫자 필드에 2 를 곱합니다. 조건이 없습니다. |
 | 5 | action 2 | 3 을 곱합니다. instance feature control 이 걸려 있어, 두 숫자가 모두 0 이면 실행할 수 없습니다. |
 | 6 | action 3 | 한 필드에 `'Z'` 를 넣습니다. global feature control 이 걸려 있어, 예제를 실행하는 시간대에 따라 실행할 수 없기도 합니다. |
-| 7 | association 을 거친 생성 | 루트와 자식을 한 요청으로 만드는 깊은 생성입니다. |
+| 7 | association 을 거친 생성 | 루트와 자식을 한 요청으로 만드는 deep create 입니다. |
 | 8 | 읽기 | 루트 읽기, 자식 직접 읽기, 부모→자식 읽기, 자식→부모 읽기 |
 | 9 | 곁들임: 동적 EML | `READ ENTITIES OPERATIONS` 에서 `full` 을 켰을 때와 껐을 때를 견줍니다. |
 

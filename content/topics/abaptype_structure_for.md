@@ -119,7 +119,7 @@ keywords: TYPE STRUCTURE FOR, STRUCTURE FOR CREATE, STRUCTURE FOR UPDATE, STRUCT
 | `[INSTANCE] FEATURES RESULT` | 위 handler method 가 돌려주는 instance feature control 정보 | `%action`, `%assoc`, `%delete`, `%features`, `%field`, `%key`, `%pky`, `%tky`, `%update` (일부만) |
 | `FUNCTION IMPORT` | function 의 입력 매개변수 | `%cid`, `%key`, `%param`, `%pky`, `%tky` (일부만) |
 | `FUNCTION RESULT` | function 의 결과. 결과 매개변수가 정의된 function 에서만 쓸 수 있습니다. | `%cid`, `%key`, `%param`, `%pky`, `%tky` (일부만) |
-| `HIERARCHY` | 깊은 action·function 매개변수의 깊은 입력·출력 매개변수. abstract BDEF 에서만 쓸 수 있습니다. | entity(엔터티)의 모든 필드와 composition 별 구성요소. `with control` 이면 `%control` 도 있습니다. |
+| `HIERARCHY` | action·function 의 deep parameter 와 deep result. abstract BDEF 에서만 쓸 수 있습니다. | entity(엔터티)의 모든 필드와 composition 별 구성요소. `with control` 이면 `%control` 도 있습니다. |
 | `KEY OF` | 예를 들어 `SET LOCKS` 문에서 잠글 인스턴스. `TYPE REQUEST FOR DELETE` 안에 든 테이블의 줄이기도 합니다. | 키 필드 자체(`%key` 가 아닙니다). `%is_draft` 와 `%pid` 는 들어갈 수 없습니다. |
 | `MAPPED [EARLY]`, `MAPPED LATE` | response parameter. `%cid` 에 어떤 키가 만들어졌는지 같은 mapping 정보 | `EARLY` : `%cid`, `%key`, `%pid`, `%pky`, `%tky`<br>`LATE` : `%key`, `%pid`, `%pre`, `%tmp` |
 | `PERMISSIONS KEY` | `GET PERMISSIONS` 문에서 허용 정보를 구할 인스턴스의 키 | `%key`, `%pky`, `%tky` |

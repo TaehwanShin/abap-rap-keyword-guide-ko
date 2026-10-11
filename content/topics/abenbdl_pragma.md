@@ -41,7 +41,7 @@ action 매개변수의 타입 때문에 난 경고도 마찬가지입니다. 경
 draft 를 쓰는 BDEF 에서 프라그마 두 가지로 경고를 숨깁니다.
 
 - `##DRAFT_ASSOC` : association 이 draft 를 지원하지 않는다는 경고를 숨깁니다.
-- `##TYPE` : action 매개변수로 쓴 abstract entity(엔터티) `ZA_TravelNote` 가 깊은 구조인데 이 BDEF 에서는 납작한 매개변수로만 쓴다는 경고를 숨깁니다.
+- `##TYPE` : action 매개변수로 쓴 abstract entity(엔터티) `ZA_TravelNote` 가 deep structure 인데 이 BDEF 에서는 flat parameter 로만 쓴다는 경고를 숨깁니다.
 
 ```bdl
 managed implementation in class zbp_r_travel unique;

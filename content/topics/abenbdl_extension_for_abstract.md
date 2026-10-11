@@ -67,7 +67,7 @@ extend behavior for ZA_TravelRequest
   // extension 노드로 가는 association
   association _ZZNote;
 
-  // 이미 있는 깊은 mapping 에 extension 노드를 잇는다
+  // 이미 있는 deep mapping 에 extension 노드를 잇는다
   extend deep mapping for zs_travel_request
   {
     sub _ZZNote = zz_note;

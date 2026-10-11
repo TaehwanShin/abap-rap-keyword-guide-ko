@@ -122,22 +122,22 @@ keywords: TYPE TABLE FOR, TABLE FOR CREATE, TABLE FOR UPDATE, TABLE FOR DELETE, 
 | `[INSTANCE] FEATURES RESULT` | 같은 handler method 의 결과입니다. 키와 요청 매개변수에 따라 구한 instance feature control 정보가 들어 있습니다. | 위와 같습니다. | `%action`, `%assoc`, `%delete`, `%features`, `%field`, `%key`, `%pky`, `%tky`, `%update`. BDEF 에 따라 일부만 있습니다. |
 | `PERMISSIONS KEY` | `GET PERMISSIONS` 문에서 어느 인스턴스의 허용 정보를 구할지 키로 지정합니다. 이 키는 그 handler method 의 입력 매개변수가 됩니다. | - | `%key`, `%pky`, `%tky` |
 
-### 저장, 잠금, 깊은 매개변수
+### 저장, 잠금, deep parameter
 
 | 변형 | 쓰임 | BDEF 조건 | 구성요소 |
 | --- | --- | --- | --- |
 | `CHANGE` | saver method(세이버 메서드) `save_modified` 에서만 씁니다. `save_modified` 는 `CL_ABAP_BEHAVIOR_SAVER` 를 상속한 로컬 saver class(세이버 클래스)에 있고, additional save 나 unmanaged save 를 쓰는 managed 구현에서만 나옵니다. `TYPE REQUEST FOR CHANGE` 타입인 `create` 와 `update` 구조 안에 이 타입의 테이블이 들어 있습니다. | additional save 나 unmanaged save 가 걸려 있어야 합니다([[abenbdl_saving]]). | `%control`, `%data`, `%key`. 구현 클래스 밖에서는 접근할 수 없습니다. |
 | `KEY OF` | 예를 들어 EML `SET LOCKS` 문에서 잠글 인스턴스를 지정할 때 씁니다. additional save 나 unmanaged save 를 쓰는 managed RAP BO 에서 `TYPE REQUEST FOR DELETE` 구조 안에 든 테이블도 이 타입입니다. | [[abenbdl_locking]] 과 [[abenbdl_saving]] 참고 | 키 필드 자체입니다(`%key` 가 아닙니다). `%is_draft` 와 `%pid` 는 들어갈 수 없습니다. |
-| `HIERARCHY` | 깊은 action·function 매개변수에서 깊은 입력 매개변수와 깊은 출력 매개변수에 씁니다. abstract BDEF 에서만 쓸 수 있습니다. | 아래 참고 | 아래 참고 |
+| `HIERARCHY` | action·function 의 deep parameter 와 deep result 에 씁니다. abstract BDEF 에서만 쓸 수 있습니다. | 아래 참고 | 아래 참고 |
 
 **`HIERARCHY` 의 조건과 구성요소**
 
 - abstract entity 에 동작이 정의되어 있어야 합니다. 곧 BDEF 에 `with hierarchy;` 가 있어야 합니다([[abenbdl_bdef_abstract_header]]).
-- abstract 가 아닌 BDEF 쪽에는 깊은 action 이나 function 이 정의되어 있어야 합니다. `deep parameter` 를 쓰면 입력 매개변수를 구조로, `deep table parameter` 를 쓰면 테이블로 해석합니다([[abenbdl_action_input_param]]).
+- abstract 가 아닌 BDEF 쪽에는 deep parameter 나 deep result 를 쓰는 action 이나 function 이 정의되어 있어야 합니다. `deep parameter` 를 쓰면 입력 매개변수를 구조로, `deep table parameter` 를 쓰면 테이블로 해석합니다([[abenbdl_action_input_param]]).
 - 타입에는 entity 의 모든 필드가 들어 있습니다. composition 이 있으면 composition 마다 구성요소가 하나씩 더 있고, 그 안에 다시 하위 구성요소가 있습니다. 필드는 모두 원래 타입을 그대로 가집니다.
 - abstract entity 의 BDEF 에 composition 의 behavior definition(동작 정의)가 들어 있으면 구성요소가 더 생깁니다. composition 의 카디널리티가 1 이하이면 구조이고, 그렇지 않으면 테이블입니다.
 - abstract entity 의 동작을 `with control` 로 정의하면 `%control` 도 구성요소로 들어갑니다([[abenbdl_define_beh_abstract]]). 원문은 `%control` 안에 abstract entity 의 모든 필드와, composition 이 있으면 그에 해당하는 구조나 내부 테이블이 있다고 설명합니다. 하지만 원문 예제([[abenderived_type_hierarchy_abexa]])는 composition 에 해당하는 `%control` 구성요소에도 필드와 똑같이 `if_abap_behv=>mk-on` 값 하나를 넣습니다. 자식 필드의 표시는 자식 구조나 자식 테이블 줄에 있는 `%control` 에서 따로 켭니다.
-- 깊은 action 과 function 에서 `%param` 의 하위 구성요소가 이 타입입니다([[abapderived_types_param]]).
+- deep parameter 나 deep result 를 쓰는 action 과 function 에서 `%param` 의 하위 구성요소가 이 타입입니다([[abapderived_types_param]]).
 
 ## 예제
 

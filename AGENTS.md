@@ -140,6 +140,8 @@ RAP 에서 키워드나 이름으로 내놓는 말은 **원문 그대로** 쓴�
 | static, internal, repeatable (action·function 앞) | 정적, 내부, 반복 가능 |
 | global, instance (feature control·권한 앞) | 전역, 인스턴스 |
 | event, business event | 이벤트, 비즈니스 이벤트 |
+| deep parameter, deep table parameter, deep result, deep mapping, deep create | 깊은 매개변수, 깊은 테이블 매개변수, 깊은 결과 … |
+| flat / deep (parameter, structure, table, type 앞) | 평평한·평면·납작한 / 깊은 |
 
 **2. 원문(한글) 꼴로 쓰는 말**
 

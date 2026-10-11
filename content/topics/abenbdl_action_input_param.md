@@ -1,18 +1,18 @@
 ---
 title: 입력 매개변수 (parameter)
-summary: action 이나 function 이 받을 값을 정하는 문법입니다. 평면 구조로 받을 수도 있고, abstract BDEF 로 깊은 구조나 테이블을 받을 수도 있습니다.
+summary: action 이나 function 이 받을 값을 정하는 문법입니다. flat structure 로 받을 수도 있고, abstract BDEF 로 deep structure 나 테이블을 받을 수도 있습니다.
 keywords: InputParameter, parameter, deep parameter, deep table parameter, $self, 입력 매개변수, 추상 엔터티, abstract entity, abstract BDEF, with hierarchy, %param
 ---
 
 ## 문법
 
-평면 매개변수
+flat parameter
 
 ```syntax
 ... parameter { ParameterEntity | $self };
 ```
 
-깊은 매개변수
+deep parameter
 
 ```syntax
 ... [deep [table]] parameter AbstractBDEF;
@@ -20,15 +20,15 @@ keywords: InputParameter, parameter, deep parameter, deep table parameter, $self
 
 ## 설명
 
-[[abenbdl_action|action]] 이나 [[abenbdl_function|function]] 의 입력 매개변수를 정의합니다. 평면(flat)으로도, 깊게(deep)로도 정의할 수 있습니다.
+[[abenbdl_action|action]] 이나 [[abenbdl_function|function]] 의 입력 매개변수를 정의합니다. flat 으로도, deep 으로도 정의할 수 있습니다.
 
-### 평면 매개변수: parameter { ParameterEntity | $self }
+### flat parameter: parameter { ParameterEntity | $self }
 
 - `ParameterEntity` 에는 CDS abstract entity(엔터티)나 클래식 DDIC 타입을 씁니다.
 - `$self` 는 입력 매개변수 entity 가 그 action 이나 function 이 속한 abstract entity 와 같을 때 씁니다.
 - `$self` 입력 매개변수는 static action 과 static function 에만 허용됩니다. instance action 이나 instance function 에 적으면 문법 경고는 나오지 않습니다. 대신 RAP BO consumer(사용자)가 그 action 이나 function 을 부를 때 런타임 오류가 납니다.
 
-### 깊은 매개변수: [deep [table]] parameter AbstractBDEF
+### deep parameter: [deep [table]] parameter AbstractBDEF
 
 `AbstractBDEF` 는 [[abenbdl_bdef_abstract_header|with hierarchy]] 가 붙은 [[abenbdl_abstract|RAP abstract BDEF]] 여야 합니다. abstract BDEF 의 BDEF derived type(BDEF 파생 타입)은 계층 구조입니다. entity 의 모든 필드에 더해, CDS composition 마다 구성요소가 하나씩 들어 있습니다.
 
@@ -36,11 +36,11 @@ keywords: InputParameter, parameter, deep parameter, deep table parameter, $self
 | --- | --- |
 | `deep parameter AbstractBDEF` | 구조 |
 | `deep table parameter AbstractBDEF` | 테이블 |
-| `parameter AbstractBDEF` | 평면 매개변수 |
+| `parameter AbstractBDEF` | flat parameter |
 
 ## 예제
 
-### 평면 매개변수
+### flat parameter
 
 할인율을 받아 여행 총액에서 깎는 action 입니다. 입력은 CDS abstract entity 로 정의합니다.
 
@@ -71,12 +71,12 @@ MODIFY ENTITIES OF zr_travel
 
 여행 `00000001` 의 총액이 10퍼센트 줄어듭니다.
 
-### 깊은 매개변수
+### deep parameter
 
 계층이 있는 abstract BDEF `ZA_Itinerary` 를 세 가지 방식으로 받습니다.
 
 ```bdl
-// 평면 매개변수로 본다
+// flat parameter 로 본다
 action setItineraryFlat parameter ZA_Itinerary;
 
 // 구조로 본다
@@ -90,7 +90,7 @@ action setItineraries deep table parameter ZA_Itinerary;
 
 - [[abenbdl_strict|strict mode]] 에서는 `$self` 를 입력 매개변수로 쓸 수 없습니다.
 - 입력 매개변수가 CDS abstract entity 면 어노테이션 `EndUserText.label` 로 라벨을 붙일 수 있습니다. OData 를 쓰는 화면에 그 라벨이 보입니다.
-- abstract BDEF 를 `deep` 없이 `parameter` 만으로 써도 됩니다. 그러면 평면 매개변수로 봅니다. CDS abstract entity 하나를 쓴 것과 같은 derived type 이 되므로 따로 얻는 것은 없습니다.
+- abstract BDEF 를 `deep` 없이 `parameter` 만으로 써도 됩니다. 그러면 flat parameter 로 봅니다. CDS abstract entity 하나를 쓴 것과 같은 derived type 이 되므로 따로 얻는 것은 없습니다.
 
 ## 관련 항목
 
