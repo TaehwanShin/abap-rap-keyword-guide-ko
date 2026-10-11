@@ -104,7 +104,7 @@ changedocuments dependent by _Travel
 - BDEF extension(확장)에서는 change documents 마스터 entity 를 새로 정할 수 없습니다. 노드 extension 에서 종속 entity 를 정하는 것은 됩니다. 다만 그렇게 한 뒤에도 change documents 를 쓰는 entity 들이 여전히 하나의 트리를 이뤄야 합니다.
 - projection BDEF 나 RAP BO interface 를 거쳐 데이터를 바꿔도, change documents 를 쓰는 entity 라면 base BO(기반 BO) 의 change documents 객체에 자동으로 기록됩니다. 따로 켤 필요가 없습니다.
 - 온프레미스 시스템에서는 언어 버전이 Standard ABAP 일 때만 change documents 연동이 작동합니다.
-- 잠금·권한·ETag 종속과 함께 `( lock, authorization, etag, changedocuments ) dependent by _Assoc` 처럼 한 줄로 줄여 쓸 수 있습니다. [[abenbdl_short_syntax]] 를 참고하세요.
+- lock dependent, authorization dependent, etag dependent 와 함께 `( lock, authorization, etag, changedocuments ) dependent by _Assoc` 처럼 한 줄로 줄여 쓸 수 있습니다. [[abenbdl_short_syntax]] 를 참고하세요.
 
 ## 관련 항목
 

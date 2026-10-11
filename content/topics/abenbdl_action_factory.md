@@ -25,7 +25,7 @@ keywords: factory action, static factory action, default factory action, 팩토�
 
 ## 설명
 
-factory action 은 entity(엔터티) 인스턴스를 **새로 만드는** action 입니다. 인스턴스에 묶인 것과 [[abenbdl_static|정적]]인 것이 있습니다.
+factory action 은 entity(엔터티) 인스턴스를 **새로 만드는** action 입니다. 인스턴스에 묶인 것과 [[abenbdl_static|static]] 인 것이 있습니다.
 
 | 종류 | 쓰임새 |
 | --- | --- |

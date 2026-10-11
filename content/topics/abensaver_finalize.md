@@ -52,7 +52,7 @@ ENDCLASS.
 
 ## 예제
 
-unmanaged BO 의 버퍼 `lcl_buffer=>mt_travel` 을 돌면서 예약 수수료를 총액에 더합니다. 통화가 비어 있는 여행은 계산할 수 없으므로 `failed` 와 `reported` 에 올립니다.
+unmanaged BO 의 버퍼 `lcl_buffer=>mt_travel` 을 돌면서 기본 요금과 예약 수수료로 총액을 다시 계산합니다. 통화가 비어 있는 여행은 계산할 수 없으므로 `failed` 와 `reported` 에 올립니다.
 
 ```abap
 CLASS lsc_travel DEFINITION INHERITING FROM cl_abap_behavior_saver.
@@ -74,8 +74,8 @@ CLASS lsc_travel IMPLEMENTATION.
         CONTINUE.
       ENDIF.
 
-      " 마지막 계산: 예약 수수료를 총액에 더한다
-      <ls_travel>-total_price = <ls_travel>-total_price + <ls_travel>-booking_fee.
+      " 마지막 계산: finalize 는 여러 번 불릴 수 있으므로, 더해 가지 않고 다시 계산한다
+      <ls_travel>-total_price = <ls_travel>-base_price + <ls_travel>-booking_fee.
     ENDLOOP.
   ENDMETHOD.
 ENDCLASS.

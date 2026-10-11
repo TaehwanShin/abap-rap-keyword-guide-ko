@@ -36,7 +36,7 @@ authorization control 이 다루는 작업은 생성, 수정, 삭제, create-by-
 
 모든 entity 는 authorization master 이거나 authorization dependent 이어야 합니다.
 
-- **authorization master entity** 는 behavior pool 에 자기 권한 메서드(전역 또는 인스턴스)가 있습니다. authorization master 자신이나 거기에 딸린 authorization dependent entity 에 접근 요청이 오면 이 구현이 쓰입니다.
+- **authorization master entity** 는 behavior pool 에 자기 권한 메서드(global 또는 instance)가 있습니다. authorization master 자신이나 거기에 딸린 authorization dependent entity 에 접근 요청이 오면 이 구현이 쓰입니다.
 - **authorization dependent entity** 는 연결된 authorization master 의 authorization control 을 그대로 씁니다. 권한 요청이 authorization master 의 구현으로 넘어갑니다. authorization dependent entity 에서 수정, 삭제, create-by-association 을 하면 authorization master 의 **수정(update) 권한 확인**이 적용됩니다. 자식으로 가는 association 에는 create-by-association 하는 작업의 권한을 따로 정해 이 기본값과 다르게 할 수 있습니다.
 
 규칙은 다음과 같습니다.
@@ -55,7 +55,7 @@ authorization control 이 다루는 작업은 생성, 수정, 삭제, create-by-
 | --- | --- | --- | --- |
 | `global` | 인스턴스와 상관없이 BO 전체에 접근이나 작업을 막습니다. 예를 들어 사용자 역할에 따라 정합니다. | `create`, create-by-association, `update`, `delete`, static action, instance action, static function, instance function | [[abaphandler_meth_global_auth|FOR GLOBAL AUTHORIZATION]] |
 | `instance` | 인스턴스의 상태에 따라 달라지는 권한 확인입니다. | create-by-association, `update`, `delete`, instance action, instance function | [[abaphandler_meth_auth|FOR INSTANCE AUTHORIZATION]] |
-| `global, instance` | 둘을 함께 씁니다. 인스턴스 단위 작업은 전역 확인과 인스턴스 확인을 모두 거칩니다. 두 확인은 실행 중 서로 다른 시점에 일어납니다. | - | 두 메서드 모두 |
+| `global, instance` | 둘을 함께 씁니다. 인스턴스 단위 작업은 global 확인과 instance 확인을 모두 거칩니다. 두 확인은 실행 중 서로 다른 시점에 일어납니다. | - | 두 메서드 모두 |
 | `none` | authorization master entity 에 적으면 BO 전체에 권한 확인이 없다는 뜻입니다. | - | 권한 handler method(핸들러 메서드)를 구현할 수 없습니다. |
 
 권한 확인 내용은 예를 들어 권한 객체로 구현할 수 있습니다.
@@ -146,7 +146,7 @@ ENDCLASS.
 - 권한은 behavior pool 의 다른 메서드, 예를 들어 [[abenbdl_validations|validation]] 에서도 확인할 수 있습니다.
 - UI 에서는 authorization control 이 RAP 사용자 힌트로 나타납니다.
 - managed·unmanaged BO 를 넓히는 BDEF extension(확장)에서는 action 마다 authorization control 을 따로 적어야 합니다. 원래 BO 가 바뀌어도 extension action 이 흔들리지 않도록, extension action 의 권한을 원래 BO 의 권한과 떼어 놓기 위해서입니다.
-- lock dependent, authorization dependent, ETag 종속을 한 줄로 줄여 쓸 수 있습니다. `( lock, authorization, etag ) dependent by _Assoc` 형태이며 [[abenbdl_short_syntax]] 에서 설명합니다.
+- lock dependent, authorization dependent, etag dependent 를 한 줄로 줄여 쓸 수 있습니다. `( lock, authorization, etag ) dependent by _Assoc` 형태이며 [[abenbdl_short_syntax]] 에서 설명합니다.
 
 ## 관련 항목
 

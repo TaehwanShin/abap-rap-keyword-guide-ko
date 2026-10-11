@@ -151,7 +151,7 @@ RAP BO consumer(사용자)는 draft action 을 보통 action 처럼 `EXECUTE` �
 " draft 여행을 활성화한다
 MODIFY ENTITIES OF zr_travel
   ENTITY travel
-    EXECUTE activate FROM VALUE #( ( %key-travelid = '00000001' ) )
+    EXECUTE activate AUTO FILL CID WITH VALUE #( ( %key-travelid = '00000001' ) )
   FAILED DATA(ls_failed)
   REPORTED DATA(ls_reported).
 

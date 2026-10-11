@@ -37,7 +37,7 @@ RAP BO 하나의 구현은 보통 여러 RAP BO provider(제공자), 곧 여러 
 `IN LOCAL MODE` 는 쓰는 provider 와 소유한 provider 가 같은 요소에서만 점검을 건너뜁니다. 자기가 소유하지 않은 작업이나 요소의 점검은 건너뛸 수 없습니다.
 
 - base BO 의 behavior pool 에서 factory action 이 `MODIFY ... IN LOCAL MODE` 로 같은 BO 의 인스턴스를 새로 만듭니다. 생성 작업에 precheck 가 걸려 있어도 precheck handler method(핸들러 메서드)는 불리지 않습니다.
-- extension behavior pool 의 핸들러에서 수정 작업 하나가 extension entity 와 base BO 의 root entity(루트 엔터티)를 함께 고칩니다. `IN LOCAL MODE` 를 붙이면 extension entity 의 점검은 건너뛰지만 base BO root entity 의 점검은 그대로 합니다.
+- extension behavior pool 의 handler 에서 수정 작업 하나가 extension entity 와 base BO 의 root entity(루트 엔터티)를 함께 고칩니다. `IN LOCAL MODE` 를 붙이면 extension entity 의 점검은 건너뛰지만 base BO root entity 의 점검은 그대로 합니다.
 
 ## 예제
 

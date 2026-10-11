@@ -46,7 +46,7 @@ BDEF extension 자체와 그 안의 extension 요소 하나하나에는, 원래 
 interface `ZI_Travel` 을 거쳐 여행 BO 를 확장합니다. 머리말이 `extension using interface ...;` 로 끝납니다. 이미 있는 entity `Travel` 에 extension 노드로 가는 association 을 더하고, extension 노드 `ZZNote` 의 동작을 정의합니다.
 
 ```bdl
-extension using interface zi_travel;
+extension using interface ZI_Travel;
 
 extend behavior for Travel
 {

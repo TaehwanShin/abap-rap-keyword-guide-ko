@@ -77,7 +77,7 @@ ENDCLASS.
 CLASS lsc_travel IMPLEMENTATION.
   METHOD adjust_numbers.
     " 지금까지 쓴 가장 큰 번호를 읽는다
-    SELECT FROM ztravel
+    SELECT SINGLE FROM ztravel
       FIELDS MAX( travel_id )
       INTO @DATA(lv_max_id).
 

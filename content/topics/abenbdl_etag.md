@@ -29,7 +29,7 @@ ETag 는 두 종류입니다.
 
 | 종류 | 대상 | 꼭 써야 하는가 |
 | --- | --- | --- |
-| `etag master` / `etag dependent` | active(영구) 데이터 | 선택입니다. entity(엔터티)마다 entity 동작 특성에 따로 적습니다. |
+| `etag master` / `etag dependent` | active(활성) 데이터, 곧 persistent 데이터 | 선택입니다. entity(엔터티)마다 entity 동작 특성에 따로 적습니다. |
 | `total etag` | draft 와 active 데이터 사이의 전환 | draft 를 쓰는 BO 에서만 쓸 수 있고, 그런 BO 에서는 필수입니다. |
 
 managed RAP BO 에서는 아래 두 조건이 맞으면 managed RAP BO provider(제공자)가 ETag 처리를 맡습니다. behavior pool(동작 풀)에 따로 구현할 것이 없습니다.
@@ -53,7 +53,7 @@ entity 를 etag master entity 로 만들고, 변경 여부를 기록할 필드 `
 
 ### etag dependent by _Assoc
 
-entity 를 ETag 종속 entity 로 만듭니다. 자기 ETag 필드가 없고, association `_Assoc` 으로 닿는 etag master entity 의 ETag 필드를 씁니다.
+entity 를 etag dependent entity 로 만듭니다. 자기 ETag 필드가 없고, association `_Assoc` 으로 닿는 etag master entity 의 ETag 필드를 씁니다.
 
 - etag master 로 가는 association 은 entity 동작 본문에 `association _Assoc { }` 로 적어 읽을 수 있게 해 두어야 합니다. CDS 데이터 모델에도 이 association 이 있어야 합니다.
 - etag master entity 는 composition 트리에서 종속 entity 보다 위에 있어야 합니다.
@@ -147,7 +147,7 @@ define root view entity ZR_Travel
 - managed provider 가 ETag 필드를 맡는다면, 그 필드를 `field ( readonly )` 로 막아 두기를 권장합니다. [[abenbdl_field_char]] 를 참고하세요.
 - unmanaged RAP BO 에서는 ETag 필드와 total ETag 필드를 save sequence(저장 순서) 안에서 처리하기를 권장합니다.
 - projection BDEF 와 interface BDEF 에서는 `use etag` 로 이 기능을 다시 씁니다. [[abenbdl_use_projection]] 을 참고하세요.
-- lock dependent, authorization dependent, ETag 종속을 한 줄로 줄여 쓸 수 있습니다. `( lock, authorization, etag ) dependent by _Assoc` 형태이며 [[abenbdl_short_syntax]] 에서 설명합니다.
+- lock dependent, authorization dependent, etag dependent 를 한 줄로 줄여 쓸 수 있습니다. `( lock, authorization, etag ) dependent by _Assoc` 형태이며 [[abenbdl_short_syntax]] 에서 설명합니다.
 
 ## 관련 항목
 

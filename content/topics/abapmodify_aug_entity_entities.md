@@ -1,6 +1,6 @@
 ---
 title: MODIFY AUGMENTING ENTITY, ENTITIES 문
-summary: projection 의 핸들러에서 base BO 로 넘어가는 수정 요청에 필드 값이나 작업을 보태는 MODIFY 문의 특수한 꼴입니다.
+summary: projection 의 handler 에서 base BO 로 넘어가는 수정 요청에 필드 값이나 작업을 보태는 MODIFY 문의 특수한 꼴입니다.
 keywords: MODIFY AUGMENTING ENTITY, MODIFY AUGMENTING ENTITIES, AUGMENTING, RELATING TO, BY, augment, 보강, 프로젝션, projection, 기반 BO, base BO, ABP_BEHV_RELATING_TAB, %control, %cid
 ---
 
@@ -17,7 +17,7 @@ MODIFY AUGMENTING { ENTITY bdef
 
 ## 설명
 
-[[abapmodify_entity_entities|MODIFY ENTITY, ENTITIES]] 의 특수한 꼴이고, projection 에서만 쓸 수 있습니다. RAP BO provider(제공자)만 쓸 수 있습니다. projection 으로 들어온 요청은 base BO(기반 BO) 로 넘어가는데, 핸들러 구현에서 이 문으로 그 요청을 손봅니다. 고칠 수 있는 것은 base BO 의 entity(엔터티)뿐입니다. standard operation(표준 작업)을 모두 쓸 수 있고 action 도 됩니다.
+[[abapmodify_entity_entities|MODIFY ENTITY, ENTITIES]] 의 특수한 꼴이고, projection 에서만 쓸 수 있습니다. RAP BO provider(제공자)만 쓸 수 있습니다. projection 으로 들어온 요청은 base BO(기반 BO) 로 넘어가는데, handler 구현에서 이 문으로 그 요청을 손봅니다. 고칠 수 있는 것은 base BO 의 entity(엔터티)뿐입니다. standard operation(표준 작업)을 모두 쓸 수 있고 action 도 됩니다.
 
 이렇게 요청에 내용을 보태는 것을 augmentation 이라고 합니다. BDEF 쪽에서는 projection BDEF 에 [[abenbdl_augment_projection|augment]] 를 적어 두어야 합니다.
 
@@ -38,11 +38,11 @@ entity 를 하나 이상 대상으로 합니다. `bdef` 에는 마찬가지로 p
 
 보탠 인스턴스를 원래 요청의 인스턴스와 이어 줍니다.
 
-augment 된 요청을 base BO 의 핸들러가 처리하다가 `FAILED` 로 인스턴스를 돌려줄 수 있습니다. 그 인스턴스가 원래 요청에는 없고 augment 하면서 새로 넣은 것이라면, RAP BO consumer(사용자)는 그 응답이 자기 요청의 어느 부분 때문인지 알 수 없습니다. `RELATING TO` 로 관계를 알려 주면 런타임이 새 인스턴스의 `FAILED` 키를 이어진 원래 인스턴스의 키로 바꿔 돌려줍니다. 사용자는 자기가 보낸 인스턴스를 기준으로 오류를 처리할 수 있습니다.
+augment 된 요청을 base BO 의 handler 가 처리하다가 `FAILED` 로 인스턴스를 돌려줄 수 있습니다. 그 인스턴스가 원래 요청에는 없고 augment 하면서 새로 넣은 것이라면, RAP BO consumer(사용자)는 그 응답이 자기 요청의 어느 부분 때문인지 알 수 없습니다. `RELATING TO` 로 관계를 알려 주면 런타임이 새 인스턴스의 `FAILED` 키를 이어진 원래 인스턴스의 키로 바꿔 돌려줍니다. 사용자는 자기가 보낸 인스턴스를 기준으로 오류를 처리할 수 있습니다.
 
 - 작업마다 뒤에 붙일 수 있습니다.
 - 보탠 인스턴스가 원래 인스턴스와 키가 같거나 `%cid_ref` 로 원래 인스턴스를 가리키고 있으면 따로 적지 않아도 됩니다.
-- `orig` 는 원래 인스턴스 테이블, 곧 augmentation 핸들러가 입력으로 받은 테이블입니다.
+- `orig` 는 원래 인스턴스 테이블, 곧 augmentation handler 가 입력으로 받은 테이블입니다.
 - `rela` 는 타입이 `ABP_BEHV_RELATING_TAB` 인 변수입니다. 정수를 담는 표준 테이블입니다.
 
 보탠 인스턴스 테이블을 `augm` 이라고 하면 `rela` 는 다음 조건을 지켜야 합니다. 어기면 런타임 오류가 납니다.
@@ -54,7 +54,7 @@ augment 된 요청을 base BO 의 핸들러가 처리하다가 `FAILED` 로 인�
 
 같은 작업(예: `CREATE`)으로 보태는데 인스턴스마다 이어진 원래 테이블이 다르다면, `MODIFY AUGMENTING` 문을 여러 개로 나누어 씁니다.
 
-`augm` 의 인스턴스가 실패하면(잠금을 걸다가, 또는 기반 핸들러가 처리하다가) 이어진 `orig` 인스턴스가 요청 전체의 `FAILED` 응답에 들어갑니다. 잠금을 걸다가 실패했다면 이어진 `orig` 인스턴스는 기반 핸들러로 넘어가지 않습니다.
+`augm` 의 인스턴스가 실패하면(잠금을 걸다가, 또는 기반 handler 가 처리하다가) 이어진 `orig` 인스턴스가 요청 전체의 `FAILED` 응답에 들어갑니다. 잠금을 걸다가 실패했다면 이어진 `orig` 인스턴스는 기반 handler 로 넘어가지 않습니다.
 
 ## 예제
 

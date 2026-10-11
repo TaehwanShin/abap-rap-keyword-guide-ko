@@ -109,7 +109,7 @@ ENDCLASS.
 - 잠금은 전역 잠금 테이블에서 관리합니다.
 - [[abenbdl_draft_action|draft action Resume]] 은 잠금이 풀린 뒤 draft 를 이어서 편집할 때, persistent table 의 인스턴스에 잠금을 다시 겁니다.
 - EML 의 [[abapset_locks|SET LOCKS]] 문으로 RAP BO 인스턴스를 직접 잠글 수 있습니다.
-- lock dependent, authorization dependent, ETag 종속을 한 줄로 줄여 쓸 수 있습니다. `( lock, authorization, etag ) dependent by _Assoc` 형태이며 [[abenbdl_short_syntax]] 에서 설명합니다.
+- lock dependent, authorization dependent, etag dependent 를 한 줄로 줄여 쓸 수 있습니다. `( lock, authorization, etag ) dependent by _Assoc` 형태이며 [[abenbdl_short_syntax]] 에서 설명합니다.
 
 ## 관련 항목
 

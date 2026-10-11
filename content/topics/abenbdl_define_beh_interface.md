@@ -34,7 +34,7 @@ RAP BO interface 의 동작을 entity(엔터티) 단위로 정의합니다. inte
 - persistent table
 - draft 테이블
 - 저장 옵션 ([[abenbdl_saving]])
-- 잠금. interface 는 lock master 와 lock dependent 관계를 물려받습니다. interface 인스턴스에 변경 작업을 할 때마다 `FOR LOCK` 메서드([[abaphandler_meth_lock]])가 불리고 해당 entity 가 잠깁니다.
+- 잠금. interface 는 lock master 와 lock dependent 관계를 물려받습니다. interface 인스턴스에 변경 작업을 할 때마다 `FOR LOCK` 메서드([[abaphandler_meth_lock]])가 불리고 그 entity 가 잠깁니다.
 - change documents
 - early numbering
 - late numbering

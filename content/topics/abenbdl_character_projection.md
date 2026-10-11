@@ -37,7 +37,7 @@ projection BDEF 에서 `define behavior for` 와 중괄호 사이에 적는 **en
 - persistent table ([[abenbdl_persistent_table]])
 - draft 테이블 ([[abenbdl_draft_table]])
 - 저장 옵션 ([[abenbdl_saving]])
-- 잠금 ([[abenbdl_locking]]). projection BO 는 lock master 와 lock dependent 관계를 물려받습니다. projection BO 인스턴스에 변경 작업을 할 때마다 `FOR LOCK` 메서드([[abaphandler_meth_lock]])가 불리고 해당 entity 가 잠깁니다.
+- 잠금 ([[abenbdl_locking]]). projection BO 는 lock master 와 lock dependent 관계를 물려받습니다. projection BO 인스턴스에 변경 작업을 할 때마다 `FOR LOCK` 메서드([[abaphandler_meth_lock]])가 불리고 그 entity 가 잠깁니다.
 - change documents
 - early numbering ([[abenbdl_early_numb]])
 - late numbering ([[abenbdl_late_numbering]])

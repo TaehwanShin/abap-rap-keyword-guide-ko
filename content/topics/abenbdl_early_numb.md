@@ -17,7 +17,7 @@ early numbering
 entity(엔터티)의 기본 키 필드 전체에 **unmanaged early numbering** 을 정합니다. 뜻을 풀면 이렇습니다.
 
 - 기본 키 필드에 값을 넣는 주체는 RAP 실행 엔진입니다.
-- 값을 **어떻게** 정할지는 개발자가 behavior pool(동작 풀)에 구현합니다. 그래서 "unmanaged"이라고 부릅니다. 구현할 곳은 handler method(핸들러 메서드) [[abaphandler_meth_numbering|FOR NUMBERING]] 입니다.
+- 값을 **어떻게** 정할지는 개발자가 behavior pool(동작 풀)에 구현합니다. 그래서 "unmanaged"라고 부릅니다. 구현할 곳은 handler method(핸들러 메서드) [[abaphandler_meth_numbering|FOR NUMBERING]] 입니다.
 - 키 값은 `CREATE` 를 담은 [[abapmodify_entity_entities|MODIFY]] 요청 직후 곧바로 transactional buffer(트랜잭션 버퍼)에 들어 있습니다. 그래서 "이른" numbering 이라고 부릅니다. 저장 직전에야 키가 정해지는 [[abenbdl_late_numbering|late numbering]] 과 반대입니다.
 
 `early numbering` 은 entity 마다 entity 동작 특성에 따로 적습니다. 그래서 한 BO 안에서 어떤 entity 는 unmanaged early numbering 을 쓰고, 다른 entity 는 다른 방법으로 키를 채워도 됩니다.
@@ -64,7 +64,7 @@ ENDCLASS.
 CLASS lhc_travel IMPLEMENTATION.
   METHOD earlynumbering_create.
     " 지금까지 쓴 가장 큰 번호를 읽는다
-    SELECT FROM ztravel
+    SELECT SINGLE FROM ztravel
       FIELDS MAX( travel_id )
       INTO @DATA(lv_max_id).
 

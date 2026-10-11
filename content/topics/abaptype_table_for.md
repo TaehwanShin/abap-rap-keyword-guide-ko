@@ -120,7 +120,7 @@ keywords: TYPE TABLE FOR, TABLE FOR CREATE, TABLE FOR UPDATE, TABLE FOR DELETE, 
 | `[INSTANCE] AUTHORIZATION RESULT` | 같은 handler method 의 결과입니다. 키와 요청 매개변수에 따라 구한 권한 정보가 들어 있습니다. | 위와 같습니다. | `%action`, `%assoc`, `%delete`, `%key`, `%op`, `%pky`, `%tky`, `%update` |
 | `[INSTANCE] FEATURES KEY` | `GET PERMISSIONS` 문을 처리하는 handler method 에서 instance feature control(기능 제어) 정보를 구할 때 씁니다. 지정한 인스턴스 키가 handler method 의 입력 매개변수가 됩니다. 어느 인스턴스의 feature control 정보를 구할지 정합니다. | BDEF 에 `features:instance` 속성이 적혀 있어야 합니다. | `%key`, `%pky`, `%tky` |
 | `[INSTANCE] FEATURES RESULT` | 같은 handler method 의 결과입니다. 키와 요청 매개변수에 따라 구한 instance feature control 정보가 들어 있습니다. | 위와 같습니다. | `%action`, `%assoc`, `%delete`, `%features`, `%field`, `%key`, `%pky`, `%tky`, `%update`. BDEF 에 따라 일부만 있습니다. |
-| `PERMISSIONS KEY` | `GET PERMISSIONS` 문에서 어느 인스턴스의 허용 정보를 구할지 키로 지정합니다. 이 키는 해당 handler method 의 입력 매개변수가 됩니다. | - | `%key`, `%pky`, `%tky` |
+| `PERMISSIONS KEY` | `GET PERMISSIONS` 문에서 어느 인스턴스의 허용 정보를 구할지 키로 지정합니다. 이 키는 그 handler method 의 입력 매개변수가 됩니다. | - | `%key`, `%pky`, `%tky` |
 
 ### 저장, 잠금, 깊은 매개변수
 

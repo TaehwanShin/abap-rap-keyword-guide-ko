@@ -1,6 +1,6 @@
 ---
 title: map_messages saver method
-summary: 외부 entity(foreign entity)로 등록한 다른 BO 가 돌려준 메시지를 내 BO 의 말로 바꾸거나 지우는 saver method 입니다.
+summary: foreign entity 로 등록한 다른 BO 가 돌려준 메시지를 내 BO 의 말로 바꾸거나 지우는 saver method 입니다.
 keywords: map_messages, 세이버 메서드, saver method, 메시지 매핑, message mapping, foreign entity, 외부 엔터티, %foreign, reported, REPORTED LATE, 전이 메시지, transition message
 ---
 
@@ -35,15 +35,15 @@ ENDCLASS.
 한 RAP 트랜잭션에서 내 BO 말고 다른 BO 도 함께 바뀌는 일이 있습니다. 그 다른 BO 는 바깥에 직접 드러나 있지 않아서, 거기서 나온 메시지를 사용자가 그대로 보면 무슨 뜻인지 알기 어렵습니다. `map_messages` 는 이런 메시지를 다루는 자리입니다. 업무 요구에 따라 드러나 있는 BO 의 업무 맥락에 맞게 바꿔 넘길 수도 있고, 그냥 무시하고 지울 수도 있습니다.
 
 - 써도 되고 안 써도 됩니다.
-- BDEF 에 다른 BO 를 [[abenbdl_foreign|외부 entity(foreign entity)]]로 적어 둔 RAP BO 의 behavior pool 에서만 쓸 수 있습니다.
+- BDEF 에 다른 BO 를 [[abenbdl_foreign|foreign entity]] 로 적어 둔 RAP BO 의 behavior pool 에서만 쓸 수 있습니다.
 - 미리 정해진 `CHANGING` 매개변수가 하나 있습니다. `reported` 이고 타입은 [[abaptype_response_for|TYPE RESPONSE FOR REPORTED LATE]] 입니다.
-- BDEF 에 외부 entity(엔터티)를 적으면, 드러나 있는 BO 의 `reported` 안에 그 외부 entity 도 구성요소로 들어옵니다. 그래서 외부 entity 가 돌려준 메시지를 읽어 내 BO 의 메시지로 옮길 수 있습니다. 외부 entity 는 `reported-%foreign` 아래에 모여 있습니다([[abapderived_types_foreign]]).
-- 외부 entity 로 적은 BO 가 자기 saver class 에서 `reported` 에 transition message(전이 메시지)를 담아 돌려줬을 때만 불립니다.
-- 원문은 이 메서드가 early save phase(이른 저장 단계)에서 불린다고 적고 있습니다. 다만 원문 예제 [[abenabp_map_messages_abexa]] 에서 외부 entity 쪽 saver class 가 구현한 메서드는 late save phase(늦은 저장 단계)의 `save` 하나뿐입니다.
+- BDEF 에 foreign entity 를 적으면, 드러나 있는 BO 의 `reported` 안에 그 foreign entity 도 구성요소로 들어옵니다. 그래서 foreign entity 가 돌려준 메시지를 읽어 내 BO 의 메시지로 옮길 수 있습니다. foreign entity 는 `reported-%foreign` 아래에 모여 있습니다([[abapderived_types_foreign]]).
+- foreign entity 로 적은 BO 가 자기 saver class 에서 `reported` 에 transition message(전이 메시지)를 담아 돌려줬을 때만 불립니다.
+- 원문은 이 메서드가 early save phase(이른 저장 단계)에서 불린다고 적고 있습니다. 다만 원문 예제 [[abenabp_map_messages_abexa]] 에서 foreign entity 쪽 saver class 가 구현한 메서드는 late save phase(늦은 저장 단계)의 `save` 하나뿐입니다.
 
 ## 예제
 
-여행 BO 의 BDEF 머리말에 여행사 BO 를 외부 entity 로 적습니다.
+여행 BO 의 BDEF 머리말에 여행사 BO 를 foreign entity 로 적습니다.
 
 ```bdl
 unmanaged implementation in class zbp_r_travel unique;

@@ -36,7 +36,7 @@ strict mode 는 RAP 프레임워크가 해 줍니다. behavior pool(동작 풀)�
 
 - `managed`
 - `unmanaged`
-- `projection` : base BDEF(기반 BDEF) 가 먼저 strict mode 를 써야 합니다. 바탕과 projection 은 같은 버전을 써야 합니다.
+- `projection` : base BDEF(기반 BDEF) 가 먼저 strict mode 를 써야 합니다. base BO 와 projection 은 같은 버전을 써야 합니다.
 - `abstract`
 
 ## 예제

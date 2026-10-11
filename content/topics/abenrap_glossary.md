@@ -12,7 +12,7 @@ RAP(ABAP RESTful Application Programming Model) 문서에 나오는 용어를 �
 
 ### ABAP behavior pool (ABAP 동작 풀)
 
-줄임말 ABP. behavior definition(동작 정의)를 바탕으로 behavior implementation(동작 구현)을 담는 특별한 클래스 풀입니다. 전역 클래스 이름은 보통 `BP_` 로 시작하지만, 이 전역 클래스가 동작을 직접 구현하지는 않습니다. 실제 구현은 behavior pool(동작 풀)의 CCIMP 인클루드에 있는 지역 handler class(핸들러 클래스)와 saver class(세이버 클래스)에 씁니다. 이 클래스들이 unmanaged RAP BO provider(제공자)가 되고, RAP BO 에 접근할 때 RAP 런타임 엔진이 부릅니다. 관련 항목: [[abenabap_behavior_pools]]
+줄임말 ABP. behavior definition(동작 정의)를 바탕으로 behavior implementation(동작 구현)을 담는 특별한 클래스 풀입니다. 전역 클래스 이름은 보통 `BP_` 로 시작하지만, 이 전역 클래스가 동작을 직접 구현하지는 않습니다. 실제 구현은 behavior pool(동작 풀)의 CCIMP 인클루드에 있는 로컬 handler class(핸들러 클래스)와 saver class(세이버 클래스)에 씁니다. 이 클래스들이 unmanaged RAP BO provider(제공자)가 되고, RAP BO 에 접근할 때 RAP 런타임 엔진이 부릅니다. 관련 항목: [[abenabap_behavior_pools]]
 
 ### ABAP contract checks (ABAP 계약 검사)
 
@@ -20,7 +20,7 @@ RAP(ABAP RESTful Application Programming Model) 문서에 나오는 용어를 �
 
 ### ABAP EML (ABAP 엔터티 조작 언어)
 
-→ **ABAP Entity Manipulation Language (ABAP entity(엔터티) 조작 언어)** 를 보세요.
+→ **ABAP Entity Manipulation Language (ABAP 엔터티 조작 언어)** 를 보세요.
 
 ### ABAP Entity Manipulation Language (ABAP 엔터티 조작 언어)
 
@@ -132,7 +132,7 @@ BOPF 가 draft 를 관리하는 BOPF 기반 RAP BO 의 draft provider 입니다.
 
 ### CDS parent entity (CDS 부모 엔터티)
 
-CDS 구성 트리 안에서 자식으로 가는 association(to-child association)로 child entity(자식 엔터티)를 정의하는 CDS entity 입니다. parent entity 하나에 child entity 가 여럿 있을 수 있습니다. child entity 는 저마다 to-parent association 을 정의하고 노출해야 합니다.
+CDS 구성 트리 안에서 자식으로 가는 association(to-child association)으로 child entity(자식 엔터티)를 정의하는 CDS entity 입니다. parent entity 하나에 child entity 가 여럿 있을 수 있습니다. child entity 는 저마다 to-parent association 을 정의하고 노출해야 합니다.
 
 ### CDS root entity (CDS 루트 엔터티)
 
@@ -188,7 +188,7 @@ RAP draft 처리를 지원하는 RAP BO 입니다. BDL 추가 구문 `with draft
 
 ### EML (엔터티 조작 언어)
 
-→ **ABAP Entity Manipulation Language (ABAP entity 조작 언어)** 를 보세요.
+→ **ABAP Entity Manipulation Language (ABAP 엔터티 조작 언어)** 를 보세요.
 
 ### entity behavior body (엔터티 동작 본문)
 
@@ -252,7 +252,7 @@ managed RAP BO 의 transactional buffer 로, managed RAP BO provider 가 제공�
 
 ### mandatory RAP BO field (필수 RAP BO 필드)
 
-behavior definition 에서 필수로 정한 RAP BO 필드입니다. 생성 요청마다 초기값이 아닌 값을 넘겨야 합니다. 변경 작업에서 초기값으로 되돌릴 수도 없습니다. 관련 항목: [[abenbdl_field_char]]
+behavior definition 에서 필수로 정한 RAP BO 필드입니다. 생성 요청마다 초기값이 아닌 값을 넘겨야 합니다. 변경 작업에서 초기값으로 되돌릴 수도 없습니다. 원문 용어집은 이렇게 적지만, 키워드 문서([[abenbdl_field_char]])는 mandatory 를 실행 중에 확인하지 않는다고 적습니다. 실제로 막으려면 validation 을 구현합니다. 관련 항목: [[abenbdl_field_char]]
 
 ## N
 
@@ -348,7 +348,7 @@ RAP BO 가 무엇을 할 수 있는지 나타내는 부분입니다. RAP behavio
 
 ### RAP Behavior Definition Language (RAP 동작 정의 언어)
 
-→ **RAP BDL (RAP behavior definition 언어)** 을 보세요.
+→ **RAP BDL (RAP 동작 정의 언어)** 을 보세요.
 
 ### RAP behavior extension body (RAP 동작 확장 본문)
 
@@ -356,7 +356,7 @@ entity 동작 extension 에서 `extend behavior for` 문 뒤 중괄호 안에 �
 
 ### RAP behavior implementation (RAP 동작 구현)
 
-unmanaged RAP BO provider 를 구현한 것입니다. ABAP behavior pool(ABP)의 지역 클래스에 씁니다.
+unmanaged RAP BO provider 를 구현한 것입니다. ABAP behavior pool(ABP)의 로컬 클래스에 씁니다.
 
 ### RAP BO augmentation
 
@@ -404,7 +404,7 @@ BDEF derived type 에서 RAP BO 인스턴스의 기본 키 필드를 담는 구�
 
 ### RAP BO interface
 
-바깥에서 안정적으로 쓰도록 interface 구실을 하는 RAP business object 입니다. CDS 트랜잭션 interface 와 RAP interface behavior definition 으로 이루어집니다. 런타임 핸들러가 없고, behavior implementation 용 클래스를 지정할 수도 없습니다. 밑에 있는 RAP BO 의 동작을 projection 만 할 수 있습니다. 관련 항목: [[abenbdl_rap_bo_interface]]
+바깥에서 안정적으로 쓰도록 interface 구실을 하는 RAP business object 입니다. CDS 트랜잭션 interface 와 RAP interface behavior definition 으로 이루어집니다. 런타임 핸들러가 없고, behavior implementation 용 클래스를 지정할 수도 없습니다. 밑에 있는 RAP BO 의 동작을 비추어 내놓을 수만 있습니다. 관련 항목: [[abenbdl_rap_bo_interface]]
 
 ### RAP BO interface entity (RAP BO interface 엔터티)
 
@@ -528,7 +528,7 @@ RAP BO entity 인스턴스를 지우는 RAP 변경 작업입니다.
 
 ### RAP dependent BO (RAP 종속 BO)
 
-BO 간 시나리오에서 잠금, 허가 처리, 삭제를 호스트 BO 에 맡기는 RAP BO 입니다. 호스트 BO 와 연관되면 composition 과 비슷한 관계가 생깁니다. BDEF 머리말에 `dependent` 문법을 씁니다.
+BO 간 시나리오에서 잠금, 권한 처리, 삭제를 호스트 BO 에 맡기는 RAP BO 입니다. 호스트 BO 와 연관되면 composition 과 비슷한 관계가 생깁니다. BDEF 머리말에 `dependent` 문법을 씁니다.
 
 ### RAP dependent draft BO (RAP 종속 draft BO)
 
@@ -594,7 +594,7 @@ draft action `Edit` 로 만들어지는 draft 인스턴스입니다. 편집 draf
 
 ETag 는 entity tag 의 줄임말입니다. RAP ETag 필드는 낙관적 동시성 제어에서 인스턴스의 상태를 나타내는 데 쓰는 RAP BO entity 의 필드입니다. RAP BO entity 인스턴스가 바뀔 때마다 값이 갱신됩니다. 관련 항목: [[abenbdl_etag]]
 
-### RAP ETag dependent entity (RAP ETag 종속 엔터티)
+### RAP ETag dependent entity (RAP etag dependent 엔터티)
 
 낙관적 동시성 제어에 다른 entity 의 ETag 필드를 쓰는 RAP BO entity 입니다. `etag dependent by _Assoc` 키워드로 정의합니다. 관련 항목: [[abenbdl_etag]]
 
@@ -620,11 +620,11 @@ draft 인스턴스가 한 사용자에게만 잠기거나 예약되는 RAP draft
 
 ### RAP extensibility (RAP 확장성)
 
-RAP business object 를 알맞은 RAP BO extension 으로 넓히는 일입니다. 확장하려면 먼저 RAP extensibility(확장 허용) 준비로 extension 을 기술적으로 열어 두어야 합니다. 쓰임새로는 필드 extension, 동작 extension, 노드 extension 이 있습니다. 온프레미스와 클라우드 환경 모두에서 개발자 extension 성의 일부로 쓰이며, ABAP for Cloud Development 에서는 C0(extend) 계약에 기대어 extension 지점의 안정성을 보장합니다.
+RAP business object 를 알맞은 RAP BO extension 으로 넓히는 일입니다. 확장하려면 먼저 RAP extensibility(확장 허용) 준비로 extension 을 기술적으로 열어 두어야 합니다. 쓰임새로는 필드 extension, 동작 extension, 노드 extension 이 있습니다. 온프레미스와 클라우드 환경 모두에서 개발자 extensibility(확장 허용)의 일부로 쓰이며, ABAP for Cloud Development 에서는 C0(extend) 계약에 기대어 extension 지점의 안정성을 보장합니다.
 
 ### RAP extensibility enablement (RAP 확장 허용 준비)
 
-RAP business object 가 RAP extension 성에 필요한 기술 요건을 모두 갖추도록 준비하는 일입니다. extension 성 주석으로 RAP 데이터 모델을 준비하고, 전용 extension 지점을 정의해 RAP behavior definition 을 준비하는 작업이 들어갈 수 있습니다. 관련 항목: [[abenbdl_extensibility_enabling]]
+RAP business object 가 RAP extensibility 에 필요한 기술 요건을 모두 갖추도록 준비하는 일입니다. extensibility 주석으로 RAP 데이터 모델을 준비하고, 전용 extension 지점을 정의해 RAP behavior definition 을 준비하는 작업이 들어갈 수 있습니다. 관련 항목: [[abenbdl_extensibility_enabling]]
 
 ### RAP extension entity behavior (RAP 확장 엔터티 동작)
 
@@ -672,7 +672,7 @@ BO entity 인스턴스의 상태와 상관없이 접근 제한을 정하는 feat
 
 ### RAP handler class (RAP 핸들러 클래스)
 
-ABAP behavior pool(ABP)의 CCIMP 인클루드에 있는 지역 클래스로, RAP handler method 를 구현합니다. RAP interaction phase 에서 실행됩니다. 관련 항목: [[abenabp_handler_class]]
+ABAP behavior pool(ABP)의 CCIMP 인클루드에 있는 로컬 클래스로, RAP handler method 를 구현합니다. RAP interaction phase 에서 실행됩니다. 관련 항목: [[abenabp_handler_class]]
 
 ### RAP handler method (RAP 핸들러 메서드)
 
@@ -684,7 +684,7 @@ ABAP behavior pool 의 RAP handler class 에 있는 메서드로, RAP interactio
 
 ### RAP host BO (RAP 호스트 BO)
 
-BO 간 시나리오에서 종속 BO 로 가는 association 이 있는 RAP BO 입니다. 이 association 은 composition 과 비슷한 관계를 만들고, 호스트 BO 가 종속 BO 의 잠금, 허가 처리, 삭제를 넘겨받습니다. 종속 BO 로 가는 association 에 `to dependent` 문법을 씁니다.
+BO 간 시나리오에서 종속 BO 로 가는 association 이 있는 RAP BO 입니다. 이 association 은 composition 과 비슷한 관계를 만들고, 호스트 BO 가 종속 BO 의 잠금, 권한 처리, 삭제를 넘겨받습니다. 종속 BO 로 가는 association 에 `to dependent` 문법을 씁니다.
 
 ### RAP input derived type (RAP 입력 파생 타입)
 
@@ -760,7 +760,7 @@ RAP BO provider 의 한 부분입니다. interaction phase 동안 transactional 
 
 ### RAP message (RAP 메시지)
 
-interface `IF_ABAP_BEHV_MESSAGE` 를 구현한 클래스의 인스턴스로 나타내는 메시지이며, RAP BO provider 구현에서 씁니다. 애플리케이션마다 자기 클래스를 만들 수 있습니다. 편의를 위해 behavior pool 마다 `CX_NO_CHECK` 를 상속한 지역 예외 클래스 `CL_ABAP_BEHV_MSG` 가 미리 들어 있고, 이 클래스는 `IF_ABAP_BEHV_MESSAGE` 를 최소한으로 구현합니다. RAP 메시지에도 쓸 수 있고, 알맞은 곳에서 예외를 일으키는 데도 쓸 수 있습니다.
+interface `IF_ABAP_BEHV_MESSAGE` 를 구현한 클래스의 인스턴스로 나타내는 메시지이며, RAP BO provider 구현에서 씁니다. 애플리케이션마다 자기 클래스를 만들 수 있습니다. 편의를 위해 behavior pool 마다 `CX_NO_CHECK` 를 상속한 로컬 예외 클래스 `CL_ABAP_BEHV_MSG` 가 미리 들어 있고, 이 클래스는 `IF_ABAP_BEHV_MESSAGE` 를 최소한으로 구현합니다. RAP 메시지에도 쓸 수 있고, 알맞은 곳에서 예외를 일으키는 데도 쓸 수 있습니다.
 
 ### RAP modify operation (RAP 변경 작업)
 
@@ -820,7 +820,7 @@ projection 층에서 노드 extension 을 정의하는, BDEF projection extensio
 
 ### RAP query (RAP 쿼리)
 
-CDS entity 에 정의된 데이터를 readonly 로 쓰게 해 주는 RAP 의 사용 방식입니다. RAP 쿼리 엔진이 실행합니다.
+CDS entity 에 정의된 데이터를 읽기만 하는 용도로 쓰게 해 주는 RAP 의 사용 방식입니다. RAP 쿼리 엔진이 실행합니다.
 
 ### RAP query engine (RAP 쿼리 엔진)
 
@@ -876,7 +876,7 @@ RAP BO 런타임의 한 부분으로, interaction phase 에서 변경이 적어�
 
 ### RAP saver class (RAP 세이버 클래스)
 
-ABAP behavior pool(ABP)의 CCIMP 인클루드에 있는 지역 클래스로, save sequence 에서 불리는 RAP saver method 를 구현합니다. 관련 항목: [[abenabp_saver_class]]
+ABAP behavior pool(ABP)의 CCIMP 인클루드에 있는 로컬 클래스로, save sequence 에서 불리는 RAP saver method 를 구현합니다. 관련 항목: [[abenabp_saver_class]]
 
 ### RAP saver method (RAP 세이버 메서드)
 
@@ -960,7 +960,7 @@ RAP BO 동작에 선택으로 넣는 부분으로, 발동 조건이 맞으면 RA
 
 ### read-only RAP BO field (readonly RAP BO 필드)
 
-behavior definition 에서 readonly 로 정한 RAP BO 필드입니다. 이 필드는 RAP BO provider 가 로컬 모드에서만 바꿀 수 있습니다. 관련 항목: [[abenbdl_field_char]]
+behavior definition 에서 readonly 로 정한 RAP BO 필드입니다. 이 필드는 RAP BO provider 가 `IN LOCAL MODE` 로만 바꿀 수 있습니다. 관련 항목: [[abenbdl_field_char]]
 
 ### REST (REST 아키텍처)
 
@@ -1000,7 +1000,7 @@ Service Adaptation Definition Language 의 줄임말입니다. 모델을 바탕�
 
 ### treeview (트리 뷰)
 
-RAP 에서 말하는 트리 뷰는 CDS 계층으로 모델링한 데이터를 눈에 보이게 나타낸 것입니다. 예를 들어 SAP Fiori Elements 의 트리 테이블로 보여 줍니다. readonly 일 수도, 편집할 수 있는 것일 수도 있습니다.
+RAP 에서 말하는 트리 뷰는 CDS 계층으로 모델링한 데이터를 눈에 보이게 나타낸 것입니다. 예를 들어 SAP Fiori Elements 의 트리 테이블로 보여 줍니다. 읽기만 할 수도, 편집할 수도 있습니다.
 
 ## U
 
