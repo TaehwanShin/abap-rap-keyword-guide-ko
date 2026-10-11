@@ -16,8 +16,13 @@ SAP ABAP 키워드 문서(ABAP Cloud)의 "ABAP RAP Business Objects" 갈래 384�
 
 설치할 것이 없습니다. **`index.html` 파일 하나**가 앱 전체입니다.
 
-1. 이 저장소를 내려받습니다. (`Code` → `Download ZIP`, 또는 `git clone`)
-2. `index.html` 을 두 번 눌러 브라우저로 엽니다.
+1. 이 저장소를 내려받습니다. 화면 위쪽의 `Code` → `Download ZIP` 을 누르거나, 아래 명령을 복사해 실행합니다.
+
+   ```
+   git clone https://github.com/TaehwanShin/abap-rap-keyword-guide-ko.git
+   ```
+
+2. 내려받은 폴더의 `index.html` 을 두 번 눌러 브라우저로 엽니다.
 
 인터넷이 없어도 돌아갑니다. 실행할 때 바깥에서 불러오는 것이 하나도 없습니다.
 GitHub Pages 를 켜면(Settings → Pages → Branch 를 고르고 폴더는 `/ (root)`) 웹 주소로도 볼 수 있습니다.
