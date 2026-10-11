@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RAP 키워드 길잡이</title>
+<meta name="description" content="ABAP RAP 키워드를 쉬운 한글로 풀어 쓴 참고서. 목차, 문서, 키워드 검색.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231a5bc4'/%3E%3Cpath d='M9 8h6v3h-3v10h3v3H9zM23 8h-6v3h3v10h-3v3h6z' fill='%23fff'/%3E%3C/svg%3E">
+<style>
+/*__CSS__*/
+</style>
+</head>
+<body>
+<a class="skip" href="#doc">본문으로 건너뛰기</a>
+
+<header class="top">
+  <button class="icon-btn menu-btn" id="menuBtn" type="button" aria-label="목차 열기" aria-expanded="false">
+    <svg viewBox="0 0 20 20" width="20" height="20" aria-hidden="true"><path d="M3 5h14M3 10h14M3 15h14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+  </button>
+  <a class="brand" href="#/" aria-label="RAP 키워드 길잡이 첫 화면">
+    <span class="brand-mark" aria-hidden="true">[ ]</span>
+    <span class="brand-name">RAP 키워드 길잡이</span>
+  </a>
+  <div class="search" role="search">
+    <svg class="search-icon" viewBox="0 0 20 20" width="18" height="18" aria-hidden="true"><circle cx="8.5" cy="8.5" r="5.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M13 13l4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+    <input id="q" type="search" autocomplete="off" spellcheck="false" placeholder="키워드 찾기  예) action, 잠금, MODIFY ENTITIES" aria-label="키워드 찾기">
+    <kbd class="search-key" aria-hidden="true">/</kbd>
+    <button class="icon-btn clear-btn" id="clearBtn" type="button" aria-label="검색어 지우기" hidden>
+      <svg viewBox="0 0 20 20" width="16" height="16" aria-hidden="true"><path d="M5 5l10 10M15 5L5 15" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+  <button class="icon-btn theme-btn" id="themeBtn" type="button" aria-label="밝은 화면 / 어두운 화면 바꾸기">
+    <svg class="sun" viewBox="0 0 20 20" width="18" height="18" aria-hidden="true"><circle cx="10" cy="10" r="3.6" fill="currentColor"/><path d="M10 1.5v2.4M10 16.1v2.4M1.5 10h2.4M16.1 10h2.4M4 4l1.7 1.7M14.3 14.3L16 16M4 16l1.7-1.7M14.3 5.7L16 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+    <svg class="moon" viewBox="0 0 20 20" width="18" height="18" aria-hidden="true"><path d="M16.5 12.2A7 7 0 0 1 7.8 3.5a7 7 0 1 0 8.7 8.7z" fill="currentColor"/></svg>
+  </button>
+</header>
+
+<div class="shell">
+  <nav class="side" id="side" aria-label="목차">
+    <div class="side-head" id="treeHead">
+      <span class="side-title">목차</span>
+      <button class="text-btn" id="expandBtn" type="button">모두 펴기</button>
+      <button class="text-btn" id="collapseBtn" type="button">모두 접기</button>
+    </div>
+    <div class="side-head" id="resultHead" hidden>
+      <span class="side-title" id="resultCount" aria-live="polite"></span>
+      <div class="chips" id="chips" role="group" aria-label="갈래 고르기"></div>
+    </div>
+    <div class="side-body" id="tree"></div>
+    <div class="side-body" id="results" hidden></div>
+  </nav>
+  <div class="grip" id="grip" role="separator" tabindex="0" aria-orientation="vertical" aria-label="목차 너비 조절 (왼쪽·오른쪽 화살표)" aria-valuemin="220" aria-valuemax="640"></div>
+  <div class="scrim" id="scrim" hidden></div>
+
+  <main class="main" id="main" tabindex="-1">
+    <article class="doc" id="doc"></article>
+    <aside class="outline" id="outline" aria-label="이 문서의 단락"></aside>
+  </main>
+</div>
+
+<script id="data" type="application/json">__DATA__</script>
+<script>
+/*__JS__*/
+</script>
+</body>
+</html>

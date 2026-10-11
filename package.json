@@ -1,0 +1,15 @@
+{
+  "name": "abap-rap-keyword-guide-ko",
+  "version": "1.0.0",
+  "description": "ABAP RAP 키워드 한글 길잡이 - 왼쪽 목차, 오른쪽 문서, 키워드 검색을 갖춘 단일 HTML 참고서",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "check": "node tools/check.mjs",
+    "build": "node tools/build.mjs"
+  },
+  "devDependencies": {
+    "marked": "^14.1.4"
+  },
+  "license": "MIT"
+}

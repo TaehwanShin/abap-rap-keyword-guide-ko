@@ -1,0 +1,2156 @@
+{
+ "id": "abenabap_rap",
+ "en": "ABAP RAP Business Objects",
+ "slug": "abap-rap-business-objects",
+ "c": [
+  {
+   "id": "abencds_business_services",
+   "en": "RAP - Business Services (BS)",
+   "slug": "rap-business-services-bs"
+  },
+  {
+   "id": "abencds_bdef",
+   "en": "RAP - Behavior Definitions",
+   "slug": "rap-behavior-definitions",
+   "c": [
+    {
+     "id": "abenbdl_syntax",
+     "en": "RAP BDL - Syntax",
+     "slug": "rap-bdl-syntax",
+     "c": [
+      {
+       "id": "abenbdl_general_syntax_rules",
+       "en": "RAP BDL - General Syntax Rules",
+       "slug": "rap-bdl-general-syntax-rules"
+      },
+      {
+       "id": "abenbdl_pragma",
+       "en": "RAP BDL - Pragmas",
+       "slug": "rap-bdl-pragmas"
+      },
+      {
+       "id": "abenrap_feature_table",
+       "en": "RAP BDL - Feature Tables",
+       "slug": "rap-bdl-feature-tables"
+      }
+     ]
+    },
+    {
+     "id": "abenbdl",
+     "en": "RAP - BDL for Behavior Definitions",
+     "slug": "rap-bdl-for-behavior-definitions",
+     "c": [
+      {
+       "id": "abenbdl_rap_bo",
+       "en": "RAP - Managed and Unmanaged Behavior Definitions",
+       "slug": "rap-managed-and-unmanaged-behavior-definitions",
+       "c": [
+        {
+         "id": "abenbdl_bdef_header",
+         "en": "RAP - BehaviorDefinitionHeader",
+         "slug": "rap-behaviordefinitionheader",
+         "c": [
+          {
+           "id": "abenbdl_impl_type",
+           "en": "RAP - Implementation Type",
+           "slug": "rap-implementation-type"
+          },
+          {
+           "id": "abenbdl_in_class_unique",
+           "en": "RAP - implementation in class unique",
+           "slug": "rap-implementation-in-class-unique"
+          },
+          {
+           "id": "abenbdl_strict",
+           "en": "RAP - BDEF Strict Mode",
+           "slug": "rap-bdef-strict-mode",
+           "c": [
+            {
+             "id": "abenbdl_strict_1",
+             "en": "RAP - strict",
+             "slug": "rap-strict"
+            },
+            {
+             "id": "abenbdl_strict_2",
+             "en": "RAP - strict(2)",
+             "slug": "rap-strict-2"
+            }
+           ]
+          },
+          {
+           "id": "abenbdl_auxiliary_class",
+           "en": "RAP - auxiliary class",
+           "slug": "rap-auxiliary-class"
+          },
+          {
+           "id": "abenbdl_extensible",
+           "en": "RAP - extensible",
+           "slug": "rap-extensible"
+          },
+          {
+           "id": "abenbdl_draft_handling",
+           "en": "RAP - DraftHandling",
+           "slug": "rap-drafthandling",
+           "c": [
+            {
+             "id": "abenbdl_with_draft",
+             "en": "RAP - with draft",
+             "slug": "rap-with-draft"
+            },
+            {
+             "id": "abenbdl_with_coll_draft",
+             "en": "RAP - with collaborative draft",
+             "slug": "rap-with-collaborative-draft"
+            }
+           ]
+          },
+          {
+           "id": "abenbdl_privileged_mode",
+           "en": "RAP - with privileged mode",
+           "slug": "rap-with-privileged-mode"
+          },
+          {
+           "id": "abenbdl_with_cross_assoc",
+           "en": "RAP - with cross associations",
+           "slug": "rap-with-cross-associations"
+          },
+          {
+           "id": "abenbdl_foreign",
+           "en": "RAP - foreign entity",
+           "slug": "rap-foreign-entity"
+          },
+          {
+           "id": "abenbdl_save_after",
+           "en": "RAP - save after",
+           "slug": "rap-save-after",
+           "c": [
+            {
+             "id": "abenbdl_save_after_abexa",
+             "en": "RAP - RAP Explicit Save Order",
+             "slug": "rap-rap-explicit-save-order"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "id": "abenbdl_define_beh",
+         "en": "RAP - EntityBehaviorDefinition",
+         "slug": "rap-entitybehaviordefinition",
+         "c": [
+          {
+           "id": "abenbdl_character",
+           "en": "RAP - EntityBehaviorCharacteristics",
+           "slug": "rap-entitybehaviorcharacteristics",
+           "c": [
+            {
+             "id": "abenbdl_persistent_table",
+             "en": "RAP - persistent table",
+             "slug": "rap-persistent-table"
+            },
+            {
+             "id": "abenbdl_draft_table",
+             "en": "RAP - draft table",
+             "slug": "rap-draft-table",
+             "c": [
+              {
+               "id": "abenbdl_draft_query_view",
+               "en": "RAP - query",
+               "slug": "rap-query",
+               "c": [
+                {
+                 "id": "abenbdl_draft_query_abexa",
+                 "en": "RAP - RAP BO with DCL Access Control",
+                 "slug": "rap-rap-bo-with-dcl-access-control"
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "id": "abenbdl_saving",
+             "en": "RAP - SavingOptions",
+             "slug": "rap-savingoptions"
+            },
+            {
+             "id": "abenbdl_etag",
+             "en": "RAP - etag",
+             "slug": "rap-etag"
+            },
+            {
+             "id": "abenbdl_locking",
+             "en": "RAP - Locking",
+             "slug": "rap-locking"
+            },
+            {
+             "id": "abenbdl_authorization",
+             "en": "RAP - Authorization",
+             "slug": "rap-authorization",
+             "c": [
+              {
+               "id": "abenbdl_cds_based_auth",
+               "en": "RAP - CDS-Based Authorization",
+               "slug": "rap-cds-based-authorization"
+              },
+              {
+               "id": "abenbdl_authorization_abexa",
+               "en": "RAP - Global Authorization",
+               "slug": "rap-global-authorization"
+              }
+             ]
+            },
+            {
+             "id": "abenbdl_change_documents",
+             "en": "RAP - changedocuments",
+             "slug": "rap-changedocuments"
+            },
+            {
+             "id": "abenbdl_short_syntax",
+             "en": "RAP - SyntaxShortForm",
+             "slug": "rap-syntaxshortform"
+            },
+            {
+             "id": "abenbdl_early_numb",
+             "en": "RAP - early numbering",
+             "slug": "rap-early-numbering"
+            },
+            {
+             "id": "abenbdl_late_numbering",
+             "en": "RAP - late numbering",
+             "slug": "rap-late-numbering"
+            }
+           ]
+          },
+          {
+           "id": "abenbdl_body",
+           "en": "RAP - EntityBehaviorBody",
+           "slug": "rap-entitybehaviorbody",
+           "c": [
+            {
+             "id": "abenbdl_field_char",
+             "en": "RAP - FieldCharacteristics",
+             "slug": "rap-fieldcharacteristics"
+            },
+            {
+             "id": "abenbdl_field_numbering",
+             "en": "RAP - FieldNumbering",
+             "slug": "rap-fieldnumbering"
+            },
+            {
+             "id": "abenbdl_operations",
+             "en": "RAP - RAP BO Operations",
+             "slug": "rap-rap-bo-operations",
+             "c": [
+              {
+               "id": "abenbdl_standard_operations",
+               "en": "RAP - Standard Operations",
+               "slug": "rap-standard-operations"
+              },
+              {
+               "id": "abenbdl_nonstandard",
+               "en": "RAP - Non-Standard Operations",
+               "slug": "rap-non-standard-operations",
+               "c": [
+                {
+                 "id": "abenbdl_action",
+                 "en": "RAP - action",
+                 "slug": "rap-action",
+                 "c": [
+                  {
+                   "id": "abenbdl_action_nonfactory",
+                   "en": "RAP - action, Non-Factory",
+                   "slug": "rap-action-non-factory",
+                   "c": [
+                    {
+                     "id": "abenbdl_action_repeatable",
+                     "en": "RAP - repeatable",
+                     "slug": "rap-repeatable"
+                    }
+                   ]
+                  },
+                  {
+                   "id": "abenbdl_action_factory",
+                   "en": "RAP - action, factory",
+                   "slug": "rap-action-factory",
+                   "c": [
+                    {
+                     "id": "abenbdl_action_default_factory",
+                     "en": "RAP - Default Factory Action",
+                     "slug": "rap-default-factory-action"
+                    }
+                   ]
+                  },
+                  {
+                   "id": "abenbdl_action_onsave",
+                   "en": "RAP - save action",
+                   "slug": "rap-save-action"
+                  },
+                  {
+                   "id": "abenbdl_action_abexas",
+                   "en": "RAP - Examples of Actions",
+                   "slug": "rap-examples-of-actions",
+                   "c": [
+                    {
+                     "id": "abenbdl_action1_abexa",
+                     "en": "RAP - Action",
+                     "slug": "rap-action-abenbdl_action1_abexa"
+                    },
+                    {
+                     "id": "abenbdl_action2_abexa",
+                     "en": "RAP - Action with Input Parameter",
+                     "slug": "rap-action-with-input-parameter"
+                    },
+                    {
+                     "id": "abenbdl_action3_abexa",
+                     "en": "RAP - Factory Action",
+                     "slug": "rap-factory-action"
+                    }
+                   ]
+                  }
+                 ]
+                },
+                {
+                 "id": "abenbdl_function",
+                 "en": "RAP - function",
+                 "slug": "rap-function",
+                 "c": [
+                  {
+                   "id": "abenbdl_keyfunction",
+                   "en": "RAP - key function",
+                   "slug": "rap-key-function"
+                  },
+                  {
+                   "id": "abenbdl_function_abexa",
+                   "en": "RAP - function",
+                   "slug": "rap-function-abenbdl_function_abexa"
+                  }
+                 ]
+                }
+               ]
+              },
+              {
+               "id": "abenbdl_association",
+               "en": "RAP - Operations for Associations",
+               "slug": "rap-operations-for-associations",
+               "c": [
+                {
+                 "id": "abenbdl_assoc_impl_type",
+                 "en": "RAP - AssocImplType",
+                 "slug": "rap-associmpltype",
+                 "c": [
+                  {
+                   "id": "abenbdl_unmanaged_assoc_abexa",
+                   "en": "RAP - Unmanaged Association Implementation",
+                   "slug": "rap-unmanaged-association-implementation"
+                  }
+                 ]
+                },
+                {
+                 "id": "abenbdl_assoc_stand_ops",
+                 "en": "RAP - StandardOperationsForAssoc",
+                 "slug": "rap-standardoperationsforassoc"
+                },
+                {
+                 "id": "abenbdl_assoc_nonstand_ops",
+                 "en": "RAP - NonstandardOperationsForAssoc",
+                 "slug": "rap-nonstandardoperationsforassoc",
+                 "c": [
+                  {
+                   "id": "abenbdl_link_unlink_action",
+                   "en": "RAP - Link / Unlink Action",
+                   "slug": "rap-link-unlink-action"
+                  },
+                  {
+                   "id": "abenbdl_inverse_funct",
+                   "en": "RAP - Inverse Function",
+                   "slug": "rap-inverse-function"
+                  }
+                 ]
+                }
+               ]
+              },
+              {
+               "id": "abenbdl_determine_action",
+               "en": "RAP - determine action",
+               "slug": "rap-determine-action"
+              },
+              {
+               "id": "abenbdl_draft_action",
+               "en": "RAP - draft action",
+               "slug": "rap-draft-action",
+               "c": [
+                {
+                 "id": "abenbdl_draft_action_abexas",
+                 "en": "RAP - Examples of Draft Actions",
+                 "slug": "rap-examples-of-draft-actions",
+                 "c": [
+                  {
+                   "id": "abenbdl_draft_action1_abexa",
+                   "en": "RAP - Draft Action Activate",
+                   "slug": "rap-draft-action-activate"
+                  },
+                  {
+                   "id": "abenbdl_draft_action2_abexa",
+                   "en": "RAP - Draft Actions Edit, Discard, Prepare",
+                   "slug": "rap-draft-actions-edit-discard-prepare"
+                  }
+                 ]
+                }
+               ]
+              },
+              {
+               "id": "abenbdl_operations_additions",
+               "en": "RAP - RAP BO Operation, Additions",
+               "slug": "rap-rap-bo-operation-additions",
+               "c": [
+                {
+                 "id": "abenbdl_actions_auth",
+                 "en": "RAP - authorization:none",
+                 "slug": "rap-authorization-none"
+                },
+                {
+                 "id": "abenbdl_actions_auth_update",
+                 "en": "RAP - authorization:update",
+                 "slug": "rap-authorization-update"
+                },
+                {
+                 "id": "abenbdl_actions_auth_global",
+                 "en": "RAP - authorization:global",
+                 "slug": "rap-authorization-global"
+                },
+                {
+                 "id": "abenbdl_actions_auth_instance",
+                 "en": "RAP - authorization:instance",
+                 "slug": "rap-authorization-instance"
+                },
+                {
+                 "id": "abenbdl_external",
+                 "en": "RAP - external",
+                 "slug": "rap-external"
+                },
+                {
+                 "id": "abenbdl_actions_fc",
+                 "en": "RAP - feature control",
+                 "slug": "rap-feature-control"
+                },
+                {
+                 "id": "abenbdl_internal",
+                 "en": "RAP - internal",
+                 "slug": "rap-internal"
+                },
+                {
+                 "id": "abenbdl_lock_none",
+                 "en": "RAP - lock:none",
+                 "slug": "rap-lock-none"
+                },
+                {
+                 "id": "abenbdl_static",
+                 "en": "RAP - static",
+                 "slug": "rap-static"
+                },
+                {
+                 "id": "abenbdl_precheck",
+                 "en": "RAP - precheck",
+                 "slug": "rap-precheck"
+                },
+                {
+                 "id": "abenbdl_action_input_param",
+                 "en": "RAP - InputParameter",
+                 "slug": "rap-inputparameter"
+                },
+                {
+                 "id": "abenbdl_action_output_para",
+                 "en": "RAP - OutputParameter",
+                 "slug": "rap-outputparameter"
+                },
+                {
+                 "id": "abenbdl_default_function",
+                 "en": "RAP - default function",
+                 "slug": "rap-default-function"
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "id": "abenbdl_validations",
+             "en": "RAP - validation",
+             "slug": "rap-validation",
+             "c": [
+              {
+               "id": "abenbdl_validation_abexa",
+               "en": "RAP - Validation",
+               "slug": "rap-validation-abenbdl_validation_abexa"
+              }
+             ]
+            },
+            {
+             "id": "abenbdl_determinations",
+             "en": "RAP - determination",
+             "slug": "rap-determination",
+             "c": [
+              {
+               "id": "abenbdl_determination_abexa",
+               "en": "RAP - Determination",
+               "slug": "rap-determination-abenbdl_determination_abexa"
+              }
+             ]
+            },
+            {
+             "id": "abenbdl_recommendations",
+             "en": "RAP - recommendation function",
+             "slug": "rap-recommendation-function"
+            },
+            {
+             "id": "abenbdl_event_overview",
+             "en": "RAP - Events",
+             "slug": "rap-events",
+             "c": [
+              {
+               "id": "abenbdl_event",
+               "en": "RAP - event",
+               "slug": "rap-event"
+              },
+              {
+               "id": "abenbdl_managed_event",
+               "en": "RAP - managed event",
+               "slug": "rap-managed-event"
+              },
+              {
+               "id": "abenbdl_event_side_effect",
+               "en": "RAP - event for side effects",
+               "slug": "rap-event-for-side-effects"
+              }
+             ]
+            },
+            {
+             "id": "abenbdl_side_effects",
+             "en": "RAP - side effects",
+             "slug": "rap-side-effects",
+             "c": [
+              {
+               "id": "abenbdl_side_effects_target",
+               "en": "RAP - side effect, Targets",
+               "slug": "rap-side-effect-targets"
+              }
+             ]
+            },
+            {
+             "id": "abenbdl_changedocs_options",
+             "en": "RAP - changedocuments, Options",
+             "slug": "rap-changedocuments-options"
+            },
+            {
+             "id": "abenbdl_instance_hierarchy",
+             "en": "RAP - instance hierarchy",
+             "slug": "rap-instance-hierarchy",
+             "c": [
+              {
+               "id": "abenbdl_copy_action",
+               "en": "RAP - copy action",
+               "slug": "rap-copy-action"
+              },
+              {
+               "id": "abenbdl_reorder_action",
+               "en": "RAP - reorder action",
+               "slug": "rap-reorder-action"
+              }
+             ]
+            },
+            {
+             "id": "abenbdl_define_key",
+             "en": "RAP - BDEF Alternative Key",
+             "slug": "rap-bdef-alternative-key"
+            },
+            {
+             "id": "abenbdl_type_mapping",
+             "en": "RAP - TypeMapping",
+             "slug": "rap-typemapping"
+            },
+            {
+             "id": "abenbdl_grouping",
+             "en": "RAP - group",
+             "slug": "rap-group"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "id": "abenbdl_authorization_context",
+         "en": "RAP - AuthorizationContext",
+         "slug": "rap-authorizationcontext",
+         "c": [
+          {
+           "id": "abenbdl_def_own_auth_context",
+           "en": "RAP - define own authorization context",
+           "slug": "rap-define-own-authorization-context"
+          },
+          {
+           "id": "abenbdl_def_auth_context",
+           "en": "RAP - define authorization context",
+           "slug": "rap-define-authorization-context"
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "id": "abenbdl_rap_bo_interface",
+       "en": "RAP - Interface Behavior Definition",
+       "slug": "rap-interface-behavior-definition",
+       "c": [
+        {
+         "id": "abenbdl_bo_interface_header",
+         "en": "RAP - Behavior Definition Header, Interface BDEF",
+         "slug": "rap-behavior-definition-header-interface-bdef"
+        },
+        {
+         "id": "abenbdl_define_beh_interface",
+         "en": "RAP - EntityBehaviorDefinition, Interface BDEF",
+         "slug": "rap-entitybehaviordefinition-interface-bdef",
+         "c": [
+          {
+           "id": "abenbdl_body_interface",
+           "en": "RAP - EntityBehaviorBody, Interface BDEF",
+           "slug": "rap-entitybehaviorbody-interface-bdef",
+           "c": [
+            {
+             "id": "abenbdl_field_interface",
+             "en": "RAP - FieldCharacteristics, Interface BDEF",
+             "slug": "rap-fieldcharacteristics-interface-bdef"
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "id": "abenbdl_projection_bo",
+       "en": "RAP - Projection Behavior Definitions",
+       "slug": "rap-projection-behavior-definitions",
+       "c": [
+        {
+         "id": "abenbdl_bdef_projection_header",
+         "en": "RAP - BehaviorDefinitionHeader, Projection BDEF",
+         "slug": "rap-behaviordefinitionheader-projection-bdef",
+         "c": [
+          {
+           "id": "abenbdl_mngd_instance_check_proj",
+           "en": "RAP - with managed instance filter",
+           "slug": "rap-with-managed-instance-filter"
+          }
+         ]
+        },
+        {
+         "id": "abenbdl_define_beh_projection",
+         "en": "RAP - EntityBehaviorDefinition, Projection BDEF",
+         "slug": "rap-entitybehaviordefinition-projection-bdef",
+         "c": [
+          {
+           "id": "abenbdl_character_projection",
+           "en": "RAP - EntityBehaviorCharacteristics, Projection BDEF",
+           "slug": "rap-entitybehaviorcharacteristics-projection-bdef",
+           "c": [
+            {
+             "id": "abenbdl_authorization_projection",
+             "en": "RAP - authorization, Projection BDEF",
+             "slug": "rap-authorization-projection-bdef"
+            }
+           ]
+          },
+          {
+           "id": "abenbdl_body_projection",
+           "en": "RAP - EntityBehaviorBody, Projection BDEF",
+           "slug": "rap-entitybehaviorbody-projection-bdef",
+           "c": [
+            {
+             "id": "abenbdl_field_projection",
+             "en": "RAP - FieldCharacteristics, Projection BDEF",
+             "slug": "rap-fieldcharacteristics-projection-bdef"
+            },
+            {
+             "id": "abenbdl_field_augment",
+             "en": "RAP - FieldAugmentation, Projection BDEF",
+             "slug": "rap-fieldaugmentation-projection-bdef"
+            },
+            {
+             "id": "abenbdl_use_projection",
+             "en": "RAP - use, Projection and Interface BDEF",
+             "slug": "rap-use-projection-and-interface-bdef",
+             "c": [
+              {
+               "id": "abenbdl_augment_projection",
+               "en": "RAP - augment",
+               "slug": "rap-augment",
+               "c": [
+                {
+                 "id": "abenbdl_augment_abexa",
+                 "en": "RAP - Operation Augmentation",
+                 "slug": "rap-operation-augmentation"
+                }
+               ]
+              },
+              {
+               "id": "abenbdl_redefine_param",
+               "en": "RAP - RedefinedParameter",
+               "slug": "rap-redefinedparameter",
+               "c": [
+                {
+                 "id": "abenbdl_redef_param_abexa",
+                 "en": "RAP - Reuse with Redefined Parameter",
+                 "slug": "rap-reuse-with-redefined-parameter"
+                }
+               ]
+              },
+              {
+               "id": "abenbdl_use_default_function",
+               "en": "RAP - use DefaultValuesFunction",
+               "slug": "rap-use-defaultvaluesfunction"
+              },
+              {
+               "id": "abenbdl_dependent_draft_abexa",
+               "en": "RAP - Draft Scope",
+               "slug": "rap-draft-scope"
+              }
+             ]
+            },
+            {
+             "id": "abenbdl_nonstandard_projection",
+             "en": "RAP - action, Projection BDEF",
+             "slug": "rap-action-projection-bdef"
+            },
+            {
+             "id": "abenbdl_function_projection",
+             "en": "RAP - function, Projection BDEF",
+             "slug": "rap-function-projection-bdef"
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "id": "abenbdl_abstract",
+       "en": "RAP - Abstract Behavior Definitions",
+       "slug": "rap-abstract-behavior-definitions",
+       "c": [
+        {
+         "id": "abenbdl_bdef_abstract_header",
+         "en": "RAP - Behavior Definition Header, Abstract BDEF",
+         "slug": "rap-behavior-definition-header-abstract-bdef"
+        },
+        {
+         "id": "abenbdl_define_beh_abstract",
+         "en": "RAP - Entity Behavior Definition, Abstract BDEF",
+         "slug": "rap-entity-behavior-definition-abstract-bdef",
+         "c": [
+          {
+           "id": "abenbdl_body_abstract",
+           "en": "RAP - Entity Behavior Body, Abstract BDEF",
+           "slug": "rap-entity-behavior-body-abstract-bdef",
+           "c": [
+            {
+             "id": "abenbdl_field_abstract",
+             "en": "RAP - Field Characteristics, Abstract BDEF",
+             "slug": "rap-field-characteristics-abstract-bdef"
+            },
+            {
+             "id": "abenbdl_association_abstract",
+             "en": "RAP - Associations, Abstract BDEF",
+             "slug": "rap-associations-abstract-bdef"
+            },
+            {
+             "id": "abenbdl_type_mapping_abstract",
+             "en": "RAP - Mapping, Abstract BDEF",
+             "slug": "rap-mapping-abstract-bdef"
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "id": "abenbdl_extension",
+       "en": "RAP - BDEF Extension",
+       "slug": "rap-bdef-extension",
+       "c": [
+        {
+         "id": "abenbdl_extensibility_enabling",
+         "en": "RAP - BDEF Extension, Extensibility Enabling",
+         "slug": "rap-bdef-extension-extensibility-enabling",
+         "c": [
+          {
+           "id": "abenbdl_extensibility_enabling_m_u",
+           "en": "RAP - Extensibility Enabling for Base BOs",
+           "slug": "rap-extensibility-enabling-for-base-bos",
+           "c": [
+            {
+             "id": "abenbdl_with_friends",
+             "en": "RAP - with friends",
+             "slug": "rap-with-friends"
+            }
+           ]
+          },
+          {
+           "id": "abenbdl_extensibility_enablng_intf",
+           "en": "RAP - Extensibility Enabling for RAP BO Interfaces",
+           "slug": "rap-extensibility-enabling-for-rap-bo-interfaces"
+          },
+          {
+           "id": "abenbdl_ext_enabling_projection",
+           "en": "RAP - Extensibility Enabling for Projection BDEFs",
+           "slug": "rap-extensibility-enabling-for-projection-bdefs"
+          },
+          {
+           "id": "abenbdl_ext_enabling_abstract",
+           "en": "RAP - Extensibility Enabling for Abstract BDEFs",
+           "slug": "rap-extensibility-enabling-for-abstract-bdefs"
+          },
+          {
+           "id": "abenbdl_extensibility_enabling_ext",
+           "en": "RAP - Extensibility Enabling for BDEF Extensions",
+           "slug": "rap-extensibility-enabling-for-bdef-extensions",
+           "c": [
+            {
+             "id": "abenbdl_ext_enabl_ext_base",
+             "en": "RAP - Extensibility Enabling for Base BDEF Extensions",
+             "slug": "rap-extensibility-enabling-for-base-bdef-extensions"
+            },
+            {
+             "id": "abenbdl_ext_enabl_ext_proj",
+             "en": "RAP - Extensibility Enabling for Projection BDEF Extensions",
+             "slug": "rap-extensibility-enabling-for-projection-bdef-extensions"
+            },
+            {
+             "id": "abenbdl_ext_enabl_ext_abs",
+             "en": "RAP - Extensibility Enabling for Abstract BDEF Extensions",
+             "slug": "rap-extensibility-enabling-for-abstract-bdef-extensions"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "id": "abenbdl_extensibility_managed_unm",
+         "en": "RAP - Base BDEF Extension",
+         "slug": "rap-base-bdef-extension",
+         "c": [
+          {
+           "id": "abenbdl_extension_syntax",
+           "en": "RAP - extension",
+           "slug": "rap-extension",
+           "c": [
+            {
+             "id": "abenbdl_using_interface",
+             "en": "RAP - using interface, Extension",
+             "slug": "rap-using-interface-extension",
+             "c": [
+              {
+               "id": "abenbdl_using_interface_abexa",
+               "en": "RAP - RAP BO Extension Using Interface",
+               "slug": "rap-rap-bo-extension-using-interface"
+              }
+             ]
+            },
+            {
+             "id": "abenbdl_extension_header",
+             "en": "RAP - ExtensionHeader",
+             "slug": "rap-extensionheader",
+             "c": [
+              {
+               "id": "abenbdl_in_class_unique_ext",
+               "en": "RAP - implementation in class unique, Extension",
+               "slug": "rap-implementation-in-class-unique-extension"
+              },
+              {
+               "id": "abenbdl_privileged_mode_extension",
+               "en": "RAP - with privileged mode, Extension",
+               "slug": "rap-with-privileged-mode-extension"
+              }
+             ]
+            },
+            {
+             "id": "abenbdl_extend_beh",
+             "en": "RAP - EntityBehaviorExtension",
+             "slug": "rap-entitybehaviorextension",
+             "c": [
+              {
+               "id": "abenbdl_entity_beh_extension",
+               "en": "RAP - ExtensionBody",
+               "slug": "rap-extensionbody",
+               "c": [
+                {
+                 "id": "abenbdl_new_elem_ext",
+                 "en": "RAP - Adding Elements",
+                 "slug": "rap-adding-elements",
+                 "c": [
+                  {
+                   "id": "abenbdl_field_ext_abexa",
+                   "en": "RAP - Field Extension",
+                   "slug": "rap-field-extension"
+                  },
+                  {
+                   "id": "abenbdl__behavior_ext_abexa",
+                   "en": "RAP - Behavior Extension",
+                   "slug": "rap-behavior-extension"
+                  }
+                 ]
+                },
+                {
+                 "id": "abenbdl_ext_elem_ext",
+                 "en": "RAP - Extending Elements",
+                 "slug": "rap-extending-elements",
+                 "c": [
+                  {
+                   "id": "abenbdl_determine_action_ext",
+                   "en": "RAP - extend determine action",
+                   "slug": "rap-extend-determine-action",
+                   "c": [
+                    {
+                     "id": "abenbdl_det_action_ext_abexa",
+                     "en": "RAP - Extend Determine Action",
+                     "slug": "rap-extend-determine-action-abenbdl_det_action_ext_abexa"
+                    }
+                   ]
+                  },
+                  {
+                   "id": "abenbdl_draft_action_ext",
+                   "en": "RAP - extend draft determine action Prepare",
+                   "slug": "rap-extend-draft-determine-action-prepare"
+                  },
+                  {
+                   "id": "abenbdl_type_mapping_ext",
+                   "en": "RAP - extend mapping",
+                   "slug": "rap-extend-mapping"
+                  }
+                 ]
+                }
+               ]
+              },
+              {
+               "id": "abenbdl_group_extension",
+               "en": "RAP - group, Extension",
+               "slug": "rap-group-extension"
+              }
+             ]
+            },
+            {
+             "id": "abenbdl_define_beh_extend",
+             "en": "RAP - Extension Entity Behavior Definition",
+             "slug": "rap-extension-entity-behavior-definition",
+             "c": [
+              {
+               "id": "abenbdl_ancestor_ext",
+               "en": "RAP - ancestor association",
+               "slug": "rap-ancestor-association",
+               "c": [
+                {
+                 "id": "abenbdl_assoc_ext_abexa",
+                 "en": "RAP - Node Extension",
+                 "slug": "rap-node-extension"
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "id": "abenbdl_extend_own_auth_context",
+             "en": "RAP - extend own authorization context",
+             "slug": "rap-extend-own-authorization-context"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "id": "abenbdl_extensibility_projection",
+         "en": "RAP - BDEF Projection Extension",
+         "slug": "rap-bdef-projection-extension",
+         "c": [
+          {
+           "id": "abenbdl_extension_for_projection",
+           "en": "RAP - extension for projection",
+           "slug": "rap-extension-for-projection",
+           "c": [
+            {
+             "id": "abenbdl_extend_beh_proj",
+             "en": "RAP - Entity Projection Extension",
+             "slug": "rap-entity-projection-extension",
+             "c": [
+              {
+               "id": "abenbdl_proj_ext_body",
+               "en": "RAP - extension_body, Projection Extension",
+               "slug": "rap-extension-body-projection-extension"
+              }
+             ]
+            },
+            {
+             "id": "abenbdl_proj_ext_entity",
+             "en": "RAP - Projection Extension Entity",
+             "slug": "rap-projection-extension-entity"
+            },
+            {
+             "id": "abenbdl_entity_proj_ext_abexa",
+             "en": "RAP - BDEF Projection Extension, Node Extension",
+             "slug": "rap-bdef-projection-extension-node-extension"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "id": "abenbdl_extensibility_abstract",
+         "en": "RAP - Abstract BDEF Extension",
+         "slug": "rap-abstract-bdef-extension",
+         "c": [
+          {
+           "id": "abenbdl_extension_for_abstract",
+           "en": "RAP - extension for abstract",
+           "slug": "rap-extension-for-abstract"
+          }
+         ]
+        },
+        {
+         "id": "abenbdl_extension_layering",
+         "en": "RAP - Extension Layering",
+         "slug": "rap-extension-layering"
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "abenabap_for_rap_bos",
+   "en": "ABAP for RAP Business Objects",
+   "slug": "abap-for-rap-business-objects",
+   "c": [
+    {
+     "id": "abenabap_provide_rap_bos",
+     "en": "ABAP for Providing RAP Business Objects",
+     "slug": "abap-for-providing-rap-business-objects",
+     "c": [
+      {
+       "id": "abenabap_behavior_pools",
+       "en": "ABAP Behavior Pools (ABP)",
+       "slug": "abap-behavior-pools-abp",
+       "c": [
+        {
+         "id": "abapclass_for_behavior_of",
+         "en": "CLASS, FOR BEHAVIOR OF",
+         "slug": "class-for-behavior-of",
+         "c": [
+          {
+           "id": "abaprap_auxiliary_class",
+           "en": "ABP Auxiliary Class",
+           "slug": "abp-auxiliary-class",
+           "c": [
+            {
+             "id": "abenabp_aux_cl_abexa",
+             "en": "ABP Auxiliary Class",
+             "slug": "abp-auxiliary-class-abenabp_aux_cl_abexa"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "id": "abenabp_handler_class",
+         "en": "RAP Handler Classes and Methods",
+         "slug": "rap-handler-classes-and-methods",
+         "c": [
+          {
+           "id": "abenabp_cl_abap_beh_handler",
+           "en": "CL_ABAP_BEHAVIOR_HANDLER, RAP Handler Class",
+           "slug": "cl-abap-behavior-handler-rap-handler-class"
+          },
+          {
+           "id": "abapmethods_for_rap_behv",
+           "en": "METHODS, FOR, RAP Handler Methods",
+           "slug": "methods-for-rap-handler-methods",
+           "c": [
+            {
+             "id": "abaphandler_meth_det",
+             "en": "FOR DETERMINE, RAP Handler Method",
+             "slug": "for-determine-rap-handler-method"
+            },
+            {
+             "id": "abaphandler_meth_auth",
+             "en": "FOR INSTANCE AUTHORIZATION, AUTHORIZATION, RAP Handler Method",
+             "slug": "for-instance-authorization-authorization-rap-handler-method"
+            },
+            {
+             "id": "abaphandler_meth_features",
+             "en": "FOR INSTANCE FEATURES, FEATURES, RAP Handler Method",
+             "slug": "for-instance-features-features-rap-handler-method"
+            },
+            {
+             "id": "abaphandler_meth_global_auth",
+             "en": "FOR GLOBAL AUTHORIZATION, RAP Handler Method",
+             "slug": "for-global-authorization-rap-handler-method"
+            },
+            {
+             "id": "abaphandler_meth_global_features",
+             "en": "FOR GLOBAL FEATURES, RAP Handler Method",
+             "slug": "for-global-features-rap-handler-method"
+            },
+            {
+             "id": "abaphandler_meth_lock",
+             "en": "FOR LOCK, RAP Handler Method",
+             "slug": "for-lock-rap-handler-method"
+            },
+            {
+             "id": "abaphandler_meth_modify",
+             "en": "FOR MODIFY, RAP Handler Method",
+             "slug": "for-modify-rap-handler-method"
+            },
+            {
+             "id": "abaphandler_meth_numbering",
+             "en": "FOR NUMBERING, RAP Handler Method",
+             "slug": "for-numbering-rap-handler-method"
+            },
+            {
+             "id": "abaphandler_meth_precheck",
+             "en": "FOR PRECHECK, RAP Handler Method",
+             "slug": "for-precheck-rap-handler-method"
+            },
+            {
+             "id": "abaphandler_meth_read",
+             "en": "FOR READ, RAP Handler Method",
+             "slug": "for-read-rap-handler-method",
+             "c": [
+              {
+               "id": "abaprap_handler_default_val_func",
+               "en": "Handler Methods for RAP Default Values Functions",
+               "slug": "handler-methods-for-rap-default-values-functions"
+              }
+             ]
+            },
+            {
+             "id": "abaphandler_meth_validate",
+             "en": "FOR VALIDATE, RAP Handler Method",
+             "slug": "for-validate-rap-handler-method"
+            },
+            {
+             "id": "abenrap_handler_methods_abexa",
+             "en": "Example for RAP Handler Methods",
+             "slug": "example-for-rap-handler-methods"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "id": "abenabp_saver_class",
+         "en": "RAP Saver Class and Methods",
+         "slug": "rap-saver-class-and-methods",
+         "c": [
+          {
+           "id": "abenabp_cl_abap_beh_saver",
+           "en": "CL_ABAP_BEHAVIOR_SAVER, RAP Saver Class",
+           "slug": "cl-abap-behavior-saver-rap-saver-class"
+          },
+          {
+           "id": "abenabp_cl_abap_beh_saver_failed",
+           "en": "CL_ABAP_BEHAVIOR_SAVER_FAILED, RAP Saver Class",
+           "slug": "cl-abap-behavior-saver-failed-rap-saver-class",
+           "c": [
+            {
+             "id": "abencl_abap_beh_saver_failed_abexa",
+             "en": "Example for CL_ABAP_BEHAVIOR_SAVER_FAILED",
+             "slug": "example-for-cl-abap-behavior-saver-failed"
+            }
+           ]
+          },
+          {
+           "id": "abenabp_saver_methods",
+           "en": "RAP Saver Methods",
+           "slug": "rap-saver-methods",
+           "c": [
+            {
+             "id": "abensaver_adjust_numbers",
+             "en": "adjust_numbers, RAP Saver Method",
+             "slug": "adjust-numbers-rap-saver-method"
+            },
+            {
+             "id": "abensaver_check_before_save",
+             "en": "check_before_save, RAP Saver Method",
+             "slug": "check-before-save-rap-saver-method"
+            },
+            {
+             "id": "abensaver_method_cleanup",
+             "en": "cleanup, RAP Saver Method",
+             "slug": "cleanup-rap-saver-method"
+            },
+            {
+             "id": "abapsaver_class_cleanup_finalize",
+             "en": "cleanup_finalize, RAP Saver Method",
+             "slug": "cleanup-finalize-rap-saver-method"
+            },
+            {
+             "id": "abensaver_finalize",
+             "en": "finalize, RAP Saver Method",
+             "slug": "finalize-rap-saver-method"
+            },
+            {
+             "id": "abensaver_map_messages",
+             "en": "map_messages, RAP Saver Method",
+             "slug": "map-messages-rap-saver-method"
+            },
+            {
+             "id": "abensaver_method_save",
+             "en": "save, RAP Saver Method",
+             "slug": "save-rap-saver-method"
+            },
+            {
+             "id": "abaprap_saver_meth_save_modified",
+             "en": "save_modified, RAP Saver Method",
+             "slug": "save-modified-rap-saver-method"
+            },
+            {
+             "id": "abenrap_saver_methods_abexas",
+             "en": "Examples for RAP Saver Methods",
+             "slug": "examples-for-rap-saver-methods",
+             "c": [
+              {
+               "id": "abenabp_saver_class_abexa",
+               "en": "Example for RAP Saver Methods",
+               "slug": "example-for-rap-saver-methods"
+              },
+              {
+               "id": "abenabp_saver_ln_abexa",
+               "en": "Example for RAP Saver Methods (Late Numbering Scenario)",
+               "slug": "example-for-rap-saver-methods-late-numbering-scenario"
+              },
+              {
+               "id": "abensave_modified_add_save_abexa",
+               "en": "Example for save_modified in a Managed RAP BO with Additional Save",
+               "slug": "example-for-save-modified-in-managed-rap-bo-with-additional-save"
+              },
+              {
+               "id": "abensave_modified_unm_save_abexa",
+               "en": "Example for save_modified in a Managed RAP BO with Unmanaged Save",
+               "slug": "example-for-save-modified-in-managed-rap-bo-with-unmanaged-save"
+              },
+              {
+               "id": "abenabp_map_messages_abexa",
+               "en": "Example for RAP Saver Method map_messages",
+               "slug": "example-for-rap-saver-method-map-messages"
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "id": "abeneml_in_abp",
+       "en": "ABAP EML - Providing RAP BOs",
+       "slug": "abap-eml-providing-rap-bos",
+       "c": [
+        {
+         "id": "abapin_local_mode",
+         "en": "ABAP EML - IN LOCAL MODE",
+         "slug": "abap-eml-in-local-mode"
+        },
+        {
+         "id": "abapmodify_aug_entity_entities",
+         "en": "ABAP EML - MODIFY AUGMENTING ENTITY, ENTITIES",
+         "slug": "abap-eml-modify-augmenting-entity-entities",
+         "c": [
+          {
+           "id": "abeneml_modify_augmenting_abexa",
+           "en": "ABAP EML - MODIFY AUGMENTING",
+           "slug": "abap-eml-modify-augmenting"
+          },
+          {
+           "id": "abeneml_modify_augm_relating_abexa",
+           "en": "ABAP EML - MODIFY AUGMENTING, RELATING TO",
+           "slug": "abap-eml-modify-augmenting-relating-to"
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "id": "abapinvalid_stmts_in_rap_methods",
+       "en": "Restrictions in RAP Handler and Saver Methods",
+       "slug": "restrictions-in-rap-handler-and-saver-methods"
+      }
+     ]
+    },
+    {
+     "id": "abenabap_consume_rap_bos",
+     "en": "ABAP for Consuming RAP Business Objects",
+     "slug": "abap-for-consuming-rap-business-objects",
+     "c": [
+      {
+       "id": "abeneml",
+       "en": "ABAP EML - Consuming RAP BOs",
+       "slug": "abap-eml-consuming-rap-bos",
+       "c": [
+        {
+         "id": "abapcommon_eml_elements",
+         "en": "ABAP EML - Common EML Statements and Operands",
+         "slug": "abap-eml-common-eml-statements-and-operands",
+         "c": [
+          {
+           "id": "abapeml_fields_tab",
+           "en": "ABAP EML - fields_tab",
+           "slug": "abap-eml-fields-tab"
+          },
+          {
+           "id": "abapeml_privileged",
+           "en": "ABAP EML - PRIVILEGED",
+           "slug": "abap-eml-privileged",
+           "c": [
+            {
+             "id": "abeneml_privileged_abexa",
+             "en": "Using the PRIVILEGED Addition with an ABAP EML Statement",
+             "slug": "using-privileged-addition-with-abap-eml-statement"
+            },
+            {
+             "id": "abeneml_forwarding_priv_abexa",
+             "en": "Using the FORWARDING PRIVILEGED Addition with an ABAP EML Statement",
+             "slug": "using-forwarding-privileged-addition-with-abap-eml-statement"
+            }
+           ]
+          },
+          {
+           "id": "abapeml_response",
+           "en": "ABAP EML - response_param",
+           "slug": "abap-eml-response-param",
+           "c": [
+            {
+             "id": "abapeml_responses",
+             "en": "response_param, Nondynamic Forms of ABAP EML Statements",
+             "slug": "response-param-nondynamic-forms-of-abap-eml-statements"
+            },
+            {
+             "id": "abapeml_responses_dyn",
+             "en": "response_param, Dynamic Forms of ABAP EML Statements",
+             "slug": "response-param-dynamic-forms-of-abap-eml-statements"
+            },
+            {
+             "id": "abeneml_responses_abexas",
+             "en": "Examples for Responses",
+             "slug": "examples-for-responses",
+             "c": [
+              {
+               "id": "abeneml_responses_abexa",
+               "en": "ABAP EML - Responses",
+               "slug": "abap-eml-responses"
+              },
+              {
+               "id": "abeneml_responses_dyn_abexa",
+               "en": "ABAP EML - Responses (Dynamic Forms of ABAP EML Statements)",
+               "slug": "abap-eml-responses-dynamic-forms-of-abap-eml-statements"
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "id": "abapeml_result",
+           "en": "ABAP EML - RESULT result_tab",
+           "slug": "abap-eml-result-result-tab"
+          }
+         ]
+        },
+        {
+         "id": "abapcommit_entities",
+         "en": "COMMIT ENTITIES",
+         "slug": "commit-entities",
+         "c": [
+          {
+           "id": "abapemlcommit_entities_short",
+           "en": "COMMIT ENTITIES, Short Form",
+           "slug": "commit-entities-short-form"
+          },
+          {
+           "id": "abapemlcommit_entities_long",
+           "en": "COMMIT ENTITIES RESPONSE OF, Long Form",
+           "slug": "commit-entities-response-of-long-form"
+          },
+          {
+           "id": "abapemlcommit_entities_dyn",
+           "en": "COMMIT ENTITIES RESPONSES, Dynamic Form",
+           "slug": "commit-entities-responses-dynamic-form"
+          },
+          {
+           "id": "abapemlcommit_entities_late",
+           "en": "COMMIT ENTITIES BEGIN, END",
+           "slug": "commit-entities-begin-end"
+          },
+          {
+           "id": "abapcommit_entities_simulation",
+           "en": "COMMIT ENTITIES, IN SIMULATION MODE",
+           "slug": "commit-entities-in-simulation-mode"
+          },
+          {
+           "id": "abencommit_entities_abexas",
+           "en": "Examples for ABAP EML COMMIT ENTITIES",
+           "slug": "examples-for-abap-eml-commit-entities",
+           "c": [
+            {
+             "id": "abencommit_entities_sh_lo_abexa",
+             "en": "ABAP EML - COMMIT ENTITIES, Short and Long Form",
+             "slug": "abap-eml-commit-entities-short-and-long-form"
+            },
+            {
+             "id": "abeneml_commit_dyn_abexa",
+             "en": "ABAP EML - COMMIT ENTITIES, Dynamic Form",
+             "slug": "abap-eml-commit-entities-dynamic-form"
+            },
+            {
+             "id": "abencommit_entities_beginend_abexa",
+             "en": "ABAP EML - COMMIT ENTITIES BEGIN, END with CONVERT KEY OF",
+             "slug": "abap-eml-commit-entities-begin-end-with-convert-key-of"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "id": "abapget_permissions",
+         "en": "GET PERMISSIONS",
+         "slug": "get-permissions",
+         "c": [
+          {
+           "id": "abapget_permissions_short",
+           "en": "GET PERMISSIONS, Short Form",
+           "slug": "get-permissions-short-form"
+          },
+          {
+           "id": "abapget_permissions_long",
+           "en": "GET PERMISSIONS OF, Long Form",
+           "slug": "get-permissions-of-long-form"
+          },
+          {
+           "id": "abapget_permissions_dyn",
+           "en": "GET PERMISSIONS OPERATIONS, Dynamic Form",
+           "slug": "get-permissions-operations-dynamic-form"
+          },
+          {
+           "id": "abapget_permissions_only_clause",
+           "en": "GET PERMISSIONS, only_clause",
+           "slug": "get-permissions-only-clause"
+          },
+          {
+           "id": "abapget_permissions_rules",
+           "en": "GET PERMISSIONS, Guidelines",
+           "slug": "get-permissions-guidelines"
+          },
+          {
+           "id": "abenget_permissions_abexas",
+           "en": "Examples for ABAP EML GET PERMISSIONS",
+           "slug": "examples-for-abap-eml-get-permissions",
+           "c": [
+            {
+             "id": "abenget_perm_forms_abexa",
+             "en": "ABAP EML - GET PERMISSIONS, Short and Long Forms",
+             "slug": "abap-eml-get-permissions-short-and-long-forms"
+            },
+            {
+             "id": "abenget_perm_dyn_form_abexa",
+             "en": "ABAP EML - GET PERMISSIONS, Dynamic Form",
+             "slug": "abap-eml-get-permissions-dynamic-form"
+            },
+            {
+             "id": "abenget_perm_only_abexa",
+             "en": "ABAP EML - GET PERMISSIONS, only_clause",
+             "slug": "abap-eml-get-permissions-only-clause"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "id": "abapmodify_entity_entities",
+         "en": "MODIFY ENTITY, ENTITIES",
+         "slug": "modify-entity-entities",
+         "c": [
+          {
+           "id": "abapmodify_entity_short",
+           "en": "MODIFY ENTITY, Short Form",
+           "slug": "modify-entity-short-form"
+          },
+          {
+           "id": "abapmodify_entities_long",
+           "en": "MODIFY ENTITIES, Long Form",
+           "slug": "modify-entities-long-form"
+          },
+          {
+           "id": "abapmodify_entities_operations_dyn",
+           "en": "MODIFY ENTITIES OPERATIONS, Dynamic Form",
+           "slug": "modify-entities-operations-dynamic-form"
+          },
+          {
+           "id": "abapmodify_entity_entities_op",
+           "en": "MODIFY ENTITY, ENTITIES, operations",
+           "slug": "modify-entity-entities-operations",
+           "c": [
+            {
+             "id": "abapmodify_entity_entities_fields",
+             "en": "MODIFY ENTITY, ENTITIES, field_spec",
+             "slug": "modify-entity-entities-field-spec"
+            }
+           ]
+          },
+          {
+           "id": "abapeml_modify_examples_abexas",
+           "en": "Examples for ABAP EML MODIFY",
+           "slug": "examples-for-abap-eml-modify",
+           "c": [
+            {
+             "id": "abeneml_modify_alternatives_abexa",
+             "en": "ABAP EML - MODIFY, Variants",
+             "slug": "abap-eml-modify-variants"
+            },
+            {
+             "id": "abeneml_modify_op_abexa",
+             "en": "ABAP EML - MODIFY, Standard Operations (Managed)",
+             "slug": "abap-eml-modify-standard-operations-managed"
+            },
+            {
+             "id": "abeneml_modify_op_u_abexa",
+             "en": "ABAP EML - MODIFY, Standard Operations (Unmanaged)",
+             "slug": "abap-eml-modify-standard-operations-unmanaged"
+            },
+            {
+             "id": "abeneml_modify_op_fields_abexa",
+             "en": "ABAP EML - MODIFY, Field Specification Expressions",
+             "slug": "abap-eml-modify-field-specification-expressions"
+            },
+            {
+             "id": "abeneml_modify_custom_op_abexa",
+             "en": "ABAP EML - MODIFY, Nonstandard Operations",
+             "slug": "abap-eml-modify-nonstandard-operations"
+            },
+            {
+             "id": "abeneml_calculator_abexa",
+             "en": "ABAP EML - RAP Calculator",
+             "slug": "abap-eml-rap-calculator"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "id": "abapread_entity_entities",
+         "en": "READ ENTITY, ENTITIES",
+         "slug": "read-entity-entities",
+         "c": [
+          {
+           "id": "abapread_entity_short",
+           "en": "READ ENTITY, Short Form",
+           "slug": "read-entity-short-form"
+          },
+          {
+           "id": "abapread_entities_long",
+           "en": "READ ENTITIES, Long Form",
+           "slug": "read-entities-long-form"
+          },
+          {
+           "id": "abapread_entities_operations",
+           "en": "READ ENTITIES OPERATIONS, Dynamic Form",
+           "slug": "read-entities-operations-dynamic-form"
+          },
+          {
+           "id": "abapread_entity_entities_op",
+           "en": "READ ENTITY, ENTITIES, operations",
+           "slug": "read-entity-entities-operations",
+           "c": [
+            {
+             "id": "abapread_entity_entities_fields",
+             "en": "READ ENTITY, ENTITIES, field_spec",
+             "slug": "read-entity-entities-field-spec"
+            }
+           ]
+          },
+          {
+           "id": "abapeml_read_with_changes",
+           "en": "READ ENTITY, ENTITIES, WITH CHANGES",
+           "slug": "read-entity-entities-with-changes"
+          },
+          {
+           "id": "abapeml_read_examples_abexas",
+           "en": "Examples for ABAP EML READ",
+           "slug": "examples-for-abap-eml-read",
+           "c": [
+            {
+             "id": "abeneml_read_alternatives_abexa",
+             "en": "ABAP EML - READ, Variants",
+             "slug": "abap-eml-read-variants"
+            },
+            {
+             "id": "abeneml_read_op_fields_abexa",
+             "en": "ABAP EML - READ, Field Specification Expressions",
+             "slug": "abap-eml-read-field-specification-expressions"
+            },
+            {
+             "id": "abeneml_read_op_func_abexa",
+             "en": "ABAP EML - READ, Operation Executing Functions",
+             "slug": "abap-eml-read-operation-executing-functions"
+            },
+            {
+             "id": "abeneml_read_with_changes_abexa",
+             "en": "ABAP EML - Read Operations Using WITH CHANGES",
+             "slug": "abap-eml-read-operations-using-with-changes"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "id": "abaprollback_entities",
+         "en": "ROLLBACK ENTITIES",
+         "slug": "rollback-entities"
+        },
+        {
+         "id": "abapset_locks",
+         "en": "SET LOCKS",
+         "slug": "set-locks",
+         "c": [
+          {
+           "id": "abapset_locks_entity",
+           "en": "SET LOCKS ENTITY, Short Form",
+           "slug": "set-locks-entity-short-form"
+          },
+          {
+           "id": "abapset_locks_of",
+           "en": "SET LOCKS OF, Long Form",
+           "slug": "set-locks-of-long-form"
+          },
+          {
+           "id": "abapset_locks_dyn",
+           "en": "SET LOCKS lock_tab, Dynamic Form",
+           "slug": "set-locks-lock-tab-dynamic-form"
+          }
+         ]
+        },
+        {
+         "id": "abapconvert_key",
+         "en": "CONVERT KEY",
+         "slug": "convert-key"
+        }
+       ]
+      },
+      {
+       "id": "abenrpm_testing",
+       "en": "ABAP EML - Testing RAP Business Objects",
+       "slug": "abap-eml-testing-rap-business-objects",
+       "c": [
+        {
+         "id": "abapcreate_object_for_testing",
+         "en": "CREATE OBJECT, FOR TESTING",
+         "slug": "create-object-for-testing"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": "abenrpm_derived_types",
+     "en": "BDEF Derived Types",
+     "slug": "bdef-derived-types",
+     "c": [
+      {
+       "id": "abapderived_types_declaration",
+       "en": "Declaring Data Objects and Types with BDEF Derived Types",
+       "slug": "declaring-data-objects-and-types-with-bdef-derived-types"
+      },
+      {
+       "id": "abapderived_types_dynamic",
+       "en": "Using BDEF Derived Types Dynamically",
+       "slug": "using-bdef-derived-types-dynamically"
+      },
+      {
+       "id": "abapderived_types_comp",
+       "en": "Components of BDEF Derived Types",
+       "slug": "components-of-bdef-derived-types",
+       "c": [
+        {
+         "id": "abapderived_types_keys_id",
+         "en": "Components Related to Keys and RAP BO Instance Identification",
+         "slug": "components-related-to-keys-and-rap-bo-instance-identification",
+         "c": [
+          {
+           "id": "abapderived_types_keys_identifiers",
+           "en": "Using Keys and Identifying RAP BO Instances in a Nutshell",
+           "slug": "using-keys-and-identifying-rap-bo-instances-in-nutshell"
+          },
+          {
+           "id": "abapderived_types_cid",
+           "en": "%cid",
+           "slug": "cid"
+          },
+          {
+           "id": "abapderived_types_cid_ref",
+           "en": "%cid_ref",
+           "slug": "cid-ref"
+          },
+          {
+           "id": "abapderived_types_is_draft",
+           "en": "%is_draft",
+           "slug": "is-draft"
+          },
+          {
+           "id": "abapderived_types_key",
+           "en": "%key",
+           "slug": "key"
+          },
+          {
+           "id": "abapderived_types_pid",
+           "en": "%pid",
+           "slug": "pid"
+          },
+          {
+           "id": "abapderived_types_pky",
+           "en": "%pky",
+           "slug": "pky"
+          },
+          {
+           "id": "abapderived_types_pre",
+           "en": "%pre",
+           "slug": "pre"
+          },
+          {
+           "id": "abapderived_types_skey",
+           "en": "%skey",
+           "slug": "skey"
+          },
+          {
+           "id": "abapderived_types_tky",
+           "en": "%tky",
+           "slug": "tky"
+          },
+          {
+           "id": "abapderived_types_tmp",
+           "en": "%tmp",
+           "slug": "tmp"
+          }
+         ]
+        },
+        {
+         "id": "abapderived_types_info",
+         "en": "Components Related to Information Processing",
+         "slug": "components-related-to-information-processing",
+         "c": [
+          {
+           "id": "abapderived_types_element",
+           "en": "%element",
+           "slug": "element"
+          },
+          {
+           "id": "abapderived_types_fail",
+           "en": "%fail",
+           "slug": "fail"
+          },
+          {
+           "id": "abapderived_types_foreign",
+           "en": "%foreign",
+           "slug": "foreign"
+          },
+          {
+           "id": "abapderived_types_global",
+           "en": "%global",
+           "slug": "global"
+          },
+          {
+           "id": "abapderived_types_msg",
+           "en": "%msg",
+           "slug": "msg"
+          },
+          {
+           "id": "abapderived_types_other",
+           "en": "%other",
+           "slug": "other"
+          },
+          {
+           "id": "abapderived_types_own",
+           "en": "%own",
+           "slug": "own"
+          },
+          {
+           "id": "abapderived_types_path",
+           "en": "%path",
+           "slug": "path"
+          },
+          {
+           "id": "abapderived_types_state_area",
+           "en": "%state_area",
+           "slug": "state-area"
+          }
+         ]
+        },
+        {
+         "id": "abapderived_types_misc",
+         "en": "Miscellaneous Components",
+         "slug": "miscellaneous-components",
+         "c": [
+          {
+           "id": "abapderived_types_action",
+           "en": "%action",
+           "slug": "action"
+          },
+          {
+           "id": "abapderived_types_assoc",
+           "en": "%assoc",
+           "slug": "assoc"
+          },
+          {
+           "id": "abapderived_types_chg",
+           "en": "%chg",
+           "slug": "chg"
+          },
+          {
+           "id": "abapderived_types_control",
+           "en": "%control",
+           "slug": "control"
+          },
+          {
+           "id": "abapderived_types_create",
+           "en": "%create",
+           "slug": "create"
+          },
+          {
+           "id": "abapderived_types_data",
+           "en": "%data",
+           "slug": "data-abapderived_types_data"
+          },
+          {
+           "id": "abapderived_types_delete",
+           "en": "%delete",
+           "slug": "delete"
+          },
+          {
+           "id": "abapderived_types_features",
+           "en": "%features",
+           "slug": "features"
+          },
+          {
+           "id": "abapderived_types_field",
+           "en": "%field",
+           "slug": "field"
+          },
+          {
+           "id": "abapderived_types_op",
+           "en": "%op",
+           "slug": "op"
+          },
+          {
+           "id": "abapderived_types_param",
+           "en": "%param",
+           "slug": "param"
+          },
+          {
+           "id": "abapderived_types_perm",
+           "en": "%perm",
+           "slug": "perm"
+          },
+          {
+           "id": "abapderived_types_target",
+           "en": "%target",
+           "slug": "target"
+          },
+          {
+           "id": "abapderived_types_update",
+           "en": "%update",
+           "slug": "update"
+          }
+         ]
+        },
+        {
+         "id": "abapderived_types_secondary_keys",
+         "en": "Secondary Table Keys in BDEF Derived Types",
+         "slug": "secondary-table-keys-in-bdef-derived-types"
+        },
+        {
+         "id": "abapeml_derived_type_flags",
+         "en": "Constants for BDEF Derived Type Components",
+         "slug": "constants-for-bdef-derived-type-components"
+        },
+        {
+         "id": "abenderived_types_abexas",
+         "en": "Examples for BDEF Derived Type Components",
+         "slug": "examples-for-bdef-derived-type-components",
+         "c": [
+          {
+           "id": "abenderived_types_misc_abexa",
+           "en": "BDEF Derived Type Components in the Context of Requesting Permissions",
+           "slug": "bdef-derived-type-components-in-context-of-requesting-permissions"
+          },
+          {
+           "id": "abenderived_types_reported_abexa",
+           "en": "Example for Message-Related BDEF Derived Type Components",
+           "slug": "example-for-message-related-bdef-derived-type-components"
+          },
+          {
+           "id": "abenderived_types_cid_cidref_abexa",
+           "en": "Using %cid / %cid_ref",
+           "slug": "using-cid-cid-ref"
+          },
+          {
+           "id": "abenderived_types_control_abexa",
+           "en": "Using %control",
+           "slug": "using-control"
+          },
+          {
+           "id": "abenderived_types_data_abexa",
+           "en": "Using %data / %target",
+           "slug": "using-data-target"
+          },
+          {
+           "id": "abenderived_types_fail_abexa",
+           "en": "Using %fail",
+           "slug": "using-fail"
+          },
+          {
+           "id": "abenderived_types_isdraft_abexa",
+           "en": "Using %is_draft",
+           "slug": "using-is-draft"
+          },
+          {
+           "id": "abenderived_types_key_abexa",
+           "en": "Using %key",
+           "slug": "using-key"
+          },
+          {
+           "id": "abenderived_types_pid_abexa",
+           "en": "Using %pid",
+           "slug": "using-pid"
+          },
+          {
+           "id": "abenderived_types_pre_tmp_abexa",
+           "en": "Using %pre / %tmp / %pky",
+           "slug": "using-pre-tmp-pky"
+          },
+          {
+           "id": "abenderived_types_tky_abexa",
+           "en": "Using %tky",
+           "slug": "using-tky"
+          },
+          {
+           "id": "abenrap_messages_abexa",
+           "en": "RAP Messages: Transition and State Messages",
+           "slug": "rap-messages-transition-and-state-messages"
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "id": "abaptype_request_for",
+       "en": "TYPE REQUEST FOR",
+       "slug": "type-request-for",
+       "c": [
+        {
+         "id": "abenrap_additional_save_abexa",
+         "en": "ABAP EML - TYPE REQUEST FOR in a Managed RAP BO with Additional Save",
+         "slug": "abap-eml-type-request-for-in-managed-rap-bo-with-additional-save"
+        },
+        {
+         "id": "abenrap_managed_unm_save_abexa",
+         "en": "ABAP EML - TYPE REQUEST FOR in a Managed RAP BO with Unmanaged Save",
+         "slug": "abap-eml-type-request-for-in-managed-rap-bo-with-unmanaged-save"
+        }
+       ]
+      },
+      {
+       "id": "abaptype_response_for",
+       "en": "TYPE RESPONSE FOR",
+       "slug": "type-response-for",
+       "c": [
+        {
+         "id": "abeneml_responses_2_abexa",
+         "en": "ABAP EML - TYPE RESPONSE FOR",
+         "slug": "abap-eml-type-response-for"
+        }
+       ]
+      },
+      {
+       "id": "abaptype_structure_for",
+       "en": "TYPE STRUCTURE FOR",
+       "slug": "type-structure-for"
+      },
+      {
+       "id": "abaptype_table_for",
+       "en": "TYPE TABLE FOR",
+       "slug": "type-table-for",
+       "c": [
+        {
+         "id": "abenderived_type_hierarchy_abexa",
+         "en": "Using TYPE TABLE/TYPE STRUCTURE FOR HIERARCHY",
+         "slug": "using-type-table-type-structure-for-hierarchy"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": "abenrap_events",
+     "en": "ABAP for RAP Business Events",
+     "slug": "abap-for-rap-business-events",
+     "c": [
+      {
+       "id": "abenclass_for_events",
+       "en": "CLASS, FOR EVENTS OF, RAP Event Handler Class",
+       "slug": "class-for-events-of-rap-event-handler-class"
+      },
+      {
+       "id": "abencl_abap_behavior_event_handler",
+       "en": "CL_ABAP_BEHAVIOR_EVENT_HANDLER",
+       "slug": "cl-abap-behavior-event-handler"
+      },
+      {
+       "id": "abenmethod_for_entity_event",
+       "en": "METHODS, FOR ENTITY EVENT",
+       "slug": "methods-for-entity-event"
+      },
+      {
+       "id": "abapraise_entity_event",
+       "en": "RAISE ENTITY EVENT",
+       "slug": "raise-entity-event"
+      },
+      {
+       "id": "abenrap_events_local_con_abexa",
+       "en": "Local Consumption of RAP Business Events (Database Table Modification)",
+       "slug": "local-consumption-of-rap-business-events-database-table-modification"
+      }
+     ]
+    },
+    {
+     "id": "abenabap_rap_other",
+     "en": "Other RAP-Related ABAP Language Elements and Topics",
+     "slug": "other-rap-related-abap-language-elements-and-topics",
+     "c": [
+      {
+       "id": "abapeml_type_mapping",
+       "en": "Type Mapping for RAP",
+       "slug": "type-mapping-for-rap",
+       "c": [
+        {
+         "id": "abapeml_corresponding",
+         "en": "CORRESPONDING, Type Mapping for ABAP EML",
+         "slug": "corresponding-type-mapping-for-abap-eml",
+         "c": [
+          {
+           "id": "abeneml_type_mapping_abexa",
+           "en": "ABAP EML - CORRESPONDING, Type Mapping",
+           "slug": "abap-eml-corresponding-type-mapping"
+          }
+         ]
+        },
+        {
+         "id": "abapmapping_from_entity",
+         "en": "ABAP SQL Statements with MAPPING FROM ENTITY",
+         "slug": "abap-sql-statements-with-mapping-from-entity",
+         "c": [
+          {
+           "id": "abensql_mapping_from_entity_abexa",
+           "en": "ABAP SQL Statements with the Addition MAPPING FROM ENTITY",
+           "slug": "abap-sql-statements-with-addition-mapping-from-entity"
+          }
+         ]
+        },
+        {
+         "id": "abapset_flags",
+         "en": "SET FLAGS",
+         "slug": "set-flags",
+         "c": [
+          {
+           "id": "abeneml_set_flags_abexa",
+           "en": "ABAP EML - Variants of SET FLAGS",
+           "slug": "abap-eml-variants-of-set-flags"
+          }
+         ]
+        },
+        {
+         "id": "abapset_names",
+         "en": "SET NAMES",
+         "slug": "set-names",
+         "c": [
+          {
+           "id": "abeneml_set_names_abexa",
+           "en": "ABAP EML - Variants of SET NAMES",
+           "slug": "abap-eml-variants-of-set-names"
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "id": "abaprap_system_classes",
+       "en": "RAP-Related System Classes and Functionality",
+       "slug": "rap-related-system-classes-and-functionality",
+       "c": [
+        {
+         "id": "abaprap_cl_abap_behv_aux",
+         "en": "CL_ABAP_BEHV_AUX",
+         "slug": "cl-abap-behv-aux",
+         "c": [
+          {
+           "id": "abenrap_cl_abap_behv_aux_abexa",
+           "en": "Getting RAP Context Information Using CL_ABAP_BEHV_AUX",
+           "slug": "getting-rap-context-information-using-cl-abap-behv-aux"
+          },
+          {
+           "id": "abenrap_cl_abap_behv_aux_ph_abexa",
+           "en": "Checking RAP Transactional Phases",
+           "slug": "checking-rap-transactional-phases"
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "id": "abaprap_impl_rules",
+       "en": "RAP Implementation Rules",
+       "slug": "rap-implementation-rules"
+      },
+      {
+       "id": "abapeml_examples_abexas",
+       "en": "RAP Examples",
+       "slug": "rap-examples",
+       "c": [
+        {
+         "id": "abensheet_rap_ext_num_m_abexa",
+         "en": "ABAP EML in Use: Managed RAP BO with External Numbering",
+         "slug": "abap-eml-in-use-managed-rap-bo-with-external-numbering"
+        },
+        {
+         "id": "abensheet_rap_ext_num_u_abexa",
+         "en": "ABAP EML in Use: Unmanaged RAP BO with External Numbering",
+         "slug": "abap-eml-in-use-unmanaged-rap-bo-with-external-numbering"
+        },
+        {
+         "id": "abensheet_rap_calc_dr_ln_m_abexa",
+         "en": "RAP Calculator: Managed, Draft-Enabled RAP BO with Late Numbering",
+         "slug": "rap-calculator-managed-draft-enabled-rap-bo-with-late-numbering"
+        },
+        {
+         "id": "abenrap_luw_abexa",
+         "en": "Transactional Phases in a RAP Transaction",
+         "slug": "transactional-phases-in-rap-transaction"
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "abenrap_glossary",
+   "en": "RAP Glossary",
+   "slug": "rap-glossary"
+  }
+ ]
+}
