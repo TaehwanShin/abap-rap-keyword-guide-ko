@@ -6,7 +6,7 @@ keywords: interface, 인터페이스, RAP BO interface, interface behavior defin
 
 ## 설명
 
-**RAP BO interface**는 다른 쪽이 오래 안정되게 쓸 수 있도록 내놓는 RAP business object(비즈니스 객체)입니다. 보통 C1 계약으로 릴리스된 API 로 공개합니다. 확장할 수 있도록 C0 계약으로 릴리스하기도 합니다.
+**RAP BO interface** 는 다른 쪽이 오래 안정되게 쓸 수 있도록 내놓는 RAP business object(비즈니스 객체)입니다. 보통 C1 계약으로 릴리스된 API 로 공개합니다. 확장할 수 있도록 C0 계약으로 릴리스하기도 합니다.
 
 RAP BO interface 는 두 가지로 이뤄집니다.
 

@@ -18,17 +18,17 @@ repeatable 작업의 BDEF derived type(BDEF 파생 타입)에는 구성요소 [[
 
 ### repeatable action
 
-`repeatable` 을 붙일 수 있는 action 은 **factory 가 아니고 인스턴스에 묶인 action**뿐입니다. 다른 action 에는 붙이면 안 됩니다. 까닭은 이렇습니다.
+`repeatable` 을 붙일 수 있는 action 은 **factory 가 아니고 인스턴스에 묶인 action** 뿐입니다. 다른 action 에는 붙이면 안 됩니다. 까닭은 이렇습니다.
 
-- **factory action**은 원래 반복할 수 있어서 따로 선언할 필요가 없습니다. factory action 의 BDEF derived type 에 이미 `%cid` 가 있고 여러 번 실행할 수 있습니다.
-- **[[abenbdl_static|정적]] action**도 원래 반복할 수 있어서 따로 선언할 필요가 없습니다. static action 은 `%cid` 로 식별하고 여러 번 실행할 수 있습니다.
-- **draft action**은 한 요청 안에서 같은 draft 인스턴스에 여러 번 실행하면 안 됩니다. 쓸모가 없고 지원하지도 않습니다.
+- **factory action** 은 원래 반복할 수 있어서 따로 선언할 필요가 없습니다. factory action 의 BDEF derived type 에 이미 `%cid` 가 있고 여러 번 실행할 수 있습니다.
+- **[[abenbdl_static|정적]] action** 도 원래 반복할 수 있어서 따로 선언할 필요가 없습니다. static action 은 `%cid` 로 식별하고 여러 번 실행할 수 있습니다.
+- **draft action** 은 한 요청 안에서 같은 draft 인스턴스에 여러 번 실행하면 안 됩니다. 쓸모가 없고 지원하지도 않습니다.
 
 그 밖의 규칙과 붙일 수 있는 [[abenbdl_operations_additions|작업 추가 구문]]은 non-factory action 과 같습니다([[abenbdl_action_nonfactory]]). 다른 점은 하나뿐입니다. repeatable action 에는 `static` 을 쓸 수 없습니다.
 
 ### repeatable function
 
-`repeatable` 을 붙일 수 있는 function 은 **인스턴스에 묶인 function**뿐입니다. static function 은 원래 반복할 수 있고 `%cid` 로 식별합니다. 그래서 static function 에는 `repeatable` 을 적을 필요가 없고, 적을 수도 없습니다.
+`repeatable` 을 붙일 수 있는 function 은 **인스턴스에 묶인 function** 뿐입니다. static function 은 원래 반복할 수 있고 `%cid` 로 식별합니다. 그래서 static function 에는 `repeatable` 을 적을 필요가 없고, 적을 수도 없습니다.
 
 그 밖의 규칙과 붙일 수 있는 작업 추가 구문은 function 과 같습니다([[abenbdl_function]]). 여기서도 다른 점은 하나뿐입니다. repeatable function 에는 `static` 을 쓸 수 없습니다.
 

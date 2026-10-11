@@ -113,7 +113,7 @@ COMMIT ENTITIES.
 ### 실행하면
 
 - **한꺼번에 생성**: composition 트리의 entity(엔터티)마다 인스턴스를 하나씩 만듭니다. extension 노드도 여기에 들어갑니다.
-- **extension 노드 수정**: 수정 작업의 instance 권한 확인은 **원본 BO 의 behavior pool**에 구현된 것이 실행됩니다. 확인을 통과해 수정이 성공합니다.
+- **extension 노드 수정**: 수정 작업의 instance 권한 확인은 **원본 BO 의 behavior pool** 에 구현된 것이 실행됩니다. 확인을 통과해 수정이 성공합니다.
 - 원문 프로그램은 entity 데이터를 담는 테이블 다섯 개의 내용을 모두 보여 줍니다.
 
 ## 알아두기

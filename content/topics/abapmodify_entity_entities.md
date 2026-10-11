@@ -43,7 +43,7 @@ MODIFY ENTITIES [IN LOCAL MODE|[FORWARDING] PRIVILEGED] OPERATIONS op_tab [respo
 
 `MODIFY` 문은 RAP BO consumer(사용자) 쪽에서 쓰든 provider(제공자) 쪽에서 쓰든, handler method(핸들러 메서드) `FOR MODIFY` 를 부릅니다.
 
-변경이 언제나 되는 것은 아닙니다. behavior definition(동작 정의)에 적힌 조건이 변경을 막을 수 있습니다. (전역 또는 인스턴스) 권한과 feature control(기능 제어), 잠금, ETag, precheck 가 그런 조건입니다.
+변경이 언제나 되는 것은 아닙니다. behavior definition(동작 정의)에 적힌 조건이 변경을 막을 수 있습니다. (global 또는 instance) 권한과 feature control(기능 제어), 잠금, ETag, precheck 가 그런 조건입니다.
 
 ## 예제
 

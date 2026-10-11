@@ -6,7 +6,7 @@ keywords: action, parameter, 입력 매개변수, input parameter, %param, abstr
 
 ## 설명
 
-managed RAP BO 에서 **입력 매개변수가 있는 action**을 선언하고, 구현하고, 실행하는 예제입니다. 원문은 구매 주문 항목을 나타내는 root entity(루트 엔터티) 하나짜리 데모 모델을 쓰고, 입력으로 받은 할인율만큼 항목 가격을 깎습니다. 여기서는 같은 내용을 `Travel` 의 `TotalPrice` 로 옮겨 적습니다.
+managed RAP BO 에서 **입력 매개변수가 있는 action** 을 선언하고, 구현하고, 실행하는 예제입니다. 원문은 구매 주문 항목을 나타내는 root entity(루트 엔터티) 하나짜리 데모 모델을 쓰고, 입력으로 받은 할인율만큼 항목 가격을 깎습니다. 여기서는 같은 내용을 `Travel` 의 `TotalPrice` 로 옮겨 적습니다.
 
 action `deductDiscount` 는 이렇게 생겼습니다.
 

@@ -32,7 +32,7 @@ persistent table 은 RAP BO 가 바탕으로 삼는 DDIC 데이터베이스 테�
 **[[abenbdl_with_draft|draft 를 켠]] RAP BO 에 `total etag` 필드가 있을 때**
 
 - persistent table 에 BO 인스턴스가 바뀔 때마다 갱신되는 필드가 있어야 합니다. `etag master` 필드와는 **다른** 필드여야 합니다.
-- `total etag` 필드는 [[abenbdl_locking|lock master entity]]에 있어야 합니다.
+- `total etag` 필드는 [[abenbdl_locking|lock master entity]] 에 있어야 합니다.
 - 이 필드가 타임스탬프이고 CDS 데이터 모델에서 `@Semantics.systemDateTime.lastChangedAt` 주석을 달았다면 RAP 프레임워크가 알아서 갱신합니다.
 
 **기본 키 필드가 `raw(16)` (UUID) 일 때**

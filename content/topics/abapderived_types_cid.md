@@ -18,7 +18,7 @@ keywords: %cid, content ID, 내용 ID, ABP_BEHV_CID, AUTO FILL CID, %cid_ref, �
 - 직접 적기 : `%cid = 'cid1'` 처럼 값을 줍니다.
 - 자동으로 채우기 : `MODIFY` 문에 [[abapmodify_entity_entities_fields|AUTO FILL CID]] 를 붙이면 `%cid` 가 자동으로 만들어져, 빠뜨릴 일이 없습니다. 다만 `%cid_ref` 는 자동으로 만든 값을 가리킬 수 없습니다. `%cid_ref` 를 쓸 생각이면 `%cid` 를 직접 적어야 합니다.
 
-`%cid` 를 가리키는 다른 작업이 없더라도 `%cid` 는 적어 두는 것이 좋습니다. 특히 [[abenbdl_early_numb|early numbering]] 과 [[abenbdl_late_numbering|late numbering]]에서는 문제가 생기지 않도록 반드시 적습니다.
+`%cid` 를 가리키는 다른 작업이 없더라도 `%cid` 는 적어 두는 것이 좋습니다. 특히 [[abenbdl_early_numb|early numbering]] 과 [[abenbdl_late_numbering|late numbering]] 에서는 문제가 생기지 않도록 반드시 적습니다.
 
 ### 타입
 
@@ -60,7 +60,7 @@ ENDLOOP.
 ## 알아두기
 
 - `%cid` 를 빠뜨리면 런타임 오류가 날 수 있습니다. [[abaprap_impl_rules]] 를 참고합니다.
-- **static action**에서는 `%cid` 의 역할이 다릅니다. factory action(static factory action 도 포함)에서는 위에서 설명한 대로 새 인스턴스의 이름표입니다. factory 가 아닌 static action 에서는 `%cid` 가 **작업 ID** 구실을 하며, RAP [[abaptype_response_for|응답]]에서 그 작업을 가리킬 때 씁니다.
+- **static action** 에서는 `%cid` 의 역할이 다릅니다. factory action(static factory action 도 포함)에서는 위에서 설명한 대로 새 인스턴스의 이름표입니다. factory 가 아닌 static action 에서는 `%cid` 가 **작업 ID** 구실을 하며, RAP [[abaptype_response_for|응답]]에서 그 작업을 가리킬 때 씁니다.
 
 ## 관련 항목
 

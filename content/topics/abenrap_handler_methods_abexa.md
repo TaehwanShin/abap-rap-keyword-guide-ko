@@ -6,7 +6,7 @@ keywords: RAP handler methods example, 핸들러 메서드 예제, unmanaged, �
 
 ## 설명
 
-원문 예제는 **unmanaged**이면서 **draft 를 쓰는** RAP BO 로 여러 handler method(핸들러 메서드)를 한꺼번에 보여 줍니다. 실제 업무를 흉내 낸 것이 아닙니다. handler method 를 직접 구현할 때 매개변수를 어떻게 다루는지 기술적인 면만 보여 줍니다.
+원문 예제는 **unmanaged** 이면서 **draft 를 쓰는** RAP BO 로 여러 handler method(핸들러 메서드)를 한꺼번에 보여 줍니다. 실제 업무를 흉내 낸 것이 아닙니다. handler method 를 직접 구현할 때 매개변수를 어떻게 다루는지 기술적인 면만 보여 줍니다.
 
 - 데이터 모델은 root entity(루트 엔터티)와 child entity(자식 엔터티) 하나씩입니다. composition 으로 이어져 있습니다.
 - behavior definition(동작 정의)는 `unmanaged`, `strict(2)`, `with draft` 이고, root entity 에 early numbering, global·instance 권한, global·instance feature control(기능 제어), action 넷, function 셋, validation 하나, determination 둘, draft action 을 선언합니다.

@@ -12,7 +12,7 @@ keywords: internal, 내부 작업, 내부 전용, internal action, 동작 풀, I
 
 ## 설명
 
-`internal` 을 붙인 작업은 **behavior pool(동작 풀) 안에서만** 부를 수 있습니다. 예를 들어 [[abenbdl_action|action]], [[abenbdl_validations|validation]], [[abenbdl_determinations|determination]]의 구현 안에서 부릅니다. 바깥의 RAP BO consumer(사용자)가 internal 작업을 실행하려 하면 런타임 오류가 납니다.
+`internal` 을 붙인 작업은 **behavior pool(동작 풀) 안에서만** 부를 수 있습니다. 예를 들어 [[abenbdl_action|action]], [[abenbdl_validations|validation]], [[abenbdl_determinations|determination]] 의 구현 안에서 부릅니다. 바깥의 RAP BO consumer(사용자)가 internal 작업을 실행하려 하면 런타임 오류가 납니다.
 
 붙일 수 있는 작업은 다음과 같습니다.
 

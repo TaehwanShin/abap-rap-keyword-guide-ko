@@ -6,9 +6,9 @@ keywords: base BDEF extension, 기반 BDEF 확장, extension, extend behavior fo
 
 ## 설명
 
-base BDEF(기반 BDEF) extension(확장)은 구현 타입이 managed이나 unmanaged인 RAP behavior definition(동작 정의)를 확장하는 **저장소 객체**입니다. `extension` 문으로 만듭니다.
+base BDEF(기반 BDEF) extension(확장)은 구현 타입이 managed 나 unmanaged 인 RAP behavior definition(동작 정의)를 확장하는 **저장소 객체**입니다. `extension` 문으로 만듭니다.
 
-먼저 확장당하는 BDEF가 extension 을 명시적으로 허용해야 합니다. 그 방법은 [[abenbdl_extensibility_enabling_m_u]] 에 있습니다.
+먼저 확장당하는 BDEF 가 extension 을 명시적으로 허용해야 합니다. 그 방법은 [[abenbdl_extensibility_enabling_m_u]] 에 있습니다.
 
 base BDEF extension 은 다음 부분으로 이루어집니다.
 
@@ -38,7 +38,7 @@ extend behavior for Travel
 
 ## 알아두기
 
-unmanaged RAP BO의 BDEF extension 에는 다음 제약이 있습니다.
+unmanaged RAP BO 의 BDEF extension 에는 다음 제약이 있습니다.
 
 - additional save 를 정의할 수 없습니다.
 - determination 과 validation 을 정의할 수 없습니다.

@@ -14,7 +14,7 @@ keywords: key function, key ( AlternativeKey ) function, 키 함수, 대체 키,
 
 ## 설명
 
-key function 은 [[abenbdl_define_key|BDEF 대체 키]]에 딸린, 미리 정해진 형태의 [[abenbdl_function|function]]입니다. 대체 키 `AlternativeKey` 의 값을 입력으로 받아, 그 값에 맞는 entity(엔터티) 인스턴스를 돌려줍니다. 기본 키가 아닌 다른 필드로 인스턴스를 찾는 길을 열어 주는 셈입니다.
+key function 은 [[abenbdl_define_key|BDEF 대체 키]]에 딸린, 미리 정해진 형태의 [[abenbdl_function|function]] 입니다. 대체 키 `AlternativeKey` 의 값을 입력으로 받아, 그 값에 맞는 entity(엔터티) 인스턴스를 돌려줍니다. 기본 키가 아닌 다른 필드로 인스턴스를 찾는 길을 열어 주는 셈입니다.
 
 key function 은 예를 들어 RAP 재사용 객체가 끼어 있는, BO 사이의 association 이 있는 RAP BO 에서 read-by-association 을 할 수 있게 하는 데 쓰입니다.
 

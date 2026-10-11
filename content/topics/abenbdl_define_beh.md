@@ -134,7 +134,7 @@ draft table zbooking_d
 
 ## 알아두기
 
-- [[abenbdl_strict|strict mode]]에서는 구성 트리의 behavior definition 에 **빈 곳**이 있으면 안 됩니다. 트리가 1(루트), 2(자식), 3(손자)으로 되어 있을 때 1 과 3 에만 동작을 정의하고 2 를 빼면 빈 곳이 생기므로 허용되지 않습니다.
+- [[abenbdl_strict|strict mode]] 에서는 구성 트리의 behavior definition 에 **빈 곳**이 있으면 안 됩니다. 트리가 1(루트), 2(자식), 3(손자)으로 되어 있을 때 1 과 3 에만 동작을 정의하고 2 를 빼면 빈 곳이 생기므로 허용되지 않습니다.
 - strict mode 에서는 바탕이 되는 CDS entity(`RootEntity`, `ChildEntity1`, `ChildEntity2`, ...)가 CDS DDIC 기반 뷰(폐기됨)이면 안 됩니다.
 
 ## 관련 항목

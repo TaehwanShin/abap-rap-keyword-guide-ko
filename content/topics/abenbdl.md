@@ -22,9 +22,9 @@ BDL 은 구현 타입에 따라 다른 문으로 시작합니다. 구현 타입�
 
 transactional buffer(트랜잭션 버퍼)와 [[abenbdl_standard_operations|standard operation]] 을 managed RAP BO provider(제공자)가 맡습니다. 그래서 managed RAP BO 는 behavior pool(동작 풀) 없이도 바로 돌아가는 business object(비즈니스 객체)가 될 수 있습니다.
 
-다만 [[abenbdl_nonstandard|non-standard operation]], [[abenbdl_validations|validation]], [[abenbdl_determinations|determination]]처럼 구현이 필요한 요소를 더하는 순간부터는 behavior pool 이 있어야 합니다.
+다만 [[abenbdl_nonstandard|non-standard operation]], [[abenbdl_validations|validation]], [[abenbdl_determinations|determination]] 처럼 구현이 필요한 요소를 더하는 순간부터는 behavior pool 이 있어야 합니다.
 
-기존 코드가 많지 않고 중요한 부분을 모두 처음부터 만드는 개발(그린필드 개발)에, 표준 구현을 쓰는 경우에 권합니다.
+기존 코드가 많지 않아 중요한 부분을 처음부터 새로 만드는 개발(그린필드 개발)에서, 표준 구현으로 충분할 때 권합니다.
 
 ### unmanaged
 

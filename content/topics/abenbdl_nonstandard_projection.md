@@ -1,6 +1,6 @@
 ---
-title: projection BDEF의 action
-summary: base BDEF 에 없는 action 을 projection 계층에서 새로 정의하는 문법으로, authorization control 은 projection BDEF에 따로 적어야 합니다.
+title: projection BDEF 의 action
+summary: base BDEF 에 없는 action 을 projection 계층에서 새로 정의하는 문법으로, authorization control 은 projection BDEF 에 따로 적어야 합니다.
 keywords: action, 액션, projection BDEF, 프로젝션 BDEF, 프로젝션 액션, 새 액션, static action, factory action, authorization ( global ), features, precheck, lock:none, FOR MODIFY
 ---
 
@@ -23,15 +23,15 @@ keywords: action, 액션, projection BDEF, 프로젝션 BDEF, 프로젝션 액�
 
 ## 설명
 
-projection BDEF에서는 base BDEF(기반 BDEF)의 action 을 [[abenbdl_use_projection|use action]] 으로 다시 쓰는 것 말고도, projection 계층에만 있는 action 을 **새로 정의**할 수 있습니다.
+projection BDEF 에서는 base BDEF(기반 BDEF)의 action 을 [[abenbdl_use_projection|use action]] 으로 다시 쓰는 것 말고도, projection 계층에만 있는 action 을 **새로 정의**할 수 있습니다.
 
-정의하는 방법은 base BDEF 에서 action 을 정의할 때와 비슷합니다. 각 추가 구문의 뜻은 [[abenbdl_action]] 을 보세요. 구현은 **projection BDEF의 behavior pool(동작 풀)**에 handler method(핸들러 메서드) `FOR MODIFY` 로 씁니다.
+정의하는 방법은 base BDEF 에서 action 을 정의할 때와 비슷합니다. 각 추가 구문의 뜻은 [[abenbdl_action]] 을 보세요. 구현은 **projection BDEF 의 behavior pool(동작 풀)**에 handler method(핸들러 메서드) `FOR MODIFY` 로 씁니다.
 
-다른 점은 **권한**입니다. projection BDEF에서는 base BDEF 의 authorization master 를 쓸 수 없습니다. 새 action 에 권한 확인이 필요하면 projection BDEF의 BO 노드마다 authorization control(권한 제어)를 직접 적어야 합니다. 방법은 [[abenbdl_authorization_projection]] 에 있습니다.
+다른 점은 **권한**입니다. projection BDEF 에서는 base BDEF 의 authorization master 를 쓸 수 없습니다. 새 action 에 권한 확인이 필요하면 projection BDEF 의 BO 노드마다 authorization control(권한 제어)를 직접 적어야 합니다. 방법은 [[abenbdl_authorization_projection]] 에 있습니다.
 
 ## 예제
 
-projection BDEF에 할인 action `deductDiscount` 를 새로 만듭니다. 할인율은 abstract entity(엔터티) `ZA_Discount` 의 `DiscountPercent` 로 받습니다. projection 에 global authorization control 을 걸었습니다.
+projection BDEF 에 할인 action `deductDiscount` 를 새로 만듭니다. 할인율은 abstract entity(엔터티) `ZA_Discount` 의 `DiscountPercent` 로 받습니다. projection 에 global authorization control 을 걸었습니다.
 
 ```bdl
 projection implementation in class zbp_c_travel unique;
@@ -107,9 +107,9 @@ ENDCLASS.
 
 ## 알아두기
 
-- projection BDEF에 새 action 을 정의하려면 projection BDEF 머리말에 `implementation in class ...` 로 behavior pool 을 지정해야 합니다. 구현할 코드가 있기 때문입니다.
+- projection BDEF 에 새 action 을 정의하려면 projection BDEF 머리말에 `implementation in class ...` 로 behavior pool 을 지정해야 합니다. 구현할 코드가 있기 때문입니다.
 - 문법 틀에서 보듯 projection 의 action 에 붙일 수 있는 권한 옵션은 `authorization:none` 과 `authorization:update` 입니다.
-- projection BDEF에는 base BDEF 의 authorization master 가 없습니다. authorization control 이 필요하면 projection 쪽에 따로 정의합니다.
+- projection BDEF 에는 base BDEF 의 authorization master 가 없습니다. authorization control 이 필요하면 projection 쪽에 따로 정의합니다.
 
 ## 관련 항목
 

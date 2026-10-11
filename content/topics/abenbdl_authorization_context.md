@@ -31,7 +31,7 @@ keywords: authorization context, 권한 컨텍스트, define own authorization c
 
 ## 설명
 
-behavior definition(동작 정의)에는 **authorization context**를 정의할 수 있습니다. authorization context 는 ABAP 문 `AUTHORITY-CHECK OBJECT` 에서 쓰는 권한 객체를 여러 개 모아 적은 목록입니다. 두 가지가 있습니다.
+behavior definition(동작 정의)에는 **authorization context** 를 정의할 수 있습니다. authorization context 는 ABAP 문 `AUTHORITY-CHECK OBJECT` 에서 쓰는 권한 객체를 여러 개 모아 적은 목록입니다. 두 가지가 있습니다.
 
 | 종류 | 정의하는 문 | 뜻 |
 | --- | --- | --- |

@@ -1,19 +1,19 @@
 ---
 title: 예제 - 매개변수를 다시 정의해 다시 쓰기
-summary: interface BDEF에서 action·function·event 의 깊은 매개변수를 구성요소가 더 적은 abstract BDEF로 바꾸고, base BO 와 interface 에서 결과가 어떻게 달라지는지 보여 주는 예제입니다.
+summary: interface BDEF 에서 action·function·event 의 깊은 매개변수를 구성요소가 더 적은 abstract BDEF 로 바꾸고, base BO 와 interface 에서 결과가 어떻게 달라지는지 보여 주는 예제입니다.
 keywords: RedefinedParameter, deep parameter, deep result, 매개변수 다시 정의, 재정의 매개변수 예제, 추상 BDEF, abstract BDEF, deep mapping, with hierarchy, with control, interface BDEF, 인터페이스 BDEF, use action, use function, use event
 ---
 
 ## 설명
 
-이 예제는 action, function, business event 의 입력·출력 매개변수를 projection BDEF나 interface BDEF에서 [[abenbdl_redefine_param|다시 정의]]하는 방법을 보여 줍니다.
+이 예제는 action, function, business event 의 입력·출력 매개변수를 projection BDEF 나 interface BDEF 에서 [[abenbdl_redefine_param|다시 정의]]하는 방법을 보여 줍니다.
 
 구성은 이렇습니다.
 
-1. CDS abstract entity(엔터티) 두 개. 하나는 구성요소가 세 개이고, 다른 하나는 그 가운데 두 개만 있는 부분집합입니다. 둘 다 `root` 로 정의합니다. 그래야 abstract BDEF의 바탕이 될 수 있습니다.
-2. abstract entity 마다 abstract BDEF 하나. 다시 정의는 깊은 매개변수에서만 되고, 깊은 매개변수는 언제나 abstract BDEF로 정의하기 때문입니다.
-3. managed base BDEF(기반 BDEF). 구성요소 세 개짜리 abstract BDEF를 action, function 두 개, event 의 깊은 매개변수로 씁니다.
-4. interface BDEF. 같은 작업을 다시 쓰면서 매개변수를 구성요소 두 개짜리 abstract BDEF로 바꿉니다.
+1. CDS abstract entity(엔터티) 두 개. 하나는 구성요소가 세 개이고, 다른 하나는 그 가운데 두 개만 있는 부분집합입니다. 둘 다 `root` 로 정의합니다. 그래야 abstract BDEF 의 바탕이 될 수 있습니다.
+2. abstract entity 마다 abstract BDEF 하나. 다시 정의는 깊은 매개변수에서만 되고, 깊은 매개변수는 언제나 abstract BDEF 로 정의하기 때문입니다.
+3. managed base BDEF(기반 BDEF). 구성요소 세 개짜리 abstract BDEF 를 action, function 두 개, event 의 깊은 매개변수로 씁니다.
+4. interface BDEF. 같은 작업을 다시 쓰면서 매개변수를 구성요소 두 개짜리 abstract BDEF 로 바꿉니다.
 
 아래 코드는 같은 내용을 공통 예제 모델로 줄여 쓴 것입니다.
 
@@ -67,7 +67,7 @@ with control
 }
 ```
 
-base BDEF 의 일부와 interface BDEF입니다.
+base BDEF 의 일부와 interface BDEF 입니다.
 
 ```bdl
 // base BDEF ZR_Travel 의 일부
@@ -131,7 +131,7 @@ COMMIT ENTITIES.
 눈여겨볼 점입니다.
 
 - 두 abstract BDEF 모두 `with hierarchy` 와 `with control` 을 씁니다. `with control` 은 양쪽이 같아야 합니다.
-- mapping 은 **부분집합 쪽** abstract BDEF에 적습니다. 왼쪽이 자기 구성요소, 오른쪽이 원래 타입의 구성요소입니다.
+- mapping 은 **부분집합 쪽** abstract BDEF 에 적습니다. 왼쪽이 자기 구성요소, 오른쪽이 원래 타입의 구성요소입니다.
 - interface 의 `deep result` 에는 base BDEF 와 달리 `[1]` 같은 카디널리티를 적지 않았습니다.
 - 원문 예제는 RAP BO 계약을 모두 지키지는 않습니다. 설명용으로 짧게 만든 것이라 일부 handler method(핸들러 메서드)는 비어 있습니다.
 

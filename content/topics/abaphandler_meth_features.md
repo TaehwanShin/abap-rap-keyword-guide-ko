@@ -80,7 +80,7 @@ ENDCLASS.
 
 ## 알아두기
 
-- 인스턴스와 상관없이 정해지는 feature control 은 [[abaphandler_meth_global_features|global feature control handler method]]에서 다룹니다.
+- 인스턴스와 상관없이 정해지는 feature control 은 [[abaphandler_meth_global_features|global feature control handler method]] 에서 다룹니다.
 - unmanaged 이면서 draft 를 쓰는 RAP BO 로 이 메서드를 보여 주는 예제가 [[abenrap_handler_methods_abexa]] 에 있습니다.
 
 ## 관련 항목

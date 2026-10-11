@@ -23,7 +23,7 @@ foreign entity ForeignEntityName [alias AliasName];
 
 ### 언제 쓰나
 
-determination이 다른 business object(비즈니스 객체)의 작업을 일으키고, 그 작업이 메시지를 돌려주는 경우를 생각하면 됩니다. 다른 BO 의 메시지를 받아 내 BO 에 맞게 고쳐 담으려면, 그 BO 의 entity 를 외부 entity 로 등록합니다. 메시지는 save sequence(저장 순서) 안에서 옮겨 담깁니다.
+determination 이 다른 business object(비즈니스 객체)의 작업을 일으키고, 그 작업이 메시지를 돌려주는 경우를 생각하면 됩니다. 다른 BO 의 메시지를 받아 내 BO 에 맞게 고쳐 담으려면, 그 BO 의 entity 를 외부 entity 로 등록합니다. 메시지는 save sequence(저장 순서) 안에서 옮겨 담깁니다.
 
 saver method(세이버 메서드) [[abensaver_map_messages|map_messages]] 를 behavior pool(동작 풀)에 다시 구현하는 것은 선택입니다.
 

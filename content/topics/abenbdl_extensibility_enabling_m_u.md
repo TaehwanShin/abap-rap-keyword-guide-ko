@@ -41,7 +41,7 @@ managed·unmanaged behavior definition(동작 정의)에 BDEF extension(확장)�
 
 extension 을 허용하는 출발점입니다. 이것이 없으면 확장할 수 없습니다. 머리말에 적었다면, entity(엔터티) 동작 특성에서 entity 를 **적어도 하나** `extensible` 로 선언해야 합니다.
 
-머리말의 `extensible` 로 BDEF extension 이 RAP BO에 덧붙일 수 있게 되는 것은 다음과 같습니다.
+머리말의 `extensible` 로 BDEF extension 이 RAP BO 에 덧붙일 수 있게 되는 것은 다음과 같습니다.
 
 - 외부 entity (`foreign entity`)
 - 새 `for disable` authorization context 를 더하는 일, 그리고 확장당하는 쪽에 이미 있는 전체 authorization context 를 확장하는 일
@@ -65,7 +65,7 @@ extension 을 허용하는 출발점입니다. 이것이 없으면 확장할 수
 
 ### 2. entity 동작 특성의 extensible
 
-extension 을 허용할 entity**마다** 반드시 적습니다. 그 entity 에 BDEF extension 으로 다음을 덧붙일 수 있게 됩니다.
+extension 을 허용할 entity** 마다** 반드시 적습니다. 그 entity 에 BDEF extension 으로 다음을 덧붙일 수 있게 됩니다.
 
 - determination 과 validation. 단, 그 종류가 머리말에서 허용되어 있어야 합니다.
 - extension 필드에 붙이는 field characteristics(필드 특성)
@@ -82,12 +82,12 @@ extension 을 허용할 entity**마다** 반드시 적습니다. 그 entity 에 
 본문에서는 요소 단위로 extension 을 허용합니다.
 
 - `mapping for PartnerType corresponding extensible` : 이 type mapping 에 extension 필드를 더할 수 있게 합니다. `corresponding` 과 함께 써야만 합니다. 이름이 같은 구성요소가 자동으로 연결되어야 하기 때문입니다.
-- `determine action Name extensible { ... }` : 이 `determine action` 에 validation 이나 determination 을 더할 수 있게 합니다. draft 를 쓰는 BO에서만 됩니다.
-- `draft determine action Prepare extensible { ... }` : draft `determine action` 인 `Prepare` 에 validation 이나 determination 을 더할 수 있게 합니다. draft 를 쓰는 BO에서만 됩니다.
+- `determine action Name extensible { ... }` : 이 `determine action` 에 validation 이나 determination 을 더할 수 있게 합니다. draft 를 쓰는 BO 에서만 됩니다.
+- `draft determine action Prepare extensible { ... }` : draft `determine action` 인 `Prepare` 에 validation 이나 determination 을 더할 수 있게 합니다. draft 를 쓰는 BO 에서만 됩니다.
 
 ## 예제
 
-저장 시점의 validation 과 determination 을 extension 에 허용한 managed BDEF입니다. root entity(루트 엔터티)와 type mapping 을 확장할 수 있게 열어 두었습니다.
+저장 시점의 validation 과 determination 을 extension 에 허용한 managed BDEF 입니다. root entity(루트 엔터티)와 type mapping 을 확장할 수 있게 열어 두었습니다.
 
 ```bdl
 managed implementation in class zbp_r_travel unique;
@@ -119,15 +119,15 @@ extensible
 }
 ```
 
-이 BDEF를 확장하는 쪽에서는 `Travel` 에 저장 시점 validation 을 더할 수 있습니다. 수정 시점의 determination 은 머리말에서 허용하지 않았으므로 더할 수 없습니다.
+이 BDEF 를 확장하는 쪽에서는 `Travel` 에 저장 시점 validation 을 더할 수 있습니다. 수정 시점의 determination 은 머리말에서 허용하지 않았으므로 더할 수 없습니다.
 
 ## 알아두기
 
 - `internal` 로 선언한 `determine action` 과 draft `determine action` 은 `extensible` 로 선언하면 안 됩니다.
 
-unmanaged RAP BO에는 다음 제약이 있습니다.
+unmanaged RAP BO 에는 다음 제약이 있습니다.
 
-- unmanaged RAP BO의 BDEF extension 에서는 determination 과 validation 을 정의할 수 없습니다. 그래서 `with validations on save;`, `with determinations on modify;`, `with determinations on save;` 를 쓸 수 없습니다.
+- unmanaged RAP BO 의 BDEF extension 에서는 determination 과 validation 을 정의할 수 없습니다. 그래서 `with validations on save;`, `with determinations on modify;`, `with determinations on save;` 를 쓸 수 없습니다.
 - additional save 도 쓸 수 없습니다. 그래서 `with additional save;` 를 쓸 수 없습니다.
 - `determine action` 과 draft `determine action` `Prepare` 를 extension 에서 쓸 수 없습니다. 그래서 이 둘을 `extensible` 로 선언할 수 없습니다.
 - 노드 extension 을 쓸 수 없습니다.

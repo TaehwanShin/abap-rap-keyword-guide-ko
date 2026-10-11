@@ -13,7 +13,7 @@ managed([[abenbdl_impl_type]]) RAP BO 에서 [[abapderived_types_fail]] 을 쓰�
 실패 원인은 behavior pool(동작 풀)의 두 handler method(핸들러 메서드)가 적어 넣습니다.
 
 - `get_instance_authorizations` : 인스턴스의 어떤 필드가 특정 값이면 수정과 삭제를 막습니다. 두 작업을 권한 없음(`unauthorized`)으로 표시하고, 그에 맞는 `%fail-cause` 와 인스턴스 키를 `failed` 에 넣습니다.
-- `get_instance_features` : 인스턴스의 어떤 필드가 특정 값이면 수정을 막습니다. 수정을 readonly으로 표시하고, 그에 맞는 `%fail-cause` 와 인스턴스 키를 `failed` 에 넣습니다.
+- `get_instance_features` : 인스턴스의 어떤 필드가 특정 값이면 수정을 막습니다. 수정을 readonly 로 표시하고, 그에 맞는 `%fail-cause` 와 인스턴스 키를 `failed` 에 넣습니다.
 
 ## 예제
 

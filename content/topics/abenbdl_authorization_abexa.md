@@ -10,8 +10,8 @@ unmanaged RAP BO 에 global 권한 확인을 걸고, 그것이 실제로 어떻�
 
 구성은 다음과 같습니다.
 
-- root entity `Travel` 은 **authorization master**이고 global 권한(`global`)을 씁니다.
-- child entity `Booking` 은 부모를 따르는 **authorization dependent**입니다.
+- root entity `Travel` 은 **authorization master** 이고 global 권한(`global`)을 씁니다.
+- child entity `Booking` 은 부모를 따르는 **authorization dependent** 입니다.
 - behavior pool(동작 풀)의 global 권한 메서드는 일부러 단순하게 만들었습니다. **수정 요청은 언제나 허용**하고, **삭제 요청은 언제나 거부**하면서 `reported` 에 오류 메시지를 남깁니다.
 
 실제 업무에서는 이렇게 무조건 허용하거나 거부하지 않습니다. 권한 객체처럼 인스턴스와 상관없는 기준으로 확인하도록 구현해야 합니다.

@@ -23,7 +23,7 @@ COMMIT ENTITIES END.
 
 RAP save sequence(저장 순서)를 시작하고 RAP 트랜잭션을 끝냅니다. transactional buffer(트랜잭션 버퍼)에 있는 변경, 곧 RAP 트랜잭션 안에서 만들고 고치고 지운 인스턴스가 모두 데이터베이스에 저장됩니다.
 
-이 형식은 **late numbering**를 켠 entity(엔터티)를 변경했을 때 씁니다. late numbering 에서는 변경 작업을 하는 동안 인스턴스에 `%pid` 나 임시 키 같은 임시 식별자만 붙어 있습니다. 최종 키는 save sequence 안에서 saver method(세이버 메서드) `adjust_numbers` 가 불릴 때 정해집니다. 새 인스턴스의 최종 키를 알아야 한다면, 이 형식으로 구간을 열고 그 안에서 `CONVERT KEY OF` 문으로 임시 식별자를 최종 키로 바꿉니다.
+이 형식은 **late numbering** 을 켠 entity(엔터티)를 변경했을 때 씁니다. late numbering 에서는 변경 작업을 하는 동안 인스턴스에 `%pid` 나 임시 키 같은 임시 식별자만 붙어 있습니다. 최종 키는 save sequence 안에서 saver method(세이버 메서드) `adjust_numbers` 가 불릴 때 정해집니다. 새 인스턴스의 최종 키를 알아야 한다면, 이 형식으로 구간을 열고 그 안에서 `CONVERT KEY OF` 문으로 임시 식별자를 최종 키로 바꿉니다.
 
 | 부분 | 하는 일 |
 | --- | --- |

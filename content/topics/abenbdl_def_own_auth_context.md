@@ -24,7 +24,7 @@ keywords: define own authorization context, 전체 권한 컨텍스트, full aut
 
 ## 설명
 
-RAP BO 의 **전체 authorization context**를 정의합니다. 전체 authorization context 는 다음 세 곳에서 확인하는 권한 객체를 적은 목록입니다.
+RAP BO 의 **전체 authorization context** 를 정의합니다. 전체 authorization context 는 다음 세 곳에서 확인하는 권한 객체를 적은 목록입니다.
 
 - behavior pool(동작 풀)의 구현 메서드가 직접 확인하는 권한 객체
 - behavior pool 의 구현이 부르는 기존 코드가 확인하는 권한 객체

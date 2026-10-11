@@ -88,7 +88,7 @@ ENDCLASS.
 
 ## 알아두기
 
-- [[abenbdl_early_numb|early numbering]](`early numbering`)에서는 이 메서드를 쓰지 않습니다. 그때는 [[abaphandler_meth_numbering|numbering handler method]]에 구현한 대로 키가 정해집니다.
+- [[abenbdl_early_numb|early numbering]](`early numbering`)에서는 이 메서드를 쓰지 않습니다. 그때는 [[abaphandler_meth_numbering|numbering handler method]] 에 구현한 대로 키가 정해집니다.
 - [[abenbdl_field_numbering|managed internal numbering]](`numbering : managed`)에서도 이 메서드를 쓰지 않습니다. 키 값을 RAP 프레임워크가 채우므로 behavior pool 에 구현할 것이 없습니다.
 - save sequence(저장 순서)가 실행될 때의 흐름은 ABAP RESTful Application Programming Model 개발 안내서의 "Save Sequence Runtime" 절에 있습니다.
 - late numbering 을 쓰는 단순한 unmanaged RAP BO 로 이 메서드를 보여 주는 예제가 [[abenabp_saver_ln_abexa]] 에 있습니다.

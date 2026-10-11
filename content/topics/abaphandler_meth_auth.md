@@ -85,7 +85,7 @@ ENDCLASS.
 ## 알아두기
 
 - 권한 handler method 는 `AUTHORITY-CHECK OBJECT` 로 구현하는 것이 좋습니다.
-- 인스턴스와 상관없이 따지는 global 권한은 [[abaphandler_meth_global_auth|global 권한 handler method]]에서 확인합니다.
+- 인스턴스와 상관없이 따지는 global 권한은 [[abaphandler_meth_global_auth|global 권한 handler method]] 에서 확인합니다.
 
 ## 관련 항목
 

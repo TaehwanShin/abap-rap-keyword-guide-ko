@@ -20,7 +20,7 @@ managed RAP BO 는 기본으로 RAP 프레임워크가 저장을 해 줍니다(m
 | `with additional save` | additional save | 기본 save sequence(저장 순서)에 단계를 **보탭니다**. managed 저장은 그대로 일어납니다. |
 | `with unmanaged save` | unmanaged save | 기본 저장을 **막고**, 직접 만든 저장 로직으로 바꿉니다. |
 
-두 구문 모두 behavior pool(동작 풀)의 [[abenabp_saver_class|saver class]]에서 메서드 [[abaprap_saver_meth_save_modified|save_modified]] 를 다시 구현해야 합니다.
+두 구문 모두 behavior pool(동작 풀)의 [[abenabp_saver_class|saver class]] 에서 메서드 [[abaprap_saver_meth_save_modified|save_modified]] 를 다시 구현해야 합니다.
 
 ### 적는 자리
 

@@ -25,12 +25,12 @@ BDEF extension 에 올 수 있는 구성요소는 다음과 같습니다.
 
 | 구성요소 | 하는 일 |
 | --- | --- |
-| `using interface InterfaceBdef` | RAP BO를 interface 계층을 거쳐 확장합니다. **이 방식을 강하게 권합니다.** [[abenbdl_using_interface]] 참고. |
+| `using interface InterfaceBdef` | RAP BO 를 interface 계층을 거쳐 확장합니다. **이 방식을 강하게 권합니다.** [[abenbdl_using_interface]] 참고. |
 | `ExtensionHeader` | extension 머리말. BDEF extension 에 반드시 있어야 합니다. behavior definition 머리말과 비슷하지만 고를 수 있는 것이 더 적습니다. [[abenbdl_extension_header]] 참고. |
-| `foreign entity` | 지금 RAP BO의 CDS composition 트리에 들지 않는 RAP BO entity(엔터티)를 응답 구조에 넣습니다. 다른 구성요소의 앞, 뒤, 사이 어디에나 적을 수 있습니다. [[abenbdl_foreign]] 참고. |
+| `foreign entity` | 지금 RAP BO 의 CDS composition 트리에 들지 않는 RAP BO entity(엔터티)를 응답 구조에 넣습니다. 다른 구성요소의 앞, 뒤, 사이 어디에나 적을 수 있습니다. [[abenbdl_foreign]] 참고. |
 | `EntityBehaviorExtension` | 이미 있는 RAP BO entity 의 동작을 확장합니다. `extend behavior for` 로 시작합니다. [[abenbdl_extend_beh]] 참고. |
 | `ExtensionEntityBehavior` | extension 노드의 동작을 정의합니다. `define behavior for` 로 시작합니다. [[abenbdl_define_beh_extend]] 참고. |
-| `extend own authorization context` | 확장당하는 BO에 전체 authorization context 가 정의되어 있으면 그것을 확장합니다. [[abenbdl_extend_own_auth_context]] 참고. |
+| `extend own authorization context` | 확장당하는 BO 에 전체 authorization context 가 정의되어 있으면 그것을 확장합니다. [[abenbdl_extend_own_auth_context]] 참고. |
 | `define authorization context` | `for disable` authorization context 를 BDEF extension 에서 새로 정의합니다. [[abenbdl_def_auth_context]] 참고. |
 
 ### 세미콜론
@@ -39,11 +39,11 @@ BDEF extension 에 올 수 있는 구성요소는 다음과 같습니다.
 
 ### 이름 짓기
 
-BDEF extension 자체와 그 안의 extension 요소 하나하나에는, 원래 BDEF와 그 요소들과 겹치지 않는 별도 네임스페이스를 써야 합니다. 이름 충돌을 막기 위해서입니다. SAP나 파트너가 아닌 개발 시스템에서 만든 BDEF extension 에는 고객 네임스페이스 접두어 `Z` 또는 `ZZ` 를 씁니다.
+BDEF extension 자체와 그 안의 extension 요소 하나하나에는, 원래 BDEF 와 그 요소들과 겹치지 않는 별도 네임스페이스를 써야 합니다. 이름 충돌을 막기 위해서입니다. SAP 나 파트너가 아닌 개발 시스템에서 만든 BDEF extension 에는 고객 네임스페이스 접두어 `Z` 또는 `ZZ` 를 씁니다.
 
 ## 예제
 
-interface `ZI_Travel` 을 거쳐 여행 BO를 확장합니다. 머리말이 `extension using interface ...;` 로 끝납니다. 이미 있는 entity `Travel` 에 extension 노드로 가는 association 을 더하고, extension 노드 `ZZNote` 의 동작을 정의합니다.
+interface `ZI_Travel` 을 거쳐 여행 BO 를 확장합니다. 머리말이 `extension using interface ...;` 로 끝납니다. 이미 있는 entity `Travel` 에 extension 노드로 가는 association 을 더하고, extension 노드 `ZZNote` 의 동작을 정의합니다.
 
 ```bdl
 extension using interface zi_travel;
@@ -91,9 +91,9 @@ extend behavior for Travel
 ## 알아두기
 
 - 외부 entity(`foreign entity`)로는 같은 소프트웨어 컴포넌트에 속한 entity 만 BDEF extension 에 더할 수 있습니다.
-- unmanaged RAP BO에서는 지금 노드 extension 을 쓸 수 없습니다. 그래서 `ExtensionEntityBehavior` 를 쓸 수 없습니다.
-- 확장당하는 BO에 자기 authorization context 가 정의되어 있지 않으면, extension 으로 그것을 새로 더할 수는 없습니다.
-- BDEF extension 의 `define authorization context` 문법은 RAP BO의 것과 비슷합니다. 다만 추가 구문 `for disable` 은 지원하지 않습니다.
+- unmanaged RAP BO 에서는 지금 노드 extension 을 쓸 수 없습니다. 그래서 `ExtensionEntityBehavior` 를 쓸 수 없습니다.
+- 확장당하는 BO 에 자기 authorization context 가 정의되어 있지 않으면, extension 으로 그것을 새로 더할 수는 없습니다.
+- BDEF extension 의 `define authorization context` 문법은 RAP BO 의 것과 비슷합니다. 다만 추가 구문 `for disable` 은 지원하지 않습니다.
 
 ## 관련 항목
 

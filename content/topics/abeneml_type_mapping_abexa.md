@@ -6,7 +6,7 @@ keywords: CORRESPONDING, type mapping, 타입 매핑, MAPPING FROM ENTITY, MAPPI
 
 ## 설명
 
-[[abapeml_corresponding|CORRESPONDING type mapping]]의 변형을 하나씩 실행해 보고, 옮기기 전과 뒤의 내용을 나란히 출력하는 예제입니다. managed RAP BO 하나를 쓰지만 behavior pool(동작 풀)은 이 예제와 상관이 없습니다. EML 로 무엇을 저장하지도 않습니다. 타입끼리 값을 옮기는 것만 봅니다.
+[[abapeml_corresponding|CORRESPONDING type mapping]] 의 변형을 하나씩 실행해 보고, 옮기기 전과 뒤의 내용을 나란히 출력하는 예제입니다. managed RAP BO 하나를 쓰지만 behavior pool(동작 풀)은 이 예제와 상관이 없습니다. EML 로 무엇을 저장하지도 않습니다. 타입끼리 값을 옮기는 것만 봅니다.
 
 behavior definition(동작 정의)에는 [[abenbdl_type_mapping|mapping for]] 가 세 개 있습니다. 하나는 필드 이름만 짝짓고, 나머지 둘은 `control` 을 붙여 제어 정보를 담는 짝 타입까지 함께 짝짓습니다.
 

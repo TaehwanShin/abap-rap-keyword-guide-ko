@@ -16,7 +16,7 @@ extensible
 
 ## 설명
 
-RAP BO interface(interface BDEF)에서는 **머리말에** `extensible` 을 적어 BDEF extension(확장)을 허용합니다. 이 선언 하나로, interface 에 들어 있는 모든 RAP BO entity(엔터티)와 구성요소가 대상이 됩니다. base BO(기반 BO)나 projection BDEF와 달리 entity 마다 다시 적지 않습니다.
+RAP BO interface(interface BDEF)에서는 **머리말에** `extensible` 을 적어 BDEF extension(확장)을 허용합니다. 이 선언 하나로, interface 에 들어 있는 모든 RAP BO entity(엔터티)와 구성요소가 대상이 됩니다. base BO(기반 BO)나 projection BDEF 와 달리 entity 마다 다시 적지 않습니다.
 
 한 가지 알아 둘 점이 있습니다. **RAP BO interface 자체를 직접 확장할 수는 없습니다.** extension 은 언제나 그 아래의 base BO 에 붙습니다. 확장하는 쪽이 `using interface` 추가 구문으로 이 RAP BO interface 를 가리킵니다. 곧 interface 는 "이 창구를 거쳐 base BO 를 확장해도 된다"는 통로 역할을 합니다.
 

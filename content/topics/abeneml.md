@@ -15,7 +15,7 @@ EML 문을 실행하면 RAP 런타임 프레임워크가 움직여 RAP BO 의 �
 | 대상 | 구현이 있는 곳 |
 | --- | --- |
 | unmanaged RAP BO, managed RAP BO 의 unmanaged 부분 | behavior pool |
-| 그 밖 | RAP provider(제공자) 프레임워크 |
+| 그 밖의 경우 | RAP provider(제공자) 프레임워크 |
 
 EML 문에 넘기는 값은 대부분 특별한 내부 테이블입니다. RAP BO 로 데이터를 보내고, 결과나 메시지를 돌려받는 데 씁니다. 줄 타입이 이 용도에 맞게 짜여 있습니다([[abaptype_table_for|BDEF derived type]]).
 

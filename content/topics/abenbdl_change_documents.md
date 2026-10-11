@@ -28,8 +28,8 @@ RAP change documents 는 persistent table 에 일어난 변경을 **change docum
 
 entity 는 change documents 마스터이거나 change documents 종속으로 지정합니다.
 
-- **change documents 마스터 entity**는 자기 change documents 객체가 있습니다. change documents 를 기록하는 entity 묶음(하위 트리)의 뿌리가 됩니다.
-- **change documents 종속 entity**는 change documents 마스터에 정해 둔 change documents 객체에 자기 변경을 기록합니다.
+- **change documents 마스터 entity** 는 자기 change documents 객체가 있습니다. change documents 를 기록하는 entity 묶음(하위 트리)의 뿌리가 됩니다.
+- **change documents 종속 entity** 는 change documents 마스터에 정해 둔 change documents 객체에 자기 변경을 기록합니다.
 
 규칙은 다음과 같습니다.
 

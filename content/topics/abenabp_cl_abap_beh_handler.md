@@ -26,7 +26,7 @@ ENDCLASS.
 
 ## 설명
 
-handler class(핸들러 클래스)는 behavior pool(동작 풀)의 CCIMP 인클루드에 정의하는 로컬 클래스입니다. `CL_ABAP_BEHAVIOR_HANDLER` 를 상속하고, 안에는 [[abapmethods_for_rap_behv|handler method]]의 선언과 구현이 들어갑니다.
+handler class(핸들러 클래스)는 behavior pool(동작 풀)의 CCIMP 인클루드에 정의하는 로컬 클래스입니다. `CL_ABAP_BEHAVIOR_HANDLER` 를 상속하고, 안에는 [[abapmethods_for_rap_behv|handler method]] 의 선언과 구현이 들어갑니다.
 
 - `handler_method_declarations` : handler method(핸들러 메서드) 선언. `PRIVATE SECTION` 에 둡니다.
 - `handler_method_implementations` : 선언한 메서드의 구현.

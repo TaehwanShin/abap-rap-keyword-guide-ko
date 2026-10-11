@@ -30,7 +30,7 @@ keywords: Adding Elements, 요소 추가, extend behavior for, determination, va
 
 ### determination / validation
 
-determination이나 validation을 entity(엔터티)에 보탭니다.
+determination 이나 validation 을 entity(엔터티)에 보탭니다.
 
 - **전제 조건**: 확장되는 BDEF 가 그 종류의 determination·validation 을 명시적으로 허용해야 합니다. ([[abenbdl_extensibility_enabling_m_u]] 참고)
 - 문법은 [[abenbdl_determinations]], [[abenbdl_validations]] 와 똑같습니다.
@@ -99,7 +99,7 @@ function 을 보탭니다. 문법은 [[abenbdl_function]] 과 똑같습니다.
 
 association 에 동작을 켭니다. 문법은 [[abenbdl_association]] 과 똑같습니다.
 
-지금은 **BO 안의 association**만 온전히 지원합니다. BO 사이(cross-BO)의 association 을 extension BDEF 에 정의하는 것은 일반적으로 지원하지 않습니다. 다음 경우만 예외입니다.
+지금은 **BO 안의 association** 만 온전히 지원합니다. BO 사이(cross-BO)의 association 을 extension BDEF 에 정의하는 것은 일반적으로 지원하지 않습니다. 다음 경우만 예외입니다.
 
 | 경우 | 지원하는 방식 |
 | --- | --- |

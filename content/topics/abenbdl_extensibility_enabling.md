@@ -8,12 +8,12 @@ keywords: extensibility enabling, 확장 허용, 확장 가능 설정, extensibl
 
 RAP behavior definition(동작 정의)에 BDEF extension(확장)을 붙이려면, 그 behavior definition 이 **extension 을 명시적으로 허용**해야 합니다. 기술 요건을 갖추고, 어디에 무엇을 덧붙일 수 있는지 extension 지점을 정해 두어야 합니다. 그렇게 하지 않은 behavior definition 에는 BDEF extension 을 붙일 수 없습니다.
 
-허용은 키워드 `extensible` 로 합니다. 다만 BDEF의 종류에 따라 `extensible` 을 적는 자리와 허용되는 범위가 다릅니다. 이 갈래는 종류별로 그 방법을 설명합니다.
+허용은 키워드 `extensible` 로 합니다. 다만 BDEF 의 종류에 따라 `extensible` 을 적는 자리와 허용되는 범위가 다릅니다. 이 갈래는 종류별로 그 방법을 설명합니다.
 
 - [[abenbdl_extensibility_enabling_m_u]] : managed·unmanaged base BO(기반 BO)에서 extension 을 허용하는 방법
 - [[abenbdl_extensibility_enablng_intf]] : RAP BO interface 에서 extension 을 허용하는 방법
-- [[abenbdl_ext_enabling_projection]] : projection BDEF에서 extension 을 허용하는 방법
-- [[abenbdl_ext_enabling_abstract]] : abstract BDEF에서 extension 을 허용하는 방법
+- [[abenbdl_ext_enabling_projection]] : projection BDEF 에서 extension 을 허용하는 방법
+- [[abenbdl_ext_enabling_abstract]] : abstract BDEF 에서 extension 을 허용하는 방법
 - [[abenbdl_extensibility_enabling_ext]] : BDEF extension 자체를 다시 확장할 수 있게 허용하는 방법 (extension 겹치기)
 
 ## 알아두기

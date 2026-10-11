@@ -12,7 +12,7 @@ keywords: numbering:managed, field ( numbering : managed ), 관리형 번호 부
 
 ## 설명
 
-필드에 **managed internal numbering**를 정합니다. 새 인스턴스를 만들 때 이 필드에 고유한 값이 자동으로 들어갑니다. RAP BO consumer(사용자)는 값을 넣을 필요가 없습니다. RAP 프레임워크가 모두 처리하므로 behavior pool(동작 풀)에 구현할 것도 없습니다.
+필드에 **managed internal numbering** 을 정합니다. 새 인스턴스를 만들 때 이 필드에 고유한 값이 자동으로 들어갑니다. RAP BO consumer(사용자)는 값을 넣을 필요가 없습니다. RAP 프레임워크가 모두 처리하므로 behavior pool(동작 풀)에 구현할 것도 없습니다.
 
 대상 필드는 두 조건을 모두 갖춰야 합니다.
 
@@ -25,8 +25,8 @@ keywords: numbering:managed, field ( numbering : managed ), 관리형 번호 부
 
 | 지정 | 동작 |
 | --- | --- |
-| `numbering : managed, readonly` | 사용자가 키 값을 넘길 수 없습니다. 언제나 프레임워크가 채우는 **internal numbering**입니다. |
-| `numbering : managed` 만 | 사용자가 키 값을 줄 수도 있습니다. 사용자가 초기값(빈 값)을 넘겼을 때만 프레임워크가 채웁니다. 이것을 **선택적 external numbering**라고 합니다. |
+| `numbering : managed, readonly` | 사용자가 키 값을 넘길 수 없습니다. 언제나 프레임워크가 채우는 **internal numbering** 입니다. |
+| `numbering : managed` 만 | 사용자가 키 값을 줄 수도 있습니다. 사용자가 초기값(빈 값)을 넘겼을 때만 프레임워크가 채웁니다. 이것을 **선택적 external numbering** 라고 합니다. |
 
 ## 예제
 

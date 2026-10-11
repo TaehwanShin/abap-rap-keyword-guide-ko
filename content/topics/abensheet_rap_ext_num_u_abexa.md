@@ -6,7 +6,7 @@ keywords: ABAP EML in use, unmanaged, 비관리형, external numbering, 외부 �
 
 ## 설명
 
-[[abensheet_rap_ext_num_m_abexa|managed 예제]]와 짝을 이루는 예제입니다. 데이터 모델은 같고(root entity(루트 엔터티)와 child entity(자식 엔터티) 하나씩, 키는 사용자가 주는 external numbering), 구현 방식만 **unmanaged**입니다. 그래서 모든 작업을 behavior pool(동작 풀)의 로컬 클래스에서 직접 구현합니다.
+[[abensheet_rap_ext_num_m_abexa|managed 예제]]와 짝을 이루는 예제입니다. 데이터 모델은 같고(root entity(루트 엔터티)와 child entity(자식 엔터티) 하나씩, 키는 사용자가 주는 external numbering), 구현 방식만 **unmanaged** 입니다. 그래서 모든 작업을 behavior pool(동작 풀)의 로컬 클래스에서 직접 구현합니다.
 
 behavior definition(동작 정의)는 managed 예제와 이런 점이 다릅니다.
 

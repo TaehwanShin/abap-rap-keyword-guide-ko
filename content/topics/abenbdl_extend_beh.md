@@ -36,7 +36,7 @@ extension 쪽 동작을 저장할 때 직접 만든 처리를 덧붙입니다.
 - **managed 전용**: base BO(기반 BO) 의 구현 타입이 managed 일 때만 쓸 수 있습니다. unmanaged RAP BO 는 지금 지원하지 않습니다.
 - **원본 설정과 무관**: 원본 BO 가 정한 저장 방식은 extension 의 additional save 에 영향을 주지 않습니다. 원본 BO 는 additional save 를 쓰든, unmanaged save 를 쓰든, 기본 save sequence 를 쓰든 상관없습니다. 원본의 저장 방식은 원본 동작에, extension 의 additional save 는 extension 동작에 적용됩니다.
 - **적는 자리**: extension 에서는 entity 마다 entity 동작 특성 자리에 적습니다. 원본 BDEF 처럼 머리말에 적을 수는 없습니다.
-- **구현 위치**: extension behavior pool 에 있는 saver class(세이버 클래스)의 `save_modified` 메서드에 구현합니다. 이 메서드의 매개변수 타입은 additional save 를 켠 **그 BDEF extension**에 맞춰 정해집니다. behavior pool 은 RAP BO 전체가 아니라 자기가 속한 BDEF 의 요소만 반영합니다. extension behavior pool 규칙([[abenbdl_in_class_unique_ext]])도 그대로 적용됩니다.
+- **구현 위치**: extension behavior pool 에 있는 saver class(세이버 클래스)의 `save_modified` 메서드에 구현합니다. 이 메서드의 매개변수 타입은 additional save 를 켠 **그 BDEF extension** 에 맞춰 정해집니다. behavior pool 은 RAP BO 전체가 아니라 자기가 속한 BDEF 의 요소만 반영합니다. extension behavior pool 규칙([[abenbdl_in_class_unique_ext]])도 그대로 적용됩니다.
 - 그 밖의 동작은 원본 BO 의 additional save 와 같습니다. ([[abenbdl_saving]] 참고)
 
 ### with full data

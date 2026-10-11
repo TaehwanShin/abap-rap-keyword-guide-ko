@@ -51,11 +51,11 @@ extension 을 허용하는 출발점입니다. 이것이 없으면 이 BDEF exte
 extension 을 허용할 extension 노드**마다** 반드시 적습니다. 그 노드에 BDEF extension 으로 다음을 덧붙일 수 있게 됩니다.
 
 - extension 필드에 붙이는 field characteristics(필드 특성)
-- managed·unmanaged 기반 RAP BO의 action, function, association 을 다시 쓰는 일
+- managed·unmanaged 기반 RAP BO 의 action, function, association 을 다시 쓰는 일
 
 ### 4. extension 노드 본문의 extensible
 
-- `mapping for PartnerType corresponding extensible` : 확장당하는 RAP BO에 정의된 type mapping 에 extension 필드를 더할 수 있게 합니다. `corresponding` 과 함께 써야만 합니다.
+- `mapping for PartnerType corresponding extensible` : 확장당하는 RAP BO 에 정의된 type mapping 에 extension 필드를 더할 수 있게 합니다. `corresponding` 과 함께 써야만 합니다.
 
 ## 예제
 
@@ -95,7 +95,7 @@ extend behavior for ZZNote
 
 ## 알아두기
 
-- projection 이 바라보는 아래쪽 BDEF가 `extensible` 일 필요는 없습니다. projection BDEF는 그 아래 RAP BO와 상관없이 따로 extension 을 허용할 수 있습니다.
+- projection 이 바라보는 아래쪽 BDEF 가 `extensible` 일 필요는 없습니다. projection BDEF 는 그 아래 RAP BO 와 상관없이 따로 extension 을 허용할 수 있습니다.
 
 ## 관련 항목
 

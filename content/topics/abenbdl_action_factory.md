@@ -57,7 +57,7 @@ action 에 넘긴 값마다 새로 만든 인스턴스(없음, 하나, 여러 �
 
 ### default factory action
 
-static factory action 가운데 정확히 하나를 `default` 로 **default factory action**으로 지정할 수 있습니다. 이 지정은 OData 처럼 BO 를 쓰는 프레임워크에 영향을 줍니다. [[abenbdl_action_default_factory]] 에서 설명합니다.
+static factory action 가운데 정확히 하나를 `default` 로 **default factory action** 으로 지정할 수 있습니다. 이 지정은 OData 처럼 BO 를 쓰는 프레임워크에 영향을 줍니다. [[abenbdl_action_default_factory]] 에서 설명합니다.
 
 ### 쓸 수 있는 곳
 

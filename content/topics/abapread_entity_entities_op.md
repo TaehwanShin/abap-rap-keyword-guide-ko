@@ -96,7 +96,7 @@ READ ENTITIES OF zr_travel
 
 - `BY` 뒤에 백슬래시(`\`)를 먼저 넣어야 코드 완성에 association 이 나옵니다.
 - read-by-association 에는 `RESULT` 나 `LINK` 가운데 적어도 하나가 있어야 합니다.
-- RAP key function 을 EML `READ` 문으로 쓰는 방법은 정적 RAP function 을 쓰는 방법과 같습니다.
+- RAP key function 을 EML `READ` 문으로 쓰는 방법은 static RAP function 을 쓰는 방법과 같습니다.
 - RAP key function 에는 BDEF 에 결과를 따로 적지 않았어도 `REQUEST` 를 쓸 수 있습니다. key function 은 `result selective [1] $self` 로 선언된 것으로 보기 때문입니다.
 - RAP BO provider(제공자)와 consumer(사용자)가 EML 문을 쓸 때 지켜야 할 규칙은 ABAP RESTful Application Programming Model 개발 안내서의 "RAP Business Object Contract" 단락에 있습니다.
 

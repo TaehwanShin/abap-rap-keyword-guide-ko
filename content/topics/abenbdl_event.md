@@ -12,7 +12,7 @@ event EventName [[deep] parameter ParamName];
 
 ## 설명
 
-managed 또는 unmanaged RAP BO 에 **business event**를 선언합니다. business event 는 entity(엔터티) 상태에 의미 있는 변화가 생겼음을 나타내는 데이터 한 건입니다. 이 event 를 받겠다고 등록한 쪽이 event 를 받아 처리합니다.
+managed 또는 unmanaged RAP BO 에 **business event** 를 선언합니다. business event 는 entity(엔터티) 상태에 의미 있는 변화가 생겼음을 나타내는 데이터 한 건입니다. 이 event 를 받겠다고 등록한 쪽이 event 를 받아 처리합니다.
 
 ### 매개변수
 

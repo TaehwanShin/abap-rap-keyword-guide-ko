@@ -20,7 +20,7 @@ keywords: InputParameter, parameter, deep parameter, deep table parameter, $self
 
 ## 설명
 
-[[abenbdl_action|action]]이나 [[abenbdl_function|function]]의 입력 매개변수를 정의합니다. 평면(flat)으로도, 깊게(deep)로도 정의할 수 있습니다.
+[[abenbdl_action|action]] 이나 [[abenbdl_function|function]] 의 입력 매개변수를 정의합니다. 평면(flat)으로도, 깊게(deep)로도 정의할 수 있습니다.
 
 ### 평면 매개변수: parameter { ParameterEntity | $self }
 
@@ -88,7 +88,7 @@ action setItineraries deep table parameter ZA_Itinerary;
 
 ## 알아두기
 
-- [[abenbdl_strict|strict mode]]에서는 `$self` 를 입력 매개변수로 쓸 수 없습니다.
+- [[abenbdl_strict|strict mode]] 에서는 `$self` 를 입력 매개변수로 쓸 수 없습니다.
 - 입력 매개변수가 CDS abstract entity 면 어노테이션 `EndUserText.label` 로 라벨을 붙일 수 있습니다. OData 를 쓰는 화면에 그 라벨이 보입니다.
 - abstract BDEF 를 `deep` 없이 `parameter` 만으로 써도 됩니다. 그러면 평면 매개변수로 봅니다. CDS abstract entity 하나를 쓴 것과 같은 derived type 이 되므로 따로 얻는 것은 없습니다.
 

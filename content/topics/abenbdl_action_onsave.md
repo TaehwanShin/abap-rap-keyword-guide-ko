@@ -28,7 +28,7 @@ save action 은 **save sequence(저장 순서) 안의 정해진 saver method(세
 
 save action 은 `save` 로 알아봅니다. 어느 saver method 동안 부를 수 있는지를 괄호 안에 적습니다. `finalize`, `adjustnumbers`, 또는 둘 다 적을 수 있습니다.
 
-[[abenbdl_action_nonfactory|non-factory action]]도, [[abenbdl_action_factory|factory action]](인스턴스에 묶인 것과 정적인 것 모두)도 save action 으로 만들 수 있습니다. 다만 **default factory action 은 save action 이 될 수 없습니다.** 문법 규칙은 action 종류(일반, static factory, instance factory)에 맞는 것을 그대로 따릅니다.
+[[abenbdl_action_nonfactory|non-factory action]] 도, [[abenbdl_action_factory|factory action]](인스턴스에 묶인 것과 정적인 것 모두)도 save action 으로 만들 수 있습니다. 다만 **default factory action 은 save action 이 될 수 없습니다.** 문법 규칙은 action 종류(일반, static factory, instance factory)에 맞는 것을 그대로 따릅니다.
 
 ### 붙일 수 있는 추가 구문
 
@@ -59,7 +59,7 @@ save action 은 `save` 로 알아봅니다. 어느 saver method 동안 부를 �
 | `on save` determination 에서 `save(adjustnumbers)` action 을 부르는 경우 | 런타임 오류 |
 | 같은 saver method 용 save action 끼리 부르는 경우. 예를 들어 `save(adjustnumbers)` action 이 다른 `save(adjustnumbers)` action 을 부르는 경우 | 런타임 오류 |
 
-`on save` determination 에는 함정이 하나 더 있습니다. `on save` determination 이 determine action 의 한 부분으로 실행되면, 그 실행은 **interaction phase**에서 일어납니다. 그래서 `on save` determination 안에서 save action 을 부르는데 그 determination 이 determine action 으로 실행되면 런타임 오류가 납니다.
+`on save` determination 에는 함정이 하나 더 있습니다. `on save` determination 이 determine action 의 한 부분으로 실행되면, 그 실행은 **interaction phase** 에서 일어납니다. 그래서 `on save` determination 안에서 save action 을 부르는데 그 determination 이 determine action 으로 실행되면 런타임 오류가 납니다.
 
 ### 쓸 수 있는 곳
 

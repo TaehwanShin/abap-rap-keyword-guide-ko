@@ -38,7 +38,7 @@ keywords: field_spec, FROM, FIELDS WITH, SET FIELDS WITH, AUTO FILL CID, fields_
 | `DELETE` | `FROM` | `TABLE FOR DELETE bdef` | `%cid_ref`, `%key`, `%pky`, `%tky` |
 | `EXECUTE` | `FROM` | `TABLE FOR ACTION IMPORT bdef~action` | `%cid_ref`, `%key`, `%param`, `%pky`, `%tky` |
 
-`FROM` 과 `AUTO FILL CID WITH` 를 쓰면 `CREATE` 와 `UPDATE` 에서는 `%control` 을, `CREATE BY` 에서는 `%target` 안의 `%control` 을 직접 채워야 합니다. 구성요소는 상황에 따라 더 있을 수 있습니다. 예를 들어 `%is_draft` 는 [[abenbdl_with_draft|draft]] 를 쓸 때만, `%pid` 는 [[abenbdl_late_numbering|late numbering]]일 때만 있습니다.
+`FROM` 과 `AUTO FILL CID WITH` 를 쓰면 `CREATE` 와 `UPDATE` 에서는 `%control` 을, `CREATE BY` 에서는 `%target` 안의 `%control` 을 직접 채워야 합니다. 구성요소는 상황에 따라 더 있을 수 있습니다. 예를 들어 `%is_draft` 는 [[abenbdl_with_draft|draft]] 를 쓸 때만, `%pid` 는 [[abenbdl_late_numbering|late numbering]] 일 때만 있습니다.
 
 ### FROM fields_tab
 
@@ -151,7 +151,7 @@ MODIFY ENTITY zr_travel
 ## 알아두기
 
 - `%cid_ref` 를 쓸 수 있는 작업에서는, `%cid_ref` 로 인스턴스를 분명히 가리키면 키를 적지 않아도 됩니다.
-- 생성과 create-by-association 에서는 RAP BO consumer(사용자)가 `%cid` 를 쓸 일이 없어도 `%cid` 를 지정하는 것이 좋습니다. 특히 [[abenbdl_early_numb|early numbering]] 과 [[abenbdl_late_numbering|late numbering]]에서는 문제를 피하려면 꼭 지정해야 합니다.
+- 생성과 create-by-association 에서는 RAP BO consumer(사용자)가 `%cid` 를 쓸 일이 없어도 `%cid` 를 지정하는 것이 좋습니다. 특히 [[abenbdl_early_numb|early numbering]] 과 [[abenbdl_late_numbering|late numbering]] 에서는 문제를 피하려면 꼭 지정해야 합니다.
 - `%cid_ref` 로 가리킬 인스턴스의 `%cid` 는 직접 적어야 합니다. 자동으로 만들어진 `%cid` 는 `%cid_ref` 로 가리킬 수 없습니다.
 - `AUTO FILL CID` 를 쓸 때 `%cid` 에 대문자 `%ABAP_EML_CID__` 로 시작하는 값을 직접 넣으면 런타임 오류 `BEHAVIOR_RESERVED_PREFIX` 가 납니다.
 - `FIELDS ( ... ) WITH` 와 `SET FIELDS WITH` 는 `DELETE` 에 쓸 수 없습니다. `EXECUTE` 에는 BDEF 에서 action 을 `deep [table] parameter`([[abenbdl_action_input_param|깊은 입력 매개변수]])로 선언하고 [[abenbdl_action_output_para|selective]] 를 쓰지 않았을 때만 쓸 수 있습니다.

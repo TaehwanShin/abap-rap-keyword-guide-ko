@@ -12,7 +12,7 @@ managed event DerivedEventName on RefEvent parameter ViewEntityName;
 
 ## 설명
 
-managed 또는 unmanaged RAP BO 에 **파생 event**를 선언합니다. 파생 event 는 이미 구현된 event `RefEvent` 를 가리켜 만들며, 그 event 와 다른 페이로드(실어 보낼 값)를 정할 수 있습니다.
+managed 또는 unmanaged RAP BO 에 **파생 event** 를 선언합니다. 파생 event 는 이미 구현된 event `RefEvent` 를 가리켜 만들며, 그 event 와 다른 페이로드(실어 보낼 값)를 정할 수 있습니다.
 
 `RefEvent` 가 발생하면 파생 event 도 자기 페이로드를 싣고 함께 발생합니다. behavior pool(동작 풀)에 따로 구현할 것이 없습니다.
 

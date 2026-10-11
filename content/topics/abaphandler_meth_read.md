@@ -25,7 +25,7 @@ METHODS meth [FINAL]
 
 RAP 의 읽기 작업을 구현하는 handler method 입니다. behavior pool(동작 풀)의 handler class(핸들러 클래스)에 선언하고 구현합니다.
 
-- `meth` : 메서드 이름. 마음대로 정합니다. 다만 [[abaprap_handler_default_val_func|default values function]]의 메서드는 이름이 정해져 있습니다.
+- `meth` : 메서드 이름. 마음대로 정합니다. 다만 [[abaprap_handler_default_val_func|default values function]] 의 메서드는 이름이 정해져 있습니다.
 - `bdef` : behavior definition(동작 정의)의 이름 또는 별칭.
 - `assoc` : association 이름.
 - `function` : function 이름.
@@ -54,7 +54,7 @@ EML 에서 `FULL` 을 드러내 지정할 수 있는 것은 동적 형식의 `RE
 
 ### 변형 3: `FUNCTION bdef~function` — function
 
-[[abenbdl_function|function]]의 읽기 요청을 처리합니다. behavior definition 쪽에 적어야 하는 내용은 [[abenbdl_function]] 에 있습니다.
+[[abenbdl_function|function]] 의 읽기 요청을 처리합니다. behavior definition 쪽에 적어야 하는 내용은 [[abenbdl_function]] 에 있습니다.
 
 - `im_par_read` (입력) : 읽을 RAP BO 인스턴스. [[abaptype_table_for|TYPE TABLE FOR FUNCTION IMPORT bdef~function]] 타입의 내부 테이블입니다.
 - `req_func` (입력) : `REQUEST` 뒤에 적는 매개변수입니다. behavior definition 에서 function 을 [[abenbdl_action_output_para|result selective]] 로 선언했을 때만 쓸 수 있습니다. [[abaptype_structure_for|TYPE STRUCTURE FOR FUNCTION REQUEST bdef~function]] 타입의 구조입니다.

@@ -34,7 +34,7 @@ READ ENTITIES [IN LOCAL MODE|[FORWARDING] PRIVILEGED] OPERATIONS op_tab [respons
 
 ## 설명
 
-`READ` 문은 RAP BO 인스턴스를 **읽기만** 합니다. 읽기 작업은 언제나 결과를 돌려줍니다. entity 가 [[abenbdl_define_beh|define behavior for]] 로 behavior definition(동작 정의)에 들어 있기만 하면 따로 선언하지 않아도 읽을 수 있습니다. 구현 유형이 [[abenbdl_abstract|abstract]]인 behavior definition 만 예외입니다.
+`READ` 문은 RAP BO 인스턴스를 **읽기만** 합니다. 읽기 작업은 언제나 결과를 돌려줍니다. entity 가 [[abenbdl_define_beh|define behavior for]] 로 behavior definition(동작 정의)에 들어 있기만 하면 따로 선언하지 않아도 읽을 수 있습니다. 구현 유형이 [[abenbdl_abstract|abstract]] 인 behavior definition 만 예외입니다.
 
 형식은 세 가지입니다.
 

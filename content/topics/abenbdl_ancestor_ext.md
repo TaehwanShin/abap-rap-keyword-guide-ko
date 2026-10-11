@@ -49,7 +49,7 @@ ancestor association 이 있으면 authorization master, lock master, etag maste
 
 ### 추가 구문
 
-- `abbreviation _newName` : association 에 짧은 다른 이름을 줍니다. 최대 16자입니다. association 이름은 root entity 의 이름 공간에 속하고 30자까지 쓸 수 있는데, 이 길이는 상황에 따라 ABAP RAP 이 처리하기에 너무 깁니다. 더 짧은 이름이 필요하면 16자 이하의 줄임 이름을 지정하라는 안내가 나옵니다.
+- `abbreviation _newName` : association 에 짧은 다른 이름을 줍니다. 최대 16자입니다. association 이름은 root entity 의 이름 공간에 속하고 30자까지 쓸 수 있는데, 이 길이는 상황에 따라 ABAP RAP 가 처리하기에 너무 깁니다. 더 짧은 이름이 필요하면 16자 이하의 줄임 이름을 지정하라는 안내가 나옵니다.
 - `without response` : 대상이 다른 BO 에 있는 BO 간(cross-BO) association 에 씁니다. 이런 association 에서는 대상 entity 가 외부 entity([[abenbdl_foreign]])로서 응답 타입에 자동으로 들어갑니다. association 으로 읽거나 create-by-association 할 때 대상 entity 쪽 문제를 응답에 담을 수 있게 하려는 것입니다. `without response` 를 붙이면 대상 entity 가 응답 타입에 들어가지 않습니다. 다만 원문은 ancestor association 을 BO 안의 association 이라고 정의하면서, 이 추가 구문은 cross-BO association 에 쓴다고 설명합니다. ancestor association 에서 언제 쓰는지는 원문에 나와 있지 않습니다.
 - `with draft` : association 이 draft 를 다루게 합니다. active(활성) 인스턴스에서 따라가면 active 데이터를, draft 인스턴스에서 따라가면 draft 데이터를 가져옵니다. ([[abenbdl_with_draft]] 참고)
 

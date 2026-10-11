@@ -73,7 +73,7 @@ ENDLOOP.
 
 ## 알아두기
 
-- 어떤 상황에서든 `%tky` 를 쓰는 편이 좋습니다. 다만 `%tky` 가 없는 특별한 자리가 있고, 그런 곳에서는 [[abapderived_types_pky|%pky]] 를 대신 씁니다. [[abenbdl_draft_action|draft action]]이나 save action 의 구현이 그 예입니다.
+- 어떤 상황에서든 `%tky` 를 쓰는 편이 좋습니다. 다만 `%tky` 가 없는 특별한 자리가 있고, 그런 곳에서는 [[abapderived_types_pky|%pky]] 를 대신 씁니다. [[abenbdl_draft_action|draft action]] 이나 save action 의 구현이 그 예입니다.
 - 생성 작업의 입력에는 `%tky` 를 쓸 수 없습니다.
 - late numbering 에서는 `%tky` 안에 [[abapderived_types_pid|%pid]] 도 들어 있습니다. 자세한 내용은 [[abapderived_types_keys_identifiers]] 에 있습니다.
 

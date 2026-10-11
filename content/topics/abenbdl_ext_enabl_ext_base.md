@@ -1,6 +1,6 @@
 ---
 title: base BDEF extension 의 extensibility
-summary: managed·unmanaged BO의 BDEF extension 에 extensible 을 적어, 그 extension 을 또 다른 BDEF extension 으로 다시 확장할 수 있게 하는 문법입니다.
+summary: managed·unmanaged BO 의 BDEF extension 에 extensible 을 적어, 그 extension 을 또 다른 BDEF extension 으로 다시 확장할 수 있게 하는 문법입니다.
 keywords: extensible, extension, extension layering, 확장 겹치기, 기반 BDEF 확장, base BDEF extension, with friends, with validations on save, with determinations on save, with determinations on modify, with additional save, extend behavior for, define behavior for, 확장 노드, 확장 허용
 ---
 
@@ -40,7 +40,7 @@ define behavior for ExtNode
 
 ## 설명
 
-base BDEF(기반 BDEF) extension(확장, managed·unmanaged BO의 BDEF extension)을 다시 확장할 수 있게 하려면, 그 BDEF extension 안에 `extensible` 을 적습니다. 적는 자리와 뜻은 [[abenbdl_extensibility_enabling_m_u|base BO 의 extensibility]] 와 거의 같습니다. 자리는 네 군데입니다.
+base BDEF(기반 BDEF) extension(확장, managed·unmanaged BO 의 BDEF extension)을 다시 확장할 수 있게 하려면, 그 BDEF extension 안에 `extensible` 을 적습니다. 적는 자리와 뜻은 [[abenbdl_extensibility_enabling_m_u|base BO 의 extensibility]] 와 거의 같습니다. 자리는 네 군데입니다.
 
 ### 1. extension 머리말의 extensible
 
@@ -56,7 +56,7 @@ extension 을 허용하는 출발점입니다. 이것이 없으면 이 BDEF exte
 ### 2. entity 동작 extension(extend behavior for) 본문의 extensible
 
 - `mapping for PartnerType corresponding extensible` : type mapping 에 extension 필드를 더할 수 있게 합니다. `corresponding` 과 함께 써야만 합니다.
-- `determine action Name extensible { ... }` : 이 `determine action` 에 validation 이나 determination 을 더할 수 있게 합니다. draft 를 쓰는 BO에서만 됩니다.
+- `determine action Name extensible { ... }` : 이 `determine action` 에 validation 이나 determination 을 더할 수 있게 합니다. draft 를 쓰는 BO 에서만 됩니다.
 
 ### 3. extension 노드(define behavior for)의 entity 동작 특성에 적는 extensible
 
@@ -74,8 +74,8 @@ extension 을 허용할 extension 노드**마다** 반드시 적습니다. 그 �
 ### 4. extension 노드 본문의 extensible
 
 - `mapping for PartnerType corresponding extensible` : type mapping 에 extension 필드를 더할 수 있게 합니다. `corresponding` 과 함께 써야만 합니다.
-- `determine action Name extensible { ... }` : 이 `determine action` 에 validation 이나 determination 을 더할 수 있게 합니다. draft 를 쓰는 BO에서만 됩니다.
-- `draft determine action Prepare extensible { ... }` : draft `determine action` 인 `Prepare` 에 validation 이나 determination 을 더할 수 있게 합니다. draft 를 쓰는 BO에서만 됩니다.
+- `determine action Name extensible { ... }` : 이 `determine action` 에 validation 이나 determination 을 더할 수 있게 합니다. draft 를 쓰는 BO 에서만 됩니다.
+- `draft determine action Prepare extensible { ... }` : draft `determine action` 인 `Prepare` 에 validation 이나 determination 을 더할 수 있게 합니다. draft 를 쓰는 BO 에서만 됩니다.
 
 ## 예제
 
@@ -130,7 +130,7 @@ extend behavior for ZZNote
 
 - `internal` 로 선언한 `determine action` 과 draft `determine action` 은 `extensible` 로 선언하면 안 됩니다.
 
-unmanaged RAP BO의 BDEF extension 에는 다음 제약이 있습니다.
+unmanaged RAP BO 의 BDEF extension 에는 다음 제약이 있습니다.
 
 - determination 과 validation 을 정의할 수 없습니다. 그래서 `with validations on save;`, `with determinations on modify;`, `with determinations on save;` 를 쓸 수 없습니다.
 - additional save 를 쓸 수 없습니다. 그래서 `with additional save;` 를 쓸 수 없습니다.

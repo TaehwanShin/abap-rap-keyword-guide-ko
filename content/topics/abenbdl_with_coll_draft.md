@@ -14,7 +14,7 @@ with collaborative draft;
 
 ## 설명
 
-`with collaborative draft` 는 RAP BO 에 **collaborative draft**을 켭니다. 여러 사용자가 같은 draft 인스턴스를 함께 고칠 수 있게 됩니다. BDEF 머리말에 적습니다.
+`with collaborative draft` 는 RAP BO 에 **collaborative draft** 를 켭니다. 여러 사용자가 같은 draft 인스턴스를 함께 고칠 수 있게 됩니다. BDEF 머리말에 적습니다.
 
 collaborative draft 를 쓰려면 BDEF 에 [[abenbdl_draft_action|draft action]] `Share` 도 더해야 합니다.
 

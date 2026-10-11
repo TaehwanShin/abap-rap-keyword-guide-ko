@@ -1,6 +1,6 @@
 ---
 title: augmentation
-summary: projection BDEF에서 다시 쓰는 생성·수정 요청에, transactional buffer 에 닿기 전 값이나 인스턴스를 덧붙이는 추가 구문입니다.
+summary: projection BDEF 에서 다시 쓰는 생성·수정 요청에, transactional buffer 에 닿기 전 값이나 인스턴스를 덧붙이는 추가 구문입니다.
 keywords: augment, 보강, operation augmentation, 작업 보강, RAP BO augmentation, use create ( augment ), use update ( augment ), MODIFY AUGMENTING ENTITIES, projection BDEF, 프로젝션 BDEF, precheck
 ---
 
@@ -12,9 +12,9 @@ keywords: augment, 보강, operation augmentation, 작업 보강, RAP BO augment
 
 ## 설명
 
-`augment` 는 projection BDEF에서 [[abenbdl_use_projection|use]] 로 다시 쓰는 standard operation(표준 작업)에 붙이는 선택 추가 구문입니다. **projection BDEF에서만** 쓸 수 있습니다.
+`augment` 는 projection BDEF 에서 [[abenbdl_use_projection|use]] 로 다시 쓰는 standard operation(표준 작업)에 붙이는 선택 추가 구문입니다. **projection BDEF 에서만** 쓸 수 있습니다.
 
-augmentation 을 걸면, RAP BO consumer(사용자)가 보낸 요청을 projection 계층에서 먼저 받아 손볼 수 있습니다. 데이터가 transactional buffer(트랜잭션 버퍼)에 닿기 전입니다. 예를 들어 projection BO로 들어온 요청에 값을 더 채운 다음, base BO(기반 BO)의 handler method(핸들러 메서드)로 넘깁니다.
+augmentation 을 걸면, RAP BO consumer(사용자)가 보낸 요청을 projection 계층에서 먼저 받아 손볼 수 있습니다. 데이터가 transactional buffer(트랜잭션 버퍼)에 닿기 전입니다. 예를 들어 projection BO 로 들어온 요청에 값을 더 채운 다음, base BO(기반 BO)의 handler method(핸들러 메서드)로 넘깁니다.
 
 augment 할 수 있는 작업은 세 가지입니다.
 
@@ -22,12 +22,12 @@ augment 할 수 있는 작업은 세 가지입니다.
 - `update`
 - create-by-association (create by association)
 
-augmentation 내용은 projection BDEF의 behavior pool(동작 풀)에, handler method `FOR MODIFY` 로 구현합니다.
+augmentation 내용은 projection BDEF 의 behavior pool(동작 풀)에, handler method `FOR MODIFY` 로 구현합니다.
 
 ### 무엇을 넣을 수 있고 무엇을 못 넣는가
 
 - **원래 요청에 이미 값이 있는 필드는 바꿀 수 없습니다.** RAP 런타임은 이미 값이 있는 필드에 대한 augmentation 요청을 버립니다. 원래 요청에서 지정하지 않은 필드만 채울 수 있습니다.
-- **`readonly` 필드에는 값을 넣을 수 없습니다.** augmentation 은 바깥에서 들어온 접근처럼 다뤄집니다. `readonly` 필드에 접근하려 하면 런타임 오류가 납니다. 원문 설명은 이렇지만, 원문 예제([[abenbdl_augment_abexa]])는 projection BDEF에서 `field ( readonly )` 로 정한 필드를 수정 augmentation 으로 채웁니다. 원문은 이 차이를 따로 설명하지 않습니다.
+- **`readonly` 필드에는 값을 넣을 수 없습니다.** augmentation 은 바깥에서 들어온 접근처럼 다뤄집니다. `readonly` 필드에 접근하려 하면 런타임 오류가 납니다. 원문 설명은 이렇지만, 원문 예제([[abenbdl_augment_abexa]])는 projection BDEF 에서 `field ( readonly )` 로 정한 필드를 수정 augmentation 으로 채웁니다. 원문은 이 차이를 따로 설명하지 않습니다.
 
 ### 잠금
 
@@ -45,7 +45,7 @@ augmentation 을 실행하는 시점에, 원래 요청에 있던 기반 인스�
 
 ## 예제
 
-projection BDEF에서 생성 작업에 augmentation 을 겁니다.
+projection BDEF 에서 생성 작업에 augmentation 을 겁니다.
 
 ```bdl
 projection implementation in class zbp_c_travel unique;
@@ -96,7 +96,7 @@ RAP BO consumer 가 `Status` 를 직접 보냈다면 그 값이 그대로 남습
 
 ## 알아두기
 
-- augmentation 은 projection BO에서만 쓸 수 있습니다. interface BDEF나 base BDEF(기반 BDEF)에는 없습니다.
+- augmentation 은 projection BO 에서만 쓸 수 있습니다. interface BDEF 나 base BDEF(기반 BDEF)에는 없습니다.
 - `delete` 는 augment 할 수 없습니다. `use delete` 에는 `precheck` 만 붙일 수 있습니다.
 - 가상 요소처럼 readonly 인 projection 필드를 augmentation 에서 받으려면 [[abenbdl_field_augment]] 로 derived type(파생 타입)에 넣어야 합니다.
 

@@ -1,15 +1,15 @@
 ---
 title: 예제 - 작업 augmentation
-summary: projection BO에서 생성과 create-by-association 요청을 augment 해, 요청에서 지정하지 않은 필드를 채우고 인스턴스를 더 만드는 과정을 보여 주는 예제입니다.
+summary: projection BO 에서 생성과 create-by-association 요청을 augment 해, 요청에서 지정하지 않은 필드를 채우고 인스턴스를 더 만드는 과정을 보여 주는 예제입니다.
 keywords: augment, operation augmentation, 작업 보강, 보강 예제, MODIFY AUGMENTING ENTITIES, RELATING TO, create by association, 연관 관계로 생성, projection BDEF, 프로젝션 BDEF, field ( modify )
 ---
 
 ## 설명
 
-이 예제는 projection BO에 [[abenbdl_augment_projection|augmentation]] 을 정의하고 구현하는 방법을 보여 줍니다.
+이 예제는 projection BO 에 [[abenbdl_augment_projection|augmentation]] 을 정의하고 구현하는 방법을 보여 줍니다.
 
 - base BO(기반 BO)는 managed 입니다. composition 으로 이어진 entity(엔터티) 두 개(부모와 자식)가 있습니다.
-- projection BDEF는 base BDEF(기반 BDEF)의 standard operation(표준 작업)을 다시 쓰면서 `create`, `update`, create-by-association 에 `augment` 를 붙입니다.
+- projection BDEF 는 base BDEF(기반 BDEF)의 standard operation(표준 작업)을 다시 쓰면서 `create`, `update`, create-by-association 에 `augment` 를 붙입니다.
 - projection 의 behavior pool(동작 풀)에 augmentation 메서드를 세 개 둡니다. 생성용, 수정용, create-by-association 용입니다.
 
 augmentation 으로 할 수 있는 일은 두 가지입니다. 원래 요청의 인스턴스에 **필드 값을 덧붙이는 일**과, 요청에 **새 인스턴스를 더하는 일**입니다. 예제는 둘 다 보여 줍니다.
@@ -18,7 +18,7 @@ augmentation 으로 할 수 있는 일은 두 가지입니다. 원래 요청의 
 
 ## 예제
 
-projection BDEF입니다. augment 할 작업마다 `( augment )` 를 붙입니다.
+projection BDEF 입니다. augment 할 작업마다 `( augment )` 를 붙입니다.
 
 ```bdl
 projection implementation in class zbp_c_travel unique;
@@ -110,7 +110,7 @@ CLASS lhc_travel IMPLEMENTATION.
 ENDCLASS.
 ```
 
-projection BO를 EML로 부릅니다. 사용자는 augmentation 이 있다는 것을 몰라도 됩니다.
+projection BO 를 EML 로 부릅니다. 사용자는 augmentation 이 있다는 것을 몰라도 됩니다.
 
 ```abap
 MODIFY ENTITIES OF zc_travel

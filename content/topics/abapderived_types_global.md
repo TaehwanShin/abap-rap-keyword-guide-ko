@@ -8,7 +8,7 @@ keywords: %global, REPORTED, 전역 기능 제어, 전역 권한, global feature
 
 `%global` 은 BDEF derived type(BDEF 파생 타입)의 구성요소이며, response parameter(응답 매개변수) `REPORTED` 안에 들어 있습니다.
 
-메시지가 [[abenbdl_actions_fc|global feature control]]나 [[abenbdl_authorization|global 권한]]에서 나온 것임을 표시합니다. 이런 메시지는 특정 인스턴스에 딸려 있지 않습니다.
+메시지가 [[abenbdl_actions_fc|global feature control]] 이나 [[abenbdl_authorization|global 권한]]에서 나온 것임을 표시합니다. 이런 메시지는 특정 인스턴스에 딸려 있지 않습니다.
 
 ### 타입
 

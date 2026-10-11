@@ -40,7 +40,7 @@ extension 을 허용하는 출발점입니다. 이것이 없으면 이 abstract 
 
 머리말의 `extensible` 로, 또 다른 abstract BDEF extension 이 다음을 덧붙일 수 있게 됩니다.
 
-- `define behavior for AbstractEntity` 로 abstract BDEF의 계층 타입에 새 노드를 더하는 일
+- `define behavior for AbstractEntity` 로 abstract BDEF 의 계층 타입에 새 노드를 더하는 일
 - `scalar entity` 로 계층 타입에 새 스칼라 entity(엔터티)를 더하는 일
 
 ### 2. entity 동작 extension(extend behavior for) 본문의 extensible
@@ -57,7 +57,7 @@ extension 을 허용하는 출발점입니다. 이것이 없으면 이 abstract 
 
 ### 4. 새 노드 본문의 extensible
 
-- `[deep] mapping for PartnerType corresponding extensible` : 원래 abstract BDEF에 정의된 type mapping 에 extension 필드를 더할 수 있게 합니다. `corresponding` 과 함께 써야만 합니다.
+- `[deep] mapping for PartnerType corresponding extensible` : 원래 abstract BDEF 에 정의된 type mapping 에 extension 필드를 더할 수 있게 합니다. `corresponding` 과 함께 써야만 합니다.
 
 ## 예제
 

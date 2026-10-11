@@ -1,6 +1,6 @@
 ---
-title: abstract BDEF의 extensibility
-summary: abstract BDEF에서 extensible 을 머리말, 노드, mapping 에 적어 abstract BDEF extension 이 계층 타입에 무엇을 덧붙일 수 있는지 정하는 문법입니다.
+title: abstract BDEF 의 extensibility
+summary: abstract BDEF 에서 extensible 을 머리말, 노드, mapping 에 적어 abstract BDEF extension 이 계층 타입에 무엇을 덧붙일 수 있는지 정하는 문법입니다.
 keywords: extensible, abstract, 추상 BDEF, 확장 허용, abstract BDEF extension, 추상 BDEF 확장, deep mapping corresponding extensible, mapping corresponding extensible, extension for abstract, scalar entity, 계층 타입, strict
 ---
 
@@ -23,7 +23,7 @@ define behavior for AbstractEntity
 
 ## 설명
 
-abstract BDEF에 abstract BDEF extension(확장)을 허용하려면 `extensible` 을 적습니다. 적는 자리는 세 군데입니다.
+abstract BDEF 에 abstract BDEF extension(확장)을 허용하려면 `extensible` 을 적습니다. 적는 자리는 세 군데입니다.
 
 **전제 조건** : `strict[(version)]` 로 BDEF strict mode 가 켜져 있어야 합니다.
 
@@ -46,11 +46,11 @@ extension 을 허용하는 출발점입니다. 이것이 없으면 확장할 수
 
 ### 3. entity 동작 본문의 extensible
 
-- `[deep] mapping for PartnerType corresponding extensible` : 원래 abstract BDEF에 정의된 type mapping 에 extension 필드를 더할 수 있게 합니다. `corresponding` 과 함께 써야만 합니다. 이름이 같은 구성요소가 자동으로 연결되어야 하기 때문입니다.
+- `[deep] mapping for PartnerType corresponding extensible` : 원래 abstract BDEF 에 정의된 type mapping 에 extension 필드를 더할 수 있게 합니다. `corresponding` 과 함께 써야만 합니다. 이름이 같은 구성요소가 자동으로 연결되어야 하기 때문입니다.
 
 ## 예제
 
-두 노드 모두 extension 을 허용한 abstract BDEF입니다. 루트 노드의 깊은 mapping 도 확장할 수 있게 열어 두었습니다.
+두 노드 모두 extension 을 허용한 abstract BDEF 입니다. 루트 노드의 깊은 mapping 도 확장할 수 있게 열어 두었습니다.
 
 ```bdl
 abstract;
@@ -81,7 +81,7 @@ with control
 ## 알아두기
 
 - 바탕이 되는 CDS abstract entity 가 `extensible` 로 선언되어 있을 필요는 없습니다.
-- abstract BDEF를 확장하는 문법은 [[abenbdl_extension_for_abstract]] 에 있습니다.
+- abstract BDEF 를 확장하는 문법은 [[abenbdl_extension_for_abstract]] 에 있습니다.
 
 ## 관련 항목
 

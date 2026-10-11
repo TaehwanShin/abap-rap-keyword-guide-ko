@@ -6,7 +6,7 @@ keywords: RAP calculator, RAP 계산기, managed, 관리형, with draft, draft, 
 
 ## 설명
 
-RAP 로 만든 계산기입니다. 인스턴스 하나가 계산 하나입니다. 계산 ID(키), 정수 피연산자 둘, 산술 연산자, 결과, 그리고 draft 에 필요한 날짜·시간 필드로 이루어집니다. managed 이고 draft 를 쓰며 **late numbering**를 합니다. 그래서 키인 계산 ID 는 save sequence(저장 순서)에 들어가서야 정해집니다.
+RAP 로 만든 계산기입니다. 인스턴스 하나가 계산 하나입니다. 계산 ID(키), 정수 피연산자 둘, 산술 연산자, 결과, 그리고 draft 에 필요한 날짜·시간 필드로 이루어집니다. managed 이고 draft 를 쓰며 **late numbering** 을 합니다. 그래서 키인 계산 ID 는 save sequence(저장 순서)에 들어가서야 정해집니다.
 
 behavior definition(동작 정의)의 뼈대는 이렇습니다.
 

@@ -6,7 +6,7 @@ keywords: READ ENTITIES, EXECUTE, function, 함수 실행, FOR READ, FOR FUNCTIO
 
 ## 설명
 
-`READ` 문으로 managed RAP BO 에 접근해 **function**를 실행하는 예제입니다. function 은 entity(엔터티)에서 몇 개 필드만 골라 읽고, 그 값을 결과로 돌려줍니다.
+`READ` 문으로 managed RAP BO 에 접근해 **function** 을 실행하는 예제입니다. function 은 entity(엔터티)에서 몇 개 필드만 골라 읽고, 그 값을 결과로 돌려줍니다.
 
 흐름은 이렇습니다.
 

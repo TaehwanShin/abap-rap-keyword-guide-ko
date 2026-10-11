@@ -36,8 +36,8 @@ authorization control 이 다루는 작업은 생성, 수정, 삭제, create-by-
 
 모든 entity 는 authorization master 이거나 authorization dependent 이어야 합니다.
 
-- **authorization master entity**는 behavior pool 에 자기 권한 메서드(전역 또는 인스턴스)가 있습니다. authorization master 자신이나 거기에 딸린 authorization dependent entity 에 접근 요청이 오면 이 구현이 쓰입니다.
-- **authorization dependent entity**는 연결된 authorization master 의 authorization control 을 그대로 씁니다. 권한 요청이 authorization master 의 구현으로 넘어갑니다. authorization dependent entity 에서 수정, 삭제, create-by-association 을 하면 authorization master 의 **수정(update) 권한 확인**이 적용됩니다. 자식으로 가는 association 에는 create-by-association 하는 작업의 권한을 따로 정해 이 기본값과 다르게 할 수 있습니다.
+- **authorization master entity** 는 behavior pool 에 자기 권한 메서드(전역 또는 인스턴스)가 있습니다. authorization master 자신이나 거기에 딸린 authorization dependent entity 에 접근 요청이 오면 이 구현이 쓰입니다.
+- **authorization dependent entity** 는 연결된 authorization master 의 authorization control 을 그대로 씁니다. 권한 요청이 authorization master 의 구현으로 넘어갑니다. authorization dependent entity 에서 수정, 삭제, create-by-association 을 하면 authorization master 의 **수정(update) 권한 확인**이 적용됩니다. 자식으로 가는 association 에는 create-by-association 하는 작업의 권한을 따로 정해 이 기본값과 다르게 할 수 있습니다.
 
 규칙은 다음과 같습니다.
 
@@ -64,8 +64,8 @@ authorization control 이 다루는 작업은 생성, 수정, 삭제, create-by-
 
 - **managed RAP BO** : root entity 를 `authorization master` 로 적으면 RAP 프레임워크가 작업마다 접근 제한이 있는지 확인합니다.
 - **unmanaged RAP BO** : global authorization control 을 적어 두면 RAP 프레임워크가 작업마다 접근 제한이 있는지 확인합니다.
-- **[[abenbdl_with_draft|draft 를 쓰는 BO]]** : draft 인스턴스에 실행하는 [[abenbdl_standard_operations|standard operation]]마다 접근 제한을 확인합니다. [[abenbdl_draft_action|draft action]] `Resume` 과 `Edit` 에는 `create` 의 authorization control 을 확인합니다. `Activate`, `Discard`, `Prepare` 에서는 권한 메서드를 부르지 않습니다. draft 활성화를 막으려면 권한 확인을 [[abenbdl_validations|validation]]에 구현해야 합니다.
-- **projection BO** : base BO(기반 BO) 의 권한을 그대로 물려받습니다. projection 계층에 [[abenbdl_nonstandard_projection|새 action 이나 function]] 을 만들면 그것에 쓸 authorization control 을 새로 정할 수 있습니다. [[abenbdl_authorization_projection]] 를 참고하세요.
+- **[[abenbdl_with_draft|draft 를 쓰는 BO]]** : draft 인스턴스에 실행하는 [[abenbdl_standard_operations|standard operation]] 마다 접근 제한을 확인합니다. [[abenbdl_draft_action|draft action]] `Resume` 과 `Edit` 에는 `create` 의 authorization control 을 확인합니다. `Activate`, `Discard`, `Prepare` 에서는 권한 메서드를 부르지 않습니다. draft 활성화를 막으려면 권한 확인을 [[abenbdl_validations|validation]] 에 구현해야 합니다.
+- **projection BO** : base BO(기반 BO) 의 권한을 그대로 물려받습니다. projection 계층에 [[abenbdl_nonstandard_projection|새 action 이나 function]] 을 만들면 그것에 쓸 authorization control 을 새로 정할 수 있습니다. [[abenbdl_authorization_projection]] 을 참고하세요.
 - **RAP BO interface** : base BO 의 authorization control 을 그대로 물려받습니다.
 
 ## 예제
@@ -143,7 +143,7 @@ ENDCLASS.
 - EML 문에 [[abapin_local_mode|IN LOCAL MODE]] 를 붙이면 authorization control 을 건너뜁니다.
 - RAP BO consumer(사용자)는 EML 의 [[abapget_permissions|GET PERMISSIONS]] 문으로 그 BO 에 authorization control 이 구현되어 있는지 알아볼 수 있습니다.
 - 읽기 접근을 막으려면 DCL(Data Control Language)을 씁니다. DCL 로 만든 CDS 접근 제어는 기반 계층에서 projection 과 RAP BO interface 로 그대로 전달됩니다. 실행 예제는 [[abenbdl_draft_query_abexa]] 에 있습니다.
-- 권한은 behavior pool 의 다른 메서드, 예를 들어 [[abenbdl_validations|validation]]에서도 확인할 수 있습니다.
+- 권한은 behavior pool 의 다른 메서드, 예를 들어 [[abenbdl_validations|validation]] 에서도 확인할 수 있습니다.
 - UI 에서는 authorization control 이 RAP 사용자 힌트로 나타납니다.
 - managed·unmanaged BO 를 넓히는 BDEF extension(확장)에서는 action 마다 authorization control 을 따로 적어야 합니다. 원래 BO 가 바뀌어도 extension action 이 흔들리지 않도록, extension action 의 권한을 원래 BO 의 권한과 떼어 놓기 위해서입니다.
 - lock dependent, authorization dependent, ETag 종속을 한 줄로 줄여 쓸 수 있습니다. `( lock, authorization, etag ) dependent by _Assoc` 형태이며 [[abenbdl_short_syntax]] 에서 설명합니다.

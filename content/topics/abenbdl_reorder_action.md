@@ -25,7 +25,7 @@ keywords: reorder action, 순서 변경 액션, managed reorder action, hierarch
 
 ## 설명
 
-순서 변경 action 은 **계층 action**의 하나입니다. 편집 가능한 트리뷰에서 계층 노드를 형제 노드(같은 부모 아래의 노드) 사이의 원하는 자리로 옮깁니다. 옮길 때 모든 형제 인스턴스의 계층 색인 필드 값을 다시 계산합니다.
+순서 변경 action 은 **계층 action** 의 하나입니다. 편집 가능한 트리뷰에서 계층 노드를 형제 노드(같은 부모 아래의 노드) 사이의 원하는 자리로 옮깁니다. 옮길 때 모든 형제 인스턴스의 계층 색인 필드 값을 다시 계산합니다.
 
 순서 변경 action 은 `instance hierarchy` 뒤의 중괄호 안에 적습니다([[abenbdl_instance_hierarchy]]). 선택 사항이고, 인스턴스 계층 안에서만 적을 수 있습니다.
 

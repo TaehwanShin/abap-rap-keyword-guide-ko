@@ -8,7 +8,7 @@ keywords: save_modified 예제, with unmanaged save, 비관리형 저장, TYPE R
 
 managed BO 의 BDEF 에 [[abenbdl_saving|with unmanaged save]] 를 적으면, interaction phase(상호작용 단계)의 버퍼 관리는 managed RAP BO provider(제공자)가 하지만 데이터베이스에 쓰는 일은 하지 않습니다. 만들고 고치고 지운 인스턴스를 저장하는 코드는 behavior pool(동작 풀)의 `save_modified` 에 직접 써야 합니다. 이 예제는 그 구현을 보여 주고, BDEF derived type(BDEF 파생 타입) `TYPE REQUEST FOR CHANGE` 와 `TYPE REQUEST FOR DELETE` 를 어떻게 쓰는지도 함께 보여 줍니다.
 
-`save_modified` 안에서는 `create`, `update`, `delete` 를 따로 선언하지 않고 바로 쓸 수 있습니다. `create` 와 `update` 는 `TYPE REQUEST FOR CHANGE`, `delete` 는 `TYPE REQUEST FOR DELETE` 타입입니다. 원문 예제는 설명을 위해 같은 타입의 변수를 일부러 한 번 더 선언해 보여 줍니다. 이런 타입은 [[abenbdl_saving|additional save]]이나 unmanaged save 를 쓰는 managed BO 에서만 의미가 있습니다.
+`save_modified` 안에서는 `create`, `update`, `delete` 를 따로 선언하지 않고 바로 쓸 수 있습니다. `create` 와 `update` 는 `TYPE REQUEST FOR CHANGE`, `delete` 는 `TYPE REQUEST FOR DELETE` 타입입니다. 원문 예제는 설명을 위해 같은 타입의 변수를 일부러 한 번 더 선언해 보여 줍니다. 이런 타입은 [[abenbdl_saving|additional save]] 나 unmanaged save 를 쓰는 managed BO 에서만 의미가 있습니다.
 
 처리 순서는 이렇습니다.
 

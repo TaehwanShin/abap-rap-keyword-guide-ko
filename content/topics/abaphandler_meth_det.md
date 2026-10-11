@@ -1,6 +1,6 @@
 ---
 title: determination handler method (FOR DETERMINE)
-summary: behavior definition 에 선언한 determination을 구현하는 handler method 이며, 저장할 때 도는 것과 버퍼가 바뀐 뒤 도는 것 두 가지가 있습니다.
+summary: behavior definition 에 선언한 determination 을 구현하는 handler method 이며, 저장할 때 도는 것과 버퍼가 바뀐 뒤 도는 것 두 가지가 있습니다.
 keywords: FOR DETERMINE ON SAVE, FOR DETERMINE ON MODIFY, 결정, determination, 핸들러 메서드, handler method, reported, TYPE TABLE FOR DETERMINATION, 저장 순서, 트랜잭션 버퍼
 ---
 

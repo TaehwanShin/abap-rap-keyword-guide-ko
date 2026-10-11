@@ -18,9 +18,9 @@ CDS projection 뷰에는 트랜잭션 처리와 상관없는 필드가 들어갈
 - association 을 따라가서 가져온 필드 (경로 표현식)
 - 지역화 필드 (`LOCALIZED` 로 정의한 필드)
 
-이런 필드는 readonly 이라서, 기본으로는 projection BDEF의 BDEF derived type(BDEF 파생 타입)에 들어가지 않습니다. 그래서 RAP BO consumer(사용자)가 값을 보내도 받을 자리가 없습니다.
+이런 필드는 readonly 이라서, 기본으로는 projection BDEF 의 BDEF derived type(BDEF 파생 타입)에 들어가지 않습니다. 그래서 RAP BO consumer(사용자)가 값을 보내도 받을 자리가 없습니다.
 
-projection BDEF에서 `field ( modify )` 로 표시하면 사정이 달라집니다. 표시한 필드가 `TYPE TABLE FOR CREATE` 같은 projection BDEF의 derived type 에 구성요소로 나타납니다. 그러면 augmentation 구현에서 그 값을 받아 트랜잭션 처리에 쓸 수 있습니다. augmentation 이 무엇인지는 [[abenbdl_augment_projection]] 에서 설명합니다.
+projection BDEF 에서 `field ( modify )` 로 표시하면 사정이 달라집니다. 표시한 필드가 `TYPE TABLE FOR CREATE` 같은 projection BDEF 의 derived type 에 구성요소로 나타납니다. 그러면 augmentation 구현에서 그 값을 받아 트랜잭션 처리에 쓸 수 있습니다. augmentation 이 무엇인지는 [[abenbdl_augment_projection]] 에서 설명합니다.
 
 `modify` 뒤에 쉼표로 field characteristics(필드 특성) `FieldChar` 를 덧붙일 수 있습니다. 쓸 수 있는 값은 다음과 같습니다.
 
@@ -50,7 +50,7 @@ define root view entity ZC_Travel
 }
 ```
 
-projection BDEF에서 `Memo` 를 `field ( modify )` 로 표시합니다.
+projection BDEF 에서 `Memo` 를 `field ( modify )` 로 표시합니다.
 
 ```bdl
 projection implementation in class zbp_c_travel unique;
@@ -67,7 +67,7 @@ define behavior for ZC_Travel alias Travel
 }
 ```
 
-이제 projection BDEF의 derived type 에 `Memo` 구성요소가 생깁니다.
+이제 projection BDEF 의 derived type 에 `Memo` 구성요소가 생깁니다.
 
 ```abap
 " lt_create 의 줄에 Memo 구성요소가 들어 있다

@@ -96,7 +96,7 @@ define behavior for ZC_Travel alias Travel
 ## 알아두기
 
 - BDEF extension(확장)에서는 default factory action 을 지정할 수 없습니다.
-- 문법 틀에서 보듯 [[abenbdl_action_factory|factory action]]보다 쓸 수 있는 추가 구문이 적습니다. `features: instance`, `authorization:update`, `authorization:instance`, `lock:none` 은 default factory action 의 문법 틀에 없습니다.
+- 문법 틀에서 보듯 [[abenbdl_action_factory|factory action]] 보다 쓸 수 있는 추가 구문이 적습니다. `features: instance`, `authorization:update`, `authorization:instance`, `lock:none` 은 default factory action 의 문법 틀에 없습니다.
 - default factory action 은 [[abenbdl_action_onsave|save action]] 이 될 수 없습니다.
 
 ## 관련 항목

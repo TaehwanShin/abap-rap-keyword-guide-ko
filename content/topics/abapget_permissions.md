@@ -85,7 +85,7 @@ GET PERMISSIONS ENTITY zr_travel
   FAILED   DATA(ls_failed)
   REPORTED DATA(ls_reported).
 
-" ls_result-global    : 전역 정보와 정적 정보
+" ls_result-global    : global 정보와 static 정보
 " ls_result-instances : 인스턴스별 정보
 ```
 

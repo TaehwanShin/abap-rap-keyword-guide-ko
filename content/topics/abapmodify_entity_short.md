@@ -31,9 +31,9 @@ RAP BO 의 노드(entity(엔터티)) **하나**에 트랜잭션 변경 작업을
 
 ### 추가 구문
 
-- `IN LOCAL MODE` : feature control(기능 제어)와 권한 확인을 건너뜁니다. RAP BO 런타임 구현 안에서만 쓸 수 있습니다. [[abapin_local_mode]] 을 봅니다.
+- `IN LOCAL MODE` : feature control(기능 제어)와 권한 확인을 건너뜁니다. RAP BO 런타임 구현 안에서만 쓸 수 있습니다. [[abapin_local_mode]] 를 봅니다.
 - `[FORWARDING] PRIVILEGED` : `PRIVILEGED` 는 privileged mode 로 RAP BO 에 접근합니다. RAP BO 런타임이 일부 권한 확인을 하지 않습니다. `FORWARDING PRIVILEGED` 는 privileged mode 를 켜지 않습니다. 지금 문맥이 privileged mode 일 때 그 상태를 이 요청으로 넘겨주기만 합니다. behavior definition 에 `privileged` 가 적혀 있어야 쓸 수 있습니다. [[abapeml_privileged]] 을 봅니다.
-- `response_param` : response parameter(응답 매개변수, `FAILED`, `MAPPED`, `REPORTED`)입니다. [[abapeml_response]] 을 봅니다.
+- `response_param` : response parameter(응답 매개변수, `FAILED`, `MAPPED`, `REPORTED`)입니다. [[abapeml_response]] 를 봅니다.
 
 ## 예제
 

@@ -71,7 +71,7 @@ ENDCLASS.
 ## 알아두기
 
 - 이 메서드에서 쓸 수 있는 response parameter 는 `reported` 하나뿐입니다. `failed` 는 없습니다.
-- 인스턴스의 상태에 따라 달라지는 feature control 은 [[abaphandler_meth_features|instance feature control handler method]]에서 다룹니다.
+- 인스턴스의 상태에 따라 달라지는 feature control 은 [[abaphandler_meth_features|instance feature control handler method]] 에서 다룹니다.
 
 ## 관련 항목
 

@@ -34,7 +34,7 @@ keywords: create, update, delete, standard operations, 표준 작업, 생성, �
 
 ### create 와 child entity
 
-- **managed RAP BO** : `create` 는 루트 노드에만 적을 수 있습니다. 자식 노드는 [[abenbdl_internal|내부용]]으로만 생성이 자동으로 켜져 있습니다. 그래서 바깥의 사용자는 자식 인스턴스를 부모를 거쳐서만, 곧 [[abenbdl_association|create-by-association]]으로만 만들 수 있습니다. 자식을 직접 생성하는 것은 그 BO 자신의 behavior pool(동작 풀) 구현 안에서만 됩니다.
+- **managed RAP BO** : `create` 는 루트 노드에만 적을 수 있습니다. 자식 노드는 [[abenbdl_internal|내부용]]으로만 생성이 자동으로 켜져 있습니다. 그래서 바깥의 사용자는 자식 인스턴스를 부모를 거쳐서만, 곧 [[abenbdl_association|create-by-association]] 으로만 만들 수 있습니다. 자식을 직접 생성하는 것은 그 BO 자신의 behavior pool(동작 풀) 구현 안에서만 됩니다.
 - **unmanaged RAP BO** : child entity(자식 엔터티)를 직접 생성하게 할 수 있지만 권장하지 않습니다.
 
 ### delete 와 자식 인스턴스
@@ -57,7 +57,7 @@ managed RAP BO 에서는 부모 인스턴스를 지우면 거기에 딸린 자�
 
 - **managed RAP BO** : managed RAP BO provider(제공자)가 standard operation 을 모두 처리하므로 behavior pool 이 필요 없습니다. 다만 몇몇 추가 구문은 구현이 필요합니다. 추가 구문 항목마다 적혀 있습니다.
 - **unmanaged RAP BO** : standard operation 마다 behavior pool 의 [[abapmethods_for_rap_behv|handler method]] [[abaphandler_meth_modify|FOR MODIFY]] 에 구현해야 합니다.
-- **projection BO 와 RAP BO interface** : base BDEF(기반 BDEF) 의 standard operation 을 키워드 `use` 로 다시 씁니다. [[abenbdl_use_projection]] 를 참고하세요.
+- **projection BO 와 RAP BO interface** : base BDEF(기반 BDEF) 의 standard operation 을 키워드 `use` 로 다시 씁니다. [[abenbdl_use_projection]] 을 참고하세요.
 
 ## 예제
 

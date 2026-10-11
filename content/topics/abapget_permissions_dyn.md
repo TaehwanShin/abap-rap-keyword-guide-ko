@@ -28,7 +28,7 @@ GET PERMISSIONS [[FORWARDING] PRIVILEGED] [only_clause] OPERATIONS perm_tab [res
 ### 추가 구문
 
 - `[FORWARDING] PRIVILEGED` : `PRIVILEGED` 는 privileged mode 로 RAP BO 에 접근합니다. RAP BO 런타임이 일부 권한 확인을 하지 않습니다. `FORWARDING PRIVILEGED` 는 privileged mode 를 켜지 않습니다. 지금 문맥이 privileged mode 일 때 그 상태를 이 요청으로 넘겨주기만 합니다. behavior definition(동작 정의)에 `privileged` 가 적혀 있어야 쓸 수 있습니다. [[abapeml_privileged]] 을 봅니다.
-- `only_clause` : 결과에 담을 갈래(전역/인스턴스, feature control(기능 제어)/권한)를 고릅니다. [[abapget_permissions_only_clause]] 을 봅니다.
+- `only_clause` : 결과에 담을 갈래(global/instance, feature control(기능 제어)/권한)를 고릅니다. [[abapget_permissions_only_clause]] 을 봅니다.
 - `response_param` : response parameter(응답 매개변수)입니다. 동적 형식에서는 `ABP_BEHV_RESPONSE_TAB` 타입 내부 테이블이어야 합니다.
 
 ## 예제

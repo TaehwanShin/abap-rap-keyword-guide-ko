@@ -1,6 +1,6 @@
 ---
-title: abstract BDEF의 entity behavior definition (define behavior for, scalar entity)
-summary: abstract BDEF에서 composition 트리의 노드를 계층 타입에 구조로 넣을지(define behavior for) 값 하나로 넣을지(scalar entity) 정하는 문법입니다.
+title: abstract BDEF 의 entity behavior definition (define behavior for, scalar entity)
+summary: abstract BDEF 에서 composition 트리의 노드를 계층 타입에 구조로 넣을지(define behavior for) 값 하나로 넣을지(scalar entity) 정하는 문법입니다.
 keywords: define behavior for, scalar entity, alias, extensible, with control, %control, 추상 BDEF, abstract BDEF, 엔터티 동작 정의, 스칼라 엔터티, 계층 타입, with hierarchy
 ---
 
@@ -22,7 +22,7 @@ keywords: define behavior for, scalar entity, alias, extensible, with control, %
 
 ## 설명
 
-abstract BDEF의 동작을 entity(엔터티) 단위로 정의합니다. abstract BDEF는 **루트 CDS abstract entity** 하나를 바탕으로 하며, CDS composition 트리의 노드 하나 또는 여러 개에 동작을 정의할 수 있습니다.
+abstract BDEF 의 동작을 entity(엔터티) 단위로 정의합니다. abstract BDEF 는 **루트 CDS abstract entity** 하나를 바탕으로 하며, CDS composition 트리의 노드 하나 또는 여러 개에 동작을 정의할 수 있습니다.
 
 트리의 노드를 계층 타입에 넣는 방법은 두 가지입니다.
 
@@ -80,8 +80,8 @@ scalar entity ZA_TagInput field TagText;
 ## 알아두기
 
 - `with control` 을 쓰려면 abstract BDEF 머리말에 `with hierarchy` 가 있어야 합니다.
-- abstract BDEF에는 entity 동작 특성(잠금, 권한, ETag 같은 것)을 적을 수 없습니다.
-- abstract BDEF에는 트랜잭션 동작을 정의할 수 없습니다. 본문에 올 수 있는 것은 field characteristics, association, type mapping 뿐입니다.
+- abstract BDEF 에는 entity 동작 특성(잠금, 권한, ETag 같은 것)을 적을 수 없습니다.
+- abstract BDEF 에는 트랜잭션 동작을 정의할 수 없습니다. 본문에 올 수 있는 것은 field characteristics, association, type mapping 뿐입니다.
 
 ## 관련 항목
 

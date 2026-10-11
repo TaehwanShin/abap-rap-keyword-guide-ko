@@ -62,7 +62,7 @@ global feature control, global 권한, 저장 시점·수정 시점 determinatio
 
 ### reported response parameter 의 %state_area
 
-- 다음 메서드에서 `reported` 에 넣는 항목은 `%state_area` 가 초기값이어야 합니다. 읽기, `with additional implementation` 으로 정의한 draft 메서드, precheck, augmentation, `adjust_numbers`, early numbering 용 `FOR NUMBERING` handler method, `save`, `save_modified`, 잠금, (전역) 권한, (전역) feature control 입니다. `cleanup` 에는 해당하지 않습니다.
+- 다음 메서드에서 `reported` 에 넣는 항목은 `%state_area` 가 초기값이어야 합니다. 읽기, `with additional implementation` 으로 정의한 draft 메서드, precheck, augmentation, `adjust_numbers`, early numbering 용 `FOR NUMBERING` handler method, `save`, `save_modified`, 잠금, (global) 권한, (global) feature control 입니다. `cleanup` 에는 해당하지 않습니다.
 - `%state_area` 에 값이 있으면 `%create`, `%update`, `%delete`, `%action`, `%cid`, `%global` 은 초기값이어야 합니다. 이때는 `%op` 아래의 `%element` 만 채울 수 있습니다.
 - 어기면 런타임 오류 `BEHAVIOR_BAD_HANDLER_RESPONSE` 가 납니다.
 

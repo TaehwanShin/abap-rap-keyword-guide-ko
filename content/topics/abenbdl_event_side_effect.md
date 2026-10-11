@@ -12,7 +12,7 @@ event EventName for side effects;
 
 ## 설명
 
-managed 또는 unmanaged RAP BO 에 **side effects 용 business event**를 선언합니다. 이 event 는 event 기반 side effects 에만 씁니다. event 기반 side effects 는 서버에서 event 가 발생하면 화면이 정해 둔 값을 다시 읽게 하는 side effects 입니다([[abenbdl_side_effects]]).
+managed 또는 unmanaged RAP BO 에 **side effects 용 business event** 를 선언합니다. 이 event 는 event 기반 side effects 에만 씁니다. event 기반 side effects 는 서버에서 event 가 발생하면 화면이 정해 둔 값을 다시 읽게 하는 side effects 입니다([[abenbdl_side_effects]]).
 
 쓰려면 두 가지를 함께 적습니다.
 

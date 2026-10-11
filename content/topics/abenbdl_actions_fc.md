@@ -113,7 +113,7 @@ ENDMETHOD.
 ## 알아두기
 
 - [[abenbdl_internal|internal]] 작업에는 feature control 을 쓸 수 없습니다.
-- 정적 RAP BO 작업에는 global feature control 만 쓸 수 있습니다. instance feature control 은 쓸 수 없습니다.
+- static RAP BO 작업에는 global feature control 만 쓸 수 있습니다. instance feature control 은 쓸 수 없습니다.
 - [[abapin_local_mode|IN LOCAL MODE]] 를 붙인 EML 호출에서는 feature control 의 실행 시점 확인을 하지 않습니다.
 - EML 문 [[abapget_permissions|GET PERMISSIONS]] 로 어떤 작업이 막혀 있는지 알아낼 수 있습니다.
 - UI 에서는 feature control 이 RAP 사용자 힌트(consumer hint)로 나타납니다.

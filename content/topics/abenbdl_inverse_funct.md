@@ -16,7 +16,7 @@ keywords: inverse function, 인버스 함수, 역함수, 외래 키, foreign key
 
 ## 설명
 
-inverse function 은 외래 키 association 에 정의하는 **static function**입니다. 그 association 의 외래 키 값을 하나 주면, 외래 키가 그 값과 같은 연관 소스 entity(엔터티)의 인스턴스를 모두 돌려줍니다.
+inverse function 은 외래 키 association 에 정의하는 **static function** 입니다. 그 association 의 외래 키 값을 하나 주면, 외래 키가 그 값과 같은 연관 소스 entity(엔터티)의 인스턴스를 모두 돌려줍니다.
 
 다른 static function 처럼 EML 에서 따로 불러 쓸 수 있습니다. 하지만 주된 쓰임새는 다른 BO 로 가는 대상 해석(target-resolved) association 에서 **managed read-by-association 이 되게 하는 것**입니다.
 

@@ -22,11 +22,11 @@ copy action
 
 ## 설명
 
-복사 action 은 **계층 action**의 하나입니다. 편집 가능한 트리뷰에서 계층 노드를 어떻게 복제할지 정합니다. 이미 있는 노드를 바탕으로 새 노드를 만들 때 씁니다.
+복사 action 은 **계층 action** 의 하나입니다. 편집 가능한 트리뷰에서 계층 노드를 어떻게 복제할지 정합니다. 이미 있는 노드를 바탕으로 새 노드를 만들 때 씁니다.
 
 복사 action 은 `instance hierarchy` 뒤의 중괄호 안에 적습니다([[abenbdl_instance_hierarchy]]). 선택 사항이고, 인스턴스 계층 안에서만 적을 수 있습니다.
 
-복사 action 은 **인스턴스에 묶인 factory action**입니다. 그래서 결과로 만들어지는 인스턴스에 `%cid` 를 쓸 수 있습니다([[abapderived_types_cid]]).
+복사 action 은 **인스턴스에 묶인 factory action** 입니다. 그래서 결과로 만들어지는 인스턴스에 `%cid` 를 쓸 수 있습니다([[abapderived_types_cid]]).
 
 프레임워크가 대신 해 주지 않으므로 직접 구현해야 합니다. behavior pool(동작 풀)의 handler method(핸들러 메서드) `FOR MODIFY` 에 씁니다([[abaphandler_meth_modify]]).
 

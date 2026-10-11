@@ -48,7 +48,7 @@ managed 와 unmanaged RAP BO 에서만 씁니다.
 
 RAP 프레임워크가 권한 객체 호출을 알아서 빼 줍니다. behavior pool(동작 풀)에 구현할 것은 없습니다.
 
-권한 확인에는 권한 객체 말고 다른 것도 있습니다. CDS 접근 제어가 그렇습니다. BO 를 권한 객체가 아닌 다른 방법으로 지키고 있다면, **빈 authorization context**를 정의해 `ContextName` 으로 가리키면 됩니다. 빈 authorization context 일 때 특권 EML 호출은 이렇게 처리됩니다.
+권한 확인에는 권한 객체 말고 다른 것도 있습니다. CDS 접근 제어가 그렇습니다. BO 를 권한 객체가 아닌 다른 방법으로 지키고 있다면, **빈 authorization context** 를 정의해 `ContextName` 으로 가리키면 됩니다. 빈 authorization context 일 때 특권 EML 호출은 이렇게 처리됩니다.
 
 - managed RAP BO : 원문은 RAP 프레임워크가 CDS 접근 제어 같은 다른 권한을 알아서 확인한다고만 적습니다. 특권 호출에서 이 확인을 건너뛰는지는 원문에서 분명하지 않습니다.
 - unmanaged RAP BO : 특권 접근을 어떻게 다룰지를 behavior pool 의 handler method(핸들러 메서드)에 직접 정할 수 있습니다.

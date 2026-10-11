@@ -52,7 +52,7 @@ keywords: field_spec, FROM, FIELDS WITH, ALL FIELDS WITH, fields_tab, %control, 
 - 키 필드는 적어도 되고 안 적어도 됩니다. 적지 않아도 기본으로 읽어 돌려줍니다.
 - 괄호 안의 순서와 상관없이, 결과 테이블의 열 순서는 데이터베이스 테이블의 순서를 따릅니다.
 - `%control` 은 자동으로 채워집니다. 그래서 `fields_tab` 은 읽는 자리이면서 쓰는 자리입니다.
-- 컴파일러의 정적 검사와 코드 완성을 쓸 수 있다는 것이 장점입니다. 예를 들어 `readonly`, `mandatory` 같은 정적 field characteristics(필드 특성)이 반영됩니다.
+- 컴파일러의 정적 검사와 코드 완성을 쓸 수 있다는 것이 장점입니다. 예를 들어 `readonly`, `mandatory` 같은 static field characteristics(필드 특성)이 반영됩니다.
 
 ### ALL FIELDS WITH fields_tab
 
@@ -112,7 +112,7 @@ READ ENTITIES OF zr_travel IN LOCAL MODE
 
 ## 알아두기
 
-- `fields_tab` 뒤에는 [[abapeml_result|RESULT]] 를 적어 문장을 마무리합니다. association 으로 읽을 때는 `RESULT` 대신 `LINK` 만 적어도 되고, 둘 다 적어도 됩니다([[abapread_entity_entities_op]]). [[abapeml_response|response parameter]]도 그 뒤에 적을 수 있습니다.
+- `fields_tab` 뒤에는 [[abapeml_result|RESULT]] 를 적어 문장을 마무리합니다. association 으로 읽을 때는 `RESULT` 대신 `LINK` 만 적어도 되고, 둘 다 적어도 됩니다([[abapread_entity_entities_op]]). [[abapeml_response|response parameter]] 도 그 뒤에 적을 수 있습니다.
 - `fields_tab` 에는 **키 필드를 모두** 적어야 합니다. 하나라도 빠지면 읽기 작업이 실패합니다.
 - association 으로 읽으면 연관된 entity 의 키 필드가 기본으로 모두 돌아옵니다.
 - `FIELDS ( ... ) WITH` 와 [[abapmodify_entity_entities_fields|SET FIELDS WITH]] 는 function 을 실행하는 읽기(`EXECUTE`)에는 조건이 맞을 때만 쓸 수 있습니다. BDEF 에서 function 을 `deep [table] parameter`([[abenbdl_action_input_param|깊은 입력 매개변수]])로 선언하고 [[abenbdl_action_output_para|selective]] 를 쓰지 않았을 때입니다.

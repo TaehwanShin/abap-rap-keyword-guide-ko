@@ -12,9 +12,9 @@ keywords: default function, default values function, GetDefaultsFor, GetDefaults
 
 ## 설명
 
-`default function` 은 RAP BO 작업에 **default values function**를 붙입니다. default values function 은 그 작업을 화면에서 실행할 때 필드 값이나 입력 매개변수를 미리 채워 줍니다. handler method(핸들러 메서드) [[abaprap_handler_default_val_func|FOR READ ... FOR FUNCTION ...]] 에 반드시 구현해야 합니다.
+`default function` 은 RAP BO 작업에 **default values function** 을 붙입니다. default values function 은 그 작업을 화면에서 실행할 때 필드 값이나 입력 매개변수를 미리 채워 줍니다. handler method(핸들러 메서드) [[abaprap_handler_default_val_func|FOR READ ... FOR FUNCTION ...]] 에 반드시 구현해야 합니다.
 
-붙일 수 있는 작업은 [[abenbdl_standard_operations|standard operation]] `create`, create-by-association, [[abenbdl_action|action]], [[abenbdl_function|function]]입니다. 작업과 매개변수 정의 뒤에 `{ default function GetDefaultsForOperation; }` 를 덧붙이는 모양입니다.
+붙일 수 있는 작업은 [[abenbdl_standard_operations|standard operation]] `create`, create-by-association, [[abenbdl_action|action]], [[abenbdl_function|function]] 입니다. 작업과 매개변수 정의 뒤에 `{ default function GetDefaultsForOperation; }` 를 덧붙이는 모양입니다.
 
 ### 이름 규칙
 
@@ -34,7 +34,7 @@ keywords: default function, default values function, GetDefaultsFor, GetDefaults
 ### 어디에서 쓸 수 있나
 
 - managed RAP BO, unmanaged RAP BO
-- projection BO : projection 단계에서 정의한 [[abenbdl_nonstandard_projection|action 과 function]]에 default values function 을 정의할 수 있습니다.
+- projection BO : projection 단계에서 정의한 [[abenbdl_nonstandard_projection|action 과 function]] 에 default values function 을 정의할 수 있습니다.
 - projection BO 와 RAP BO interface : base BDEF(기반 BDEF) 의 default values function 을 [[abenbdl_use_default_function|use]] 로 다시 쓸 수 있습니다. 작업과 default values function 은 따로따로 다시 써야 합니다.
 
 ## 예제

@@ -42,7 +42,7 @@ action acceptTravel external 'AcceptTravelRequestAndNotifyAgency' result [1] $se
 
 ## 알아두기
 
-- [[abenbdl_default_function|default values function]]에 붙이는 바깥 이름은 `GetDefaultsFor` 로 시작해야 합니다. 그렇지 않으면 문법 오류가 납니다.
+- [[abenbdl_default_function|default values function]] 에 붙이는 바깥 이름은 `GetDefaultsFor` 로 시작해야 합니다. 그렇지 않으면 문법 오류가 납니다.
 
 ## 관련 항목
 

@@ -1,6 +1,6 @@
 ---
 title: 예제 - draft 범위 (종속 draft)
-summary: 서로 다른 두 BO를 with dependent draft 와 use draft as dependent 로 묶어, 한쪽을 편집 상태로 바꾸면 연결된 다른 BO의 인스턴스도 함께 draft 가 되는 것을 보여 주는 예제입니다.
+summary: 서로 다른 두 BO 를 with dependent draft 와 use draft as dependent 로 묶어, 한쪽을 편집 상태로 바꾸면 연결된 다른 BO 의 인스턴스도 함께 draft 가 되는 것을 보여 주는 예제입니다.
 keywords: draft scope, 초안 범위, dependent draft, 종속 초안, with dependent draft, use draft as dependent, principal draft BO, 주 초안 BO, cross-BO, with cross associations, use association, Edit, 프로젝션 BDEF
 ---
 
@@ -8,16 +8,16 @@ keywords: draft scope, 초안 범위, dependent draft, 종속 초안, with depen
 
 종속 draft 기능을 쓰면 서로 다른 BO 여러 개를 **하나의 작업 단위(LUW)** 처럼 묶어 편집할 수 있습니다. 연결된 draft 인스턴스들이 같이 움직이므로 서로 어긋나지 않습니다.
 
-이 예제에는 BO가 두 개 나옵니다. 여기서는 여행(`ZR_Travel`)과 경비(`ZR_Expense`)로 바꿔 씁니다.
+이 예제에는 BO 가 두 개 나옵니다. 여기서는 여행(`ZR_Travel`)과 경비(`ZR_Expense`)로 바꿔 씁니다.
 
-- 두 BO는 association `_Expense` 와 `_Travel` 로 서로 이어져 있습니다.
-- 경비 BO는 여행의 키를 `TravelID` 필드에 외래 키로 담고 있습니다.
-- 둘 다 draft 를 쓸 수 있는 managed BO입니다.
+- 두 BO 는 association `_Expense` 와 `_Travel` 로 서로 이어져 있습니다.
+- 경비 BO 는 여행의 키를 `TravelID` 필드에 외래 키로 담고 있습니다.
+- 둘 다 draft 를 쓸 수 있는 managed BO 입니다.
 
 종속 draft 는 **projection 계층의 behavior definition(동작 정의)**에서 설정합니다.
 
-- 여행의 projection BDEF : 경비로 가는 association 에 `with dependent draft` 를 붙입니다. 여행이 **주 draft BO**가 됩니다.
-- 경비의 projection BDEF : 머리말에 `use draft as dependent` 를 적습니다. 경비가 **종속 draft BO**가 됩니다.
+- 여행의 projection BDEF : 경비로 가는 association 에 `with dependent draft` 를 붙입니다. 여행이 **주 draft BO** 가 됩니다.
+- 경비의 projection BDEF : 머리말에 `use draft as dependent` 를 적습니다. 경비가 **종속 draft BO** 가 됩니다.
 
 ## 예제
 
@@ -44,7 +44,7 @@ association _Travel
 }
 ```
 
-여행의 projection BDEF입니다. 주 draft BO입니다.
+여행의 projection BDEF 입니다. 주 draft BO 입니다.
 
 ```bdl
 projection;
@@ -73,7 +73,7 @@ use etag
 }
 ```
 
-경비의 projection BDEF입니다. 종속 draft BO입니다.
+경비의 projection BDEF 입니다. 종속 draft BO 입니다.
 
 ```bdl
 projection;
@@ -89,7 +89,7 @@ define behavior for ZC_Expense alias Expense
 }
 ```
 
-EML로 확인합니다.
+EML 로 확인합니다.
 
 ```abap
 " 1) active 여행 하나와, association 으로 경비 두 건을 만든다
@@ -116,7 +116,7 @@ MODIFY ENTITIES OF zc_travel
   REPORTED ls_reported.
 COMMIT ENTITIES.
 
-" 3) 두 BO의 draft 테이블을 읽는다
+" 3) 두 BO 의 draft 테이블을 읽는다
 SELECT * FROM ztravel_d  INTO TABLE @DATA(lt_travel_draft).
 SELECT * FROM zexpense_d INTO TABLE @DATA(lt_expense_draft).
 ```
@@ -133,7 +133,7 @@ SELECT * FROM zexpense_d INTO TABLE @DATA(lt_expense_draft).
 
 - `with dependent draft` 와 `use draft as dependent` 는 짝입니다. 한쪽만 있으면 안 됩니다.
 - 두 BO 모두 draft 를 쓸 수 있어야 합니다.
-- 종속 쪽 projection BDEF에는 draft action 을 `use action` 으로 적지 않았습니다. 원문 예제에서는 `use create` 도 주석으로 막아 두었고, 종속 BO의 인스턴스는 주 draft BO의 association 으로 만듭니다.
+- 종속 쪽 projection BDEF 에는 draft action 을 `use action` 으로 적지 않았습니다. 원문 예제에서는 `use create` 도 주석으로 막아 두었고, 종속 BO 의 인스턴스는 주 draft BO 의 association 으로 만듭니다.
 - 원문 예제는 RAP BO 계약을 모두 지키지는 않습니다. 설명용으로 짧게 만든 것입니다.
 
 ## 관련 항목

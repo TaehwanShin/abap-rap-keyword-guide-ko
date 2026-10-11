@@ -20,9 +20,9 @@ interaction phase(상호작용 단계)의 EML 문에서 `%key` 를 쓸 수 있�
 `%pky` 는 키를 가리키는 또 하나의 길입니다. 다른 묶음과 견주면 이렇습니다.
 
 - late numbering 이 아니면 `%pid` 가 없으므로 `%key` 와 `%pky` 가 같습니다.
-- late numbering 도 아니고 [[abenbdl_with_draft|draft]]도 아니면 [[abapderived_types_is_draft|%is_draft]] 도 없으므로 `%pky` 가 곧 [[abapderived_types_tky|%tky]] 입니다.
+- late numbering 도 아니고 [[abenbdl_with_draft|draft]] 도 아니면 [[abapderived_types_is_draft|%is_draft]] 도 없으므로 `%pky` 가 곧 [[abapderived_types_tky|%tky]] 입니다.
 
-보통은 `%pky` 보다 `%tky` 를 쓰는 편이 낫습니다([[abapderived_types_keys_identifiers]]). 다만 `%tky` 가 없는 특별한 자리가 있고, 그런 곳에서는 `%pky` 를 대신 씁니다. [[abenbdl_draft_action|draft action]]이나 save action 의 구현이 그 예입니다.
+보통은 `%pky` 보다 `%tky` 를 쓰는 편이 낫습니다([[abapderived_types_keys_identifiers]]). 다만 `%tky` 가 없는 특별한 자리가 있고, 그런 곳에서는 `%pky` 를 대신 씁니다. [[abenbdl_draft_action|draft action]] 이나 save action 의 구현이 그 예입니다.
 
 ### 키 묶음끼리 대입하기
 

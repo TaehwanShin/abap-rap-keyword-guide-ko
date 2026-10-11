@@ -38,7 +38,7 @@ association 작업은 association 을 따라가서 **연관 대상 entity(엔터
 - `internal` : 그 association 에 정의한 모든 작업을 BO 안에서만 쓸 수 있게 합니다. 자동으로 열리는 읽기도 포함됩니다. [[abenbdl_internal]] 참고.
 - `AssocImplType` : association 작업을 누가 처리할지 정합니다. [[abenbdl_assoc_impl_type]] 참고.
 - `abbreviation newName` : association 에 짧은 다른 이름을 붙입니다. 길이는 16자까지입니다. association 이름은 root entity(루트 엔터티)의 이름 공간에 속하고 30자까지 쓸 수 있는데, 상황에 따라 ABAP RAP 가 처리하기에는 너무 깁니다. 더 짧은 이름이 필요하면 16자 이하의 줄임 이름을 지정하라는 안내가 나옵니다. 줄임 이름은 밑줄이 아니라 글자로 시작하는 편이 좋습니다.
-- `without response` : 다른 BO 의 entity 가 대상인 association 에 씁니다. 기본으로는 대상 entity 가 [[abenbdl_foreign|외부 entity]]로서 지금 BO 의 응답 타입에 자동으로 들어갑니다. 그래서 association 으로 읽거나 만들 때 대상 entity 에서 생긴 문제도 응답에 담을 수 있습니다. `without response` 는 이 기본 동작을 끄고 대상 entity 를 응답 타입에서 뺍니다.
+- `without response` : 다른 BO 의 entity 가 대상인 association 에 씁니다. 기본으로는 대상 entity 가 [[abenbdl_foreign|외부 entity]] 로서 지금 BO 의 응답 타입에 자동으로 들어갑니다. 그래서 association 으로 읽거나 만들 때 대상 entity 에서 생긴 문제도 응답에 담을 수 있습니다. `without response` 는 이 기본 동작을 끄고 대상 entity 를 응답 타입에서 뺍니다.
 - `using TargetEntity ...` : 다른 BO 로 가는 대상 해석(target-resolved) association 에 씁니다. read-by-association 같은 작업에서 대상 인스턴스를 읽으려면 대상의 기본 키를 알아야 하는데, 그 키를 어떻게 구할지 정합니다. 방법은 아래 두 가지입니다.
 - `with draft` : association 이 draft 를 다루게 합니다. active(활성) 인스턴스에서 따라가면 active 데이터를, draft 인스턴스에서 따라가면 draft 데이터를 가져옵니다. draft 처리 전반은 [[abenbdl_with_draft]] 에 있습니다.
 

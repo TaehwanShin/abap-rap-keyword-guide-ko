@@ -6,7 +6,7 @@ keywords: type mapping, 타입 매핑, CORRESPONDING, MAPPING FROM ENTITY, MAPPI
 
 ## 설명
 
-RAP BO provider(제공자)와 consumer(사용자)는 BDEF derived type(BDEF 파생 타입)(behavior definition(동작 정의)에서 자동으로 만들어지는 타입)으로 데이터를 주고받습니다. 그런데 실제 처리 로직은 예전부터 쓰던 타입으로 짜여 있는 일이 많습니다. 필드 이름이 entity(엔터티)와 다르기도 하고, "어느 필드가 채워졌는가"를 나타내는 정보(`%control`)를 다른 모양으로 들고 있기도 합니다.
+RAP BO provider(제공자)와 consumer(사용자)는 BDEF derived type(BDEF 파생 타입, behavior definition 에서 자동으로 만들어지는 타입)으로 데이터를 주고받습니다. 그런데 실제 처리 로직은 예전부터 쓰던 타입으로 짜여 있는 일이 많습니다. 필드 이름이 entity(엔터티)와 다르기도 하고, "어느 필드가 채워졌는가"를 나타내는 정보(`%control`)를 다른 모양으로 들고 있기도 합니다.
 
 type mapping 은 이 두 쪽을 이어 주는 문법입니다. 필드 이름이 다를 때는 behavior definition 에 [[abenbdl_type_mapping|mapping for]] 로 짝을 적어 두고, ABAP 에서는 아래 문법으로 값을 옮깁니다. 필드마다 대입문을 따로 쓰지 않아도 되니 코드가 줄고 실수도 줄어듭니다.
 

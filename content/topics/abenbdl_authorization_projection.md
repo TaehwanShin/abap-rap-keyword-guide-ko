@@ -16,7 +16,7 @@ keywords: authorization, 권한 제어, 프로젝션 BDEF, projection, global, i
 
 projection BDEF 는 base BDEF(기반 BDEF) 의 authorization control(권한 제어)를 **물려받습니다**. 물려받은 authorization control 은 CRUD 작업, 그리고 `use action` 이나 `use function` 으로 가져온 action([[abenbdl_action]])과 function([[abenbdl_function]])에 적용됩니다.
 
-projection BDEF 는 action 과 function 을 새로 정의할 수도 있습니다([[abenbdl_nonstandard_projection]], [[abenbdl_function_projection]]). 이 **새 action 과 function**에는 projection 계층에서 authorization control 을 따로 정할 수 있습니다. 구현은 projection 의 behavior pool(동작 풀)에 씁니다.
+projection BDEF 는 action 과 function 을 새로 정의할 수도 있습니다([[abenbdl_nonstandard_projection]], [[abenbdl_function_projection]]). 이 **새 action 과 function** 에는 projection 계층에서 authorization control 을 따로 정할 수 있습니다. 구현은 projection 의 behavior pool(동작 풀)에 씁니다.
 
 - global 권한 : handler method(핸들러 메서드) `FOR GLOBAL AUTHORIZATION` ([[abaphandler_meth_global_auth]])
 - instance 권한 : handler method `FOR INSTANCE AUTHORIZATION` ([[abaphandler_meth_auth]])

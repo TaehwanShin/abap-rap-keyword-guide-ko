@@ -46,7 +46,7 @@ late numbering 에서는 새 인스턴스가 저장 직전에야 최종 키를 �
 
 ### 곁들여 알아 둘 RAP 개념
 
-**numbering** 는 기본 키 필드의 값을 정하는 일입니다. 언제 정하느냐와 누가 정하느냐에 따라 나뉩니다.
+**numbering** 은 기본 키 필드의 값을 정하는 일입니다. 언제 정하느냐와 누가 정하느냐에 따라 나뉩니다.
 
 | 기준 | 종류 | 내용 |
 | --- | --- | --- |
@@ -57,7 +57,7 @@ late numbering 에서는 새 인스턴스가 저장 직전에야 최종 키를 �
 
 internal numbering 은 구현 방식에 따라 다릅니다. managed BO 에서는 프레임워크가 키를 자동으로 만드는데, 키가 정해진 타입(16자리 바이트형 UUID)일 때만 됩니다. unmanaged BO 에서는 전용 handler method(핸들러 메서드)를 직접 구현해 키 값을 줍니다. late numbering 은 기본적으로 internal numbering 입니다. save sequence 의 뒤쪽 단계에서는 RAP BO consumer 가 더 끼어들 수 없기 때문입니다.
 
-**draft** 은 transactional buffer(트랜잭션 버퍼)의 내용을 중간 저장소(draft 테이블)에 담아 두어, 트랜잭션이 여러 ABAP 세션에 걸쳐 이어질 수 있게 하는 개념입니다.
+**draft** 는 transactional buffer(트랜잭션 버퍼)의 내용을 중간 저장소(draft 테이블)에 담아 두어, 트랜잭션이 여러 ABAP 세션에 걸쳐 이어질 수 있게 하는 개념입니다.
 
 - draft 도 behavior definition(동작 정의)에서 켭니다. 켜면 데이터를 고치고 그 변경을 임시로 보관할 수 있지만, 아직 데이터베이스에 확정 저장하지는 않습니다. 사용자는 나중에 이어서 고칠 수 있고, 그때 다른 기기를 써도 됩니다.
 - 인스턴스 식별에는 draft 표시 `%is_draft` 를 씁니다. 인스턴스가 draft 인지 active(활성)인지 나타냅니다. `%tky` 안에 `%is_draft` 가 들어 있으므로 `%tky` 로 함께 다룰 수 있습니다.

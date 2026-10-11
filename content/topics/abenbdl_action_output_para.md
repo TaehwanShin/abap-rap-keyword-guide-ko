@@ -15,7 +15,7 @@ keywords: OutputParameter, result, selective, deep result, cardinality, $self, e
 
 ## 설명
 
-[[abenbdl_action|action]]이나 [[abenbdl_function|function]]의 출력 매개변수는 키워드 `result` 로 정의합니다. action 이나 function 의 결과를 내부 테이블에 담아 돌려줄 때 씁니다. 결과 구조의 구성요소는 [[abapeml_result]] 에 설명되어 있습니다.
+[[abenbdl_action|action]] 이나 [[abenbdl_function|function]] 의 출력 매개변수는 키워드 `result` 로 정의합니다. action 이나 function 의 결과를 내부 테이블에 담아 돌려줄 때 씁니다. 결과 구조의 구성요소는 [[abapeml_result]] 에 설명되어 있습니다.
 
 action 이나 function 정의에 `result` 를 적었으면 behavior pool(동작 풀)의 구현에서 **반드시 채워야** 합니다.
 

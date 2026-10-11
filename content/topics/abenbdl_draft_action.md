@@ -73,9 +73,9 @@ draft 인스턴스를 draft 테이블에서 지웁니다. `with additional imple
 
 ### draft determine action Prepare
 
-BDEF 에서 넣어 둔 determination 과 validation 을 실행합니다. draft 데이터를 active 데이터로 넘기기 전에 검증할 수 있게 해 줍니다. active 인스턴스의 [[abenbdl_determine_action|determine action]]에 해당하는 draft 쪽 action 이고, determine action 의 규칙이 그대로 적용됩니다.
+BDEF 에서 넣어 둔 determination 과 validation 을 실행합니다. draft 데이터를 active 데이터로 넘기기 전에 검증할 수 있게 해 줍니다. active 인스턴스의 [[abenbdl_determine_action|determine action]] 에 해당하는 draft 쪽 action 이고, determine action 의 규칙이 그대로 적용됩니다.
 
-- [[abenbdl_validations|validation]] 과, `on save` 로 정의한 [[abenbdl_determinations|determination]]만 넣을 수 있습니다.
+- [[abenbdl_validations|validation]] 과, `on save` 로 정의한 [[abenbdl_determinations|determination]] 만 넣을 수 있습니다.
 - 무엇을 넣을지는 BDEF 에 직접 적어야 합니다. BO 에 정의하고 구현한 determination 과 validation 만 쓸 수 있습니다.
 - determination 과 validation 을 하나도 넣지 않아도 됩니다.
 - `( always )` 를 붙일 수 있습니다.
@@ -95,7 +95,7 @@ draft 인스턴스에 additional save 를 정의합니다. 특히 `with addition
 
 ### Share
 
-collaborative draft에 쓰입니다. draft 인스턴스의 사용자 목록에 다른 사용자가 추가되거나, 사용자가 그 목록에 들어오려 할 때 실행됩니다. 그 사용자를 목록에 넣어도 되는지 확인합니다. 아직 exclusive draft 면 collaborative draft 로 바꾸는 일도 합니다.
+collaborative draft 에 쓰입니다. draft 인스턴스의 사용자 목록에 다른 사용자가 추가되거나, 사용자가 그 목록에 들어오려 할 때 실행됩니다. 그 사용자를 목록에 넣어도 되는지 확인합니다. 아직 exclusive draft 면 collaborative draft 로 바꾸는 일도 합니다.
 
 ### with additional implementation
 
@@ -160,7 +160,7 @@ COMMIT ENTITIES.
 
 ## 알아두기
 
-- draft 를 쓰는 BO 에서는 draft action 의 이름을 다른 [[abenbdl_action|action]]의 이름으로 쓸 수 없습니다. draft 를 쓰지 않는 entity 에서는 `Edit`, `Activate` 같은 이름을 action 이름으로 써도 됩니다. 하지만 `with draft;` 나 `with collaborative draft;` 로 BO 가 draft 를 쓰게 되면 이 이름들은 금지됩니다.
+- draft 를 쓰는 BO 에서는 draft action 의 이름을 다른 [[abenbdl_action|action]] 의 이름으로 쓸 수 없습니다. draft 를 쓰지 않는 entity 에서는 `Edit`, `Activate` 같은 이름을 action 이름으로 써도 됩니다. 하지만 `with draft;` 나 `with collaborative draft;` 로 BO 가 draft 를 쓰게 되면 이 이름들은 금지됩니다.
 - active 인스턴스를 고치는 draft 에서 precheck 가 필요하면, draft action `Resume` 도중에 precheck 구현을 직접 불러야 합니다. `Resume` 에 `with additional implementation` 을 붙이고, 그 handler method 에서 precheck 메서드를 부릅니다.
 - `AdditionalSave` 는 static action 입니다. 그래서 handler method 의 입력 매개변수 BDEF derived type(BDEF 파생 타입)에 구성요소 [[abapderived_types_cid|%cid]] 가 있습니다.
 

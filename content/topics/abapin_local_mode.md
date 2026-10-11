@@ -25,7 +25,7 @@ Fiori 화면에 여행의 예약 상태를 보여 주는 필드가 있다고 합
 
 ### 어디까지 건너뛰나
 
-RAP BO 하나의 구현은 보통 여러 RAP BO provider(제공자)(behavior pool(동작 풀))로 나뉩니다. base BO(기반 BO) 의 behavior pool 이 있고, BDEF extension(확장)마다 behavior pool 이 따로 있습니다. provider 는 자기 BDEF 에 적힌 요소(action 같은 것, 또는 entity(엔터티) 전체)를 **소유**하고 그 구현을 맡습니다.
+RAP BO 하나의 구현은 보통 여러 RAP BO provider(제공자), 곧 여러 behavior pool(동작 풀)로 나뉩니다. base BO(기반 BO) 의 behavior pool 이 있고, BDEF extension(확장)마다 behavior pool 이 따로 있습니다. provider 는 자기 BDEF 에 적힌 요소(action 같은 것, 또는 entity(엔터티) 전체)를 **소유**하고 그 구현을 맡습니다.
 
 `IN LOCAL MODE` 의 효과를 알려면 두 가지 provider 를 나눠 봐야 합니다.
 

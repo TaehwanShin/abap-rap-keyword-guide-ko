@@ -1,6 +1,6 @@
 ---
 title: 프렌드 선언 (with friends)
-summary: 특정 BDEF extension 을 behavior definition 의 프렌드로 선언해, internal 작업 호출과 IN LOCAL MODE 같은 원래 BO와 같은 접근 권한을 주는 추가 구문입니다.
+summary: 특정 BDEF extension 을 behavior definition 의 프렌드로 선언해, internal 작업 호출과 IN LOCAL MODE 같은 원래 BO 와 같은 접근 권한을 주는 추가 구문입니다.
 keywords: with friends, friends, 프렌드, BDEF 확장, BDEF extension, extensible, internal action, 내부 액션, IN LOCAL MODE, 접근 권한, 모듈화, 확장 허용
 ---
 
@@ -14,21 +14,21 @@ keywords: with friends, friends, 프렌드, BDEF 확장, BDEF extension, extensi
 
 `with friends` 는 머리말의 `extensible` 뒤에 붙이는 선택 추가 구문입니다. BDEF extension(확장) `BDEFExtension1`, `BDEFExtension2`, ... 를 지금 behavior definition(동작 정의)의 **프렌드**로 선언합니다. 적어도 하나는 적어야 합니다.
 
-프렌드로 적을 수 있는 것은 **지금 BDEF의 BDEF extension**뿐입니다. 다른 것을 적으면 아무 효과가 없습니다.
+프렌드로 적을 수 있는 것은 **지금 BDEF 의 BDEF extension** 뿐입니다. 다른 것을 적으면 아무 효과가 없습니다.
 
-프렌드는 이 BDEF의 모든 구성요소에 제한 없이 접근합니다. 바깥의 RAP BO consumer(사용자)로 다뤄지지 않고, 원래 RAP BO와 같은 접근 권한을 받습니다. 구체적으로는 이렇습니다.
+프렌드는 이 BDEF 의 모든 구성요소에 제한 없이 접근합니다. 바깥의 RAP BO consumer(사용자)로 다뤄지지 않고, 원래 RAP BO 와 같은 접근 권한을 받습니다. 구체적으로는 이렇습니다.
 
 - `internal` 로 선언한 RAP BO 작업을 부를 수 있습니다.
 - `IN LOCAL MODE` 추가 구문으로 특권 접근을 할 수 있습니다.
-- 원래 RAP BO의 필드에 접근할 수 있습니다.
+- 원래 RAP BO 의 필드에 접근할 수 있습니다.
 
-프렌드 관계는 **이어지지 않습니다.** BDEF의 프렌드가 다시 자기 프렌드를 선언해도, 그 프렌드가 원래 BDEF의 프렌드가 되지는 않습니다.
+프렌드 관계는 **이어지지 않습니다.** BDEF 의 프렌드가 다시 자기 프렌드를 선언해도, 그 프렌드가 원래 BDEF 의 프렌드가 되지는 않습니다.
 
 쓸 수 있는 곳은 다음과 같습니다.
 
 - managed RAP BO
 - unmanaged RAP BO
-- managed·unmanaged RAP BO의 BDEF extension ([[abenbdl_ext_enabl_ext_base]] 참고)
+- managed·unmanaged RAP BO 의 BDEF extension ([[abenbdl_ext_enabl_ext_base]] 참고)
 
 ## 예제
 
@@ -67,7 +67,7 @@ extend behavior for Travel
 }
 ```
 
-extension 의 behavior pool 에서, extension action 이 원래 BO의 internal action 을 부릅니다.
+extension 의 behavior pool 에서, extension action 이 원래 BO 의 internal action 을 부릅니다.
 
 ```abap
 METHOD zz_recalc.
@@ -79,7 +79,7 @@ METHOD zz_recalc.
 ENDMETHOD.
 ```
 
-바깥에서 `zz_recalc` 를 실행하면 호출 순서는 이렇습니다. 먼저 BDEF extension 의 authorization control(권한 제어)가 불립니다. 다음으로 extension action 이 불립니다. extension action 은 원래 BO의 internal action `recalcTotalPrice` 를 부릅니다. 이때 원래 BO의 authorization control 은 불리지 않고, internal action 이 그대로 실행됩니다.
+바깥에서 `zz_recalc` 를 실행하면 호출 순서는 이렇습니다. 먼저 BDEF extension 의 authorization control(권한 제어)가 불립니다. 다음으로 extension action 이 불립니다. extension action 은 원래 BO 의 internal action `recalcTotalPrice` 를 부릅니다. 이때 원래 BO 의 authorization control 은 불리지 않고, internal action 이 그대로 실행됩니다.
 
 ## 알아두기
 

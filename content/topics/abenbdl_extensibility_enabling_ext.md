@@ -12,7 +12,7 @@ BDEF extension(확장)을 또 다른 BDEF extension 으로 확장할 수 있습�
 
 방법은 BDEF extension 의 종류에 따라 다릅니다.
 
-- [[abenbdl_ext_enabl_ext_base]] : base BDEF(기반 BDEF) extension(managed·unmanaged BO의 extension)에서 extension 을 허용하는 방법
+- [[abenbdl_ext_enabl_ext_base]] : base BDEF(기반 BDEF) extension(managed·unmanaged BO 의 extension)에서 extension 을 허용하는 방법
 - [[abenbdl_ext_enabl_ext_proj]] : projection BDEF extension 에서 extension 을 허용하는 방법
 - [[abenbdl_ext_enabl_ext_abs]] : abstract BDEF extension 에서 extension 을 허용하는 방법
 

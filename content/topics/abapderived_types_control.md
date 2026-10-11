@@ -19,7 +19,7 @@ ABAP 구조에서는 필드를 "없는 상태"로 둘 수 없습니다. 값을 �
 
 BAPI 를 써 봤다면 **X 구조**와 같은 것입니다. `BAPI_PO_CHANGE` 에 `POHEADER` 와 `POHEADERX` 를 함께 넘기고, 바꿀 필드에만 `'X'` 를 넣던 방식입니다. RAP 에서는 X 구조가 따로 있지 않고, 같은 줄 안에 `%control` 이라는 이름으로 들어 있습니다.
 
-화면에서도 같은 일이 일어납니다. 사용자가 화면에서 필드 하나를 고치면 요청에는 바뀐 필드만 실려 옵니다. RAP 은 이 정보를 `%control` 표시로 바꿔 RAP BO provider(제공자)에 넘깁니다. provider 는 켜진 필드만 고칩니다.
+화면에서도 같은 일이 일어납니다. 사용자가 화면에서 필드 하나를 고치면 요청에는 바뀐 필드만 실려 옵니다. RAP 는 이 정보를 `%control` 표시로 바꿔 RAP BO provider(제공자)에 넘깁니다. provider 는 켜진 필드만 고칩니다.
 
 ### 작업마다 다른 뜻
 
@@ -29,7 +29,7 @@ BAPI 를 써 봤다면 **X 구조**와 같은 것입니다. `BAPI_PO_CHANGE` 에
 | `UPDATE` | 적은 값으로 바꿉니다. 값이 비어 있으면 비웁니다. | 예전 값 그대로 둡니다. |
 | `READ` | 읽어서 돌려 달라는 뜻입니다. | 읽지 않아도 됩니다. |
 
-변경 작업([[abapmodify_entity_entities_op]])에서는 "어느 필드에 값을 넘겼는가"이고, 읽기 작업([[abapread_entity_entities]])에서는 "어느 필드를 읽어 달라는가"입니다. RAP BO consumer(사용자)와 provider 는 현재 트랜잭션 동안 이 표시로 서로 정보를 주고받습니다.
+변경 작업([[abapmodify_entity_entities_op]])에서는 "어느 필드에 값을 넘겼는가"이고, 읽기 작업([[abapread_entity_entities]])에서는 "어느 필드를 읽어 달라는가"입니다. 변경 작업의 표시는 RAP BO consumer(사용자)가 채우고 provider 가 읽습니다. 읽기 작업의 표시는 consumer 가 켜서 "이 필드를 돌려 달라"고 알립니다. 둘 다 현재 트랜잭션 안에서만 뜻이 있습니다.
 
 ### 언제 신경 써야 하나
 
@@ -45,7 +45,7 @@ BAPI 를 써 봤다면 **X 구조**와 같은 것입니다. `BAPI_PO_CHANGE` 에
 | `save_modified` 에서 저장하거나 변경 기록을 남긴다 ([[abaprap_saver_meth_save_modified]]) | 읽습니다. 이번 트랜잭션에서 바뀐 필드를 알려 줍니다. |
 | precheck 에서 요청을 거른다 ([[abaphandler_meth_precheck]]) | 어느 필드를 바꾸려는 요청인지 볼 때 읽습니다. |
 
-managed BO 에서는 저장을 RAP 이 맡으므로, EML 을 `FIELDS ( ... ) WITH` 로만 쓴다면 `%control` 을 직접 다룰 일이 거의 없습니다.
+managed BO 에서는 저장을 RAP 가 맡으므로, EML 을 `FIELDS ( ... ) WITH` 로만 쓴다면 `%control` 을 직접 다룰 일이 거의 없습니다.
 
 ### 저절로 채워지는 경우와 직접 채워야 하는 경우
 

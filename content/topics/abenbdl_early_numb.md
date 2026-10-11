@@ -14,7 +14,7 @@ early numbering
 
 ## 설명
 
-entity(엔터티)의 기본 키 필드 전체에 **unmanaged early numbering**를 정합니다. 뜻을 풀면 이렇습니다.
+entity(엔터티)의 기본 키 필드 전체에 **unmanaged early numbering** 을 정합니다. 뜻을 풀면 이렇습니다.
 
 - 기본 키 필드에 값을 넣는 주체는 RAP 실행 엔진입니다.
 - 값을 **어떻게** 정할지는 개발자가 behavior pool(동작 풀)에 구현합니다. 그래서 "unmanaged"이라고 부릅니다. 구현할 곳은 handler method(핸들러 메서드) [[abaphandler_meth_numbering|FOR NUMBERING]] 입니다.

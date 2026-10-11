@@ -122,7 +122,7 @@ COMMIT ENTITIES.
 
 ## 알아두기
 
-- projection extension 이 `use` 로 내놓는 것은 원본 BO **extension**에서 만든 작업입니다. 실제 처리는 원본 BO extension 의 extension behavior pool 에 있습니다.
+- projection extension 이 `use` 로 내놓는 것은 원본 BO **extension** 에서 만든 작업입니다. 실제 처리는 원본 BO extension 의 extension behavior pool 에 있습니다.
 - 원문 예제는 CDS 쪽에서 원본 뷰, interface 뷰, projection 뷰 세 곳에 모두 자식으로 가는 composition 을 보탭니다. BDEF projection extension 은 그 위에서 동작만 내놓습니다.
 - projection extension 에서 할 수 있는 것과 없는 것은 [[abenbdl_proj_ext_body]] 와 [[abenbdl_proj_ext_entity]] 에 정리되어 있습니다.
 

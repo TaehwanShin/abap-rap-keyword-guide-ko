@@ -14,13 +14,13 @@ late numbering
 
 ## 설명
 
-entity(엔터티)의 기본 키 필드 전체에 **내부 late numbering**를 정합니다. 뜻을 풀면 이렇습니다.
+entity(엔터티)의 기본 키 필드 전체에 **내부 late numbering** 을 정합니다. 뜻을 풀면 이렇습니다.
 
 - 기본 키 필드에 값을 넣는 주체는 RAP 실행 엔진입니다.
 - behavior pool(동작 풀)에서 saver method(세이버 메서드) [[abensaver_adjust_numbers|adjust_numbers]] 를 구현해, 인스턴스마다 최종 키 값을 정해 줘야 합니다.
 - 키 값은 인스턴스를 데이터베이스에 저장하기 바로 전에 정해집니다. 그래서 중간에 빈 번호 없이 이어지는 고유한 키를 만들 수 있습니다.
 
-`late numbering` 은 entity 마다 entity 동작 특성에 따로 적어야 합니다. 부모 노드가 late numbering 을 쓰면, 바로 아래 자식 노드도 late numbering 을 써야 합니다.
+`late numbering` 은 entity 마다 [[abenbdl_character|entity 동작 특성]] 자리에 따로 적어야 합니다. 부모 노드가 late numbering 을 쓰면, 바로 아래 자식 노드도 late numbering 을 써야 합니다.
 
 draft 를 쓰는 BO 에서 `late numbering` 을 쓰려면 [[abenbdl_draft_table|draft 테이블]]에 키 필드 `DRAFTUUID` 가 하나 더 있어야 합니다. 데이터 타입은 `raw(16)` 입니다.
 
@@ -28,7 +28,7 @@ draft 를 쓰는 BO 에서 `late numbering` 을 쓰려면 [[abenbdl_draft_table|
 
 - managed RAP BO
 - unmanaged RAP BO
-- projection BO 와 RAP BO interface 는 base BDEF(기반 BDEF) 의 late numbering 을 그대로 다시 씁니다. 따로 적을 필요가 없습니다. [[abenbdl_character_projection]] 를 참고하세요.
+- projection BO 와 RAP BO interface 는 base BDEF(기반 BDEF) 의 late numbering 을 그대로 다시 씁니다. 따로 적을 필요가 없습니다. [[abenbdl_character_projection]] 을 참고하세요.
 
 ## 예제
 

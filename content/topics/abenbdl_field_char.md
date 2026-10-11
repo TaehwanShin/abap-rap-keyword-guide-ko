@@ -151,7 +151,7 @@ ENDCLASS.
 
 - 기본 키 필드는 모두 `readonly` 나 `readonly:update` 로 지정해야 합니다. 그러지 않으면 문법 경고가 나옵니다.
 - UI 시나리오에서는 필드 제어에 바탕을 둔 field characteristics(필드 특성)이 RAP 사용자 힌트로 나타납니다. `field ( recommendations )` 를 준 필드에는 화면에 recommendation 값이 보입니다.
-- projection BO 는 field characteristics 를 자동으로 물려받습니다. projection 에서 새로 정할 때는 따로 규칙이 있습니다. [[abenbdl_field_projection]] 를 참고하세요.
+- projection BO 는 field characteristics 를 자동으로 물려받습니다. projection 에서 새로 정할 때는 따로 규칙이 있습니다. [[abenbdl_field_projection]] 을 참고하세요.
 - abstract BDEF 에는 따로 규칙이 있습니다. [[abenbdl_field_abstract]] 를 참고하세요.
 - interface BDEF 도 자동으로 물려받습니다. 기반 계층의 field characteristics 와 어긋나지 않는 한 특성을 더 붙일 수 있습니다. [[abenbdl_field_interface]] 를 참고하세요.
 - 동적 필드 제어를 쓰는 실행 예제는 [[abeneml_calculator_abexa]] 에 있습니다.

@@ -23,7 +23,7 @@ entity(엔터티) **하나**의 인스턴스에 허용 여부를 묻습니다.
 
 `result` 의 두 구성요소는 다음과 같습니다.
 
-- `instances` : 내부 테이블입니다. 줄마다 인스턴스 키가 있고, behavior definition(동작 정의)의 entity 동작 본문에서 허용 여부가 정해진 요소마다 구성요소가 있습니다. 정적 요소는 빠집니다.
+- `instances` : 내부 테이블입니다. 줄마다 인스턴스 키가 있고, behavior definition(동작 정의)의 entity 동작 본문에서 허용 여부가 정해진 요소마다 구성요소가 있습니다. static 요소는 빠집니다.
 - `global` : 구조입니다. entity 동작 본문에서 허용 여부가 정해진 모든 요소의 구성요소가 있습니다.
 
 결과 값을 어떻게 읽는지는 [[abapget_permissions_rules]] 에 있습니다.
@@ -31,9 +31,9 @@ entity(엔터티) **하나**의 인스턴스에 허용 여부를 묻습니다.
 ### 추가 구문
 
 - `[FORWARDING] PRIVILEGED` : `PRIVILEGED` 는 privileged mode 로 RAP BO 에 접근합니다. RAP BO 런타임이 일부 권한 확인을 하지 않습니다. `FORWARDING PRIVILEGED` 는 privileged mode 를 켜지 않습니다. 지금 문맥이 privileged mode 일 때 그 상태를 이 요청으로 넘겨주기만 합니다. behavior definition 에 `privileged` 가 적혀 있어야 쓸 수 있습니다. [[abapeml_privileged]] 을 봅니다.
-- `only_clause` : 결과에 담을 갈래(전역/인스턴스, feature control(기능 제어)/권한)를 고릅니다. [[abapget_permissions_only_clause]] 을 봅니다.
+- `only_clause` : 결과에 담을 갈래(global/instance, feature control(기능 제어)/권한)를 고릅니다. [[abapget_permissions_only_clause]] 을 봅니다.
 - `FROM keys` : 허용 여부를 물을 인스턴스의 키입니다. `keys` 는 `TYPE TABLE FOR PERMISSIONS KEY` 타입 내부 테이블이어야 합니다.
-- `response_param` : response parameter(응답 매개변수)입니다. [[abapeml_response]] 을 봅니다.
+- `response_param` : response parameter(응답 매개변수)입니다. [[abapeml_response]] 를 봅니다.
 
 ## 예제
 

@@ -146,7 +146,7 @@ define root view entity ZR_Travel
 - RAP 프레임워크가 ETag 와 total ETag 용으로 쓸 수 있는 재사용 데이터 엘리먼트를 제공합니다.
 - managed provider 가 ETag 필드를 맡는다면, 그 필드를 `field ( readonly )` 로 막아 두기를 권장합니다. [[abenbdl_field_char]] 를 참고하세요.
 - unmanaged RAP BO 에서는 ETag 필드와 total ETag 필드를 save sequence(저장 순서) 안에서 처리하기를 권장합니다.
-- projection BDEF 와 interface BDEF 에서는 `use etag` 로 이 기능을 다시 씁니다. [[abenbdl_use_projection]] 를 참고하세요.
+- projection BDEF 와 interface BDEF 에서는 `use etag` 로 이 기능을 다시 씁니다. [[abenbdl_use_projection]] 을 참고하세요.
 - lock dependent, authorization dependent, ETag 종속을 한 줄로 줄여 쓸 수 있습니다. `( lock, authorization, etag ) dependent by _Assoc` 형태이며 [[abenbdl_short_syntax]] 에서 설명합니다.
 
 ## 관련 항목

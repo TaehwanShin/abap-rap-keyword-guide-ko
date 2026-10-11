@@ -59,9 +59,9 @@ handler method 는 behavior pool(동작 풀)의 [[abenabp_cl_abap_beh_handler|ha
 
 메서드 이름 `meth` 는 마음대로 정합니다. 다만 다음은 이름이 정해져 있습니다.
 
-- 미리 정의된 [[abenbdl_draft_action|draft action]]의 메서드. behavior definition(동작 정의)에 `with additional implementation` 을 붙였을 때만 구현이 쓰입니다.
+- 미리 정의된 [[abenbdl_draft_action|draft action]] 의 메서드. behavior definition(동작 정의)에 `with additional implementation` 을 붙였을 때만 구현이 쓰입니다.
 - [[abenbdl_augment_projection|augment]] 작업의 메서드.
-- [[abaprap_handler_default_val_func|default values function]]의 메서드.
+- [[abaprap_handler_default_val_func|default values function]] 의 메서드.
 
 ### 매개변수
 

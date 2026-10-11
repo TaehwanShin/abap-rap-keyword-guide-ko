@@ -51,7 +51,7 @@ entity 에 잠금을 정해 두면, 아래 변경 작업이 실행되는 동안 
 
 ### projection BDEF
 
-projection BO 는 base BO(기반 BO) 에 정의하고 구현한 잠금을 그대로 다시 씁니다. 따로 적을 필요가 없습니다. [[abenbdl_character_projection]] 를 참고하세요.
+projection BO 는 base BO(기반 BO) 에 정의하고 구현한 잠금을 그대로 다시 씁니다. 따로 적을 필요가 없습니다. [[abenbdl_character_projection]] 을 참고하세요.
 
 ## 예제
 

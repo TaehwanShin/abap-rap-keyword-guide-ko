@@ -6,7 +6,7 @@ keywords: factory action, static factory action, 팩토리 액션 예제, 인스
 
 ## 설명
 
-managed RAP BO 에서 **factory action**을 선언하고, 구현하고, 실행하는 예제입니다. 원문은 root entity(루트 엔터티) 하나짜리 데모 모델을 씁니다. 여기서는 같은 내용을 `Travel` 로 옮겨 적습니다.
+managed RAP BO 에서 **factory action** 을 선언하고, 구현하고, 실행하는 예제입니다. 원문은 root entity(루트 엔터티) 하나짜리 데모 모델을 씁니다. 여기서는 같은 내용을 `Travel` 로 옮겨 적습니다.
 
 factory action 은 둘입니다.
 

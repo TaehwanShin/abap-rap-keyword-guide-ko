@@ -1,6 +1,6 @@
 ---
 title: validation handler method (FOR VALIDATE)
-summary: behavior definition 에 선언한 validation을 구현하는 handler method 로, 저장할 때 데이터가 올바른지 확인하고 문제를 알립니다.
+summary: behavior definition 에 선언한 validation 을 구현하는 handler method 로, 저장할 때 데이터가 올바른지 확인하고 문제를 알립니다.
 keywords: FOR VALIDATE ON SAVE, 검증, validation, 핸들러 메서드, handler method, TYPE TABLE FOR VALIDATION, failed, reported, 저장 시점 검증
 ---
 

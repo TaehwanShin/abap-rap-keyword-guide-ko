@@ -20,7 +20,7 @@ keywords: only_clause, ONLY GLOBAL, ONLY GLOBAL FEATURES, ONLY GLOBAL AUTHORIZAT
 
 ## 설명
 
-`only_clause` 는 `GET PERMISSIONS` 문의 결과에 어느 갈래를 담을지 정합니다. 갈래는 두 축으로 나뉩니다. 하나는 **전역이냐 인스턴스냐**, 다른 하나는 **feature control(기능 제어)냐 권한이냐**입니다.
+`only_clause` 는 `GET PERMISSIONS` 문의 결과에 어느 갈래를 담을지 정합니다. 갈래는 두 축으로 나뉩니다. 하나는 **global 이냐 instance 냐**, 다른 하나는 **feature control(기능 제어)냐 권한이냐**입니다.
 
 `only_clause` 를 적지 않으면 모든 갈래가 담깁니다. 곧 global feature control, instance feature control, global 권한, instance 권한이 모두 들어옵니다.
 
@@ -33,14 +33,14 @@ keywords: only_clause, ONLY GLOBAL, ONLY GLOBAL FEATURES, ONLY GLOBAL AUTHORIZAT
 | `ONLY INSTANCE FEATURES` | instance feature control. static 기능도 함께 나옵니다. | 필수 |
 | `ONLY INSTANCE AUTHORIZATION` | instance 권한 | 필수 |
 | `ONLY FEATURES` | global·static·instance feature control | 필수 |
-| `ONLY AUTHORIZATION` | global 권한과 instance 권한. feature control 은 전역이든 인스턴스든 담기지 않습니다. | 필수 |
+| `ONLY AUTHORIZATION` | global 권한과 instance 권한. feature control 은 global 이든 instance 든 담기지 않습니다. | 필수 |
 | `ONLY (dyn_spec)` | 위 가운데 하나를 실행 시점에 고릅니다. interface `IF_ABAP_BEHV` 의 `T_PERMISSIONS_ONLY` 타입 열거 값을 넘깁니다. | - |
 
 결과가 어떻게 합쳐지고 어떻게 읽어야 하는지는 [[abapget_permissions_rules]] 에 있습니다.
 
 ## 예제
 
-전역 정보만 물을 때는 키를 넘기지 않습니다.
+global 정보만 물을 때는 키를 넘기지 않습니다.
 
 ```abap
 DATA ls_request TYPE STRUCTURE FOR PERMISSIONS REQUEST zr_travel.

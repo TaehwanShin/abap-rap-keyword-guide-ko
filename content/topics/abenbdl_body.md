@@ -39,7 +39,7 @@ entity(엔터티) 동작 본문은 `define behavior for ...` 뒤 중괄호 `{ }`
 | [[abenbdl_side_effects|side effects]] | BO 속성 사이의 의존 관계를 적어, 영향받는 속성을 화면에서 다시 읽어 오게 합니다. |
 | [[abenbdl_changedocs_options|change documents 옵션]] | entity 가 change documents 를 쓰도록 되어 있을 때, 기록 옵션을 본문에 적습니다. |
 | [[abenbdl_instance_hierarchy|인스턴스 계층]] | 편집할 수 있는 트리 화면 시나리오를 켭니다. |
-| [[abenbdl_define_key|BDEF 대체 키]] | 직접 정의하는 BDEF 키입니다. 순수 키(pure key)와 보조 키(secondary key)가 있고, 예를 들어 [[abenbdl_keyfunction|key function]]에 쓰입니다. |
+| [[abenbdl_define_key|BDEF 대체 키]] | 직접 정의하는 BDEF 키입니다. 순수 키(pure key)와 보조 키(secondary key)가 있고, 예를 들어 [[abenbdl_keyfunction|key function]] 에 쓰입니다. |
 | [[abenbdl_type_mapping|type mapping]] | 데이터베이스 테이블의 필드 이름이 CDS 데이터 모델의 필드 이름과 다를 때 필요합니다. |
 | [[abenbdl_grouping|구현 그룹 (group)]] | BO 업무 로직 가운데 구현이 필요한 부분을 여러 그룹으로 나눕니다. 그룹마다 [[abenbdl_in_class_unique|구현 클래스]]를 따로 둡니다. |
 

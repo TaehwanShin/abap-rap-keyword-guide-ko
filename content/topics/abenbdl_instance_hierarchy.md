@@ -20,7 +20,7 @@ instance hierarchy CDSHierarchyName
 
 `CDSHierarchyName` 에는 그 RAP BO 에 정의된 CDS 계층의 이름을 적습니다. 그러므로 RAP BO 에 CDS 계층이 먼저 있어야 합니다. 편집 가능한 트리뷰용 CDS 데이터 모델을 만드는 순서는 RAP 개발 안내서의 "Editable Treeviews with Draft Capabilities" 에 나와 있습니다.
 
-중괄호 안에는 **계층 action**을 적습니다. 계층 action 은 계층 노드를 어떻게 복사하고 순서를 바꿀지 정합니다.
+중괄호 안에는 **계층 action** 을 적습니다. 계층 action 은 계층 노드를 어떻게 복사하고 순서를 바꿀지 정합니다.
 
 - [[abenbdl_copy_action]] — 복사 action. 편집 가능한 트리뷰에서 계층 노드를 복제하는 방법을 정합니다.
 - [[abenbdl_reorder_action]] — 순서 변경 action. 계층 노드를 형제 노드 사이의 원하는 자리로 옮깁니다. managed 일 수도, unmanaged 일 수도 있습니다.

@@ -24,7 +24,7 @@ define authorization context ContextName
 
 ## 설명
 
-`define authorization context` 는 **확인 생략용 authorization context**를 정의합니다. ABAP 문 `AUTHORITY-CHECK OBJECT` 에서 쓰는 권한 객체를 여러 개 모아 적은 목록입니다.
+`define authorization context` 는 **확인 생략용 authorization context** 를 정의합니다. ABAP 문 `AUTHORITY-CHECK OBJECT` 에서 쓰는 권한 객체를 여러 개 모아 적은 목록입니다.
 
 이 컨텍스트가 **켜지면** 목록에 든 권한 객체의 권한 확인은 늘 성공합니다. 곧 그 확인을 건너뜁니다. 예를 들어 BDEF 가 자체 권한 확인([[abenbdl_authorization]])을 구현해 놓고, 그 뒤에 또 권한 확인을 하는 기존 코드를 부르는 경우에 쓸모가 있습니다.
 

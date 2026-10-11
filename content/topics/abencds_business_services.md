@@ -6,14 +6,14 @@ keywords: business service, 비즈니스 서비스, service definition, 서비�
 
 ## 설명
 
-RAP 비즈니스 서비스는 AS ABAP 가 ABAP RAP 의 한 부분으로 내놓는 REST 방식 서비스입니다. 크게 두 조각으로 이루어집니다.
+RAP 비즈니스 서비스는 AS ABAP 이 ABAP RAP 의 한 부분으로 내놓는 REST 방식 서비스입니다. 크게 두 조각으로 이루어집니다.
 
 | 조각 | 하는 일 |
 | --- | --- |
 | service definition(서비스 정의) | 비즈니스 서비스로 쓸 수 있는 CDS entity(엔터티)를 골라 내놓습니다. |
 | service binding(서비스 바인딩) | service definition 을 REST 프로토콜 하나에 묶는 저장소 객체입니다. 이렇게 묶어야 바깥에서 쓸 수 있게 서비스가 공개됩니다. |
 
-비즈니스 서비스는 AS ABAP 를 읽는 데도, 쓰는 데도 쓸 수 있습니다. 쓰기까지 하려면 조건이 있습니다. service definition 이 내놓는 CDS entity 가 RAP business object(비즈니스 객체)의 root entity(루트 엔터티)여야 하고, 그 RAP BO 에 behavior definition(동작 정의, BDEF)와 behavior pool(동작 풀)이 있어야 합니다.
+비즈니스 서비스는 AS ABAP 을 읽는 데도, 쓰는 데도 쓸 수 있습니다. 쓰기까지 하려면 조건이 있습니다. service definition 이 내놓는 CDS entity 가 RAP business object(비즈니스 객체)의 root entity(루트 엔터티)여야 하고, 그 RAP BO 에 behavior definition(동작 정의, BDEF)와 behavior pool(동작 풀)이 있어야 합니다.
 
 ## 예제
 
