@@ -50,7 +50,7 @@ association 의 대상 entity 에 인스턴스를 만듭니다. BDEF 에서 그 
 
 action 을 실행합니다. action 이름 뒤에 `field_spec` 을 적고, 필요하면 아래 두 가지를 덧붙입니다.
 
-- `REQUEST request` : 결과를 전부 돌려받을지 일부(예: 키만)만 돌려받을지 정합니다. 성능을 높이려고 씁니다. `request` 는 BDEF derived type(BDEF 파생 타입) [[abaptype_structure_for|TYPE STRUCTURE FOR ACTION REQUEST]] 로 선언합니다. 구성요소는 entity 의 키 필드와 데이터 필드 전부이고 타입은 `ABP_BEHV_FLAG` 입니다. 돌려받을 필드에 표시를 켭니다. BDEF 에서 [[abenbdl_action_output_para|result selective]] 로 선언한 action 에만 쓸 수 있습니다.
+- `REQUEST request` : 결과를 전부 돌려받을지 일부(예: 키만)만 돌려받을지 정합니다. 성능을 높이려고 씁니다. `request` 는 BDEF derived type(BDEF 파생 타입) [[abaptype_structure_for|TYPE STRUCTURE FOR ACTION REQUEST]] 로 선언합니다. 구성요소는 entity 의 키 필드와 데이터 필드 전부이고 타입은 `ABP_BEHV_FLAG` 입니다. 돌려받을 필드에 표시를 on 으로 둡니다. BDEF 에서 [[abenbdl_action_output_para|result selective]] 로 선언한 action 에만 쓸 수 있습니다.
 - `RESULT result_tab` : action 의 결과를 받습니다. BDEF 에서 [[abenbdl_action_output_para|result]] 로 선언한 action 에만 쓸 수 있습니다. `result_tab` 의 타입은 `TABLE FOR ACTION RESULT bdef~action` 이어야 합니다. 자세한 내용은 [[abapeml_result]] 를 봅니다.
 
 ## 예제

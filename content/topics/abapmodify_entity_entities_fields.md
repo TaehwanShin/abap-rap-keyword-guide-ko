@@ -94,15 +94,15 @@ keywords: field_spec, FROM, FIELDS WITH, SET FIELDS WITH, AUTO FILL CID, fields_
 
 | 적는 법 | `%param-%control-a` | `%param-%control-_ent` | `%param-_ent-%control-b` |
 | --- | --- | --- | --- |
-| `FIELDS ( a _ent ) WITH` | 켜짐 | 켜짐 | 꺼짐 |
-| `FIELDS ( a _ent ( b ) ) WITH` | 켜짐 | 꺼짐 | 켜짐 |
-| `FIELDS ( a _ent +( b ) ) WITH` | 켜짐 | 켜짐 | 켜짐 |
+| `FIELDS ( a _ent ) WITH` | on | on | off |
+| `FIELDS ( a _ent ( b ) ) WITH` | on | off | on |
+| `FIELDS ( a _ent +( b ) ) WITH` | on | on | on |
 
 괄호만 쓰면 `_ent` 자신은 표시하지 않고 하위 구성요소만 표시합니다. 괄호 앞에 `+` 를 붙이면 `_ent` 자신도 함께 표시합니다. SAP 예제 클래스 `CL_DEMO_RAP_EML_DEEP_PARA_FLDS` 가 이 차이를 action 으로 보여 줍니다.
 
 ## 예제
 
-같은 생성 작업을 `FROM` 과 `FIELDS ( ... ) WITH` 로 써 봅니다. `FROM` 은 넘길 필드마다 `%control` 을 켜야 합니다.
+같은 생성 작업을 `FROM` 과 `FIELDS ( ... ) WITH` 로 써 봅니다. `FROM` 은 넘길 필드마다 `%control` 을 on 으로 해야 합니다.
 
 ```abap
 MODIFY ENTITY zr_travel

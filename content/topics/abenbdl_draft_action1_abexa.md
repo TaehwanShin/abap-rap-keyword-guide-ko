@@ -97,7 +97,7 @@ SELECT * FROM ztravel   INTO TABLE @FINAL(lt_active_after).
 | 활성화 전 | 새 draft 인스턴스 두 건 | 비어 있음 |
 | 활성화 후 | 비어 있음 | 인스턴스 두 건 |
 
-- `CREATE` 에서 `%is_draft` 를 켜면 인스턴스가 persistent table 이 아니라 draft 테이블에 들어갑니다.
+- `CREATE` 에서 `%is_draft` 를 on 으로 하면 인스턴스가 persistent table 이 아니라 draft 테이블에 들어갑니다.
 - `Activate` 는 `MODIFY ENTITIES ... EXECUTE` 로 두 인스턴스에 한꺼번에 실행합니다.
 - `Activate` 는 draft 테이블의 내용을 persistent table 로 복사하고, draft 테이블에서는 지웁니다.
 

@@ -67,7 +67,7 @@ DATA ls_input TYPE STRUCTURE FOR HIERARCHY za_travelinput.
 DATA lt_input TYPE TABLE FOR HIERARCHY za_travelinput.
 
 " composition _booking 이 구조 안에 테이블로 들어 있다
-" 자식 줄의 필드는 자식 줄의 %control 에서 켠다
+" 자식 줄의 필드는 자식 줄의 %control 에서 on 으로 둔다
 ls_input = VALUE #(
   agencyid   = '070001'
   customerid = '000010'
@@ -115,7 +115,7 @@ COMMIT ENTITIES.
 ## 알아두기
 
 - `FOR HIERARCHY` 타입은 여러 겹으로 겹칠 수 있습니다. 원문 예제는 루트 abstract entity 아래에 구조로 들어가는 항목, 테이블로 들어가는 항목, 스칼라 타입 항목을 두고, 그 항목 아래에 다시 다른 루트 abstract entity 를 둡니다.
-- `%control` 에는 필드뿐 아니라 composition 에 해당하는 구성요소도 있습니다. 넘기는 것마다 `if_abap_behv=>mk-on` 으로 켭니다. 자식 필드는 자식 구조나 자식 테이블 줄의 `%control` 에서 따로 켭니다.
+- `%control` 에는 필드뿐 아니라 composition 에 해당하는 구성요소도 있습니다. 넘기는 것마다 `if_abap_behv=>mk-on` 으로 둡니다. 자식 필드는 자식 구조나 자식 테이블 줄의 `%control` 에서 따로 on 으로 둡니다.
 - 원문 예제의 키 필드에는 `numbering : managed` 가 걸려 있어서, 인스턴스마다 키 값이 자동으로 만들어집니다.
 - 타입의 조건과 구성요소는 [[abaptype_table_for]] 의 `HIERARCHY` 설명에 있습니다.
 

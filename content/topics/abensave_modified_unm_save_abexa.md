@@ -13,8 +13,8 @@ managed BO 의 BDEF 에 [[abenbdl_saving|with unmanaged save]] 를 적으면, in
 처리 순서는 이렇습니다.
 
 1. `IF` 문으로 만든 인스턴스, 고친 인스턴스, 지운 인스턴스가 있는지 차례로 확인합니다. 어떤 필드에 값이 들어왔는지는 `%control` 로 알아냅니다.
-2. 만든 인스턴스는 임시 내부 테이블에 옮겨 담습니다. `%control` 에서 꺼져 있지 않은 필드의 값만 옮깁니다. 다 모이면 데이터베이스 테이블에 씁니다.
-3. 고친 인스턴스도 비슷하게 처리합니다. 다만 먼저 `SELECT` 로 지금 데이터베이스에 있는 값을 읽어 둡니다. 값이 넘어오지 않았거나 `%control` 에서 꺼진 필드는 읽어 둔 값을 그대로 두어, 빈 값으로 덮어쓰지 않게 합니다.
+2. 만든 인스턴스는 임시 내부 테이블에 옮겨 담습니다. `%control` 에서 off 가 아닌 필드의 값만 옮깁니다. 다 모이면 데이터베이스 테이블에 씁니다.
+3. 고친 인스턴스도 비슷하게 처리합니다. 다만 먼저 `SELECT` 로 지금 데이터베이스에 있는 값을 읽어 둡니다. 값이 넘어오지 않았거나 `%control` 에서 off 인 필드는 읽어 둔 값을 그대로 두어, 빈 값으로 덮어쓰지 않게 합니다.
 4. 지운 인스턴스는 `DELETE` 문으로 데이터베이스 테이블에서 지웁니다.
 
 ## 예제
@@ -56,7 +56,7 @@ CLASS lsc_travel IMPLEMENTATION.
       INSERT ztravel FROM TABLE @lt_db.
     ENDIF.
 
-    " 고친 인스턴스: 지금 값을 먼저 읽고, %control 이 켜진 필드만 바꾼다
+    " 고친 인스턴스: 지금 값을 먼저 읽고, %control 이 on 인 필드만 바꾼다
     IF update-travel IS NOT INITIAL.
       SELECT * FROM ztravel
         FOR ALL ENTRIES IN @update-travel
@@ -84,7 +84,7 @@ CLASS lsc_travel IMPLEMENTATION.
 ENDCLASS.
 ```
 
-BO 를 쓰는 쪽에서 `%control` 의 일부 필드를 꺼서 수정을 요청하면, 꺼진 필드는 값이 함께 넘어와도 바뀌지 않습니다.
+BO 를 쓰는 쪽에서 `%control` 의 일부 필드를 off 로 해서 수정을 요청하면, off 인 필드는 값이 함께 넘어와도 바뀌지 않습니다.
 
 ```abap
 MODIFY ENTITY zr_travel

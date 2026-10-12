@@ -136,7 +136,7 @@ keywords: TYPE TABLE FOR, TABLE FOR CREATE, TABLE FOR UPDATE, TABLE FOR DELETE, 
 - abstract 가 아닌 BDEF 쪽에는 deep parameter 나 deep result 를 쓰는 action 이나 function 이 정의되어 있어야 합니다. `deep parameter` 를 쓰면 입력 매개변수를 구조로, `deep table parameter` 를 쓰면 테이블로 해석합니다([[abenbdl_action_input_param]]).
 - 타입에는 entity 의 모든 필드가 들어 있습니다. composition 이 있으면 composition 마다 구성요소가 하나씩 더 있고, 그 안에 다시 하위 구성요소가 있습니다. 필드는 모두 원래 타입을 그대로 가집니다.
 - abstract entity 의 BDEF 에 composition 의 behavior definition(동작 정의)가 들어 있으면 구성요소가 더 생깁니다. composition 의 카디널리티가 1 이하이면 구조이고, 그렇지 않으면 테이블입니다.
-- abstract entity 의 동작을 `with control` 로 정의하면 `%control` 도 구성요소로 들어갑니다([[abenbdl_define_beh_abstract]]). 원문은 `%control` 안에 abstract entity 의 모든 필드와, composition 이 있으면 그에 해당하는 구조나 내부 테이블이 있다고 설명합니다. 하지만 원문 예제([[abenderived_type_hierarchy_abexa]])는 composition 에 해당하는 `%control` 구성요소에도 필드와 똑같이 `if_abap_behv=>mk-on` 값 하나를 넣습니다. 자식 필드의 표시는 자식 구조나 자식 테이블 줄에 있는 `%control` 에서 따로 켭니다.
+- abstract entity 의 동작을 `with control` 로 정의하면 `%control` 도 구성요소로 들어갑니다([[abenbdl_define_beh_abstract]]). 원문은 `%control` 안에 abstract entity 의 모든 필드와, composition 이 있으면 그에 해당하는 구조나 내부 테이블이 있다고 설명합니다. 하지만 원문 예제([[abenderived_type_hierarchy_abexa]])는 composition 에 해당하는 `%control` 구성요소에도 필드와 똑같이 `if_abap_behv=>mk-on` 값 하나를 넣습니다. 자식 필드의 표시는 자식 구조나 자식 테이블 줄에 있는 `%control` 에서 따로 on 으로 둡니다.
 - deep parameter 나 deep result 를 쓰는 action 과 function 에서 `%param` 의 하위 구성요소가 이 타입입니다([[abapderived_types_param]]).
 
 ## 예제

@@ -13,8 +13,8 @@ unmanaged save 에서는 managed RAP BO 인데도 **데이터베이스에 쓰는
 `save_modified` 의 처리 순서는 이렇습니다.
 
 1. `create`, `update`, `delete` 가 비어 있는지 `IF` 로 각각 확인합니다.
-2. **생성** — 생성된 인스턴스를 하나씩 돌면서 보조 내부 테이블에 옮깁니다. `%control` 에서 꺼져 있지 않은 필드의 값만 옮깁니다. 다 옮기면 ABAP SQL `MODIFY` 문으로 persistent table 에 씁니다.
-3. **수정** — 생성과 비슷하지만 먼저 ABAP SQL `SELECT` 문으로 persistent table 의 기존 줄을 읽어 둡니다. 값이 넘어오지 않았거나 `%control` 에서 꺼져 있는 필드는 기존 값을 그대로 둡니다. 이렇게 해야 기존 값이 초기값으로 덮이지 않습니다.
+2. **생성** — 생성된 인스턴스를 하나씩 돌면서 보조 내부 테이블에 옮깁니다. `%control` 에서 off 가 아닌 필드의 값만 옮깁니다. 다 옮기면 ABAP SQL `MODIFY` 문으로 persistent table 에 씁니다.
+3. **수정** — 생성과 비슷하지만 먼저 ABAP SQL `SELECT` 문으로 persistent table 의 기존 줄을 읽어 둡니다. 값이 넘어오지 않았거나 `%control` 에서 off 인 필드는 기존 값을 그대로 둡니다. 이렇게 해야 기존 값이 초기값으로 덮이지 않습니다.
 4. **삭제** — ABAP SQL `DELETE` 문으로 persistent table 에서 줄을 지웁니다.
 
 ## 예제
@@ -41,7 +41,7 @@ authorization master ( none )
 METHOD save_modified.
   DATA lt_travel TYPE STANDARD TABLE OF ztravel WITH EMPTY KEY.
 
-  " 생성: %control 에서 켜진 필드만 옮겨 담는다
+  " 생성: %control 에서 on 인 필드만 옮겨 담는다
   IF create-travel IS NOT INITIAL.
     LOOP AT create-travel INTO DATA(ls_created).
       DATA(ls_new) = VALUE ztravel( travel_id = ls_created-travelid ).
@@ -56,7 +56,7 @@ METHOD save_modified.
     MODIFY ztravel FROM TABLE @lt_travel.
   ENDIF.
 
-  " 수정: 기존 줄을 먼저 읽고, 켜진 필드만 덮어쓴다
+  " 수정: 기존 줄을 먼저 읽고, on 인 필드만 덮어쓴다
   IF update-travel IS NOT INITIAL.
     CLEAR lt_travel.
     LOOP AT update-travel INTO DATA(ls_updated).

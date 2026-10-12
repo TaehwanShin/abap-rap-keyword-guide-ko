@@ -6,7 +6,7 @@ keywords: %control, 필드 표시, control structure, if_abap_behv=>mk-on, mk-of
 
 ## 설명
 
-`%control` 은 BDEF derived type(BDEF 파생 타입)에 들어 있는 구조형 구성요소입니다. RAP BO 인스턴스의 키 필드와 데이터 필드가 모두 구성요소로 들어 있고, 구성요소마다 값 대신 **표시** 하나(켬 또는 끔)를 담습니다.
+`%control` 은 BDEF derived type(BDEF 파생 타입)에 들어 있는 구조형 구성요소입니다. RAP BO 인스턴스의 키 필드와 데이터 필드가 모두 구성요소로 들어 있고, 구성요소마다 값 대신 **표시** 하나(on 또는 off)를 담습니다.
 
 ### 왜 필요한가
 
@@ -19,17 +19,17 @@ ABAP 구조에서는 필드를 "없는 상태"로 둘 수 없습니다. 값을 �
 
 BAPI 를 써 봤다면 **X 구조**와 같은 것입니다. `BAPI_PO_CHANGE` 에 `POHEADER` 와 `POHEADERX` 를 함께 넘기고, 바꿀 필드에만 `'X'` 를 넣던 방식입니다. RAP 에서는 X 구조가 따로 있지 않고, 같은 줄 안에 `%control` 이라는 이름으로 들어 있습니다.
 
-화면에서도 같은 일이 일어납니다. 사용자가 화면에서 필드 하나를 고치면 요청에는 바뀐 필드만 실려 옵니다. RAP 는 이 정보를 `%control` 표시로 바꿔 RAP BO provider(제공자)에 넘깁니다. provider 는 켜진 필드만 고칩니다.
+화면에서도 같은 일이 일어납니다. 사용자가 화면에서 필드 하나를 고치면 요청에는 바뀐 필드만 실려 옵니다. RAP 는 이 정보를 `%control` 표시로 바꿔 RAP BO provider(제공자)에 넘깁니다. provider 는 on 인 필드만 고칩니다.
 
 ### 작업마다 다른 뜻
 
-| 작업 | 켠 필드 | 끈 필드 |
+| 작업 | on 인 필드 | off 인 필드 |
 | --- | --- | --- |
 | `CREATE` | 적은 값으로 만듭니다. | 값을 적어도 버립니다. 초깃값으로 만들어집니다. |
 | `UPDATE` | 적은 값으로 바꿉니다. 값이 비어 있으면 비웁니다. | 예전 값 그대로 둡니다. |
 | `READ` | 읽어서 돌려 달라는 뜻입니다. | 읽지 않아도 됩니다. |
 
-변경 작업([[abapmodify_entity_entities_op]])에서는 "어느 필드에 값을 넘겼는가"이고, 읽기 작업([[abapread_entity_entities]])에서는 "어느 필드를 읽어 달라는가"입니다. 변경 작업의 표시는 RAP BO consumer(사용자)가 채우고 provider 가 읽습니다. 읽기 작업의 표시는 consumer 가 켜서 "이 필드를 돌려 달라"고 알립니다. 둘 다 현재 트랜잭션 안에서만 뜻이 있습니다.
+변경 작업([[abapmodify_entity_entities_op]])에서는 "어느 필드에 값을 넘겼는가"이고, 읽기 작업([[abapread_entity_entities]])에서는 "어느 필드를 읽어 달라는가"입니다. 변경 작업의 표시는 RAP BO consumer(사용자)가 채우고 provider 가 읽습니다. 읽기 작업의 표시는 consumer 가 on 으로 해서 "이 필드를 돌려 달라"고 알립니다. 둘 다 현재 트랜잭션 안에서만 뜻이 있습니다.
 
 ### 언제 신경 써야 하나
 
@@ -40,8 +40,8 @@ BAPI 를 써 봤다면 **X 구조**와 같은 것입니다. `BAPI_PO_CHANGE` 에
 | EML 로 BO 를 부른다. `FIELDS ( ... ) WITH` 를 쓴다 | 문이 대신 채웁니다. 적지 않습니다. |
 | EML 로 BO 를 부른다. `FROM` 을 쓴다 (`CREATE FROM`, `UPDATE FROM`, `READ ... FROM`) | **직접 채웁니다.** |
 | managed BO 의 determination, validation 을 구현한다 | 볼 일이 없습니다. 넘어오는 것은 키뿐입니다. |
-| unmanaged BO 의 수정 handler method(핸들러 메서드)를 구현한다 ([[abaphandler_meth_modify]]) | **읽어야 합니다.** 켜진 필드만 반영합니다. |
-| unmanaged BO 의 읽기 handler method 를 구현한다 ([[abaphandler_meth_read]]) | 읽습니다. 켜진 필드만 채워 돌려주면 됩니다. |
+| unmanaged BO 의 수정 handler method(핸들러 메서드)를 구현한다 ([[abaphandler_meth_modify]]) | **읽어야 합니다.** on 인 필드만 반영합니다. |
+| unmanaged BO 의 읽기 handler method 를 구현한다 ([[abaphandler_meth_read]]) | 읽습니다. on 인 필드만 채워 돌려주면 됩니다. |
 | `save_modified` 에서 저장하거나 변경 기록을 남긴다 ([[abaprap_saver_meth_save_modified]]) | 읽습니다. 이번 트랜잭션에서 바뀐 필드를 알려 줍니다. |
 | precheck 에서 요청을 거른다 ([[abaphandler_meth_precheck]]) | 어느 필드를 바꾸려는 요청인지 볼 때 읽습니다. |
 
@@ -51,11 +51,11 @@ managed BO 에서는 저장을 RAP 가 맡으므로, EML 을 `FIELDS ( ... ) WIT
 
 `MODIFY` 문에서 필드를 넘기는 방법에 따라 달라집니다([[abapmodify_entity_entities_fields]]).
 
-| 쓰는 법 | `%control` 을 채우는 쪽 | 켜지는 필드 |
+| 쓰는 법 | `%control` 을 채우는 쪽 | on 이 되는 필드 |
 | --- | --- | --- |
 | `FIELDS ( a b ) WITH` | 문 | 괄호 안에 적은 필드 |
 | `SET FIELDS WITH` | 문 | 값이 들어 있는 필드 |
-| `FROM` | 직접 | 직접 켠 필드 |
+| `FROM` | 직접 | 직접 on 으로 한 필드 |
 
 `FROM` 을 쓰면(`CREATE FROM ...`, `UPDATE FROM ...`) `%control` 을 반드시 적어야 합니다.
 
@@ -66,7 +66,7 @@ interface `IF_ABAP_BEHV` 의 구조형 상수 `mk` 를 씁니다.
 - `if_abap_behv=>mk-on` : 표시함. `CREATE` 에서는 그 필드 값을 반영합니다.
 - `if_abap_behv=>mk-off` : 표시 안 함. `CREATE` 에서 값을 적어도 그 필드는 반영하지 않습니다.
 
-기술적인 타입이 `x LENGTH 1` 이라 `'X'` 같은 문자 표시는 통하지 않습니다. 켠 값은 16진수 01, 끈 값은 00 입니다.
+기술적인 타입이 `x LENGTH 1` 이라 `'X'` 같은 문자 표시는 통하지 않습니다. on 값은 16진수 01, off 값은 00 입니다.
 
 ### 타입
 
@@ -87,7 +87,7 @@ association 으로 만드는 작업에서는 [[abapderived_types_target]] 안에
 
 ### 값을 넘겼는데 바뀌지 않는 경우
 
-`UPDATE FROM` 에 값만 적고 `%control` 을 비워 두면 켜진 필드가 없어서 아무 필드도 바뀌지 않습니다. 같은 일을 `FIELDS ( ... ) WITH` 로 쓰면 괄호 안 필드를 문이 대신 켭니다.
+`UPDATE FROM` 에 값만 적고 `%control` 을 비워 두면 on 인 필드가 없어서 아무 필드도 바뀌지 않습니다. 같은 일을 `FIELDS ( ... ) WITH` 로 쓰면 괄호 안 필드를 문이 대신 on 으로 둡니다.
 
 ```abap
 " 1) 값은 적었지만 %control 이 비어 있어 status 가 바뀌지 않는다
@@ -97,14 +97,14 @@ MODIFY ENTITIES OF zr_travel
   FAILED DATA(ls_failed1)
   REPORTED DATA(ls_reported1).
 
-" 2) 괄호 안에 적은 status 의 %control 이 저절로 켜져 status 가 바뀐다
+" 2) 괄호 안에 적은 status 의 %control 이 저절로 on 이 되어 status 가 바뀐다
 MODIFY ENTITIES OF zr_travel
   ENTITY travel
     UPDATE FIELDS ( status ) WITH VALUE #( ( travelid = '00000001' status = 'A' ) )
   FAILED DATA(ls_failed2)
   REPORTED DATA(ls_reported2).
 
-" 3) 필드를 켜고 값을 비워 두면 그 필드를 비운다
+" 3) 필드를 on 으로 하고 값을 비워 두면 그 필드를 비운다
 MODIFY ENTITIES OF zr_travel
   ENTITY travel
     UPDATE FIELDS ( customerid ) WITH VALUE #( ( travelid = '00000001' customerid = '' ) )
@@ -155,7 +155,7 @@ MODIFY ENTITIES OF zr_travel
 
 ### unmanaged BO 의 수정 handler method 에서 읽기
 
-unmanaged BO 에서는 수정을 직접 구현하므로 `%control` 을 직접 읽어야 합니다. 지금 값을 먼저 가져온 뒤, 켜진 필드만 새 값으로 덮어씁니다. 표시를 보지 않고 줄 전체를 옮기면 넘기지 않은 필드가 초깃값으로 지워집니다.
+unmanaged BO 에서는 수정을 직접 구현하므로 `%control` 을 직접 읽어야 합니다. 지금 값을 먼저 가져온 뒤, on 인 필드만 새 값으로 덮어씁니다. 표시를 보지 않고 줄 전체를 옮기면 넘기지 않은 필드가 초깃값으로 지워집니다.
 
 ```abap
 METHOD update.
@@ -166,12 +166,12 @@ METHOD update.
       WHERE travel_id = @ls_entity-travelid
       INTO @DATA(ls_travel).
 
-    " 켜진 필드만 새 값으로 덮어쓴다
+    " on 인 필드만 새 값으로 덮어쓴다
     IF ls_entity-%control-status = if_abap_behv=>mk-on.
       ls_travel-status = ls_entity-status.
     ENDIF.
     IF ls_entity-%control-customerid = if_abap_behv=>mk-on.
-      " 켜져 있고 값이 비어 있으면 고객을 비우라는 뜻이다
+      " on 이고 값이 비어 있으면 고객을 비우라는 뜻이다
       ls_travel-customer_id = ls_entity-customerid.
     ENDIF.
 
@@ -180,15 +180,15 @@ METHOD update.
 ENDMETHOD.
 ```
 
-필드가 많으면 `IF` 를 필드마다 쓰지 않아도 됩니다. `CORRESPONDING` 에 `USING CONTROL` 을 붙이면 켜진 필드만 옮깁니다([[abapeml_corresponding]]). 옛 BAPI 처럼 X 구조를 받는 코드를 부를 때는 BDEF 의 `mapping for ... control` 로 `%control` 과 X 구조를 이어 둡니다([[abenbdl_type_mapping]]).
+필드가 많으면 `IF` 를 필드마다 쓰지 않아도 됩니다. `CORRESPONDING` 에 `USING CONTROL` 을 붙이면 on 인 필드만 옮깁니다([[abapeml_corresponding]]). 옛 BAPI 처럼 X 구조를 받는 코드를 부를 때는 BDEF 의 `mapping for ... control` 로 `%control` 과 X 구조를 이어 둡니다([[abenbdl_type_mapping]]).
 
 ## 알아두기
 
-- `SET FIELDS WITH` 는 값이 들어 있는 필드만 켭니다. 그래서 필드를 빈 값으로 지우는 데는 쓸 수 없습니다. 지우려면 `FIELDS ( ... ) WITH` 나 `FROM` 을 씁니다.
+- `SET FIELDS WITH` 는 값이 들어 있는 필드만 on 으로 둡니다. 그래서 필드를 빈 값으로 지우는 데는 쓸 수 없습니다. 지우려면 `FIELDS ( ... ) WITH` 나 `FROM` 을 씁니다.
 - `FIELDS ( ... ) WITH` 에서 괄호 안에 적지 않은 필드는 값을 넣어 두어도 무시됩니다. 값을 넘겼는데 반영되지 않으면 괄호 안 필드 목록부터 봅니다.
 - 옛 자료에는 `%control` 을 `cl_abap_behv=>flag_changed` 와 비교하는 코드가 보입니다. 지금 원문은 `if_abap_behv=>mk-on` 을 씁니다.
 - `READ` 작업에서는 키를 늘 쓰고 늘 돌려줍니다. 그래서 managed 에서는 `%control` 에서 키 표시를 꺼도 무시됩니다.
-- managed 에서는 키 필드의 `%control` 표시를 켜지 않아도 됩니다. 예를 들어 EML `READ` 문에서 `FROM` 을 쓸 때 그렇습니다. 돌려받은 인스턴스에는 키 값이 들어 있습니다.
+- managed 에서는 키 필드의 `%control` 표시를 on 으로 하지 않아도 됩니다. 예를 들어 EML `READ` 문에서 `FROM` 을 쓸 때 그렇습니다. 돌려받은 인스턴스에는 키 값이 들어 있습니다.
 - 시스템 클래스 `CL_ABAP_STRUCT_UTILITIES` 의 `FILLED_COMPONENTS_X` 메서드는 모든 구성요소가 `x LENGTH 1` 타입인 구조에서 값이 채워진 구성요소만 골라 처리하게 도와줍니다. `%control` 에서 표시된 필드만 훑을 때 쓸모 있습니다.
 
 ## 관련 항목

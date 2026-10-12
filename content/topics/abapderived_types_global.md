@@ -22,7 +22,7 @@ keywords: %global, REPORTED, 전역 기능 제어, 전역 권한, global feature
 
 ## 예제
 
-global 권한을 확인하는 handler method(핸들러 메서드)입니다. 수정 권한이 없으면 메시지를 내면서 `%global` 을 켭니다.
+global 권한을 확인하는 handler method(핸들러 메서드)입니다. 수정 권한이 없으면 메시지를 내면서 `%global` 을 on 으로 둡니다.
 
 ```abap
 CLASS lhc_travel DEFINITION INHERITING FROM cl_abap_behavior_handler.
@@ -54,7 +54,7 @@ ENDCLASS.
 
 ## 알아두기
 
-- 원문 예제는 `get_global_authorizations` 에서 생성·수정·삭제 권한을 각각 확인하고, 허용했을 때와 거부했을 때 모두 `%global` 을 켠 메시지를 `reported` 에 넣습니다. 이때 `%create`, `%update`, `%delete` 구성요소도 함께 채웁니다.
+- 원문 예제는 `get_global_authorizations` 에서 생성·수정·삭제 권한을 각각 확인하고, 허용했을 때와 거부했을 때 모두 `%global` 을 on 으로 한 메시지를 `reported` 에 넣습니다. 이때 `%create`, `%update`, `%delete` 구성요소도 함께 채웁니다.
 - 메시지 처리 전반은 ABAP RESTful Application Programming Model 개발 안내서의 Messages 절에 나옵니다.
 - `%global` 을 포함해 메시지와 관련된 구성요소 여러 개를 managed BO 에서 함께 쓰는 모습은 [[abenderived_types_reported_abexa]] 에 나옵니다.
 

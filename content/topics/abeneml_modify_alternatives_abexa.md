@@ -126,7 +126,7 @@ COMMIT ENTITIES.
 
 - 원문 프로그램은 형식마다 `MODIFY` 문을 실행하고 `COMMIT ENTITIES` 로 저장한 뒤, persistent table 을 `SELECT` 로 읽어 루트와 자식 테이블의 내용을 출력합니다. 형식이 바뀔 때마다 테이블을 비우고 다시 시작하므로 형식별 결과를 따로 볼 수 있습니다.
 - `MODIFY` 문은 transactional buffer(트랜잭션 버퍼)만 바꿉니다. managed BO 라서 버퍼는 프레임워크가 맡고, `COMMIT ENTITIES` 가 실행돼야 persistent table 에 저장됩니다. 원문은 `COMMIT ENTITIES` 뒤에 `sy-subrc` 를 보고 save sequence(저장 순서)에서 문제가 났는지 확인합니다.
-- 짧은 형식과 긴 형식에서는 `FIELDS ( ... ) WITH` 를 써서 `%control` 을 문장에 맡겼습니다. 동적 형식에서는 인스턴스 테이블을 직접 만들므로 `%control` 을 손으로 켭니다.
+- 짧은 형식과 긴 형식에서는 `FIELDS ( ... ) WITH` 를 써서 `%control` 을 문장에 맡겼습니다. 동적 형식에서는 인스턴스 테이블을 직접 만들므로 `%control` 을 손으로 on 으로 둡니다.
 - 긴 형식에서 `OF` 뒤에는 root entity 의 전체 이름을, `ENTITY` 뒤에는 BDEF 의 별칭을 씁니다.
 - 원문의 동적 형식 부분은 루트 생성·수정·삭제, create-by-association(`op-m-create_ba` 와 `sub_name`), 자식 수정·삭제까지 여섯 가지 작업을 한 테이블에 담습니다. 여기서는 두 가지만 남겼습니다.
 

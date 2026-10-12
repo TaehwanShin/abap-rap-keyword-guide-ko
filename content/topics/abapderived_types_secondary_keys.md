@@ -98,7 +98,7 @@ ENDLOOP.
 ## 알아두기
 
 - 어떤 보조 키가 있는지는 BDEF 에 적은 내용에 따라 달라집니다. `draft` 는 draft 를 쓸 때만, `pid` 는 late numbering 을 쓸 때만 있습니다.
-- 직접 만든 보조 키를 ABAP 문에서 쓰는 것은, 보조 키 전체를 요청했을 때만 의미가 있습니다. EML 읽기 결과를 도는 경우라면 키를 이루는 모든 필드에 [[abapderived_types_control]] 표시가 켜져 있어야 합니다.
+- 직접 만든 보조 키를 ABAP 문에서 쓰는 것은, 보조 키 전체를 요청했을 때만 의미가 있습니다. EML 읽기 결과를 도는 경우라면 키를 이루는 모든 필드에 [[abapderived_types_control]] 표시가 on 이어야 합니다.
 - 여러 BDEF derived type 과 그 키를 직접 살펴보려면 SAP 데모 클래스 `CL_DEMO_RAP_DSPLY_DER_TYPE_KS` 를 실행합니다. 세 가지 경우를 보여 줍니다: 바깥에서 번호를 주는 경우(draft 도 late numbering 도 아님), late numbering([[abenbdl_late_numbering]], draft 아님), draft([[abenbdl_with_draft]]). 출력의 `KEY_KIND` 필드에서 `E` 는 빈 키, `U` 는 사용자 정의 키를 뜻합니다.
 - 많은 BDEF derived type 은 구현 클래스 밖에서 변수로 선언할 수 없습니다. 그래서 위 데모는 전역 클래스에 여러 derived type 으로 선언한 변수를 두고, 각 클래스의 `get_keys`, `get_keys_ln`, `get_keys_dt` 메서드가 키 테이블을 내어 줍니다.
 

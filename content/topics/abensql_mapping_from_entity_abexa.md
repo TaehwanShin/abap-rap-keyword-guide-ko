@@ -33,7 +33,7 @@ DATA: ls_upd TYPE STRUCTURE FOR UPDATE zr_travel,
 ls_upd = VALUE #( TravelID = '00000001' AgencyID = '070009' Status = 'O' ).
 UPDATE ztravel FROM @ls_upd MAPPING FROM ENTITY.
 
-" --- UPDATE + INDICATORS: %control 에서 켠 필드만 덮어쓴다
+" --- UPDATE + INDICATORS: %control 에서 on 인 필드만 덮어쓴다
 lt_upd = VALUE #( ( TravelID = '00000002' AgencyID = '070009' Status = 'A'
                     %control = VALUE #( TravelID = if_abap_behv=>mk-on
                                         AgencyID = if_abap_behv=>mk-off

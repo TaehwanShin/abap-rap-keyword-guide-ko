@@ -22,7 +22,7 @@ additional save 에서는 인스턴스 저장은 managed RAP BO provider(제공�
 `save_modified` 의 처리 순서는 이렇습니다.
 
 1. `create`, `update`, `delete` 가 비어 있는지 `IF` 로 각각 확인합니다.
-2. 생성된 인스턴스를 하나씩 돌면서 `%control` 을 봅니다. 어떤 필드가 켜져 있으면 UUID 를 새로 만들고, 필드 이름과 RAP BO consumer(사용자)가 넘긴 값을 기록 줄에 담습니다. 원문은 필드 두 개를 이렇게 처리합니다.
+2. 생성된 인스턴스를 하나씩 돌면서 `%control` 을 봅니다. 어떤 필드가 on 이면 UUID 를 새로 만들고, 필드 이름과 RAP BO consumer(사용자)가 넘긴 값을 기록 줄에 담습니다. 원문은 필드 두 개를 이렇게 처리합니다.
 3. 수정된 인스턴스도 같은 방식으로 처리합니다. 원문은 생성 때와 다른 필드 두 개를 봅니다.
 4. 삭제된 인스턴스는 필드 이름과 값을 남기지 않습니다. 삭제에서는 뜻이 없기 때문입니다.
 5. 모은 줄을 기록 테이블에 넣습니다.
@@ -108,7 +108,7 @@ ENDMETHOD.
 
 - `create`, `update`, `delete` 는 `save_modified` 안에서 선언 없이 바로 쓸 수 있습니다. 원문 예제는 타입을 보여 주려고 `TYPE REQUEST FOR CHANGE`, `TYPE REQUEST FOR DELETE`, `TYPE TABLE FOR CHANGE`, `TYPE STRUCTURE FOR CHANGE` 로 변수를 일부러 따로 선언합니다.
 - 이 네 타입은 additional save 나 unmanaged save 를 쓰는 managed RAP BO 에서만 뜻이 있습니다.
-- 원문 예제는 `MODIFY ENTITY ... CREATE FROM` 과 `UPDATE FROM` 을 쓰면서 `%control` 의 필드를 하나하나 켭니다. `save_modified` 가 보는 `%control` 값이 여기서 옵니다.
+- 원문 예제는 `MODIFY ENTITY ... CREATE FROM` 과 `UPDATE FROM` 을 쓰면서 `%control` 의 필드를 하나하나 on 으로 둡니다. `save_modified` 가 보는 `%control` 값이 여기서 옵니다.
 - 원문 끝의 설명 글에는 BDEF 에 `with unmanaged save` 가 있다고 적혀 있습니다. 하지만 원문의 BDEF 코드와 첫머리 설명은 `with additional save` 입니다. 이 항목은 BDEF 코드를 따랐습니다.
 - 인스턴스 저장까지 직접 맡는 방식은 [[abenrap_managed_unm_save_abexa]] 에서 다룹니다.
 

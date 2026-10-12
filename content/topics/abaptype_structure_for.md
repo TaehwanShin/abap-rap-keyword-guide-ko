@@ -74,13 +74,13 @@ keywords: TYPE STRUCTURE FOR, STRUCTURE FOR CREATE, STRUCTURE FOR UPDATE, STRUCT
 | --- | --- | --- | --- |
 | `ACTION REQUEST` | action 의 결과를 전부 받을지 일부만 받을지 요청 매개변수로 정합니다. | action 에 `result selective` 가 적혀 있어야 합니다. | 키 필드와 데이터 필드. 타입은 `ABP_BEHV_FLAG` 입니다. |
 | `FUNCTION REQUEST` | function 의 결과를 전부 받을지 일부만 받을지 요청 매개변수로 정합니다. | function 에 `result selective` 가 적혀 있어야 합니다. | 키 필드와 데이터 필드. 타입은 `ABP_BEHV_FLAG` 입니다. |
-| `AUTHORIZATION REQUEST`<br>`INSTANCE AUTHORIZATION REQUEST` | `GET PERMISSIONS` 문을 처리하는 handler method 에서 instance 권한 정보를 구할 때 씁니다. 허용 정보를 어떤 조건으로 구할지 정한 요청 매개변수가 handler method 의 입력 매개변수가 됩니다. 예를 들어 작업별로 정보를 구할지 말지 켜고 끕니다. `INSTANCE` 는 있으나 없으나 같습니다. | BDEF 에 `instance` 속성으로 권한 확인이 정의되어 있어야 합니다([[abenbdl_authorization]]). | `%action` 과 `%assoc` 의 하위 구성요소, `%create`, `%delete`, `%update`. 타입은 모두 `ABP_BEHV_FLAG` 입니다. |
+| `AUTHORIZATION REQUEST`<br>`INSTANCE AUTHORIZATION REQUEST` | `GET PERMISSIONS` 문을 처리하는 handler method 에서 instance 권한 정보를 구할 때 씁니다. 허용 정보를 어떤 조건으로 구할지 정한 요청 매개변수가 handler method 의 입력 매개변수가 됩니다. 예를 들어 작업별로 정보를 구할지 말지 on 으로 하고 off 로 둡니다. `INSTANCE` 는 있으나 없으나 같습니다. | BDEF 에 `instance` 속성으로 권한 확인이 정의되어 있어야 합니다([[abenbdl_authorization]]). | `%action` 과 `%assoc` 의 하위 구성요소, `%create`, `%delete`, `%update`. 타입은 모두 `ABP_BEHV_FLAG` 입니다. |
 | `FEATURES REQUEST`<br>`INSTANCE FEATURES REQUEST` | `GET PERMISSIONS` 문을 처리하는 handler method 에서 instance feature control(기능 제어) 정보를 구할 때 씁니다. 요청 매개변수가 handler method 의 입력 매개변수가 됩니다. `INSTANCE` 는 있으나 없으나 같습니다. | BDEF 에 `features: instance` 속성이 적혀 있어야 합니다. | `%action` 과 `%assoc` 의 하위 구성요소, `%create`, `%delete`, `%update`(`ABP_BEHV_FLAG`), `%field` 의 하위 구성요소(`ABP_BEHV_FEATURE`) |
 | `GLOBAL AUTHORIZATION REQUEST` | `GET PERMISSIONS` 문을 처리하는 handler method 에서 global 권한 정보를 구할 때 씁니다. 요청 매개변수가 handler method 의 입력 매개변수가 됩니다. | BDEF 에 `global` 속성으로 권한 확인이 정의되어 있어야 합니다([[abenbdl_authorization]]). | `%action` 의 하위 구성요소, `%create`, `%delete`, `%update`. 타입은 `ABP_BEHV_FLAG` 입니다. |
 | `GLOBAL AUTHORIZATION RESULT` | 위 handler method 의 결과입니다. 요청 매개변수에 따라 구한 global 권한 정보가 들어 있습니다. | 위와 같습니다. | `%action` 과 `%assoc` 의 하위 구성요소, `%create`, `%delete`, `%update`. 타입은 `ABP_BEHV_FLAG` 입니다. |
 | `GLOBAL FEATURES REQUEST` | `GET PERMISSIONS` 문을 처리하는 handler method 에서 global feature control 정보를 구할 때 씁니다. 요청 매개변수가 handler method 의 입력 매개변수가 됩니다. | BDEF 에 `features: global` 속성이 적혀 있어야 합니다. | `%action` 과 `%assoc` 의 하위 구성요소, `%create`, `%delete`, `%update`. 타입은 `ABP_BEHV_FLAG` 입니다. |
 | `GLOBAL FEATURES RESULT` | 위 handler method 의 결과입니다. 요청 매개변수에 따라 구한 global feature control 정보가 들어 있습니다. | 위와 같습니다. | `%action` 과 `%assoc` 의 하위 구성요소, `%create`, `%delete`, `%update`. 타입은 `ABP_BEHV_FLAG` 입니다. |
-| `PERMISSIONS REQUEST` | `GET PERMISSIONS` 문에서 허용 정보를 어떤 조건으로 구할지 정합니다. 예를 들어 어느 작업의 정보를 구할지 켜고 끕니다. | 작업, action, association, 필드가 BDEF 에 정의되어 있어야 그에 맞는 구성요소가 생깁니다. | `%action` 과 `%assoc` 의 하위 구성요소, `%create`, `%delete`, `%update`(`ABP_BEHV_FLAG`), `%field` 의 하위 구성요소(`ABP_BEHV_FEATURE`) |
+| `PERMISSIONS REQUEST` | `GET PERMISSIONS` 문에서 허용 정보를 어떤 조건으로 구할지 정합니다. 예를 들어 어느 작업의 정보를 구할지 on 으로 하고 off 로 둡니다. | 작업, action, association, 필드가 BDEF 에 정의되어 있어야 그에 맞는 구성요소가 생깁니다. | `%action` 과 `%assoc` 의 하위 구성요소, `%create`, `%delete`, `%update`(`ABP_BEHV_FLAG`), `%field` 의 하위 구성요소(`ABP_BEHV_FEATURE`) |
 | `PERMISSIONS RESULT` | `GET PERMISSIONS` 문의 결과입니다. global·instance 권한, global·instance feature control, static feature control 의 결과가 모두 들어 있습니다. | 위와 같습니다. | 아래 참고 |
 
 **`PERMISSIONS RESULT` 의 구성요소**
@@ -151,7 +151,7 @@ MODIFY ENTITIES OF zr_travel
   FAILED   DATA(ls_failed)
   REPORTED DATA(ls_reported).
 
-" 2) GET PERMISSIONS 의 요청 구조: 무엇의 허용 정보를 구할지 켠다
+" 2) GET PERMISSIONS 의 요청 구조: 무엇의 허용 정보를 구할지 on 으로 둔다
 DATA ls_request TYPE STRUCTURE FOR PERMISSIONS REQUEST zr_travel.
 
 ls_request = VALUE #( %update              = if_abap_behv=>mk-on

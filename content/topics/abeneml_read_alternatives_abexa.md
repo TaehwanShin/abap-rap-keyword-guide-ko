@@ -70,7 +70,7 @@ DATA: lt_op       TYPE abp_behv_retrievals_tab,
       lt_rba_res  TYPE TABLE FOR READ RESULT zr_travel\_booking,
       lt_rba_link TYPE TABLE FOR READ LINK   zr_travel\_booking.
 
-" 읽을 필드를 %control 에서 직접 켠다
+" 읽을 필드를 %control 에서 직접 on 으로 둔다
 lt_read = VALUE #(
   ( travelid = '00000001'
     %control = VALUE #( agencyid = if_abap_behv=>mk-on

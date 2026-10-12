@@ -25,7 +25,7 @@ entity(엔터티) 동작 본문에서 RAP change documents 의 **기록 옵션**
 **change documents 대상 필드**란 다음 둘 가운데 하나에 해당하는 필드입니다.
 
 - 주석 `AbapCatalog.typeSpec.changeDocumentRelevant` 가 `true` 인 CDS 단순 타입으로 타입을 준 필드
-- change documents 표시가 켜진 DDIC 데이터 요소로 타입을 준 필드
+- change documents 표시가 켜진 DDIC 데이터 엘리먼트로 타입을 준 필드
 
 적는 규칙은 다음과 같습니다.
 

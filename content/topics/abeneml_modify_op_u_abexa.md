@@ -54,10 +54,10 @@ authorization dependent by _Travel
 
 **handler method(핸들러 메서드).**
 
-- `create` : 버퍼를 준비한 뒤 넘어온 인스턴스를 하나씩 돌며 조건을 확인합니다. 조건에 맞지 않는 인스턴스는 `FAILED` 와 `REPORTED` 에 넣습니다. 조건에 맞으면 버퍼에 넣고 `changed` 를 켭니다. `%control` 에서 꺼져 있는(`if_abap_behv=>mk-off`) 필드는 넘어온 값을 넣지 않습니다.
-- `update` : 같은 흐름입니다. `%control` 에서 꺼진 필드는 기존 값을 덮어쓰지 않습니다. 요청이 키만 넘긴 경우와 `%cid_ref` 만 넘긴 경우를 모두 다룹니다. `%cid_ref` 가 있으면 함께 넘어온 키는 무시합니다. `%cid_ref` 가 인스턴스를 가리키는 주된 기준이기 때문입니다.
+- `create` : 버퍼를 준비한 뒤 넘어온 인스턴스를 하나씩 돌며 조건을 확인합니다. 조건에 맞지 않는 인스턴스는 `FAILED` 와 `REPORTED` 에 넣습니다. 조건에 맞으면 버퍼에 넣고 `changed` 를 켭니다. `%control` 에서 off 인(`if_abap_behv=>mk-off`) 필드는 넘어온 값을 넣지 않습니다.
+- `update` : 같은 흐름입니다. `%control` 에서 off 인 필드는 기존 값을 덮어쓰지 않습니다. 요청이 키만 넘긴 경우와 `%cid_ref` 만 넘긴 경우를 모두 다룹니다. `%cid_ref` 가 있으면 함께 넘어온 키는 무시합니다. `%cid_ref` 가 인스턴스를 가리키는 주된 기준이기 때문입니다.
 - `delete` : `update` 와 비슷하게 키만 온 경우와 `%cid_ref` 만 온 경우를 다룹니다. 지울 인스턴스에 `deleted` 를 켜고 `changed` 는 비웁니다. `%control` 은 삭제와 상관없습니다.
-- `read` : 버퍼를 준비한 뒤 넘어온 키에 맞는 줄을 결과 테이블에 채웁니다. `%control` 에서 꺼진 필드는 읽지 않고 결과에도 넣지 않습니다. 키는 언제나 읽어 돌려줍니다.
+- `read` : 버퍼를 준비한 뒤 넘어온 키에 맞는 줄을 결과 테이블에 채웁니다. `%control` 에서 off 인 필드는 읽지 않고 결과에도 넣지 않습니다. 키는 언제나 읽어 돌려줍니다.
 - read-by-association (`rba_child`) : 루트와 자식 버퍼를 모두 준비합니다. 그 뒤는 `read` 와 같습니다.
 - create-by-association (`cba_child`) : 루트와 자식 버퍼를 모두 준비합니다. 키만 온 경우와 `%cid_ref` 만 온 경우를 다루고 `%control` 표시도 따릅니다. 만들 수 있는 인스턴스는 자식 버퍼에 넣고 `created` 를 켭니다.
 
@@ -134,7 +134,7 @@ READ ENTITY zr_travel
 
 - 원문 프로그램은 작업 묶음마다 `FAILED` 와 `REPORTED` 응답을 출력하고, `COMMIT ENTITIES` 뒤에 persistent table 을 `SELECT` 로 읽어 저장된 결과를 보여 줍니다. 일부러 실패하는 인스턴스(이미 있는 키로 생성, 없는 키로 수정·삭제·읽기)를 섞어 응답이 어떻게 채워지는지 보여 줍니다.
 - 출력되는 `FAILED` 에는 실패 원인, `%cid`, 키, 실패한 작업이나 association 표시(`01`)가 들어 있습니다. 원인을 여러 가지로 나누는 로직은 구현돼 있지 않습니다. `REPORTED` 에는 심각도, `%cid`, 키, 직접 만든 메시지가 들어 있습니다. 응답을 채우는 것도 behavior pool 메서드가 직접 합니다.
-- 일부 필드는 `%control` 에서 일부러 꺼 두었습니다. 꺼진 필드는 작업에 반영되지 않는다는 점을 보여 주려는 것입니다. `FROM` 을 쓰는 까닭도 `%control` 을 직접 채워야 하는 형태이기 때문입니다.
+- 일부 필드는 `%control` 에서 일부러 off 로 두었습니다. off 인 필드는 작업에 반영되지 않는다는 점을 보여 주려는 것입니다. `FROM` 을 쓰는 까닭도 `%control` 을 직접 채워야 하는 형태이기 때문입니다.
 - `UPDATE` 와 `DELETE` 를 보여 주는 문장에 `CREATE` 를 함께 넣은 것은 `%cid` 와 `%cid_ref` 로 가리키는 방법도 보여 주려는 것입니다.
 - 이 코드는 unmanaged 에서는 모든 것을 직접 구현해야 한다는 점과, EML 이 다루는 transactional buffer 가 얼마나 중요한지를 보여 주는 데 목적이 있습니다. 운영 시스템에 그대로 가져다 쓰면 안 됩니다.
 

@@ -20,7 +20,7 @@ keywords: field_spec, FROM, FIELDS WITH, ALL FIELDS WITH, fields_tab, %control, 
 
 | 방법 | `%control` | 읽는 필드 |
 | --- | --- | --- |
-| `FROM` | 직접 채움 | `%control` 에서 켠 필드 |
+| `FROM` | 직접 채움 | `%control` 에서 on 인 필드 |
 | `FIELDS ( ... ) WITH` | 자동 | 괄호 안에 적은 필드 |
 | `ALL FIELDS WITH` | 자동 | 모든 필드 |
 
@@ -42,7 +42,7 @@ keywords: field_spec, FROM, FIELDS WITH, ALL FIELDS WITH, fields_tab, %control, 
 
 - [[abapderived_types_comp|%control]] 을 `fields_tab` 에 직접 채워야 합니다.
 - `fields_tab` 은 읽기만 하는 자리입니다.
-- managed 에서는 키 필드의 [[abapderived_types_control|%control]] 표시를 켜지 않아도 됩니다. 돌아오는 인스턴스에는 키 값이 들어 있습니다.
+- managed 에서는 키 필드의 [[abapderived_types_control|%control]] 표시를 on 으로 하지 않아도 됩니다. 돌아오는 인스턴스에는 키 값이 들어 있습니다.
 
 ### FIELDS ( comp1 comp2 ... ) WITH fields_tab
 
@@ -77,7 +77,7 @@ keywords: field_spec, FROM, FIELDS WITH, ALL FIELDS WITH, fields_tab, %control, 
 
 ## 예제
 
-`FROM` 으로 읽습니다. `%control` 에서 켠 `AgencyID`, `Status` 는 요청하고, 꺼 둔 `TotalPrice` 는 요청하지 않습니다.
+`FROM` 으로 읽습니다. `%control` 에서 on 으로 한 `AgencyID`, `Status` 는 요청하고, off 로 둔 `TotalPrice` 는 요청하지 않습니다.
 
 ```abap
 READ ENTITY zr_travel

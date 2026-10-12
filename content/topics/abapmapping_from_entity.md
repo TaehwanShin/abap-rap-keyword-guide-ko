@@ -30,7 +30,7 @@ DB 테이블을 바꾸는 ABAP SQL 문 `INSERT`, `UPDATE`, `MODIFY`, `DELETE` �
 
 ### UPDATE 와 INDICATORS SET STRUCTURE
 
-`UPDATE` 에는 `INDICATORS SET STRUCTURE %control` 을 함께 쓸 수 있습니다. 그러면 [[abapderived_types_control|%control]] 구조에서 켜진 필드만 고칩니다. 꺼진 필드는 원본에 값이 들어 있어도 DB 에 쓰지 않습니다.
+`UPDATE` 에는 `INDICATORS SET STRUCTURE %control` 을 함께 쓸 수 있습니다. 그러면 [[abapderived_types_control|%control]] 구조에서 on 인 필드만 고칩니다. off 인 필드는 원본에 값이 들어 있어도 DB 에 쓰지 않습니다.
 
 ## 예제
 
@@ -52,7 +52,7 @@ INSERT ztravel FROM TABLE @lt_create MAPPING FROM ENTITY.
 " 넣거나 고치기
 MODIFY ztravel FROM TABLE @lt_create MAPPING FROM ENTITY.
 
-" %control 에서 켜진 Status 만 고친다. AgencyID 값은 쓰지 않는다
+" %control 에서 on 인 Status 만 고친다. AgencyID 값은 쓰지 않는다
 lt_update = VALUE #( ( TravelID = '00000001' AgencyID = '079999' Status = 'A'
                        %control = VALUE #( TravelID = if_abap_behv=>mk-on
                                            AgencyID = if_abap_behv=>mk-off

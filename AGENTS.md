@@ -142,6 +142,7 @@ RAP 에서 키워드나 이름으로 내놓는 말은 **원문 그대로** 쓴�
 | event, business event | 이벤트, 비즈니스 이벤트 |
 | deep parameter, deep table parameter, deep result, deep mapping, deep create | 깊은 매개변수, 깊은 테이블 매개변수, 깊은 결과 … |
 | flat / deep (parameter, structure, table, type 앞) | 평평한·평면·납작한 / 깊은 |
+| on / off (`mk-on`·`mk-off` 가 들어가는 표시의 값) | 켬·켠·켜진 / 끔·끈·꺼진 ("draft 를 켠다", "strict mode 를 켠다"처럼 기능을 쓰게 한다는 뜻은 그대로 쓴다) |
 
 **2. 원문(한글) 꼴로 쓰는 말**
 

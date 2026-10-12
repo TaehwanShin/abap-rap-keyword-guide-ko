@@ -21,7 +21,7 @@ keywords: %tky, 트랜잭션 키, transactional key, %is_draft, %key, %pky, 초�
 
 active(활성) 인스턴스와 draft 인스턴스를 차례로 다룹니다.
 
-1. **active 인스턴스** — `%is_draft` 를 끄고 인스턴스를 만든 뒤 한 필드를 수정합니다. 수정할 때 `%tky` 안의 `%is_draft` 를 `if_abap_behv=>mk-off` 로 둡니다. `COMMIT ENTITIES` 로 persistent table 에 저장합니다.
+1. **active 인스턴스** — `%is_draft` 를 off 로 하고 인스턴스를 만든 뒤 한 필드를 수정합니다. 수정할 때 `%tky` 안의 `%is_draft` 를 `if_abap_behv=>mk-off` 로 둡니다. `COMMIT ENTITIES` 로 persistent table 에 저장합니다.
 2. **draft 로 옮기기** — draft action `Edit` 을 실행하고 `COMMIT ENTITIES` 를 실행합니다. 방금 만든 active 인스턴스의 draft 가 draft 테이블에 생깁니다.
 3. **draft 수정** — `%tky` 안의 `%is_draft` 를 `if_abap_behv=>mk-on` 으로 두고 수정합니다. `COMMIT ENTITIES` 를 실행하면 바뀐 값이 draft 테이블에 저장됩니다.
 4. **활성화** — draft action `Activate` 를 실행하고 `COMMIT ENTITIES` 를 실행합니다. draft 에서 고친 내용이 persistent table 에 저장됩니다.
@@ -31,7 +31,7 @@ active(활성) 인스턴스와 draft 인스턴스를 차례로 다룹니다.
 공통 예제 모델의 `ZR_Travel` 이 draft 를 쓴다고 보고, draft 시나리오의 흐름을 줄여 썼습니다.
 
 ```abap
-" 1) active 인스턴스를 만들고 고친다 (%is_draft 꺼짐)
+" 1) active 인스턴스를 만들고 고친다 (%is_draft off)
 MODIFY ENTITY zr_travel
   CREATE FIELDS ( travelid agencyid customerid )
     WITH VALUE #( ( %cid      = 'cid1'
@@ -56,7 +56,7 @@ MODIFY ENTITY zr_travel
   REPORTED ls_reported.
 COMMIT ENTITIES.
 
-" 3) draft 를 고친다 (%is_draft 켜짐)
+" 3) draft 를 고친다 (%is_draft on)
 MODIFY ENTITY zr_travel
   UPDATE FIELDS ( status )
     WITH VALUE #( ( %tky   = VALUE #( %is_draft = if_abap_behv=>mk-on

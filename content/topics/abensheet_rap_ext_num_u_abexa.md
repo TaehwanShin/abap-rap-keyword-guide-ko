@@ -118,9 +118,9 @@ READ ENTITIES OPERATIONS lt_ops.
 ## 알아두기
 
 - **`full` 표시** : 동적 꼴로 association 을 거쳐 읽을 때 `full` 을 켜지 않으면 association 연결(link)만 돌아옵니다. `results` 로 넘긴 테이블은 비어 있습니다. 예제는 같은 요청을 `full` 을 끄고 한 번, 켜고 한 번 실행해 결과를 견줍니다.
-- **`FROM` 만 되는 작업** : 삭제와 action 실행은 `FROM` 으로만 쓸 수 있습니다. 생성을 `CREATE FROM` 으로 쓰면 `%control` 을 직접 켜 주어야 합니다.
+- **`FROM` 만 되는 작업** : 삭제와 action 실행은 `FROM` 으로만 쓸 수 있습니다. 생성을 `CREATE FROM` 으로 쓰면 `%control` 을 직접 on 으로 해 주어야 합니다.
 - **`%cid_ref`** : 수정, 삭제, action 실행 요청 앞에 생성 요청을 함께 넣어 두었습니다. 아직 저장되지 않은 인스턴스를 `%cid_ref` 로 가리키는 모습을 보이려는 것입니다.
-- **읽기** : `ALL FIELDS WITH` 는 모든 필드를 읽고 `%control` 을 모두 켭니다. `RESULT` 는 꼭 적어야 합니다. association 을 거친 읽기에서 `LINK` 는 선택입니다.
+- **읽기** : `ALL FIELDS WITH` 는 모든 필드를 읽고 `%control` 을 모두 on 으로 둡니다. `RESULT` 는 꼭 적어야 합니다. association 을 거친 읽기에서 `LINK` 는 선택입니다.
 - **응답 풀어 보기** : `failed` 의 `%op` 아래에는 `%create`, `%update`, `%delete`, `%assoc`, `%action` 이 있어 어떤 작업이 실패했는지 알 수 있습니다. 실패 원인은 `%fail-cause` 에 있습니다. child entity 의 실패는 `failed` 의 자식 쪽 테이블에 따로 담깁니다.
 - unmanaged 이므로 behavior implementation(동작 구현)은 모두 behavior pool 의 로컬 클래스(CCIMP include)에 있습니다. 자세한 설명은 SAP 예제 코드의 주석에 적혀 있습니다.
 

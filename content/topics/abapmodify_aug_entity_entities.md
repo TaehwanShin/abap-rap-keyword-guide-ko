@@ -124,7 +124,7 @@ MODIFY AUGMENTING ENTITIES OF zr_travel
 ## 알아두기
 
 - [[abapeml_response|response parameter]] 를 적을 수 없습니다. `FAILED`, `MAPPED`, `REPORTED` 를 쓰지 못합니다.
-- 원래 요청의 필드를 덮어쓰면 안 됩니다. 같은 인스턴스의 같은 필드에 원래 작업과 augmentation 작업이 둘 다 `%control` 표시를 켜서는 안 됩니다.
+- 원래 요청의 필드를 덮어쓰면 안 됩니다. 같은 인스턴스의 같은 필드에 원래 작업과 augmentation 작업이 둘 다 `%control` 표시를 on 으로 해서는 안 됩니다.
 - 원래 요청에 없는 인스턴스에 작업을 보탤 때는 `RELATING TO` 로 원래 요청의 인스턴스와 이어 주어야 합니다. 그래야 응답을 원래 요청과 맞춰 볼 수 있습니다.
 - projection 에서 들어온 생성 요청을 생성이나 create-by-association 작업으로 augment 해도, `mapped` 응답에는 원래 생성 요청의 [[abapderived_types_cid|%cid]] 값만 들어갑니다. augment 하면서 생긴 `%cid` 값은 원래 요청의 `mapped` 응답에 들어가지 않습니다.
 

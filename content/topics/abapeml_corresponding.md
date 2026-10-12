@@ -41,8 +41,8 @@ RAP 에서 provider(제공자)와 consumer(사용자)는 BDEF derived type(BDEF 
 | --- | --- | --- | --- |
 | `MAPPING FROM ENTITY` | 입력 derived type → 일반 타입 | 필요 | 필드 이름을 mapping 대로 바꿔 옮깁니다. |
 | `MAPPING TO ENTITY` | 일반 타입 → 출력 derived type | 필요 | 필드 이름을 mapping 대로 바꿔 옮깁니다. |
-| `USING CONTROL` | 입력 derived type → 일반 타입 | 필요 없음 | `%control` 에서 켜진 필드만 옮깁니다. |
-| `MAPPING FROM ENTITY USING CONTROL` | 입력 derived type → 일반 타입 | 필요 (`control` 표기 포함) | 이름을 바꾸면서 `%control` 에서 켜진 필드만 옮깁니다. |
+| `USING CONTROL` | 입력 derived type → 일반 타입 | 필요 없음 | `%control` 에서 on 인 필드만 옮깁니다. |
+| `MAPPING FROM ENTITY USING CONTROL` | 입력 derived type → 일반 타입 | 필요 (`control` 표기 포함) | 이름을 바꾸면서 `%control` 에서 on 인 필드만 옮깁니다. |
 | `CHANGING CONTROL` | 일반 타입 → 입력 derived type | 필요 없음 | 값을 옮기면서 `%control` 을 채웁니다. |
 
 ### MAPPING FROM ENTITY
@@ -55,15 +55,15 @@ RAP 에서 provider(제공자)와 consumer(사용자)는 BDEF derived type(BDEF 
 
 ### USING CONTROL
 
-`%control` 을 따져서 옮깁니다. `in_der_type` 은 `%control` 구성요소가 있는 BDEF derived type 이어야 합니다. `%control` 에서 켜진 필드만 옮기고, 꺼진(초기값인) 필드는 옮기지 않습니다. 예제처럼 `BASE` 없이 쓰면 옮기지 않은 필드는 결과에서 초기값이 됩니다. behavior definition 에 mapping 이 없어도 됩니다.
+`%control` 을 따져서 옮깁니다. `in_der_type` 은 `%control` 구성요소가 있는 BDEF derived type 이어야 합니다. `%control` 에서 on 인 필드만 옮기고, off 인(초기값인) 필드는 옮기지 않습니다. 예제처럼 `BASE` 없이 쓰면 옮기지 않은 필드는 결과에서 초기값이 됩니다. behavior definition 에 mapping 이 없어도 됩니다.
 
 ### MAPPING FROM ENTITY USING CONTROL
 
-앞의 두 가지를 합친 변형입니다. `%control` 에서 켜진 필드만 옮기는데, 일반 타입의 필드 이름이 BDEF derived type 과 다를 때 씁니다. 그래서 behavior definition 에 `control` 표기가 들어간 mapping 이 있어야 합니다.
+앞의 두 가지를 합친 변형입니다. `%control` 에서 on 인 필드만 옮기는데, 일반 타입의 필드 이름이 BDEF derived type 과 다를 때 씁니다. 그래서 behavior definition 에 `control` 표기가 들어간 mapping 이 있어야 합니다.
 
 ### CHANGING CONTROL
 
-제어 정보가 없는 일반 타입을 보고 BDEF derived type 의 `%control` 을 채웁니다. 일반 타입의 필드가 초기값이면 그 필드의 `%control` 을 초기값(`00`)으로 두고, 값이 있으면 켭니다(`01`). 입력 derived type 에만 쓸 수 있습니다. 입력 derived type 에는 모두 `%control` 구조가 있기 때문입니다.
+제어 정보가 없는 일반 타입을 보고 BDEF derived type 의 `%control` 을 채웁니다. 일반 타입의 필드가 초기값이면 그 필드의 `%control` 을 초기값(`00`)으로 두고, 값이 있으면 on 으로 둡니다(`01`). 입력 derived type 에만 쓸 수 있습니다. 입력 derived type 에는 모두 `%control` 구조가 있기 때문입니다.
 
 behavior definition 에 mapping 이 없어도 됩니다. 다만 일반 타입의 필드 이름이 달라서 이름 mapping 까지 해야 한다면 두 단계로 나눕니다. behavior definition 에 `control` 표기가 들어간 mapping 을 적어 두고, 먼저 `MAPPING TO ENTITY` 로 이름을 맞춘 다음, 그 결과에 `CHANGING CONTROL` 을 써서 `%control` 을 채웁니다.
 
@@ -117,13 +117,13 @@ lt_legacy = CORRESPONDING #( lt_update MAPPING FROM ENTITY ).
 " 2) 옛 구조 → 출력 derived type
 lt_result = CORRESPONDING #( lt_legacy MAPPING TO ENTITY ).
 
-" 3) %control 에서 켜진 필드만 옮긴다. AgencyID 는 꺼져 있어 옮기지 않는다
+" 3) %control 에서 on 인 필드만 옮긴다. AgencyID 는 off 라서 옮기지 않는다
 lt_plain = CORRESPONDING #( lt_update USING CONTROL ).
 
-" 4) 이름을 바꾸면서 켜진 필드만 옮긴다
+" 4) 이름을 바꾸면서 on 인 필드만 옮긴다
 lt_legacy = CORRESPONDING #( lt_update MAPPING FROM ENTITY USING CONTROL ).
 
-" 5) 값이 있는 필드는 %control 을 켜고, 비어 있는 필드는 끈다
+" 5) 값이 있는 필드는 %control 을 on 으로 하고, 비어 있는 필드는 off 로 둔다
 lt_update = CORRESPONDING #( lt_plain CHANGING CONTROL ).
 ```
 

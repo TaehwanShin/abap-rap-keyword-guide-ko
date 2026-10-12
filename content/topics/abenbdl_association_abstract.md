@@ -19,7 +19,7 @@ CDS association 을 계층 BDEF derived type(BDEF 파생 타입)에 넣습니다
 
 ### mandatory:execute
 
-association 을 **필수**로 선언합니다. abstract BDEF 를 action 이나 function 의 입력 매개변수로 쓸 때, 이 association 에는 반드시 값을 넘겨야 합니다. 곧 `%control` 표시가 켜져 있어야 합니다. 그렇지 않으면 런타임 오류가 납니다.
+association 을 **필수**로 선언합니다. abstract BDEF 를 action 이나 function 의 입력 매개변수로 쓸 때, 이 association 에는 반드시 값을 넘겨야 합니다. 곧 `%control` 표시가 on 이어야 합니다. 그렇지 않으면 런타임 오류가 납니다.
 
 - CDS composition 과 cross-BO association 에 쓸 수 있습니다. to-parent association 에는 쓸 수 없습니다.
 - behavior definition(동작 정의) 머리말에 `with hierarchy` 가 있어야 합니다.
@@ -65,7 +65,7 @@ with control
 }
 ```
 
-이 abstract BDEF 를 deep parameter 로 쓰는 action 을 부릅니다. `_Booking` 의 `%control` 표시를 켜야 합니다.
+이 abstract BDEF 를 deep parameter 로 쓰는 action 을 부릅니다. `_Booking` 의 `%control` 표시를 on 으로 해야 합니다.
 
 ```abap
 DATA lt_param TYPE TABLE FOR ACTION IMPORT zr_travel~createdeep.

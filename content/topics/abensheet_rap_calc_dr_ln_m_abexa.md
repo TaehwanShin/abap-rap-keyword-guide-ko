@@ -119,7 +119,7 @@ COMMIT ENTITIES.
 - **draft 표시** : draft 인스턴스를 만들거나 읽거나 고칠 때는 `%is_draft = if_abap_behv=>mk-on` 을 넣습니다.
 - **`%pid`** : late numbering 에서는 저장하기 전까지 키가 없습니다. 생성의 `mapped` 응답에서 `%pid` 를 꺼내 두었다가 `Activate` action 의 입력(`TYPE TABLE FOR ACTION IMPORT ...~Activate`)과 읽기 요청(`%pky`)에 씁니다.
 - **`AUTO FILL CID`** : `%cid` 를 따로 쓸 일이 없어 생성과 action 실행에 모두 `AUTO FILL CID` 를 붙였습니다.
-- **`UPDATE FROM`** : 고칠 때 `FROM` 꼴을 쓰므로 바꿀 필드의 `%control` 을 직접 켭니다. 예제는 실패 종류에 따라 고칠 필드가 달라서, 필드마다 `%control` 을 켤지 끌지를 조건식으로 정합니다.
+- **`UPDATE FROM`** : 고칠 때 `FROM` 꼴을 쓰므로 바꿀 필드의 `%control` 을 직접 on 으로 둡니다. 예제는 실패 종류에 따라 고칠 필드가 달라서, 필드마다 `%control` 을 on 으로 할지 off 로 할지를 조건식으로 정합니다.
 - **활성화 전과 후** : draft 를 저장한 직후에는 draft 테이블에만 줄이 있습니다. `Activate` 뒤에는 persistent table 에 줄이 생기고 draft 테이블이 비어 있습니다. 잘못된 인스턴스는 `Activate` 를 해도 persistent table 로 가지 않습니다.
 - **Fiori Elements 앱으로 써 보기** : ADT 에서 service binding(서비스 바인딩) `DEMO_RAP_CALC_DR_SB` 를 엽니다(실행 클래스와 같은 패키지에 있습니다). Service Version Details 의 Local Service Endpoint 가 게시되어 있는지 확인합니다. entity(엔터티) 집합 `DEMO_CS_RAP_DRAFT_M` 을 고르고 Preview 를 누르면 브라우저에 앱이 열립니다. 로그온을 물으면 시스템 계정으로 들어갑니다. 새 계산을 만들고 저장하지 않은 채 draft 로 두면 계산 ID 가 초기값입니다. 저장해야 최종 키가 정해집니다. late numbering 이 눈에 보이는 대목입니다.
 

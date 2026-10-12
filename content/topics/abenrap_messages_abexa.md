@@ -25,7 +25,7 @@ validation 은 `draft determine action Prepare` 에 묶여 있습니다. 그래�
 | 2b | `Activate` 를 실행합니다. | draft 가 없으므로 아무 일도 일어나지 않습니다. |
 | 3a | 올바른 인스턴스와 틀린 인스턴스를 함께 draft 로 만듭니다. | 둘 다 draft 테이블에 들어갑니다. 이때는 validation 이 불리지 않아 메시지가 없습니다. |
 | 3b | 두 인스턴스에 `Activate` 를 실행합니다. | validation 이 불립니다. 올바른 쪽은 정보 transition message 를 받고 persistent table 에 저장됩니다. 틀린 쪽은 `failed` 와 `reported` 에 항목이 생기고 draft 로 남습니다. |
-| 4 | 두 인스턴스를 draft 표시를 켠 것과 끈 것으로 각각 읽습니다. | 올바른 인스턴스는 active 로만, 틀린 인스턴스는 draft 로만 찾아집니다. `READ` 의 `reported` 에 상태 메시지가 들어 있습니다. |
+| 4 | 두 인스턴스를 draft 표시를 on 으로 한 것과 off 로 한 것으로 각각 읽습니다. | 올바른 인스턴스는 active 로만, 틀린 인스턴스는 draft 로만 찾아집니다. `READ` 의 `reported` 에 상태 메시지가 들어 있습니다. |
 | 5 | 틀린 draft 를 고치고 `Activate` 를 실행합니다. | validation 을 통과합니다. transition message 가 오고, 고친 인스턴스가 persistent table 에 저장됩니다. draft 테이블에서는 사라집니다. |
 
 ## 예제

@@ -32,7 +32,7 @@ MODIFY ENTITIES OF zr_travel
     CREATE FROM VALUE #(
       %control-travelid   = if_abap_behv=>mk-on
       %control-agencyid   = if_abap_behv=>mk-on
-      " 표시를 끈 필드는 값을 적어도 반영되지 않는다
+      " 표시를 off 로 한 필드는 값을 적어도 반영되지 않는다
       %control-customerid = if_abap_behv=>mk-off
       ( %cid = 'T1' travelid = '00000001' agencyid = '070001' customerid = '000010' )
       ( %cid = 'T2' travelid = '00000002' agencyid = '070002' customerid = '000020' ) )

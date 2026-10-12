@@ -63,7 +63,7 @@ ENDIF.
 
 ## 알아두기
 
-- 원문 예제는 `CREATE FROM` 형태를 쓰기 때문에 `%control` 에서 필드마다 `if_abap_behv=>mk-on` 을 직접 켭니다. 위 예제처럼 `FIELDS ( ... ) WITH` 형태를 쓰면 `%control` 을 직접 채우지 않아도 됩니다.
+- 원문 예제는 `CREATE FROM` 형태를 쓰기 때문에 `%control` 에서 필드마다 `if_abap_behv=>mk-on` 을 직접 설정합니다. 위 예제처럼 `FIELDS ( ... ) WITH` 형태를 쓰면 `%control` 을 직접 채우지 않아도 됩니다.
 - 원문 예제의 behavior pool(동작 풀)에는 이 예제와 관련된 구현이 없습니다. managed 이라 생성과 수정을 managed RAP BO provider(제공자)가 처리합니다.
 - 키 표기와 인스턴스를 가리키는 방법을 한데 정리한 글은 [[abapderived_types_keys_identifiers]] 입니다.
 

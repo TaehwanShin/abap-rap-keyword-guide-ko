@@ -1,6 +1,6 @@
 ---
 title: 예제 - SET NAMES 의 여러 꼴
-summary: %control 과 %element 의 칸을 일부만 켠 뒤 SET NAMES 를 실행해, 켜진 필드의 이름만 목록에 담기는 것을 확인하는 예제입니다.
+summary: %control 과 %element 의 칸을 일부만 on 으로 한 뒤 SET NAMES 를 실행해, on 인 필드의 이름만 목록에 담기는 것을 확인하는 예제입니다.
 keywords: SET NAMES, FROM FLAGS, MAPPING TYPE, MAPPING LIKE, %control, %element, %assoc, ABP_FIELD_NAME_TAB, 필드 이름 목록, TYPE STRUCTURE FOR REPORTED, 예제
 ---
 
@@ -8,7 +8,7 @@ keywords: SET NAMES, FROM FLAGS, MAPPING TYPE, MAPPING LIKE, %control, %element,
 
 [[abapset_names|SET NAMES]] 문의 세 가지 꼴을 차례로 실행하는 예제입니다. managed RAP BO(root entity(루트 엔터티)와 child entity(자식 엔터티))를 쓰지만 behavior pool(동작 풀)은 예제와 상관이 없습니다. derived type(파생 타입)만 빌려 씁니다.
 
-꼴마다 변수를 두 개 선언합니다. 하나는 결과를 받을 `ABP_FIELD_NAME_TAB` 타입의 필드 이름 목록이고, 다른 하나는 `%control` 구조가 들어 있는 BDEF derived type 변수입니다. `%control` 을 채울 때 **칸 하나를 일부러 끕니다.** 그 칸은 초기값이므로 결과 목록에 이름이 나오지 않습니다.
+꼴마다 변수를 두 개 선언합니다. 하나는 결과를 받을 `ABP_FIELD_NAME_TAB` 타입의 필드 이름 목록이고, 다른 하나는 `%control` 구조가 들어 있는 BDEF derived type 변수입니다. `%control` 을 채울 때 **칸 하나를 일부러 off 로 둡니다.** 그 칸은 초기값이므로 결과 목록에 이름이 나오지 않습니다.
 
 1. `SET NAMES fields FROM FLAGS src.` : mapping 없이. 원본을 `%control` 과 `%element` 두 가지로 해 봅니다.
 2. `... MAPPING TYPE p_type.` : 옛 타입의 필드 이름으로 결과를 받습니다.
@@ -59,7 +59,7 @@ SET NAMES lt_fields4 FROM FLAGS ls_update3 MAPPING LIKE ls_legacy.
 ## 알아두기
 
 - 출력 창에는 꼴마다 결과 필드 이름 목록이 나옵니다. `%control` 에서 꺼 둔 필드는 어느 목록에도 없습니다.
-- 첫 번째 꼴만 원본을 `%control` 과 `%element` 둘 다로 보여 줍니다. `%element` 예에서는 `TYPE STRUCTURE FOR REPORTED` 변수를 쓰고 `%assoc` 아래 to-child association 칸도 켰습니다.
+- 첫 번째 꼴만 원본을 `%control` 과 `%element` 둘 다로 보여 줍니다. `%element` 예에서는 `TYPE STRUCTURE FOR REPORTED` 변수를 쓰고 `%assoc` 아래 to-child association 칸도 on 으로 두었습니다.
 - 2번과 3번이 돌아가려면 behavior definition(동작 정의)에 옛 타입의 [[abenbdl_type_mapping|mapping for]] 가 있어야 합니다.
 - `%element` 에 `MAPPING` 을 함께 쓰면 association 정보가 사라지는 점은 [[abapset_names]] 에 적혀 있습니다.
 

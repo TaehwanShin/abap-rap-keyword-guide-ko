@@ -45,7 +45,7 @@ DATA: lt_op       TYPE abp_behv_changes_tab,
       lt_reported TYPE abp_behv_response_tab,
       lt_mapped   TYPE abp_behv_response_tab.
 
-" 넘길 필드는 %control 에서 직접 켠다
+" 넘길 필드는 %control 에서 직접 on 으로 둔다
 lt_create = VALUE #(
   ( %cid = 'cid1'
     travelid = '00000001'  %control-travelid = if_abap_behv=>mk-on

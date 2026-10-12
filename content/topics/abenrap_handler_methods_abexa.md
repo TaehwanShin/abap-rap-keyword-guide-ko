@@ -115,10 +115,10 @@ ENDCLASS.
 
 | 메서드 | 하는 일 |
 | --- | --- |
-| `create` | 버퍼를 준비한 뒤 넘어온 인스턴스를 하나씩 봅니다. 조건에 맞으면 `changed` 표시를 하고, 안 맞으면 `failed`·`reported` 에 넣습니다. `%control` 에서 꺼진 필드는 값을 넣지 않습니다. |
-| `update` | `create` 와 비슷합니다. `%control` 에서 꺼진 필드는 덮어쓰지 않습니다. 키만 온 경우와 `%cid_ref` 만 온 경우를 모두 다룹니다. `%cid_ref` 가 있으면 키는 무시합니다. |
+| `create` | 버퍼를 준비한 뒤 넘어온 인스턴스를 하나씩 봅니다. 조건에 맞으면 `changed` 표시를 하고, 안 맞으면 `failed`·`reported` 에 넣습니다. `%control` 에서 off 인 필드는 값을 넣지 않습니다. |
+| `update` | `create` 와 비슷합니다. `%control` 에서 off 인 필드는 덮어쓰지 않습니다. 키만 온 경우와 `%cid_ref` 만 온 경우를 모두 다룹니다. `%cid_ref` 가 있으면 키는 무시합니다. |
 | `delete` | `update` 와 비슷합니다. 지울 인스턴스에 `deleted` 표시를 하고 `changed` 는 비웁니다. `%control` 은 쓰지 않습니다. |
-| `read` | 넘어온 키대로 결과 테이블을 채웁니다. `%control` 에서 꺼진 필드는 읽지 않습니다. 키는 언제나 돌려줍니다. |
+| `read` | 넘어온 키대로 결과 테이블을 채웁니다. `%control` 에서 off 인 필드는 읽지 않습니다. 키는 언제나 돌려줍니다. |
 | `rba_child` | read-by-association. 루트 버퍼와 자식 버퍼를 모두 준비한 뒤 `read` 와 같은 방식으로 결과를 채웁니다. |
 | `cba_child` | create-by-association. 두 버퍼를 준비하고, 키만 온 경우와 `%cid_ref` 만 온 경우를 다룹니다. 만들 수 있는 인스턴스에 `created` 표시를 합니다. |
 | `action1` | 요청받은 모든 인스턴스의 문자열 필드 하나를 바꿉니다. |
@@ -151,7 +151,7 @@ ENDCLASS.
 2. **active 인스턴스에 standard operation (두 번째)** — 같은 종류의 작업을 다시 보내 `get_instance_authorizations`, `get_instance_features` 같은 메서드의 효과를 보여 줍니다. 그 메서드들이 정한 조건에 걸려 일부 작업이 실패합니다.
 3. **action 실행** — behavior definition 에 서로 다르게 선언한 action 을 차례로 실행합니다. 결과 매개변수가 있는 action 은 결과도 출력합니다. `action4` 는 `precheck_action4` 의 효과를 함께 봐야 합니다.
 4. **읽기와 function** — `READ`, `READ BY` 를 실행합니다. `rba_child` 가 돌려준 연결 정보(`association_links`)도 출력합니다. 이어서 function 셋을 실행하고 읽은 결과를 보여 줍니다.
-5. **draft 인스턴스 생성** — `%is_draft` 를 켜고, 키 없이 `%cid` 만 주어 draft 를 만듭니다. 키는 `earlynumbering_create` 가 정하고, determination `det_on_modify` 도 불립니다. `COMMIT ENTITIES` 로 draft 테이블에 저장한 뒤 `Activate` 를 실행하고 다시 커밋합니다. 이 과정에서 `det_on_save` 와 `validation` 이 불리고, `discard` 가 마지막에 불립니다. validation 에 실패한 인스턴스 하나는 draft 테이블에 그대로 남고, 나머지 둘은 데이터베이스 테이블로 옮겨집니다.
+5. **draft 인스턴스 생성** — `%is_draft` 를 on 으로 하고, 키 없이 `%cid` 만 주어 draft 를 만듭니다. 키는 `earlynumbering_create` 가 정하고, determination `det_on_modify` 도 불립니다. `COMMIT ENTITIES` 로 draft 테이블에 저장한 뒤 `Activate` 를 실행하고 다시 커밋합니다. 이 과정에서 `det_on_save` 와 `validation` 이 불리고, `discard` 가 마지막에 불립니다. validation 에 실패한 인스턴스 하나는 draft 테이블에 그대로 남고, 나머지 둘은 데이터베이스 테이블로 옮겨집니다.
 6. **draft 인스턴스 수정** — draft action `Edit` 를 실행하면 저장되어 있던 인스턴스가 draft 테이블에 들어가고 데이터베이스 테이블 쪽은 잠깁니다. 다시 `Activate` 와 커밋을 하면 `edit` 메서드가 바꾼 내용이 데이터베이스 테이블에 저장된 것을 볼 수 있습니다.
 
 눈여겨볼 점은 다음과 같습니다.

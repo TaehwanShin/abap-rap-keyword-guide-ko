@@ -72,7 +72,7 @@ handler method(핸들러 메서드)는 다음 순서로 불립니다.
 - 사용자는 `IF_ABAP_BEHV=>PERM` 의 상수를 씁니다.
 - 작업과 association 의 결과(전역이든 인스턴스든)는 `BIT-AND` 와 상수 `PERM-O-UNAUTHORIZED`, `PERM-O-DISABLED` 로 가려냅니다. 권한이 없는 것인지 기능이 꺼진 것인지 구분할 수 있습니다.
 - 필드의 결과는 `BIT-AND` 와 상수 `PERM-F-...` 로 확인합니다. static feature control `mandatory` 는 무시됩니다.
-- 결과 값은 조심해서 읽습니다. 예를 들어 필드 결과 `02` 는 readonly(`IF_ABAP_BEHV=>PERM-F` 의 `read_only`)입니다. `00` 은 그 필드에 제한이 없다는 뜻일 수 있지만, `request` 에서 그 필드를 켜지 않았거나 요청이 실패했다는 뜻일 수도 있습니다. 요청이 실패한 경우라면 응답을 확인해야 합니다.
+- 결과 값은 조심해서 읽습니다. 예를 들어 필드 결과 `02` 는 readonly(`IF_ABAP_BEHV=>PERM-F` 의 `read_only`)입니다. `00` 은 그 필드에 제한이 없다는 뜻일 수 있지만, `request` 에서 그 필드를 on 으로 하지 않았거나 요청이 실패했다는 뜻일 수도 있습니다. 요청이 실패한 경우라면 응답을 확인해야 합니다.
 
 ### 권한 구현을 어느 핸들러가 맡나
 

@@ -132,7 +132,7 @@ COMMIT ENTITIES.
 
 눈여겨볼 점은 두 가지입니다. projection 에 요청을 보내는 쪽은 augmentation 이 있는지 몰라도 됩니다. 그리고 `MODIFY AUGMENTING` 문에는 `FAILED`, `MAPPED`, `REPORTED` 를 적지 않습니다.
 
-이 예제는 RAP BO consumer 가 augment 할 필드를 요청에 넣지 않는다고 보고 쓴 것입니다. augmentation 은 원래 요청의 필드를 덮어쓰면 안 됩니다([[abapmodify_aug_entity_entities]]). 사용자가 `Status`, `LastChangedAt`, `BookingStatus` 를 직접 보낼 수도 있다면, 입력의 `%control` 을 보고 표시가 꺼진 필드만 보태야 합니다.
+이 예제는 RAP BO consumer 가 augment 할 필드를 요청에 넣지 않는다고 보고 쓴 것입니다. augmentation 은 원래 요청의 필드를 덮어쓰면 안 됩니다([[abapmodify_aug_entity_entities]]). 사용자가 `Status`, `LastChangedAt`, `BookingStatus` 를 직접 보낼 수도 있다면, 입력의 `%control` 을 보고 표시가 off 인 필드만 보태야 합니다.
 
 ## 관련 항목
 

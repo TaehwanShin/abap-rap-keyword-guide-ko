@@ -1,6 +1,6 @@
 ---
 title: SET FLAGS 문
-summary: 필드 이름 목록을 받아 BDEF derived type 의 %control 이나 %element 에서 그 필드들을 켜고 나머지는 끄는 문입니다.
+summary: 필드 이름 목록을 받아 BDEF derived type 의 %control 이나 %element 에서 그 필드들을 on 으로 하고 나머지는 off 로 하는 문입니다.
 keywords: SET FLAGS, FROM NAMES, MAPPING TYPE, MAPPING LIKE, %control, %element, ABP_FIELD_NAME_TAB, ABP_FIELD_NAME, 필드 이름 목록, 표시 값, type mapping, 타입 매핑, BEHAVIOR_FLAGS_NAMES_ERROR, TCHK_TYPE_LOAD
 ---
 

@@ -43,7 +43,7 @@ ls_update-%control = VALUE #( TravelID = if_abap_behv=>mk-on
                               AgencyID = if_abap_behv=>mk-off
                               Status   = if_abap_behv=>mk-on ).
 
-" 켜진 필드의 이름만 목록에 담긴다. AgencyID 는 들어가지 않는다
+" on 인 필드의 이름만 목록에 담긴다. AgencyID 는 들어가지 않는다
 SET NAMES lt_fields FROM FLAGS ls_update.
 
 " 옛 구조의 필드 이름으로 받는다 (behavior definition 에 mapping for zstravel_legacy 가 있다)

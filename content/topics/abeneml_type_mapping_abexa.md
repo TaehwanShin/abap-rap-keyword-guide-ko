@@ -15,8 +15,8 @@ behavior definition(동작 정의)에는 [[abenbdl_type_mapping|mapping for]] �
 1. `MAPPING FROM ENTITY` : 입력 derived type(파생 타입, `TYPE TABLE FOR UPDATE`)에서 이름이 다른 일반 타입으로
 2. `MAPPING TO ENTITY` : 이름이 다른 일반 타입에서 출력 derived type(`TYPE TABLE FOR READ RESULT`)으로
 3. 응용 - 제어 타입 : `MAPPING FROM ENTITY` 를 두 번 써서 데이터는 일반 타입으로, `%control` 은 짝이 되는 제어 타입으로
-4. `USING CONTROL` : 이름이 같은 일반 타입으로, `%control` 에서 켜진 필드만
-5. `MAPPING FROM ENTITY USING CONTROL` : 이름이 다른 일반 타입으로, 켜진 필드만
+4. `USING CONTROL` : 이름이 같은 일반 타입으로, `%control` 에서 on 인 필드만
+5. `MAPPING FROM ENTITY USING CONTROL` : 이름이 다른 일반 타입으로, on 인 필드만
 6. `CHANGING CONTROL` : 이름이 같은 일반 타입에서 입력 derived type 으로, `%control` 을 채우면서
 7. 응용 - 앞에 mapping 을 둔 `CHANGING CONTROL` : 이름이 다른 일반 타입에서 입력 derived type 으로
 
@@ -69,13 +69,13 @@ lt_result = CORRESPONDING #( lt_legacy MAPPING TO ENTITY ).
 " 3) 같은 문장을 대상만 바꿔 한 번 더: %control 이 제어 타입으로 간다
 lt_legacy_x = CORRESPONDING #( lt_update MAPPING FROM ENTITY ).
 
-" 4) 켜진 필드만. Status 는 꺼져 있어 비어 있다
+" 4) on 인 필드만. Status 는 off 라서 비어 있다
 lt_plain = CORRESPONDING #( lt_update USING CONTROL ).
 
-" 5) 이름을 바꾸면서 켜진 필드만
+" 5) 이름을 바꾸면서 on 인 필드만
 lt_legacy = CORRESPONDING #( lt_update MAPPING FROM ENTITY USING CONTROL ).
 
-" 6) AgencyID 를 비워 둔 일반 타입 → AgencyID 의 %control 이 꺼진다
+" 6) AgencyID 를 비워 둔 일반 타입 → AgencyID 의 %control 이 off 가 된다
 lt_plain  = VALUE #( ( travelid = '00000002' status = 'N' ) ).
 lt_update = CORRESPONDING #( lt_plain CHANGING CONTROL ).
 
@@ -90,7 +90,7 @@ lt_update = CORRESPONDING #( lt_tmp CHANGING CONTROL ).
 - 1, 2, 3, 5, 7번은 behavior definition 에 mapping 이 있어야 돌아갑니다. 4번과 6번은 일반 타입의 필드 이름이 RAP BO 와 같아서 mapping 이 필요 없습니다.
 - 3번에서는 `%control` 의 한 필드를 꺼 두었습니다. 그 결과 제어 타입 테이블에서 그 필드에 해당하는 칸이 비어 있습니다. 제어 정보를 일반 타입 쪽에 따로 보관해야 할 때 쓰는 방법입니다.
 - 4번과 5번에서는 `%control` 에서 꺼 둔 필드가 대상 테이블에서 값 없이 남습니다. 원본에는 값이 있었는데도 옮겨지지 않습니다.
-- 6번과 7번에서는 일반 타입에서 비워 둔 필드가 결과의 `%control` 에서 꺼진 것으로 나옵니다.
+- 6번과 7번에서는 일반 타입에서 비워 둔 필드가 결과의 `%control` 에서 off 인 것으로 나옵니다.
 - 7번의 중간 변수는 entity 타입(`TYPE TABLE OF` entity 이름)으로 선언합니다. 이름 mapping 과 `%control` 채우기는 문장을 따로 써야 합니다.
 
 ## 관련 항목

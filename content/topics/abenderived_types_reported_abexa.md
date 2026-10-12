@@ -109,7 +109,7 @@ COMMIT ENTITIES RESPONSE OF zr_travel
 
 SAP 예제 클래스는 EML 요청을 다섯 번 보내고, 그때마다 응답과 데이터베이스 테이블 내용을 출력합니다.
 
-1. **루트 인스턴스 생성** : root entity 인스턴스를 여러 개 만들고 `COMMIT ENTITIES`([[abapcommit_entities]])로 저장합니다. `REPORTED EARLY` 응답에 `%global` 표시가 켜진 메시지와 `%other` 의 내용이 보입니다.
+1. **루트 인스턴스 생성** : root entity 인스턴스를 여러 개 만들고 `COMMIT ENTITIES`([[abapcommit_entities]])로 저장합니다. `REPORTED EARLY` 응답에 `%global` 표시가 on 인 메시지와 `%other` 의 내용이 보입니다.
 2. **첫 번째 association 생성** : 자식 인스턴스를 여러 개 만듭니다. 모두 validation 을 통과하도록 값을 주었으므로 전부 저장됩니다. validation 이 성공했으니 `REPORTED LATE` 의 entity 테이블은 비어 있습니다. validation 메서드가 `%other` 에 넣은 메시지만 보입니다.
 3. **두 번째 association 생성** : 자식 인스턴스 두 개를 일부러 validation 에 걸리게 만듭니다. `COMMIT ENTITIES` 를 해도 저장되지 않아 데이터베이스 테이블은 그대로입니다. `REPORTED LATE` 에 줄이 생기고 `%path` 와 `%element` 의 내용을 볼 수 있습니다. 다만 여기서는 `%state_area` 가 비어 있습니다. `%other` 의 메시지도 함께 나옵니다.
 4. **association 읽기** : 방금 실패한 인스턴스를 association 으로 읽습니다. 이 요청은 `%state_area` 를 보여 주려는 것입니다. `REPORTED EARLY` 응답에서 `%state_area` 에 값이 들어 있습니다.

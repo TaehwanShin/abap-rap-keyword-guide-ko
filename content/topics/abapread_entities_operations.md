@@ -39,7 +39,7 @@ READ ENTITIES [IN LOCAL MODE|[FORWARDING] PRIVILEGED] OPERATIONS op_tab [respons
 
 ## 예제
 
-여행 한 건을 읽고, 다른 여행의 예약을 association 으로 읽습니다. 읽을 필드는 입력 테이블의 `%control` 에서 직접 켭니다.
+여행 한 건을 읽고, 다른 여행의 예약을 association 으로 읽습니다. 읽을 필드는 입력 테이블의 `%control` 에서 직접 on 으로 둡니다.
 
 ```abap
 DATA: lt_op         TYPE abp_behv_retrievals_tab,

@@ -13,7 +13,7 @@ keywords: GET PERMISSIONS OPERATIONS, 동적 형식, 예제, ABP_BEHV_PERMISSION
 프로그램의 흐름은 다음과 같습니다.
 
 1. 데이터베이스 테이블을 비우고 시험 데이터를 채웁니다.
-2. 루트와 자식의 요청 구조에서 필드와 작업, association 을 켭니다.
+2. 루트와 자식의 요청 구조에서 필드와 작업, association 을 on 으로 둡니다.
 3. entity(엔터티)마다 키 테이블, 요청 구조, 결과 구조를 준비합니다.
 4. 이 셋의 참조와 entity 이름을 `ABP_BEHV_PERMISSIONS_TAB` 타입 테이블의 줄에 넣습니다. 줄 하나가 질의 하나입니다.
 5. `GET PERMISSIONS ... OPERATIONS` 를 한 번 실행합니다.

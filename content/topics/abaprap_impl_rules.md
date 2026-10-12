@@ -20,7 +20,7 @@ ABAP 계약 점검에는 **RAP BO 계약 점검**이 들어 있습니다. RAP BO
 | 잘못된 임시 키의 mapping 요청 | 최종 키가 없는 임시 키의 mapping 을 요청하면 안 됩니다. 그래서 provider 는 작업이 실패한 경우가 아니면 임시 키를 모두 mapping 해야 합니다. 사용자도 세션 중에 지워진 인스턴스의 임시 키 mapping 은 요청하지 않아야 합니다. |
 | static feature control(기능 제어) 무시 | static feature control 을 따라야 합니다. behavior definition(동작 정의)에서 readonly 인 필드는 수정하면 안 되고, 필수인 필드는 생성할 때 꼭 넣어야 합니다. |
 | 불필요하거나 모호한 요청 | 필드를 하나도 바꾸지 않는 수정은 불필요한 요청입니다. 같은 인스턴스를 두 번 수정하거나 두 번 삭제하는 것, action 이나 function 실행을 겹쳐 요청하는 것은 모호한 요청입니다. |
-| 빈 수정 | EML 수정 요청은 수정하는 데이터 줄마다 키가 아닌 필드를 적어도 하나 담아야 합니다. `%control` 에도 키가 아닌 필드가 적어도 하나 켜져 있어야 합니다. |
+| 빈 수정 | EML 수정 요청은 수정하는 데이터 줄마다 키가 아닌 필드를 적어도 하나 담아야 합니다. `%control` 에도 키가 아닌 필드가 적어도 하나 on 이어야 합니다. |
 | EML 요청 안의 중복 | EML 수정·삭제 요청과 `EXECUTE` 를 쓴 요청에는 같은 데이터 줄이 두 번 들어가면 안 됩니다. |
 | 잘못된 BDEF derived type(BDEF 파생 타입) | EML 작업은 정해진 BDEF derived type 을 피연산자로 받습니다. 예를 들어 수정은 `TABLE FOR UPDATE` 타입을 받습니다. 타입을 동적으로 지정하면 컴파일러가 이를 확인하지 못하므로 EML 처리 중에 오류가 날 수 있습니다. |
 
@@ -31,7 +31,7 @@ ABAP 계약 점검에는 **RAP BO 계약 점검**이 들어 있습니다. RAP BO
 | save sequence(저장 순서) 안의 EML 수정 작업 | provider 는 interaction phase(상호작용 단계)와 `finalize` saver method(세이버 메서드)에서만 EML 수정 작업을 할 수 있습니다. |
 | [[abenbdl_draft_action|with additional implementation]] 을 붙인 draft action 의 잘못된 구현 | [[abenbdl_draft_action2_abexa|edit]], [[abenbdl_draft_action2_abexa|discard]], [[abenbdl_draft_action1_abexa|activate]] 메서드 구현은 실패 항목을 돌려주면 안 됩니다. `edit`, `discard`, `activate`, [[abenbdl_draft_action2_abexa|resume]] 메서드 구현은 상태 메시지를 돌려주면 안 됩니다. [[abapderived_types_state_area|%state_area]] 를 채우지 않습니다. |
 | 맞지 않는 권한 확인 | behavior definition 에 권한 확인([[abenbdl_authorization_context|authorization context]])을 정의했다면 그 정의와 다른 권한 확인을 하면 안 됩니다. 쓰는 권한 객체는 `own authorization context` 에 적혀 있거나 다른 컨텍스트가 꺼 주어야 합니다. 어기면 보통 런타임 오류 `BEHAVIOR_UNEXPECTED_AUTH_CHECK` 가 납니다. |
-| augmentation 의 잘못된 사용 | `AUGMENTING` 을 붙인 EML `MODIFY` 문은 원래 요청의 필드를 덮어쓰면 안 됩니다. 같은 인스턴스의 같은 필드가 원래 작업과 augmentation 작업 양쪽 `%control` 에 켜져 있으면 안 된다는 뜻입니다. 원래 요청에 없던 인스턴스를 다룬다면 `RELATING` 절로 원래 요청의 인스턴스와 이어 줍니다. 그래야 응답을 짝지을 수 있습니다. |
+| augmentation 의 잘못된 사용 | `AUGMENTING` 을 붙인 EML `MODIFY` 문은 원래 요청의 필드를 덮어쓰면 안 됩니다. 같은 인스턴스의 같은 필드가 원래 작업과 augmentation 작업 양쪽 `%control` 에 on 이면 안 된다는 뜻입니다. 원래 요청에 없던 인스턴스를 다룬다면 `RELATING` 절로 원래 요청의 인스턴스와 이어 줍니다. 그래야 응답을 짝지을 수 있습니다. |
 | 특권이 아닌 접근 | 접근 제어가 걸린 CDS 뷰에 `OPTIONS PRIVILEGED ACCESS` 없이 `SELECT` 하는 것 같은 접근을 잡아냅니다. `AUTHORITY-CHECK OBJECT` 문과 같은 방식으로 점검합니다. 그래서 핸들러·saver method 와 분류된 API 에서, 권한 확인이 아예 허용되지 않는 곳이거나 `OPTIONS PRIVILEGED ACCESS` 없는 접근이 발견되면 계약 위반이 됩니다. |
 | save action 을 맞는 saver method 밖에서 실행 | [[abenbdl_action_onsave|save action]] 은 save sequence 에서, 그 action 에 해당하는 saver method 구현 안에서만 실행할 수 있습니다. |
 | late numbering 에서 키 mapping 누락 | late numbering 에서는 `adjust_numbers` saver method 가 임시 키를 모두 최종 키로 mapping 해 돌려주어야 합니다. 그래야 [[abencommit_entities_beginend_abexa|CONVERT KEY]] 문으로 최종 키를 알아낼 수 있습니다. |

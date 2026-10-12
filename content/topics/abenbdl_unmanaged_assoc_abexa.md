@@ -48,7 +48,7 @@ METHOD cba_confirmedbooking.
     CLEAR <ls_cba>-%cid_ref.
     LOOP AT <ls_cba>-%target ASSIGNING FIELD-SYMBOL(<ls_target>).
       IF <ls_target>-%control-bookingstatus = if_abap_behv=>mk-off.
-        " 상태를 주지 않았으면 %control 을 켜고 'C' 로 채운다
+        " 상태를 주지 않았으면 %control 을 on 으로 하고 'C' 로 채운다
         <ls_target>-%control-bookingstatus = if_abap_behv=>mk-on.
         <ls_target>-bookingstatus          = 'C'.
       ELSEIF <ls_target>-bookingstatus <> 'C'.
@@ -128,7 +128,7 @@ READ ENTITY zr_travel
 
 - `cid1` : 조건(`'C'`)에 맞으므로 만들어집니다.
 - `cid2` : 조건에 맞지 않으므로 거절됩니다.
-- `cid3` : `%control` 을 켜지 않았으므로, 핸들러가 값을 `'C'` 로 채워서 만듭니다.
+- `cid3` : `%control` 을 on 으로 하지 않았으므로, 핸들러가 값을 `'C'` 로 채워서 만듭니다.
 - `cid4` : composition `_Booking` 으로 만들었으므로 거르는 조건이 적용되지 않습니다. `'X'` 그대로 데이터베이스에 들어갑니다. 다음 읽기에서 걸러지는 모습을 보여 주려고 넣은 단계입니다.
 - 마지막 읽기는 `_ConfirmedBooking` 을 거칩니다. 이 association 이 BDEF 에서 `unmanaged` 이므로 behavior pool(동작 풀)의 읽기 메서드가 불리고, 상태가 `'C'` 인 예약만 돌아옵니다.
 

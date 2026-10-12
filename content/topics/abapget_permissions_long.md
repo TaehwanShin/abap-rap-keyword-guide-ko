@@ -24,7 +24,7 @@ RAP BO 하나에 속한 **여러 entity(엔터티)**의 허용 여부 질의를 
 | --- | --- |
 | `OF bdef` | RAP BO 의 root entity(루트 엔터티) 이름입니다. |
 | `ENTITY entity1`, `ENTITY entity2`, ... | `bdef` 의 composition 트리에 속한 entity 입니다. root entity 자신도 적을 수 있습니다. behavior definition(동작 정의)에 별칭이 있으면 **별칭**을 적습니다. 전체 이름을 적으면 경고가 납니다. root entity 도 별칭이 있으면 별칭을 씁니다. |
-| `REQUEST request` | 무엇을 물을지 표시하는 구조입니다. 작업, 필드, action 마다 구성요소가 있고, 켜거나 끌 수 있습니다. 타입은 `TYPE STRUCTURE FOR PERMISSIONS REQUEST` 여야 합니다. 켤 때는 `if_abap_behv=>mk-on`(값 `01`), 끌 때는 `if_abap_behv=>mk-off`(값 `00`) 같은 interface `IF_ABAP_BEHV` 의 상수를 씁니다. |
+| `REQUEST request` | 무엇을 물을지 표시하는 구조입니다. 작업, 필드, action 마다 구성요소가 있고, on 으로 하거나 off 로 할 수 있습니다. 타입은 `TYPE STRUCTURE FOR PERMISSIONS REQUEST` 여야 합니다. on 으로 할 때는 `if_abap_behv=>mk-on`(값 `01`), off 로 할 때는 `if_abap_behv=>mk-off`(값 `00`) 같은 interface `IF_ABAP_BEHV` 의 상수를 씁니다. |
 | `RESULT result` | 결과를 받는 구조입니다. 타입은 `TYPE STRUCTURE FOR PERMISSIONS RESULT` 입니다. |
 
 `result` 에는 구성요소가 두 개 있습니다.

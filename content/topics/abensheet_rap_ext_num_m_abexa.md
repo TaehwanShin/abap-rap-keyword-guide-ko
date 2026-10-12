@@ -120,11 +120,11 @@ READ ENTITIES OPERATIONS lt_ops.
 
 ## 알아두기
 
-- **`FIELDS ( ... ) WITH` 와 `FROM`** : `FIELDS` 목록에서 뺀 필드는 `%control` 값이 `if_abap_behv=>mk-off` 가 됩니다. 그래서 인스턴스에 값을 적어도 저장되지 않고 초기값이 들어갑니다. `CREATE FROM` 꼴을 쓰면 `%control` 을 직접 켜 주어야 합니다. 삭제와 action 실행은 `FROM` 으로만 쓸 수 있습니다.
+- **`FIELDS ( ... ) WITH` 와 `FROM`** : `FIELDS` 목록에서 뺀 필드는 `%control` 값이 `if_abap_behv=>mk-off` 가 됩니다. 그래서 인스턴스에 값을 적어도 저장되지 않고 초기값이 들어갑니다. `CREATE FROM` 꼴을 쓰면 `%control` 을 직접 on 으로 해 주어야 합니다. 삭제와 action 실행은 `FROM` 으로만 쓸 수 있습니다.
 - **같은 키로 다시 생성** : DB 테이블에 같은 키가 이미 있으면 그 인스턴스는 저장되지 않습니다.
 - **수정에서 뺀 필드** : `UPDATE FIELDS ( ... )` 목록에 없는 필드는 값을 적어도 바뀌지 않습니다.
 - **validation 은 전부 아니면 전무** : 예제의 validation 은 숫자 필드가 1000 을 넘지 않아야 한다는 조건입니다. 세 인스턴스 가운데 하나가 걸리면 그 요청의 인스턴스는 하나도 DB 에 들어가지 않습니다. validation 의 응답은 `COMMIT ENTITIES` 문의 response parameter(응답 매개변수)에서만 받을 수 있습니다. 이때 타입은 `TYPE RESPONSE FOR ... LATE` 입니다.
-- **읽기** : `ALL FIELDS WITH` 는 모든 필드를 읽고 모든 필드의 `%control` 을 켭니다. `FIELDS ( ... ) WITH` 는 적은 필드만 그렇게 합니다. `RESULT` 는 꼭 적어야 합니다. child entity 는 `ENTITY` 뒤에 behavior definition 의 별칭을 적어 직접 읽을 수도 있습니다. association 을 거친 읽기에서 `LINK` 는 선택입니다.
+- **읽기** : `ALL FIELDS WITH` 는 모든 필드를 읽고 모든 필드의 `%control` 을 on 으로 둡니다. `FIELDS ( ... ) WITH` 는 적은 필드만 그렇게 합니다. `RESULT` 는 꼭 적어야 합니다. child entity 는 `ENTITY` 뒤에 behavior definition 의 별칭을 적어 직접 읽을 수도 있습니다. association 을 거친 읽기에서 `LINK` 는 선택입니다.
 - **응답 풀어 보기** : 예제는 `failed` 의 `%op`(어떤 작업이었는가)와 `%fail-cause`(실패 원인), `reported` 의 `%msg` 를 읽어 글로 바꿔 출력합니다. `%cid` 가 있으면 `%cid` 로, 없으면 키로 인스턴스를 가리킵니다.
 
 ## 관련 항목

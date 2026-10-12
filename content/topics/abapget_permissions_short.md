@@ -18,7 +18,7 @@ entity(엔터티) **하나**의 인스턴스에 허용 여부를 묻습니다.
 | 부분 | 내용 |
 | --- | --- |
 | `ENTITY entity` | entity 이름입니다. 별칭이 아니라 전체 이름을 적어야 합니다. |
-| `REQUEST request` | 무엇을 물을지 표시하는 구조입니다. 작업, 필드, action 마다 구성요소가 있고, 켜거나 끌 수 있습니다. 타입은 `TYPE STRUCTURE FOR PERMISSIONS REQUEST` 여야 합니다. 켤 때는 `if_abap_behv=>mk-on`(값 `01`), 끌 때는 `if_abap_behv=>mk-off`(값 `00`) 같은 interface `IF_ABAP_BEHV` 의 상수를 씁니다. |
+| `REQUEST request` | 무엇을 물을지 표시하는 구조입니다. 작업, 필드, action 마다 구성요소가 있고, on 으로 하거나 off 로 할 수 있습니다. 타입은 `TYPE STRUCTURE FOR PERMISSIONS REQUEST` 여야 합니다. on 으로 할 때는 `if_abap_behv=>mk-on`(값 `01`), off 로 할 때는 `if_abap_behv=>mk-off`(값 `00`) 같은 interface `IF_ABAP_BEHV` 의 상수를 씁니다. |
 | `RESULT result` | 결과를 받는 구조입니다. 타입은 `TYPE STRUCTURE FOR PERMISSIONS RESULT` 입니다. 구성요소가 두 개 있습니다. |
 
 `result` 의 두 구성요소는 다음과 같습니다.
@@ -61,7 +61,7 @@ ENDLOOP.
 ## 알아두기
 
 - `ONLY GLOBAL ...` 로 시작하는 `only_clause` 를 쓰면 `FROM keys` 를 적으면 안 됩니다. 그 밖의 `ONLY` 절에서는 `FROM keys` 가 꼭 있어야 합니다.
-- 결과 값 `00` 은 제한이 없다는 뜻일 수 있지만, `REQUEST` 에서 그 요소를 켜지 않았거나 요청이 실패했다는 뜻일 수도 있습니다. response parameter 도 함께 확인합니다.
+- 결과 값 `00` 은 제한이 없다는 뜻일 수 있지만, `REQUEST` 에서 그 요소를 on 으로 하지 않았거나 요청이 실패했다는 뜻일 수도 있습니다. response parameter 도 함께 확인합니다.
 
 ## 관련 항목
 

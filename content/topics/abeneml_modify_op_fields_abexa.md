@@ -23,7 +23,7 @@ BO 는 root entity(루트 엔터티)와 child entity(자식 엔터티) 하나씩
 
 ## 예제
 
-`FROM` 은 넘길 필드마다 `%control` 을 직접 켭니다. `DELETE` 에는 `FROM` 만 쓸 수 있습니다.
+`FROM` 은 넘길 필드마다 `%control` 을 직접 on 으로 둡니다. `DELETE` 에는 `FROM` 만 쓸 수 있습니다.
 
 ```abap
 MODIFY ENTITY zr_travel

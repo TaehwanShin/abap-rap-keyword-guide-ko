@@ -1,6 +1,6 @@
 ---
 title: 예제 - %control 쓰기
-summary: CREATE FROM 과 UPDATE FROM 에서 %control 을 한꺼번에 주는 법과 줄마다 주는 법, 그리고 표시를 끈 필드가 어떻게 되는지 보여 주는 예제입니다.
+summary: CREATE FROM 과 UPDATE FROM 에서 %control 을 한꺼번에 주는 법과 줄마다 주는 법, 그리고 표시를 off 로 한 필드가 어떻게 되는지 보여 주는 예제입니다.
 keywords: %control, CREATE FROM, UPDATE FROM, FIELDS WITH, mk-on, mk-off, if_abap_behv=>mk, MODIFY ENTITIES, CREATE BY, COMMIT ENTITIES, 필드 표시, 예제
 ---
 
@@ -28,7 +28,7 @@ MODIFY ENTITIES OF zr_travel
       %control-customerid = if_abap_behv=>mk-on
       ( %cid = 'T1' travelid = '00000001' agencyid = '070001' customerid = '000010' )
       ( %cid = 'T2' travelid = '00000002' agencyid = '070002' customerid = '000020' ) )
-    " FIELDS ( ... ) WITH 는 %control 을 저절로 켠다
+    " FIELDS ( ... ) WITH 는 %control 을 저절로 on 으로 둔다
     CREATE BY \_booking FIELDS ( bookingid flightprice )
       WITH VALUE #(
         ( %cid_ref = 'T1'
@@ -40,7 +40,7 @@ MODIFY ENTITIES OF zr_travel
 COMMIT ENTITIES.
 ```
 
-두 번째 요청은 줄마다 `%control` 을 따로 적고, 일부 필드는 일부러 표시를 끕니다.
+두 번째 요청은 줄마다 `%control` 을 따로 적고, 일부 필드는 일부러 표시를 off 로 둡니다.
 
 ```abap
 MODIFY ENTITIES OF zr_travel
@@ -49,7 +49,7 @@ MODIFY ENTITIES OF zr_travel
       ( %cid       = 'T3'
         travelid   = '00000003'  %control-travelid   = if_abap_behv=>mk-on
         agencyid   = '070003'    %control-agencyid   = if_abap_behv=>mk-on
-        " 값은 적었지만 표시를 껐다
+        " 값은 적었지만 표시를 off 로 했다
         customerid = '000030'    %control-customerid = if_abap_behv=>mk-off ) )
     UPDATE FROM VALUE #(
       ( travelid   = '00000001'
@@ -67,10 +67,10 @@ COMMIT ENTITIES.
 
 ### 실행 결과
 
-- 첫 번째 요청 : 생성과 association 생성을 합니다. 생성은 `VALUE` 연산자로 내부 테이블을 지어 넘기는데, 첫 번째 괄호 앞에 `%control` 을 적어 모든 인스턴스의 모든 필드에 표시를 켭니다. association 생성에는 `%control` 을 적지 않아도 됩니다. `FIELDS ( ... ) WITH`([[abapmodify_entity_entities_fields]])가 `%control` 을 저절로 켜기 때문입니다. `COMMIT ENTITIES`([[abapcommit_entities]])로 저장합니다.
-- 두 번째 요청 : 생성과 수정을 합니다. 생성에서는 인스턴스의 필드마다 `%control` 을 따로 적고, 몇몇 필드는 일부러 표시를 끕니다. 수정도 마찬가지인데, 이번에는 `VALUE` 연산자로 `%control` 을 적습니다. `COMMIT ENTITIES` 로 저장합니다.
+- 첫 번째 요청 : 생성과 association 생성을 합니다. 생성은 `VALUE` 연산자로 내부 테이블을 지어 넘기는데, 첫 번째 괄호 앞에 `%control` 을 적어 모든 인스턴스의 모든 필드에 표시를 on 으로 둡니다. association 생성에는 `%control` 을 적지 않아도 됩니다. `FIELDS ( ... ) WITH`([[abapmodify_entity_entities_fields]])가 `%control` 을 저절로 on 으로 하기 때문입니다. `COMMIT ENTITIES`([[abapcommit_entities]])로 저장합니다.
+- 두 번째 요청 : 생성과 수정을 합니다. 생성에서는 인스턴스의 필드마다 `%control` 을 따로 적고, 몇몇 필드는 일부러 표시를 off 로 둡니다. 수정도 마찬가지인데, 이번에는 `VALUE` 연산자로 `%control` 을 적습니다. `COMMIT ENTITIES` 로 저장합니다.
 
-출력에는 root entity 와 child entity 의 데이터베이스 테이블 내용이 나옵니다. 표시를 끈 필드는 값을 적었어도 반영되지 않은 것을 확인할 수 있습니다.
+출력에는 root entity 와 child entity 의 데이터베이스 테이블 내용이 나옵니다. 표시를 off 로 한 필드는 값을 적었어도 반영되지 않은 것을 확인할 수 있습니다.
 
 ## 알아두기
 

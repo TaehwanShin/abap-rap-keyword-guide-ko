@@ -8,7 +8,7 @@ keywords: %is_draft, draft indicator, 초안 표시, 초안 인스턴스, 활성
 
 `%is_draft` 는 BDEF derived type(BDEF 파생 타입)의 구성요소이며 **draft 표시**입니다. 인스턴스가 [[abenbdl_with_draft|draft]] 인스턴스인지 active(활성) 인스턴스인지 나타냅니다.
 
-draft 인스턴스를 만들려면 `MODIFY` 요청에서 `%is_draft` 를 **직접** 켜야 합니다.
+draft 인스턴스를 만들려면 `MODIFY` 요청에서 `%is_draft` 를 **직접** on 으로 해야 합니다.
 
 ### 타입
 
@@ -46,7 +46,7 @@ MODIFY ENTITY zr_travel
 
 ## 알아두기
 
-- `%is_draft` 를 켜지 않으면 draft 인스턴스가 만들어지지 않습니다. draft 를 만들 때는 빠뜨리지 않도록 합니다.
+- `%is_draft` 를 on 으로 하지 않으면 draft 인스턴스가 만들어지지 않습니다. draft 를 만들 때는 빠뜨리지 않도록 합니다.
 - `%tky` 안에 `%is_draft` 가 들어 있으므로, `%tky` 로 키와 draft 표시를 함께 다룰 수 있습니다.
 
 ## 관련 항목
